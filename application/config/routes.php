@@ -14,11 +14,8 @@ if (count($array_arg) >= 1) {
 	}
 }
 
-if ($is_website) {
-	$route['pph'] = "website/pph";
-	$route['login'] = "website/login";
-	$route['login/(:any)'] = "website/login";
-}
+$route['login'] = "panel/login";
+$route['login/(:any)'] = "panel/login";
 
-$route['default_controller'] = "website/home";
+$route['default_controller'] = "panel/home";
 $route['404_override'] = '';

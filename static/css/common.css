@@ -1,13 +1,18 @@
 a { text-decoration: none; }
-body, form { margin: 0px; padding: 0px; }
+body, form, h1, h2 , form { margin: 0px; padding: 0px; }
 
+.hide { display: none; }
+.clear { clear: both; }
 .center { text-align: center; }
+.main-title { padding: 0 0 15px 0; text-align: center; }
 
 #cnt-header { padding: 10px; background: #047520; color: #FFFFFF; text-align: center; }
 #cnt-header a { color: #FFFFFF; }
 
 #cnt-content { padding: 20px 0 50px 0; }
 #cnt-content .home-img { width: 80%; }
+#cnt-content .container { width: 1000px; margin: 0 auto; text-align: center; }
+#cnt-content .cnt-normal { text-align: left; }
 
 #cnt-footer { position: fixed; bottom: 0px; background: #047520; width: 100%; padding: 10px; color: #FFFFFF; text-align: center; }
 
@@ -21,3 +26,17 @@ table.reference th a:link,table.reference th a:visited{ color:#ffffff; }
 table.reference th a:hover,table.reference th a:active{ color:#EE872A; }
 table.reference td{ border:1px solid #d4d4d4;padding:5px;padding-top:7px;padding-bottom:7px;vertical-align:top; }
 table.reference td.example_code { vertical-align:bottom; }
+
+/* datatable */
+.dataTables_wrapper { margin: 0 0 60px 0; }
+.dataTables_length, .dataTables_filter { margin: 0 0 15px 0; }
+.dataTables_info, .dataTables_paginate { margin: 15px 0 0 0; }
+
+/* jquery validator */
+label.error { display: block; font-size: 11px; color: #FF0000; }
+
+/* form box */
+.form-box { border-radius: 4px; box-shadow: 0 0 1px #000000; min-height: 50px; padding: 1%; width: 98%; }
+.form-box .label { float: left; width: 200px; }
+.form-box .input { float: left; width: 760px; padding: 0 0 10px 0; }
+.form-box .input .long { width: 730px; }

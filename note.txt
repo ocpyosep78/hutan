@@ -1,3 +1,6 @@
 Terusakan template yang skr jangan pakai template boostrap, bikin manual saja pakai jquery
 
 target sampai 04-03-2014 : bikin sampai keluar 1 form untuk CRUD
+
+datatable => render table html saja
+
