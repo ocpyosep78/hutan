@@ -33,7 +33,7 @@ $('#form-login').submit(function(e) {
 		return false;
 	}
 	
-	var param = Site.Form.GetValue('form-login');
+	var param = Func.form.get_galue('form-login');
 	Func.ajax({ url: web.host + 'login/action', param: param, callback: function(result) {
 		if (result.status == 1) {
 			window.location = web.host + 'pph/index';

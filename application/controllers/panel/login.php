@@ -39,4 +39,11 @@ class login extends CI_Controller {
 		echo json_encode($result);
 		exit;
     }
+	
+	function logout() {
+		$this->User_model->del_session();
+		
+		header('Location: '.base_url());
+		exit;
+	}
 }

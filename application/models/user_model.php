@@ -138,9 +138,6 @@ class User_model extends CI_Model {
 			}
 		}
 		
-		// hack for template
-		$result = true;
-		
 		return $result;
 	}
 	
