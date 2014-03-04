@@ -1,4 +1,7 @@
-<?php $this->load->view( 'panel/common/meta' ); ?>
+<?php
+	$meta['title'] = 'Selamat Datang di Sistem Informasi';
+?>
+<?php $this->load->view( 'panel/common/meta', $meta ); ?>
 <body>
 	<?php $this->load->view( 'panel/common/header' ); ?>
 	<div id="cnt-content">

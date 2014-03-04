@@ -1,7 +1,9 @@
 <?php
 	$web['host'] = base_url();
+	$title = (isset($title)) ? $title : 'Selamat Datang';
 ?>
 <head>
+	<title><?php echo $title; ?></title>
 	<link rel="stylesheet" href="<?php echo base_url('static/css/common.css'); ?>" />
 	
 	<script type="text/javascript">var web = <?php echo json_encode($web); ?></script>

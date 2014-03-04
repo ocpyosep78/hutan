@@ -18,6 +18,7 @@ define('SHA_SECRET',							'OraNgerti');
 
 define('CATEGORY',								'category');
 define('PAGE_STATIC',							'page_static');
-define('PPH',									'pph');
+define('MODULE',								'module');
+define('MODULE_TYPE',							'module_type');
 define('USER',									'user');
 define('USER_TYPE',								'user_type');

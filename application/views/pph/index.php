@@ -1,7 +1,10 @@
 <?php
-	$array_pph = $this->pph_model->get_array();
+	$array_module = $this->module_model->get_array();
+	
+	// meta
+	$meta['title'] = 'PPH';
 ?>
-<?php $this->load->view( 'panel/common/meta' ); ?>
+<?php $this->load->view( 'panel/common/meta', $meta ); ?>
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 <div id="cnt-content">
@@ -11,9 +14,9 @@
 				<th style="width: 70%">KETERANGAN</th>
 				<th style="width: 15%">SUMBER DANA</th>
 				<th style="width: 15%">PERIODE</th></tr>
-			<?php foreach ($array_pph as $row) { ?>
+			<?php foreach ($array_module as $row) { ?>
 			<tr>
-				<td><?php echo $row['content']; ?></td>
+				<td><a href="<?php echo $row['module_link']; ?>"><?php echo $row['content']; ?></a></td>
 				<td><?php echo $row['sumber_dana']; ?></td>
 				<td><?php echo $row['periode']; ?></td></tr>
 			<?php } ?>

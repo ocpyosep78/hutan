@@ -1,5 +1,5 @@
 a { text-decoration: none; }
-body, form, h1, h2 , form { margin: 0px; padding: 0px; }
+body, form, h1, h2 , h3 , form { margin: 0px; padding: 0px; }
 
 .hide { display: none; }
 .clear { clear: both; }
@@ -26,6 +26,7 @@ table.reference th a:link,table.reference th a:visited{ color:#ffffff; }
 table.reference th a:hover,table.reference th a:active{ color:#EE872A; }
 table.reference td{ border:1px solid #d4d4d4;padding:5px;padding-top:7px;padding-bottom:7px;vertical-align:top; }
 table.reference td.example_code { vertical-align:bottom; }
+table.reference td a { color: #000000; }
 
 /* datatable */
 .dataTables_wrapper { margin: 0 0 60px 0; }

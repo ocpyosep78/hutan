@@ -1,12 +1,12 @@
 <?php
-	$array_pph = $this->pph_model->get_array();
+	$array_record = $this->$module['model_name']->get_array();
 ?>
 <?php $this->load->view( 'panel/common/meta' ); ?>
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 
 <div id="cnt-content"><div class="container"><div class="cnt-normal">
-	<h2 class="main-title">Judul nya</h2>
+	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	
 	<div class="table">
 		<table cellpadding="0" cellspacing="0" border="0" class="display datatable">

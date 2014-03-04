@@ -942,6 +942,23 @@
 		}
 	}
 	
+	if (! function_exists('get_module_name')) {
+		function get_module_name($value) {
+			$value = trim($value);
+			preg_match('/([a-z0-9\_]+\/[a-z0-9\_]+)$/i', $value, $match);
+			$result_temp = (isset($match[1])) ? $match[1] : '';
+			$array_module = explode('/', $result_temp);
+			
+			$result = array();
+			if (count($array_module) == 2) {
+				$result['alias'] = $array_module[1];
+				$result['module_type_alias'] = $array_module[0];
+			}
+			
+			return $result;
+		}
+	}
+	
 	if (! class_exists('curl')) {
 		class curl {
 			var $callback = false;
