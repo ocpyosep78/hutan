@@ -944,18 +944,39 @@
 	
 	if (! function_exists('get_module_name')) {
 		function get_module_name($value) {
+			$ci = get_instance();
+			
+			$result = array();
+			if (count($ci->uri->segments) >= 2) {
+				$result['alias'] = $ci->uri->segments[2];
+				$result['module_type_alias'] = $ci->uri->segments[1];
+			}
+			
+			/*
 			$value = trim($value);
 			preg_match('/([a-z0-9\_]+\/[a-z0-9\_]+)$/i', $value, $match);
 			$result_temp = (isset($match[1])) ? $match[1] : '';
 			$array_module = explode('/', $result_temp);
 			
-			$result = array();
 			if (count($array_module) == 2) {
 				$result['alias'] = $array_module[1];
 				$result['module_type_alias'] = $array_module[0];
 			}
+			/*	*/
 			
 			return $result;
+		}
+	}
+	
+	if (! function_exists('get_array_satuan_hutan')) {
+		function get_array_satuan_hutan() {
+			$array = array(
+				array( 'id' => 'm3', 'title' => 'm3' ),
+				array( 'id' => 'batang', 'title' => 'batang' ),
+				array( 'id' => 'pohon', 'title' => 'pohon' )
+			);
+			
+			return $array;
 		}
 	}
 	

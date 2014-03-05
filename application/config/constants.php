@@ -16,9 +16,9 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 define('SHA_SECRET',							'OraNgerti');
 
-define('CATEGORY',								'category');
-define('PAGE_STATIC',							'page_static');
 define('MODULE',								'module');
 define('MODULE_TYPE',							'module_type');
 define('USER',									'user');
 define('USER_TYPE',								'user_type');
+
+define('PPH_TABLE_01',							'pph_table_01');

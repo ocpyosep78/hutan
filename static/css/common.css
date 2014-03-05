@@ -29,9 +29,11 @@ table.reference td.example_code { vertical-align:bottom; }
 table.reference td a { color: #000000; }
 
 /* datatable */
+.datatable .fa { margin: 0 5px; }
 .dataTables_wrapper { margin: 0 0 60px 0; }
 .dataTables_length, .dataTables_filter { margin: 0 0 15px 0; }
 .dataTables_info, .dataTables_paginate { margin: 15px 0 0 0; }
+.dataTables_length label { display: none; }
 
 /* jquery validator */
 label.error { display: block; font-size: 11px; color: #FF0000; }
@@ -40,4 +42,5 @@ label.error { display: block; font-size: 11px; color: #FF0000; }
 .form-box { border-radius: 4px; box-shadow: 0 0 1px #000000; min-height: 50px; padding: 1%; width: 98%; }
 .form-box .label { float: left; width: 200px; }
 .form-box .input { float: left; width: 760px; padding: 0 0 10px 0; }
+.form-box .input .short { width: 250px; }
 .form-box .input .long { width: 730px; }

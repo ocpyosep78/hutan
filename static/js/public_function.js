@@ -217,6 +217,22 @@ var Func = {
 					}
 				}
 			})
+		},
+		delete: function(p) {
+			Func.ajax({
+				url: p.url,
+				param: p.param,
+				callback: function(result) {
+					if (result.status) {
+						// callback
+						if (p.callback != null) {
+							p.callback(result)
+						}
+					} else {
+						$.notify(result.message, "error");
+					}
+				}
+			})
 		}
     }
 }
@@ -256,4 +272,13 @@ $(document).ready(function() {
 	
 	// datepicker
 	$('.datepicker').datepicker({ dateFormat: 'dd-mm-yy', changeMonth: true, changeYear: true, yearRange: 'c-50:c+10' });
+	
+	// message
+	var raw_data = $('.cnt-data').text();
+	eval('var data = ' + raw_data);
+	if (data.message != null) {
+		if (data.message.length > 0) {
+			$.notify(data.message, "success");
+		}
+	}
 } );

@@ -1,0 +1,38 @@
+
+		
+		<div class="label">Nama Label</div>
+		<div class="input"><input type="text" name="hello_world" class="long" /></div>
+		<div class="clear"></div>
+		<div class="label">Nama Label</div>
+		<div class="input"><textarea class="long"></textarea></div>
+		<div class="clear"></div>
+		<div class="label">Datepicker</div>
+		<div class="input"><input type="text" name="3213" class="datepicker" /></div>
+		<div class="clear"></div>
+		
+		
+		
+		
+	// form
+	$('#form-editor').validate({
+		rules: {
+			hello_world: { required: true }
+		}
+	});
+	$('#form-editor').submit(function(e) {
+		e.preventDefault();
+		if (! $('#form-editor').valid()) {
+			return false;
+		}
+		
+		Func.form.submit({
+			url: web.host + 'pph/table_01/action',
+			param: Func.form.get_galue('form-editor'),
+			callback: function(result) {
+				if (result.status) {
+					window.location = window.location.href;
+				}
+			}
+		});
+	});
+	

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 3.2.4
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 04, 2014 at 11:31 AM
--- Server version: 5.5.32
--- PHP Version: 5.4.19
+-- Host: localhost
+-- Generation Time: Mar 05, 2014 at 08:38 PM
+-- Server version: 5.1.41
+-- PHP Version: 5.3.1
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,8 +18,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `hutan_db`
 --
-CREATE DATABASE IF NOT EXISTS `hutan_db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `hutan_db`;
 
 -- --------------------------------------------------------
 
@@ -80,6 +77,41 @@ CREATE TABLE IF NOT EXISTS `module_type` (
 
 INSERT INTO `module_type` (`id`, `name`, `alias`) VALUES
 (1, 'PPH', 'pph');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_01`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_01` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hutan_produksi_value` varchar(255) NOT NULL,
+  `hutan_produksi_satuan` varchar(255) NOT NULL,
+  `hutan_lidung_value` varchar(255) NOT NULL,
+  `hutan_lindung_satuan` varchar(255) NOT NULL,
+  `ksa_value` varchar(255) NOT NULL,
+  `ksa_satuan` varchar(255) NOT NULL,
+  `kpa_value` varchar(255) NOT NULL,
+  `kps_satuan` varchar(255) NOT NULL,
+  `tb_value` varchar(255) NOT NULL,
+  `tb_satuan` varchar(255) NOT NULL,
+  `hutan_lain_value` varchar(255) NOT NULL,
+  `hutan_lain_satuan` varchar(255) NOT NULL,
+  `nilai_rugi` int(11) NOT NULL,
+  `upaya` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `pph_table_01`
+--
+
+INSERT INTO `pph_table_01` (`id`, `hutan_produksi_value`, `hutan_produksi_satuan`, `hutan_lidung_value`, `hutan_lindung_satuan`, `ksa_value`, `ksa_satuan`, `kpa_value`, `kps_satuan`, `tb_value`, `tb_satuan`, `hutan_lain_value`, `hutan_lain_satuan`, `nilai_rugi`, `upaya`, `keterangan`, `update_time`) VALUES
+(10, '11', '', '2', '', '3', '', '', '', '', '', '', '', 15, '', '', '2014-03-05 20:36:20'),
+(9, '12', 'm3', '132', 'batang', '111', 'm3', '4', 'batang', '111', 'm3', '11', 'm3', 16, '', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 

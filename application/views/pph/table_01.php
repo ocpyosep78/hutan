@@ -1,5 +1,16 @@
 <?php
+	// master
+	$array_satuan = get_array_satuan_hutan();
+	
+	// record data
 	$array_record = $this->$module['model_name']->get_array();
+	$message = get_flash_message();
+	
+	// page
+	$page = array();
+	if (!empty($message)) {
+		$page['message'] = $message;
+	}
 ?>
 <?php $this->load->view( 'panel/common/meta' ); ?>
 <body>
@@ -7,436 +18,100 @@
 
 <div id="cnt-content"><div class="container"><div class="cnt-normal">
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
+	<div class="hide">
+		<div class="cnt-data"><?php echo json_encode($page); ?></div>
+	</div>
 	
 	<div class="table">
 		<table cellpadding="0" cellspacing="0" border="0" class="display datatable">
 			<thead>
 				<tr>
-					<th>Rendering engine</th>
-					<th>Browser</th>
-					<th>Platform(s)</th>
-					<th>Engine version</th>
-					<th>CSS grade</th>
+					<th>Hutan Produksi</th>
+					<th>Hutan Lindung</th>
+					<th>Hutan Lainnya</th>
+					<th>Nilai Kerugian</th>
+					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="odd gradeX">
-					<td>Trident</td>
-					<td>Internet
-						 Explorer 4.0</td>
-					<td>Win 95+</td>
-					<td class="center"> 4</td>
-					<td class="center">X</td>
+				<?php foreach ($array_record as $key => $row) { ?>
+				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
+					<td><?php echo $row['hutan_produksi_text']; ?></td>
+					<td><?php echo $row['hutan_lindung_text']; ?></td>
+					<td><?php echo $row['hutan_lain_text']; ?></td>
+					<td class="center"><?php echo $row['nilai_rugi']; ?></td>
+					<td class="center">
+						<i class="fa fa-pencil btn-edit"></i>
+						<i class="fa fa-times btn-delete"></i>
+						<span class="hide"><?php echo json_encode($row); ?></div>
+					</td>
 				</tr>
-				<tr class="even gradeC">
-					<td>Trident</td>
-					<td>Internet
-						 Explorer 5.0</td>
-					<td>Win 95+</td>
-					<td class="center">5</td>
-					<td class="center">C</td>
-				</tr>
-				<tr class="odd gradeA">
-					<td>Trident</td>
-					<td>Internet
-						 Explorer 5.5</td>
-					<td>Win 95+</td>
-					<td class="center">5.5</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="even gradeA">
-					<td>Trident</td>
-					<td>Internet
-						 Explorer 6</td>
-					<td>Win 98+</td>
-					<td class="center">6</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="odd gradeA">
-					<td>Trident</td>
-					<td>Internet Explorer 7</td>
-					<td>Win XP SP2+</td>
-					<td class="center">7</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="even gradeA">
-					<td>Trident</td>
-					<td>AOL browser (AOL desktop)</td>
-					<td>Win XP</td>
-					<td class="center">6</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Geck0</td>
-					<td>Firefox 1.0</td>
-					<td>Win 98+ / OSX.2+</td>
-					<td class="center">1.7</td>
-					<td class="center"><i class="fa fa-anchor btn-edit"></i></td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Firefox 1.5</td>
-					<td>Win 98+ / OSX.2+</td>
-					<td class="center">1.8</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Firefox 2.0</td>
-					<td>Win 98+ / OSX.2+</td>
-					<td class="center">1.8</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Firefox 3.0</td>
-					<td>Win 2k+ / OSX.3+</td>
-					<td class="center">1.9</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Camino 1.0</td>
-					<td>OSX.2+</td>
-					<td class="center">1.8</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Camino 1.5</td>
-					<td>OSX.3+</td>
-					<td class="center">1.8</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Netscape 7.2</td>
-					<td>Win 95+ / Mac OS 8.6-9.2</td>
-					<td class="center">1.7</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Netscape Browser 8</td>
-					<td>Win 98SE+</td>
-					<td class="center">1.7</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Netscape Navigator 9</td>
-					<td>Win 98+ / OSX.2+</td>
-					<td class="center">1.8</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Mozilla 1.0</td>
-					<td>Win 95+ / OSX.1+</td>
-					<td class="center">1</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Mozilla 1.1</td>
-					<td>Win 95+ / OSX.1+</td>
-					<td class="center">1.1</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Mozilla 1.2</td>
-					<td>Win 95+ / OSX.1+</td>
-					<td class="center">1.2</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Mozilla 1.3</td>
-					<td>Win 95+ / OSX.1+</td>
-					<td class="center">1.3</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Mozilla 1.4</td>
-					<td>Win 95+ / OSX.1+</td>
-					<td class="center">1.4</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Mozilla 1.5</td>
-					<td>Win 95+ / OSX.1+</td>
-					<td class="center">1.5</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Mozilla 1.6</td>
-					<td>Win 95+ / OSX.1+</td>
-					<td class="center">1.6</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Mozilla 1.7</td>
-					<td>Win 98+ / OSX.1+</td>
-					<td class="center">1.7</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Mozilla 1.8</td>
-					<td>Win 98+ / OSX.1+</td>
-					<td class="center">1.8</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Seamonkey 1.1</td>
-					<td>Win 98+ / OSX.2+</td>
-					<td class="center">1.8</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Epiphany 2.20</td>
-					<td>Gnome</td>
-					<td class="center">1.8</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Webkit</td>
-					<td>Safari 1.2</td>
-					<td>OSX.3</td>
-					<td class="center">125.5</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Webkit</td>
-					<td>Safari 1.3</td>
-					<td>OSX.3</td>
-					<td class="center">312.8</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Webkit</td>
-					<td>Safari 2.0</td>
-					<td>OSX.4+</td>
-					<td class="center">419.3</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Webkit</td>
-					<td>Safari 3.0</td>
-					<td>OSX.4+</td>
-					<td class="center">522.1</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Webkit</td>
-					<td>OmniWeb 5.5</td>
-					<td>OSX.4+</td>
-					<td class="center">420</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Webkit</td>
-					<td>iPod Touch / iPhone</td>
-					<td>iPod</td>
-					<td class="center">420.1</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Webkit</td>
-					<td>S60</td>
-					<td>S60</td>
-					<td class="center">413</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Presto</td>
-					<td>Opera 7.0</td>
-					<td>Win 95+ / OSX.1+</td>
-					<td class="center">-</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Presto</td>
-					<td>Opera 7.5</td>
-					<td>Win 95+ / OSX.2+</td>
-					<td class="center">-</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Presto</td>
-					<td>Opera 8.0</td>
-					<td>Win 95+ / OSX.2+</td>
-					<td class="center">-</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Presto</td>
-					<td>Opera 8.5</td>
-					<td>Win 95+ / OSX.2+</td>
-					<td class="center">-</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Presto</td>
-					<td>Opera 9.0</td>
-					<td>Win 95+ / OSX.3+</td>
-					<td class="center">-</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Presto</td>
-					<td>Opera 9.2</td>
-					<td>Win 88+ / OSX.3+</td>
-					<td class="center">-</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Presto</td>
-					<td>Opera 9.5</td>
-					<td>Win 88+ / OSX.3+</td>
-					<td class="center">-</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Presto</td>
-					<td>Opera for Wii</td>
-					<td>Wii</td>
-					<td class="center">-</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Presto</td>
-					<td>Nokia N800</td>
-					<td>N800</td>
-					<td class="center">-</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Presto</td>
-					<td>Nintendo DS browser</td>
-					<td>Nintendo DS</td>
-					<td class="center">8.5</td>
-					<td class="center">C/A<sup>1</sup></td>
-				</tr>
-				<tr class="gradeC">
-					<td>KHTML</td>
-					<td>Konqureror 3.1</td>
-					<td>KDE 3.1</td>
-					<td class="center">3.1</td>
-					<td class="center">C</td>
-				</tr>
-				<tr class="gradeA">
-					<td>KHTML</td>
-					<td>Konqureror 3.3</td>
-					<td>KDE 3.3</td>
-					<td class="center">3.3</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeA">
-					<td>KHTML</td>
-					<td>Konqureror 3.5</td>
-					<td>KDE 3.5</td>
-					<td class="center">3.5</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeX">
-					<td>Tasman</td>
-					<td>Internet Explorer 4.5</td>
-					<td>Mac OS 8-9</td>
-					<td class="center">-</td>
-					<td class="center">X</td>
-				</tr>
-				<tr class="gradeC">
-					<td>Tasman</td>
-					<td>Internet Explorer 5.1</td>
-					<td>Mac OS 7.6-9</td>
-					<td class="center">1</td>
-					<td class="center">C</td>
-				</tr>
-				<tr class="gradeC">
-					<td>Tasman</td>
-					<td>Internet Explorer 5.2</td>
-					<td>Mac OS 8-X</td>
-					<td class="center">1</td>
-					<td class="center">C</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Misc</td>
-					<td>NetFront 3.1</td>
-					<td>Embedded devices</td>
-					<td class="center">-</td>
-					<td class="center">C</td>
-				</tr>
-				<tr class="gradeA">
-					<td>Misc</td>
-					<td>NetFront 3.4</td>
-					<td>Embedded devices</td>
-					<td class="center">-</td>
-					<td class="center">A</td>
-				</tr>
-				<tr class="gradeX">
-					<td>Misc</td>
-					<td>Dillo 0.8</td>
-					<td>Embedded devices</td>
-					<td class="center">-</td>
-					<td class="center">X</td>
-				</tr>
-				<tr class="gradeX">
-					<td>Misc</td>
-					<td>Links</td>
-					<td>Text only</td>
-					<td class="center">-</td>
-					<td class="center">X</td>
-				</tr>
-				<tr class="gradeX">
-					<td>Misc</td>
-					<td>Lynx</td>
-					<td>Text only</td>
-					<td class="center">-</td>
-					<td class="center">X</td>
-				</tr>
-				<tr class="gradeC">
-					<td>Misc</td>
-					<td>IE Mobile</td>
-					<td>Windows Mobile 6</td>
-					<td class="center">-</td>
-					<td class="center">C</td>
-				</tr>
-				<tr class="gradeC">
-					<td>Misc</td>
-					<td>PSP browser</td>
-					<td>PSP</td>
-					<td class="center">-</td>
-					<td class="center">C</td>
-				</tr>
-				<tr class="gradeU">
-					<td>Other browsers</td>
-					<td>All others</td>
-					<td>-</td>
-					<td class="center">-</td>
-					<td class="center">U</td>
-				</tr>
+				<?php } ?>
 			</tbody>
 		</table>
 	</div>
 	
 	<div class="form-box hide"><form id="form-editor">
+		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
-		<div class="label">Nama Label</div>
-		<div class="input"><input type="text" name="hello_world" class="long" /></div>
+		
+		<div class="label">Hutan Produksi</div>
+		<div class="input">
+			<input type="text" name="hutan_produksi_value" class="short" />
+			<select name="hutan_produksi_satuan">
+				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
+			</select>
+		</div>
 		<div class="clear"></div>
-		<div class="label">Nama Label</div>
-		<div class="input"><textarea class="long"></textarea></div>
+		<div class="label">Hutan Lindung</div>
+		<div class="input">
+			<input type="text" name="hutan_lidung_value" class="short" />
+			<select name="hutan_lindung_satuan">
+				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
+			</select>
+		</div>
 		<div class="clear"></div>
-		<div class="label">Datepicker</div>
-		<div class="input"><input type="text" name="3213" class="datepicker" /></div>
+		<div class="label">KSA</div>
+		<div class="input">
+			<input type="text" name="ksa_value" class="short" />
+			<select name="ksa_satuan">
+				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
+			</select>
+		</div>
+		<div class="clear"></div>
+		<div class="label">KPA</div>
+		<div class="input">
+			<input type="text" name="kpa_value" class="short" />
+			<select name="kps_satuan">
+				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
+			</select>
+		</div>
+		<div class="clear"></div>
+		<div class="label">TB</div>
+		<div class="input">
+			<input type="text" name="tb_value" class="short" />
+			<select name="tb_satuan">
+				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
+			</select>
+		</div>
+		<div class="clear"></div>
+		<div class="label">Hutan Lainnya</div>
+		<div class="input">
+			<input type="text" name="hutan_lain_value" class="short" />
+			<select name="hutan_lain_satuan">
+				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
+			</select>
+		</div>
+		<div class="clear"></div>
+		<div class="label">Nilai Rugi</div>
+		<div class="input"><input type="text" name="nilai_rugi" class="short" /></div>
+		<div class="clear"></div>
+		<div class="clear"></div>
+		<div class="label">Upaya Pengendalian</div>
+		<div class="input"><input type="text" name="upaya" class="long" /></div>
+		<div class="clear"></div>
+		<div class="label">Keterangan</div>
+		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
 		<div class="clear"></div>
 		<div class="label">&nbsp;</div>
 		<div class="input">
@@ -449,12 +124,40 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	// form
-	$('#form-editor').validate({
-		rules: {
-			hello_world: { required: true }
+	var page = {
+		show_form: function() {
+			$('.table').hide();
+			$('.form-box').show();
+		},
+		show_grid: function() {
+			$('.table').show();
+			$('.form-box').hide();
 		}
+	}
+	
+	// datatable
+	$('.btn-edit').click(function() {
+		var raw_record = $(this).parent('td').find('.hide').text();
+		eval('var record = ' + raw_record);
+		Func.populate({ cnt: '#form-editor', record: record });
+		page.show_form();
 	});
+	$('.btn-delete').click(function() {
+		var raw_record = $(this).parent('td').find('.hide').text();
+		eval('var record = ' + raw_record);
+		Func.form.delete({
+			url: web.host + 'pph/table_01/action',
+			param: { action: 'delete', id: record.id },
+			callback: function(result) {
+				if (result.status) {
+					window.location = window.location.href;
+				}
+			}
+		});
+	});
+	
+	// form
+	$('#form-editor').validate({ });
 	$('#form-editor').submit(function(e) {
 		e.preventDefault();
 		if (! $('#form-editor').valid()) {
@@ -465,19 +168,22 @@ $(document).ready(function() {
 			url: web.host + 'pph/table_01/action',
 			param: Func.form.get_galue('form-editor'),
 			callback: function(result) {
-				console.log(result);
+				if (result.status) {
+					window.location = window.location.href;
+				}
 			}
 		});
 	});
 	
 	// helper
-	$('.btn-edit').click(function() {
-		$('.table').hide();
-		$('.form-box').show();
+	$('.dataTables_length').prepend('<div style="float: left; width: 65px; padding: 2px 0 0 0;"><button class="btn show-form">Tambah</button></div>');
+	$('.show-form').click(function() {
+		$('#form-editor')[0].reset();
+		$('#form-editor [name="id"]').val(0);
+		page.show_form();
 	});
 	$('.btn-cancel').click(function() {
-		$('.table').show();
-		$('.form-box').hide();
+		page.show_grid();
 	});
 } );
 </script>
