@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.4
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Mar 05, 2014 at 08:38 PM
--- Server version: 5.1.41
--- PHP Version: 5.3.1
+-- Host: 127.0.0.1
+-- Generation Time: Mar 06, 2014 at 01:42 PM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.19
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,6 +19,70 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `hutan_db`
 --
+CREATE DATABASE IF NOT EXISTS `hutan_db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `hutan_db`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kkbhl_table_01`
+--
+
+CREATE TABLE IF NOT EXISTS `kkbhl_table_01` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `kawasan_penunjukan_no` varchar(255) NOT NULL,
+  `kawasan_penunjukan_tanggal` date NOT NULL,
+  `kawasan_penunjukan_luas` varchar(255) NOT NULL,
+  `kawasan_penetapan_no` varchar(255) NOT NULL,
+  `kawasan_penetapan_tanggal` date NOT NULL,
+  `kawasan_penetapan_luas` varchar(255) NOT NULL,
+  `blog_penata_pengesah` varchar(255) NOT NULL,
+  `blog_penata_no` varchar(255) NOT NULL,
+  `blog_penata_tanggal` date NOT NULL,
+  `blog_luas_inti` varchar(255) NOT NULL,
+  `blog_luas_rimba` varchar(255) NOT NULL,
+  `blog_luas_manfaat` varchar(255) NOT NULL,
+  `blog_luas_lain` varchar(255) NOT NULL,
+  `sk_pengesahaan_no` varchar(255) NOT NULL,
+  `sk_pengesahaan_tanggal` date NOT NULL,
+  `sk_pengesahaan_periode` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `kkbhl_table_01`
+--
+
+INSERT INTO `kkbhl_table_01` (`id`, `nama_kawasan`, `kawasan_penunjukan_no`, `kawasan_penunjukan_tanggal`, `kawasan_penunjukan_luas`, `kawasan_penetapan_no`, `kawasan_penetapan_tanggal`, `kawasan_penetapan_luas`, `blog_penata_pengesah`, `blog_penata_no`, `blog_penata_tanggal`, `blog_luas_inti`, `blog_luas_rimba`, `blog_luas_manfaat`, `blog_luas_lain`, `sk_pengesahaan_no`, `sk_pengesahaan_tanggal`, `sk_pengesahaan_periode`, `update_time`) VALUES
+(2, 'Bromo Tengger', '01', '2014-03-02', '03', '04', '2014-03-05', '06', '07', '08', '2014-03-09', '11', '12', '13', '14', '15', '2014-03-16', '17', '2014-03-06 10:42:05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kkh_table_01`
+--
+
+CREATE TABLE IF NOT EXISTS `kkh_table_01` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(255) NOT NULL,
+  `nama_kelas` varchar(255) NOT NULL,
+  `nama_spesies_indo` varchar(255) NOT NULL,
+  `nama_spesies_ilmiah` varchar(255) NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
+  `populasi` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `kkh_table_01`
+--
+
+INSERT INTO `kkh_table_01` (`id`, `jenis`, `nama_kelas`, `nama_spesies_indo`, `nama_spesies_ilmiah`, `lokasi`, `populasi`, `keterangan`, `update_time`) VALUES
+(5, 'satwa', '11', '22', '33', '44', '55', '66', '2014-03-06 10:08:47');
 
 -- --------------------------------------------------------
 
@@ -34,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `module` (
   `alias` varchar(50) NOT NULL,
   `module_type_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=90 ;
 
 --
 -- Dumping data for table `module`
@@ -42,21 +107,94 @@ CREATE TABLE IF NOT EXISTS `module` (
 
 INSERT INTO `module` (`id`, `content`, `sumber_dana`, `periode`, `urutan`, `alias`, `module_type_id`) VALUES
 (1, 'TABEL 1.  GANGGUAN KEAMANAN KAWASAN DARI PENCURIAN KAYU/PENEBANGAN LIAR', 'UPT', 'Bulanan', 1, 'table_01', 1),
-(2, 'TABEL 2.  GANGGUAN KEAMANAN KAWASAN HUTAN AKIBAT PERAMBAHAN DAN PEMUKIMAN LIAR', 'UPT', 'Bulanan', 2, '', 0),
-(3, 'TABEL 3.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PERAMBAHAN DAN PEMUKIMAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 3, '', 0),
-(4, 'TABEL 4.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PERLADANGAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 4, '', 0),
-(5, 'TABEL 5.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PENAMBANGAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 5, '', 0),
-(6, 'TABEL 6.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP ILLEGAL LOGGING', 'UPT', 'Bulanan', 6, '', 0),
-(7, 'TABEL 7.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP TUMBUHAN DAN SATWA LIAR  ', 'UPT', 'Bulanan', 7, '', 0),
-(8, 'TABEL 8.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PERKEBUNAN', 'UPT', 'Bulanan', 8, '', 0),
-(9, 'TABEL 9.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PERTAMBANGAN', 'UPT', 'Bulanan', 9, '', 0),
-(10, 'TABEL 10.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PEMBANGUNAN SARANA PRASARANA', 'UPT', 'Bulanan', 10, '', 0),
-(11, 'TABEL 11.  PENANGANAN KERUSAKAN KAWASAN AKIBAT BENCANA ALAM', 'UPT', 'Triwulan', 11, '', 0),
-(12, 'TABEL 12.  JUMLAH TENAGA PENGAMANAN HUTAN', 'UPT', 'Bulanan', 12, '', 0),
-(13, 'TABEL 13.  REKAPITULASI PERKARA', 'UPT', 'Bulanan', 13, '', 0),
-(14, 'TABEL 14.  SARANA PENGAMANAN HUTAN', 'UPT', 'Semester', 14, '', 0),
-(15, 'TABEL 15.  PRASARANA PENGAMANAN HUTAN', 'UPT', 'Semester', 15, '', 0),
-(16, 'TABEL 16.  SENJATA API DAN AMUNISI', 'UPT', 'Semester', 16, '', 0);
+(2, 'TABEL 2.  GANGGUAN KEAMANAN KAWASAN HUTAN AKIBAT PERAMBAHAN DAN PEMUKIMAN LIAR', 'UPT', 'Bulanan', 2, '', 1),
+(3, 'TABEL 3.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PERAMBAHAN DAN PEMUKIMAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 3, '', 1),
+(4, 'TABEL 4.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PERLADANGAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 4, '', 1),
+(5, 'TABEL 5.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PENAMBANGAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 5, '', 1),
+(6, 'TABEL 6.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP ILLEGAL LOGGING', 'UPT', 'Bulanan', 6, '', 1),
+(7, 'TABEL 7.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP TUMBUHAN DAN SATWA LIAR  ', 'UPT', 'Bulanan', 7, '', 1),
+(8, 'TABEL 8.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PERKEBUNAN', 'UPT', 'Bulanan', 8, '', 1),
+(9, 'TABEL 9.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PERTAMBANGAN', 'UPT', 'Bulanan', 9, '', 1),
+(10, 'TABEL 10.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PEMBANGUNAN SARANA PRASARANA', 'UPT', 'Bulanan', 10, '', 1),
+(11, 'TABEL 11.  PENANGANAN KERUSAKAN KAWASAN AKIBAT BENCANA ALAM', 'UPT', 'Triwulan', 11, '', 1),
+(12, 'TABEL 12.  JUMLAH TENAGA PENGAMANAN HUTAN', 'UPT', 'Bulanan', 12, '', 1),
+(13, 'TABEL 13.  REKAPITULASI PERKARA', 'UPT', 'Bulanan', 13, '', 1),
+(14, 'TABEL 14.  SARANA PENGAMANAN HUTAN', 'UPT', 'Semester', 14, '', 1),
+(15, 'TABEL 15.  PRASARANA PENGAMANAN HUTAN', 'UPT', 'Semester', 15, '', 1),
+(16, 'TABEL 16.  SENJATA API DAN AMUNISI', 'UPT', 'Semester', 16, '', 1),
+(17, 'TABEL 1.  POTENSI TUMBUHAN DAN SATWA LIAR DILINDUNGI', 'UPT', 'Triwulan', 1, 'table_01', 2),
+(18, 'TABEL 2.  DAFTAR PENANGKAR TUMBUHAN DAN SATWA LIAR', 'UPT', 'Triwulan', 2, '', 2),
+(19, 'TABEL 3.  DAFTAR PENGEDAR TUMBUHAN DAN SATWA LIAR ', 'UPT', 'Triwulan', 3, '', 2),
+(20, 'TABEL 4.  KUOTA TANGKAP DAN EKSPOR TUMBUHAN DAN SATWA LIAR (APPENDIKS DAN NON APPENDIKS)', 'UPT', 'Tahunan', 4, '', 2),
+(21, 'TABEL 5.  REALISASI TANGKAP TUMBUHAN DAN SATWA LIAR (APPENDIKS DAN NON APPENDIKS)', 'UPT', 'Triwulan', 5, '', 2),
+(22, 'TABEL 6.  REALISASI EKSPOR TUMBUHAN DAN SATWA LIAR HASIL PENANGKARAN', 'UPT', 'Triwulan', 6, '', 2),
+(23, 'TABEL 7.  REALISASI EKSPOR TUMBUHAN DAN SATWA LIAR DARI ALAM', 'UPT', 'Triwulan', 7, '', 2),
+(24, 'TABEL 8.  LEMBAGA KONSERVASI', 'Pusat', 'Triwulan', 8, '', 2),
+(25, 'TABEL 9.  PUSAT PENYELAMATAN SATWA ', 'UPT', 'Triwulan', 9, '', 2),
+(26, 'TABEL 10. PUSAT PELATIHAN GAJAH', 'UPT', 'Triwulan', 10, '', 2),
+(27, 'TABEL 11. PERAGAAN SATWA LIAR DI LINDUNGI DI DALAM NEGERI', 'UPT', 'Semester ', 11, '', 2),
+(28, 'TABEL 12. PERAGAAN SATWA LIAR DILINDUNGI DI LUAR NEGERI', 'Pusat', 'Semester ', 12, '', 2),
+(29, 'TABEL 13. KERJASAMA PROGRAM BREEDING', 'Pusat', 'Semester ', 13, '', 2),
+(30, 'TABEL 14. KONFLIK ANTARA MANUSIA DAN SATWA LIAR', 'UPT', 'Triwulan', 14, '', 2),
+(31, 'TABEL 1.  DATA KAWASAN KONSERVASI', 'UPT', 'Semester ', 1, 'table_01', 3),
+(32, 'TABEL 2.  PERKEMBANGAN LUAS DAN FUNGSI', 'UPT', 'Semester ', 2, '', 3),
+(33, 'TABEL 3.  KONDISI TATA BATAS', 'UPT', 'Semester ', 3, '', 3),
+(34, 'TABEL 4.  PERUBAHAN FUNGSI', 'UPT', 'Semester ', 4, '', 3),
+(35, 'TABEL 5.  PEMANFAATAN KAWASAN KONSERVASI UNTUK KEGIATAN NON KEHUTANAN ', 'UPT', 'Semester ', 5, '', 3),
+(36, 'TABEL 6.  PERMASALAHAN KAWASAN KONSERVASI ', 'UPT', 'Triwulan', 6, '', 3),
+(37, 'TABEL 7.  REHABILITASI/RESTORASI DI KAWASAN KONSERVASI  ', 'UPT', 'Tahunan', 7, '', 3),
+(38, 'TABEL 8.  PEMBINAAN DAERAH PENYANGGA', 'UPT', 'Triwulan', 8, '', 3),
+(39, 'TABEL 9.  PEMBERDAYAAN MASYARAKAT DI SEKITAR KAWASAN KONSERVASI', 'UPT', 'Semester ', 9, '', 3),
+(40, 'TABEL 10. PERKEMBANGAN DAN PEMBENTUKAN DESA KONSERVASI', 'UPT', 'Triwulan', 10, '', 3),
+(41, 'TABEL 11. POTENSI KAWASAN EKOSISTEM ESENSIAL ', 'UPT', 'Triwulan', 11, '', 3),
+(42, 'TABEL 12. POTENSI KAWASAN KONSERVASI LAHAN BASAH ', 'UPT', 'Triwulan', 12, '', 3),
+(43, 'TABEL 1.  LUASAN KEBAKARAN HUTAN BERDASARKAN FUNGSI HUTAN ', 'UPT', 'Bulanan', 1, 'table_01', 4),
+(44, 'TABEL 2.  LAPORAN  HASIL GROUND CHECK HOTSPOT/TITIK PANAS', 'UPT', 'Bulanan', 2, '', 4),
+(45, 'TABEL 3.  REKAPITULASI JUMLAH HOTSPOT/TITIK PANAS', 'UPT', 'Bulanan', 3, '', 4),
+(46, 'TABEL 4.  JUMLAH DAN SEBARAN PERSONIL BRIGDALKAR MANGGALA AGNI DAOPS ', 'UPT', 'Semester', 4, '', 4),
+(47, 'TABEL 5.  JUMLAH DAN SEBARAN PERSONIL BRIGDALKAR MANGGALA AGNI NON DAOPS ', 'UPT', 'Semester', 5, '', 4),
+(48, 'TABEL 6.  PEMBENTUKAN DAN PELATIHAN  MASYARAKAT PEDULI API  (MPA)  ', 'UPT', 'Semester', 6, '', 4),
+(49, 'TABEL 7.  KEADAAN SUMBER DAYA MANUSIA PENGENDALIAN KEBAKARAN HUTAN ', 'UPT', 'Semester', 7, '', 4),
+(50, 'TABEL 8.  PELATIHAN YANG TELAH DIIKUTI OLEH ANGGOTA PENGENDALIAN KEBAKARAN HUTAN MANGGALA AGNI', 'UPT', 'Semester', 8, '', 4),
+(51, 'TABEL 9.  PERALATAN TANGAN ', 'UPT', 'Semester', 9, '', 4),
+(52, 'TABEL 10. FASILITAS BANGUNAN', 'UPT', 'Semester', 10, '', 4),
+(53, 'TABEL 11. PERLENGKAPAN PERORANGAN', 'UPT', 'Semester', 11, '', 4),
+(54, 'TABEL 12. PERALATAN TRANSPORTASI ', 'UPT', 'Semester', 12, '', 4),
+(55, 'TABEL 13. PERALATAN MESIN POMPA DAN KELENGKAPANNYA ', 'UPT', 'Semester', 13, '', 4),
+(56, 'TABEL 14. PERALATAN KOMUNIKASI DAN PENGAMATAN CUACA ', 'UPT', 'Semester', 14, '', 4),
+(57, 'TABEL 15. PERLENGKAPAN BEREGU ', 'UPT', 'Semester', 15, '', 4),
+(58, 'TABEL 1. DATA POTENSI WISATA ALAM DI TAMAN NASIONAL', 'UPT', 'Semester ', 1, 'table_01', 5),
+(59, 'TABEL 2. DATA POTENSI AIR  DI TAMAN NASIONAL', 'UPT', 'Semester ', 2, '', 5),
+(60, 'TABEL 3. DATA POTENSI KARBON  DI TAMAN NASIONAL', 'UPT', 'Semester ', 3, '', 5),
+(61, 'TABEL 4. DATA POTENSI GEOTERMAL  DI TAMAN NASIONAL', 'UPT', 'Semester ', 4, '', 5),
+(62, 'TABEL 5. DATA POTENSI TANAMAN OBAT DI TAMAN NASIONAL', 'UPT', 'Semester ', 5, '', 5),
+(63, 'TABEL 6. PENGUNJUNG TAMAN NASIONAL', 'UPT', 'Triwulan', 6, '', 5),
+(64, 'TABEL 7. KEJADIAN KECELAKAAN WISATA ALAM', 'UPT', 'Triwulan', 7, '', 5),
+(65, 'TABEL 8. JUMLAH DAN LUAS IZIN USAHA PEMANFAATAN JASA LINGKUNGAN', 'UPT', 'Triwulan', 8, '', 5),
+(66, 'TABEL 9. PERKEMBANGAN  IZIN PENGUSAHAAN PARIWISATA ALAM (IPPA) DI TAMAN NASIONAL', 'UPT', 'Triwulan', 9, '', 5),
+(67, 'TABEL 10. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN AIR DAN KARBON DI TAMAN NASIONAL', 'UPT', 'Triwulan', 10, '', 5),
+(68, 'TABEL 11. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN KETINGGIAN DI TAMAN NASIONAL', 'UPT', 'Triwulan', 11, '', 5),
+(69, 'TABEL 12. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN GEOTERMAL DI TAMAN NASIONAL', 'UPT', 'Triwulan', 12, '', 5),
+(70, 'TABEL 13. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN TANAMAN OBAT DI TAMAN NASIONAL', 'UPT', 'Triwulan', 13, '', 5),
+(71, 'TABEL 14. PENERIMAAN NEGARA DARI PEMANFAATAN JASA LINGKUNGAN', 'UPT', 'Triwulan', 14, '', 5),
+(72, 'TABEL 15. JUMLAH KADER, KELOMPOK PENCINTA ALAM DAN KELOMPOK SWADAYA MASYARAKAT/PROFESI', 'UPT', 'Triwulan', 15, '', 5),
+(73, 'TABEL 16. PROMOSI DAN PUBLIKASI JASA LINGKUNGAN', 'UPT', 'Triwulan', 16, '', 5),
+(74, 'TABEL 1.  SEBARAN PNS/CPNS BERDASARKAN TINGKAT PENDIDIKAN ', 'UPT ', 'Semester ', 1, 'table_01', 6),
+(75, 'TABEL 2.  SEBARAN PNS/CPNS BERDASARKAN  GOLONGAN', 'UPT', 'Semester ', 2, '', 6),
+(76, 'TABEL 3.  SEBARAN PNS BERDASARKAN NAMA JABATAN FUNGSIONAL', 'UPT', 'Semester ', 3, '', 6),
+(77, 'TABEL 4.  SEBARAN PEGAWAI HARIAN LEPAS MENURUT TINGKAT PENDIDIKAN ', 'UPT', 'Semester ', 4, '', 6),
+(78, 'TABEL 5.  SEBARAN PNS MENURUT JENIS JABATAN ', 'UPT', 'Semester ', 5, '', 6),
+(79, 'TABEL 6.  SEBARAN PEGAWAI FUNGSIONAL MENURUT TINGKAT PENDIDIKAN ', 'UPT', 'Semester ', 6, '', 6),
+(80, 'TABEL 7.  SEBARAN PEGAWAI FUNGSIONAL MENURUT GOLONGAN / RUANG', 'UPT', 'Semester ', 7, '', 6),
+(81, 'TABEL 8.  PAGU DAN REALISASI ANGGARAN', 'UPT', 'Bulanan', 8, '', 6),
+(82, 'TABEL 9.  REALISASI PNBP MENURUT JENIS PENERIMAAN ', 'UPT', 'Semester ', 9, '', 6),
+(83, 'TABEL 10. DAFTAR INVENTARIS TANAH BANGUNAN', 'UPT', 'Tahunan', 10, '', 6),
+(84, 'TABEL 11. DAFTAR INVENTARIS GEDUNG DAN BANGUNAN ', 'UPT', 'Tahunan', 11, '', 6),
+(85, 'TABEL 12. DAFTAR INVENTARIS ALAT TRANSPORTASI', 'UPT', 'Tahunan', 12, '', 6),
+(86, 'TABEL 13. DAFTAR  MUTASI BARANG', 'UPT', 'Tahunan', 13, '', 6),
+(87, 'TABEL 14. DAFTAR KERJASAMA/KEMITRAAN/HLN', 'UPT', 'Tahunan', 14, '', 6),
+(88, 'TABEL 15. DAFTAR TENAGA AHLI ASING DI LINGKUP DIREKTORAT JENDERAL PHKA ', 'UPT', 'Tahunan', 15, '', 6),
+(89, 'TABEL 16. PUBLIKASI BIDANG PHKA', 'UPT', 'Triwulan', 16, '', 6);
 
 -- --------------------------------------------------------
 
@@ -69,14 +207,129 @@ CREATE TABLE IF NOT EXISTS `module_type` (
   `name` varchar(50) NOT NULL,
   `alias` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `module_type`
 --
 
 INSERT INTO `module_type` (`id`, `name`, `alias`) VALUES
-(1, 'PPH', 'pph');
+(1, 'PPH', 'pph'),
+(2, 'KKH', 'kkh'),
+(3, 'KKBHL', 'kkbhl'),
+(4, 'PKH', 'pkh'),
+(5, 'PJLKKHL', 'pjlkkhl'),
+(6, 'Sekretariat', 'sekretariat');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `odtwa`
+--
+
+CREATE TABLE IF NOT EXISTS `odtwa` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
+
+--
+-- Dumping data for table `odtwa`
+--
+
+INSERT INTO `odtwa` (`id`, `title`) VALUES
+(1, 'Pemandangan '),
+(2, 'Pantai '),
+(3, 'Lembah '),
+(4, 'Air Terjun '),
+(5, 'Telaga '),
+(6, 'Danau '),
+(7, 'Laut '),
+(8, 'Kawah '),
+(17, 'Anoa'),
+(18, 'Kera'),
+(19, 'Sapi liar'),
+(20, 'Kancil'),
+(21, 'Lutung'),
+(22, 'Babi Rusa'),
+(23, 'Kambing hutan'),
+(24, 'Kerbau Liar'),
+(25, 'Tapir'),
+(26, 'Harimau Sumatera'),
+(27, 'Badak Sumatera'),
+(28, 'Gajah'),
+(29, 'Rusa'),
+(30, 'Macan Tutul'),
+(31, 'Burung Enggan'),
+(32, 'Burung elang'),
+(33, 'Pasir putih'),
+(34, 'Udara sejuk'),
+(35, 'Itik liar'),
+(36, 'Dll');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_01`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_01` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `odtwa_id` int(11) NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
+  `fungsi` varchar(255) NOT NULL,
+  `pengelola` varchar(255) NOT NULL,
+  `luas` varchar(255) NOT NULL,
+  `pariwisata` varchar(255) NOT NULL,
+  `sarana` varchar(255) NOT NULL,
+  `peluang` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_01`
+--
+
+INSERT INTO `pjlkkhl_table_01` (`id`, `odtwa_id`, `lokasi`, `fungsi`, `pengelola`, `luas`, `pariwisata`, `sarana`, `peluang`, `keterangan`, `update_time`) VALUES
+(2, 4, '1', '2', '3', '4', '5', '6', '7', '8', '2014-03-06 13:10:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_01`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_01` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tanggal_kebakaran` date NOT NULL,
+  `lintang` varchar(255) NOT NULL,
+  `bujur` varchar(255) NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
+  `hutan_sm` int(11) NOT NULL,
+  `hutan_ca` int(11) NOT NULL,
+  `hutan_tn` int(11) NOT NULL,
+  `hutan_thr` int(11) NOT NULL,
+  `hutan_twa` int(11) NOT NULL,
+  `hutan_tb` int(11) NOT NULL,
+  `hutan_hl` int(11) NOT NULL,
+  `hutan_hti` int(11) NOT NULL,
+  `hutan_ha` int(11) NOT NULL,
+  `hutan_htr` int(11) NOT NULL,
+  `hutan_terbakar` varchar(255) NOT NULL,
+  `kerugian` varchar(255) NOT NULL,
+  `luas_lain` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pkh_table_01`
+--
+
+INSERT INTO `pkh_table_01` (`id`, `tanggal_kebakaran`, `lintang`, `bujur`, `lokasi`, `hutan_sm`, `hutan_ca`, `hutan_tn`, `hutan_thr`, `hutan_twa`, `hutan_tb`, `hutan_hl`, `hutan_hti`, `hutan_ha`, `hutan_htr`, `hutan_terbakar`, `kerugian`, `luas_lain`, `update_time`) VALUES
+(2, '2014-03-31', '1', '2', '3', 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, '14', '15', '16', '2014-03-06 11:39:58');
 
 -- --------------------------------------------------------
 
@@ -103,15 +356,47 @@ CREATE TABLE IF NOT EXISTS `pph_table_01` (
   `keterangan` varchar(255) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `pph_table_01`
 --
 
 INSERT INTO `pph_table_01` (`id`, `hutan_produksi_value`, `hutan_produksi_satuan`, `hutan_lidung_value`, `hutan_lindung_satuan`, `ksa_value`, `ksa_satuan`, `kpa_value`, `kps_satuan`, `tb_value`, `tb_satuan`, `hutan_lain_value`, `hutan_lain_satuan`, `nilai_rugi`, `upaya`, `keterangan`, `update_time`) VALUES
-(10, '11', '', '2', '', '3', '', '', '', '', '', '', '', 15, '', '', '2014-03-05 20:36:20'),
-(9, '12', 'm3', '132', 'batang', '111', 'm3', '4', 'batang', '111', 'm3', '11', 'm3', 16, '', '', '0000-00-00 00:00:00');
+(10, '1111', '', '2', '', '3', '', '', '', '', '', '', '', 15, '', '', '2014-03-05 20:36:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_01`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_01` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `s3_l` int(11) NOT NULL,
+  `s3_p` int(11) NOT NULL,
+  `s2_l` int(11) NOT NULL,
+  `s2_p` int(11) NOT NULL,
+  `s1_l` int(11) NOT NULL,
+  `s1_p` int(11) NOT NULL,
+  `d3_l` int(11) NOT NULL,
+  `d3_p` int(11) NOT NULL,
+  `slta_l` int(11) NOT NULL,
+  `slta_p` int(11) NOT NULL,
+  `sltp_l` int(11) NOT NULL,
+  `sltp_p` int(11) NOT NULL,
+  `sd_l` int(11) NOT NULL,
+  `sd_p` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `sekretariat_table_01`
+--
+
+INSERT INTO `sekretariat_table_01` (`id`, `s3_l`, `s3_p`, `s2_l`, `s2_p`, `s1_l`, `s1_p`, `d3_l`, `d3_p`, `slta_l`, `slta_p`, `sltp_l`, `sltp_p`, `sd_l`, `sd_p`, `update_time`) VALUES
+(1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
