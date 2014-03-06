@@ -55,8 +55,8 @@ class pph_table_01_model extends CI_Model {
 		$string_limit = GetStringLimit($param);
 		
 		$select_query = "
-			SELECT SQL_CALC_FOUND_ROWS PphTable.*
-			FROM ".PPH_TABLE_01." PphTable
+			SELECT SQL_CALC_FOUND_ROWS *
+			FROM ".PPH_TABLE_01."
 			WHERE 1 $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit

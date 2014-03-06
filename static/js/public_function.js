@@ -121,13 +121,18 @@ var Func = {
 			if (p.record.hasOwnProperty(form_name)) {
 				var input = $(p.cnt + ' [name="' + form_name + '"]');
 				var value = p.record[form_name];
+				
 				if (input.attr('type') == 'checkbox') {
 					input.prop('checked', false);
 					if (value == 1) {
 						input.prop('checked', true);
 					}
 				} else if (input.hasClass('datepicker')) {
-					input.val(Func.SwapDate(value));
+					if (Func.in_array(value, ['0000-00-00'])) {
+						value = ''
+					}
+					
+					input.val(Func.swap_date(value));
 				} else {
 					input.val(value);
 				}
@@ -184,7 +189,10 @@ var Func = {
 				var name = Input.eq(i).attr('name');
 				var value = Input.eq(i).val();
 				
-				if (Input.eq(i).attr('type') == 'checkbox') {
+				if (Input.eq(i).hasClass('datepicker')) {
+					value = Func.swap_date(value);
+					data = set_value(data, name, value);
+				} else if (Input.eq(i).attr('type') == 'checkbox') {
 					if (Input.eq(i).is(':checked')) {
 						data = set_value(data, name, value);
 					} else {
@@ -274,11 +282,15 @@ $(document).ready(function() {
 	$('.datepicker').datepicker({ dateFormat: 'dd-mm-yy', changeMonth: true, changeYear: true, yearRange: 'c-50:c+10' });
 	
 	// message
-	var raw_data = $('.cnt-data').text();
-	eval('var data = ' + raw_data);
-	if (data.message != null) {
-		if (data.message.length > 0) {
-			$.notify(data.message, "success");
+	if ($('.cnt-data').length == 1) {
+		var raw_data = $('.cnt-data').text();
+		if (raw_data.length > 0) {
+			eval('var data = ' + raw_data);
+			if (data.message != null) {
+				if (data.message.length > 0) {
+					$.notify(data.message, "success");
+				}
+			}
 		}
 	}
 } );

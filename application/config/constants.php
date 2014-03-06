@@ -18,7 +18,13 @@ define('SHA_SECRET',							'OraNgerti');
 
 define('MODULE',								'module');
 define('MODULE_TYPE',							'module_type');
+define('ODTWA',									'odtwa');
 define('USER',									'user');
 define('USER_TYPE',								'user_type');
 
 define('PPH_TABLE_01',							'pph_table_01');
+define('PKH_TABLE_01',							'pkh_table_01');
+define('KKH_TABLE_01',							'kkh_table_01');
+define('KKBHL_TABLE_01',						'kkbhl_table_01');
+define('SEKRETARIAT_TABLE_01',					'sekretariat_table_01');
+define('PJLKKHL_TABLE_01',						'pjlkkhl_table_01');

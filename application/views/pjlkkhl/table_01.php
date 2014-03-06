@@ -1,6 +1,6 @@
 <?php
 	// master
-	$array_satuan = get_array_satuan_hutan();
+	$array_odtwa = $this->odtwa_model->get_array();
 	
 	// record data
 	$array_record = $this->$module['model_name']->get_array();
@@ -26,20 +26,34 @@
 		<table cellpadding="0" cellspacing="0" border="0" class="display datatable">
 			<thead>
 				<tr>
-					<th>Hutan Produksi</th>
-					<th>Hutan Lindung</th>
-					<th>Hutan Lainnya</th>
-					<th>Nilai Kerugian</th>
-					<th>&nbsp;</th>
+					<th colspan="2">Kawasan</th>
+					<th rowspan="2">Pengusaha / Pengelolaan</th>
+					<th rowspan="2">Luas Kawasan</th>
+					<th colspan="3">Produk Wisata Alam</th>
+					<th rowspan="2">Peluang Pengembangan Wisata</th>
+					<th rowspan="2">Keterangan</th>
+					<th rowspan="2">&nbsp;</th>
+				</tr>
+				<tr>
+					<th>Lokasi</th>
+					<th>Fungsi</th>
+					<th>ODTWA</th>
+					<th>Atraksi Utama</th>
+					<th>Sarana / Prasarana</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td><?php echo $row['hutan_produksi_text']; ?></td>
-					<td><?php echo $row['hutan_lindung_text']; ?></td>
-					<td><?php echo $row['hutan_lain_text']; ?></td>
-					<td class="center"><?php echo $row['nilai_rugi']; ?></td>
+					<td class="center"><?php echo $row['lokasi']; ?></td>
+					<td class="center"><?php echo $row['fungsi']; ?></td>
+					<td class="center"><?php echo $row['pengelola']; ?></td>
+					<td class="center"><?php echo $row['luas']; ?></td>
+					<td class="center"><?php echo $row['odtwa_title']; ?></td>
+					<td class="center"><?php echo $row['pariwisata']; ?></td>
+					<td class="center"><?php echo $row['sarana']; ?></td>
+					<td class="center"><?php echo $row['peluang']; ?></td>
+					<td class="center"><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -55,60 +69,38 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Hutan Produksi</div>
+		<div class="label">Kawasan</div>
+		<div class="clear"></div>
+		<div class="label">Lokasi</div>
+		<div class="input"><input type="text" name="lokasi" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Fungsi</div>
+		<div class="input"><input type="text" name="fungsi" class="long" /></div>
+		<div class="clear"></div>
+		
+		<div class="label">Pengusahaan/Pengelolaan</div>
+		<div class="input"><input type="text" name="pengelola" class="long" /></div>
+		<div class="clear"></div>
+		<div class="label">Luas Pemanfaatan</div>
+		<div class="input"><input type="text" name="luas" class="short" /></div>
+		<div class="clear"></div>
+		
+		<div class="label">Produk Wisata Alam</div>
+		<div class="clear"></div>
+		<div class="label">ODTWA *</div>
 		<div class="input">
-			<input type="text" name="hutan_produksi_value" class="short" />
-			<select name="hutan_produksi_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
+			<select name="odtwa_id">
+				<?php echo ShowOption(array( 'Array' => $array_odtwa )); ?>
 			</select>
 		</div>
+		<div class="label">Atraksi Utama Pariwisata</div>
+		<div class="input"><input type="text" name="pariwisata" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">Hutan Lindung</div>
-		<div class="input">
-			<input type="text" name="hutan_lidung_value" class="short" />
-			<select name="hutan_lindung_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">Sarana & Prasarana</div>
+		<div class="input"><input type="text" name="sarana" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">KSA</div>
-		<div class="input">
-			<input type="text" name="ksa_value" class="short" />
-			<select name="ksa_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
-		<div class="clear"></div>
-		<div class="label">KPA</div>
-		<div class="input">
-			<input type="text" name="kpa_value" class="short" />
-			<select name="kps_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
-		<div class="clear"></div>
-		<div class="label">TB</div>
-		<div class="input">
-			<input type="text" name="tb_value" class="short" />
-			<select name="tb_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
-		<div class="clear"></div>
-		<div class="label">Hutan Lainnya</div>
-		<div class="input">
-			<input type="text" name="hutan_lain_value" class="short" />
-			<select name="hutan_lain_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
-		<div class="clear"></div>
-		<div class="label">Nilai Rugi</div>
-		<div class="input"><input type="text" name="nilai_rugi" class="short" /></div>
-		<div class="clear"></div>
-		<div class="clear"></div>
-		<div class="label">Upaya Pengendalian</div>
-		<div class="input"><input type="text" name="upaya" class="long" /></div>
+		<div class="label">Peluang Pengembangan</div>
+		<div class="input"><input type="text" name="peluang" class="long" /></div>
 		<div class="clear"></div>
 		<div class="label">Keterangan</div>
 		<div class="input"><textarea name="keterangan" class="long"></textarea></div>

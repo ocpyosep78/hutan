@@ -1,7 +1,4 @@
 <?php
-	// master
-	$array_satuan = get_array_satuan_hutan();
-	
 	// record data
 	$array_record = $this->$module['model_name']->get_array();
 	$message = get_flash_message();
@@ -26,20 +23,26 @@
 		<table cellpadding="0" cellspacing="0" border="0" class="display datatable">
 			<thead>
 				<tr>
-					<th>Hutan Produksi</th>
-					<th>Hutan Lindung</th>
-					<th>Hutan Lainnya</th>
-					<th>Nilai Kerugian</th>
+					<th>Tanggal Kebakaran</th>
+					<th>Lintang</th>
+					<th>Bujur</th>
+					<th>Lokasi</th>
+					<th>Luas Konservasi</th>
+					<th>Luas Produksi</th>
+					<th>Kerugian</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td><?php echo $row['hutan_produksi_text']; ?></td>
-					<td><?php echo $row['hutan_lindung_text']; ?></td>
-					<td><?php echo $row['hutan_lain_text']; ?></td>
-					<td class="center"><?php echo $row['nilai_rugi']; ?></td>
+					<td class="center"><?php echo GetFormatDate($row['tanggal_kebakaran']); ?></td>
+					<td><?php echo $row['lintang']; ?></td>
+					<td><?php echo $row['bujur']; ?></td>
+					<td><?php echo $row['lokasi']; ?></td>
+					<td class="center"><?php echo $row['total_konservasi']; ?></td>
+					<td class="center"><?php echo $row['total_produksi']; ?></td>
+					<td><?php echo $row['kerugian']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -55,64 +58,67 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Hutan Produksi</div>
-		<div class="input">
-			<input type="text" name="hutan_produksi_value" class="short" />
-			<select name="hutan_produksi_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">Tanggal Terjadinya Kebakaran</div>
+		<div class="input"><input type="text" name="tanggal_kebakaran" class="datepicker" /></div>
 		<div class="clear"></div>
-		<div class="label">Hutan Lindung</div>
-		<div class="input">
-			<input type="text" name="hutan_lidung_value" class="short" />
-			<select name="hutan_lindung_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">Koordinat</div>
 		<div class="clear"></div>
-		<div class="label">KSA</div>
-		<div class="input">
-			<input type="text" name="ksa_value" class="short" />
-			<select name="ksa_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">- Lintang</div>
+		<div class="input"><input type="text" name="lintang" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">KPA</div>
-		<div class="input">
-			<input type="text" name="kpa_value" class="short" />
-			<select name="kps_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">- Bujur</div>
+		<div class="input"><input type="text" name="bujur" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">TB</div>
-		<div class="input">
-			<input type="text" name="tb_value" class="short" />
-			<select name="tb_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">Lokasi</div>
+		<div class="input"><input type="text" name="lokasi" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">Hutan Lainnya</div>
-		<div class="input">
-			<input type="text" name="hutan_lain_value" class="short" />
-			<select name="hutan_lain_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		
+		<div class="label">Hutan Konservsi (HA)</div>
 		<div class="clear"></div>
-		<div class="label">Nilai Rugi</div>
-		<div class="input"><input type="text" name="nilai_rugi" class="short" /></div>
+		<div class="label">- SM</div>
+		<div class="input"><input type="text" name="hutan_sm" class="short" /></div>
 		<div class="clear"></div>
+		<div class="label">- CA</div>
+		<div class="input"><input type="text" name="hutan_ca" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Upaya Pengendalian</div>
-		<div class="input"><input type="text" name="upaya" class="long" /></div>
+		<div class="label">- TN</div>
+		<div class="input"><input type="text" name="hutan_tn" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Keterangan</div>
-		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
+		<div class="label">- THR</div>
+		<div class="input"><input type="text" name="hutan_thr" class="short" /></div>
 		<div class="clear"></div>
+		<div class="label">- TWA</div>
+		<div class="input"><input type="text" name="hutan_twa" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- TB</div>
+		<div class="input"><input type="text" name="hutan_tb" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">HL</div>
+		<div class="input"><input type="text" name="hutan_hl" class="short" /></div>
+		<div class="clear"></div>
+		
+		<div class="label">Hutan Produksi (HA)</div>
+		<div class="clear"></div>
+		<div class="label">- HTI</div>
+		<div class="input"><input type="text" name="hutan_hti" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- HA</div>
+		<div class="input"><input type="text" name="hutan_ha" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- HTR</div>
+		<div class="input"><input type="text" name="hutan_htr" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Luas yang Terbakar</div>
+		<div class="input"><input type="text" name="hutan_terbakar" class="short" /></div>
+		<div class="clear"></div>
+		
+		<div class="label">Taksiran Kerugian</div>
+		<div class="input"><input type="text" name="kerugian" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Luas Yang Terbakar Diluar Kawasan Hutan</div>
+		<div class="input"><input type="text" name="luas_lain" class="short" /></div>
+		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

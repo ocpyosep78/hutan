@@ -1,24 +1,27 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class module_model extends CI_Model {
+class pkh_table_01_model extends CI_Model {
     function __construct() {
         parent::__construct();
 		
-        $this->field = array( 'id', 'content', 'sumber_dana', 'periode', 'urutan', 'alias', 'module_type_id' );
+        $this->field = array(
+			'id', 'tanggal_kebakaran', 'lintang', 'bujur', 'lokasi', 'hutan_sm', 'hutan_ca', 'hutan_tn', 'hutan_thr', 'hutan_twa', 'hutan_tb', 'hutan_hl', 'hutan_hti',
+			'hutan_ha', 'hutan_htr', 'hutan_terbakar', 'kerugian', 'luas_lain', 'update_time'
+		);
     }
-
+	
     function update($param) {
         $result = array();
        
         if (empty($param['id'])) {
-            $insert_query  = GenerateInsertQuery($this->field, $param, MODULE);
+            $insert_query  = GenerateInsertQuery($this->field, $param, PKH_TABLE_01);
             $insert_result = mysql_query($insert_query) or die(mysql_error());
            
             $result['id'] = mysql_insert_id();
             $result['status'] = '1';
             $result['message'] = 'Data berhasil disimpan.';
         } else {
-            $update_query  = GenerateUpdateQuery($this->field, $param, MODULE);
+            $update_query  = GenerateUpdateQuery($this->field, $param, PKH_TABLE_01);
             $update_result = mysql_query($update_query) or die(mysql_error());
            
             $result['id'] = $param['id'];
@@ -33,15 +36,7 @@ class module_model extends CI_Model {
         $array = array();
        
         if (isset($param['id'])) {
-            $select_query  = "SELECT * FROM ".MODULE." WHERE id = '".$param['id']."' LIMIT 1";
-        } else if (isset($param['alias']) && isset($param['module_type_alias'])) {
-			$select_query = "
-				SELECT SQL_CALC_FOUND_ROWS Module.*,
-					ModuleType.name module_type_name, ModuleType.alias module_type_alias
-				FROM ".MODULE." Module
-				LEFT JOIN ".MODULE_TYPE." ModuleType ON ModuleType.id = Module.module_type_id
-				WHERE Module.alias = '".$param['alias']."' AND ModuleType.alias = '".$param['module_type_alias']."'
-			";
+            $select_query  = "SELECT * FROM ".PKH_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
         }
 		
         $select_result = mysql_query($select_query) or die(mysql_error());
@@ -55,17 +50,15 @@ class module_model extends CI_Model {
     function get_array($param = array()) {
         $array = array();
 		
-		$string_module_type = (isset($param['module_type_id'])) ? "AND ModuleType.id = '".$param['module_type_id']."'" : '';
+		$string_jenis = (isset($param['jenis'])) ? "AND jenis = '".$param['jenis']."'" : '';
 		$string_filter = GetStringFilter($param, @$param['column']);
-		$string_sorting = GetStringSorting($param, @$param['column'], 'urutan ASC');
+		$string_sorting = GetStringSorting($param, @$param['column'], 'update_time ASC');
 		$string_limit = GetStringLimit($param);
 		
 		$select_query = "
-			SELECT SQL_CALC_FOUND_ROWS Module.*,
-				ModuleType.name module_type_name, ModuleType.alias module_type_alias
-			FROM ".MODULE." Module
-			LEFT JOIN ".MODULE_TYPE." ModuleType ON ModuleType.id = Module.module_type_id
-			WHERE 1 $string_module_type $string_filter
+			SELECT SQL_CALC_FOUND_ROWS *
+			FROM ".PKH_TABLE_01."
+			WHERE 1 $string_jenis $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
 		";
@@ -87,7 +80,7 @@ class module_model extends CI_Model {
     }
 	
     function delete($param) {
-		$delete_query  = "DELETE FROM ".MODULE." WHERE id = '".$param['id']."' LIMIT 1";
+		$delete_query  = "DELETE FROM ".PKH_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
 		$delete_result = mysql_query($delete_query) or die(mysql_error());
 		
 		$result['status'] = '1';
@@ -99,14 +92,8 @@ class module_model extends CI_Model {
 	function sync($row) {
 		$row = StripArray($row);
 		
-		// module info
-		if (!empty($row['alias']) && !empty($row['module_type_alias'])) {
-			$row['model_name'] = $row['module_type_alias'].'_'.$row['alias'].'_model';
-			$row['module_link'] = base_url($row['module_type_alias'].'/'.$row['alias']);
-		} else {
-			$row['model_name'] = '';
-			$row['module_link'] = '#';
-		}
+		$row['total_produksi'] = $row['hutan_hti'] + $row['hutan_ha'] + $row['hutan_htr'];
+		$row['total_konservasi'] = $row['hutan_sm'] + $row['hutan_ca'] + $row['hutan_tn'] + $row['hutan_thr'] + $row['hutan_twa'] + $row['hutan_tb'];
 		
 		return $row;
 	}

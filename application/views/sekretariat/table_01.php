@@ -1,7 +1,4 @@
 <?php
-	// master
-	$array_satuan = get_array_satuan_hutan();
-	
 	// record data
 	$array_record = $this->$module['model_name']->get_array();
 	$message = get_flash_message();
@@ -26,20 +23,56 @@
 		<table cellpadding="0" cellspacing="0" border="0" class="display datatable">
 			<thead>
 				<tr>
-					<th>Hutan Produksi</th>
-					<th>Hutan Lindung</th>
-					<th>Hutan Lainnya</th>
-					<th>Nilai Kerugian</th>
-					<th>&nbsp;</th>
+					<th colspan="2">S3</th>
+					<th colspan="2">S2</th>
+					<th colspan="2">S1 / D4</th>
+					<th colspan="2">D3</th>
+					<th colspan="2">SLTA</th>
+					<th colspan="2">SLTP</th>
+					<th colspan="2">SD</th>
+					<th colspan="3">Jumlah</th>
+					<th rowspan="2">&nbsp;</th>
+				</tr>
+				<tr>
+					<th>L</th>
+					<th>P</th>
+					<th>L</th>
+					<th>P</th>
+					<th>L</th>
+					<th>P</th>
+					<th>L</th>
+					<th>P</th>
+					<th>L</th>
+					<th>P</th>
+					<th>L</th>
+					<th>P</th>
+					<th>L</th>
+					<th>P</th>
+					<th>L</th>
+					<th>P</th>
+					<th>Total</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td><?php echo $row['hutan_produksi_text']; ?></td>
-					<td><?php echo $row['hutan_lindung_text']; ?></td>
-					<td><?php echo $row['hutan_lain_text']; ?></td>
-					<td class="center"><?php echo $row['nilai_rugi']; ?></td>
+					<td class="center"><?php echo $row['s3_l']; ?></td>
+					<td class="center"><?php echo $row['s3_p']; ?></td>
+					<td class="center"><?php echo $row['s2_l']; ?></td>
+					<td class="center"><?php echo $row['s2_p']; ?></td>
+					<td class="center"><?php echo $row['s1_l']; ?></td>
+					<td class="center"><?php echo $row['s1_p']; ?></td>
+					<td class="center"><?php echo $row['d3_l']; ?></td>
+					<td class="center"><?php echo $row['d3_p']; ?></td>
+					<td class="center"><?php echo $row['slta_l']; ?></td>
+					<td class="center"><?php echo $row['slta_p']; ?></td>
+					<td class="center"><?php echo $row['sltp_l']; ?></td>
+					<td class="center"><?php echo $row['sltp_p']; ?></td>
+					<td class="center"><?php echo $row['sd_l']; ?></td>
+					<td class="center"><?php echo $row['sd_p']; ?></td>
+					<td class="center"><?php echo $row['total_l']; ?></td>
+					<td class="center"><?php echo $row['total_p']; ?></td>
+					<td class="center"><?php echo $row['total']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -55,63 +88,47 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Hutan Produksi</div>
-		<div class="input">
-			<input type="text" name="hutan_produksi_value" class="short" />
-			<select name="hutan_produksi_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">S3 L</div>
+		<div class="input"><input type="text" name="s3_l" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Hutan Lindung</div>
-		<div class="input">
-			<input type="text" name="hutan_lidung_value" class="short" />
-			<select name="hutan_lindung_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">S3 P</div>
+		<div class="input"><input type="text" name="s3_p" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">KSA</div>
-		<div class="input">
-			<input type="text" name="ksa_value" class="short" />
-			<select name="ksa_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">S2 L</div>
+		<div class="input"><input type="text" name="s2_l" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">KPA</div>
-		<div class="input">
-			<input type="text" name="kpa_value" class="short" />
-			<select name="kps_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">S2 P</div>
+		<div class="input"><input type="text" name="s2_p" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">TB</div>
-		<div class="input">
-			<input type="text" name="tb_value" class="short" />
-			<select name="tb_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">S1 L</div>
+		<div class="input"><input type="text" name="s1_l" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Hutan Lainnya</div>
-		<div class="input">
-			<input type="text" name="hutan_lain_value" class="short" />
-			<select name="hutan_lain_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">S1 P</div>
+		<div class="input"><input type="text" name="s1_p" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Nilai Rugi</div>
-		<div class="input"><input type="text" name="nilai_rugi" class="short" /></div>
+		<div class="label">D3 L</div>
+		<div class="input"><input type="text" name="d3_l" class="short" /></div>
 		<div class="clear"></div>
+		<div class="label">D3 P</div>
+		<div class="input"><input type="text" name="d3_p" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Upaya Pengendalian</div>
-		<div class="input"><input type="text" name="upaya" class="long" /></div>
+		<div class="label">SLTA L</div>
+		<div class="input"><input type="text" name="slta_l" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Keterangan</div>
-		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
+		<div class="label">SLTA P</div>
+		<div class="input"><input type="text" name="slta_p" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">SLTP L</div>
+		<div class="input"><input type="text" name="sltp_l" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">SLTP P</div>
+		<div class="input"><input type="text" name="sltp_p" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">SD L</div>
+		<div class="input"><input type="text" name="sd_l" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">SD P</div>
+		<div class="input"><input type="text" name="sd_p" class="short" /></div>
 		<div class="clear"></div>
 		<div class="label">&nbsp;</div>
 		<div class="input">
