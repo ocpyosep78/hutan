@@ -23,26 +23,39 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th>Nama Kawasan</th>
-					<th>SK Penunjukan No</th>
-					<th>SK Penunjukan Tanggal</th>
-					<th>SK Penetapan No</th>
-					<th>SK Penetapan Tanggal</th>
-					<th>Luas Inti</th>
-					<th>Luas Rimba</th>
-					<th>&nbsp;</th>
+					<th rowspan="3">Nama Kawasan</th>
+					<th rowspan="3">Mitra</th>
+					<th rowspan="3">Jenis Kegiatan</th>
+					<th colspan="6">Dasar Pemanfaatan</th>
+					<th rowspan="3">Keterangan</th>
+					<th rowspan="3">&nbsp;</th>
+				</tr>
+				<tr>
+					<th colspan="2">Surat Persetujuan</th>
+					<th colspan="2">Perjanjian Kerjasama</th>
+					<th rowspan="2">Berlaku s/d</th>
+					<th rowspan="2">Luas (Ha)</th>
+				</tr>
+				<tr>
+					<th>No</th>
+					<th>Tanggal</th>
+					<th>No</th>
+					<th>Tanggal</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
 					<td><?php echo $row['nama_kawasan']; ?></td>
-					<td><?php echo $row['kawasan_penunjukan_no']; ?></td>
-					<td class="center"><?php echo GetFormatDate($row['kawasan_penunjukan_tanggal']); ?></td>
-					<td><?php echo $row['kawasan_penetapan_no']; ?></td>
-					<td class="center"><?php echo GetFormatDate($row['kawasan_penetapan_tanggal']); ?></td>
-					<td class="center"><?php echo $row['blog_luas_inti']; ?></td>
-					<td class="center"><?php echo $row['blog_luas_rimba']; ?></td>
+					<td><?php echo $row['mitra']; ?></td>
+					<td><?php echo $row['jenis_kegiatan']; ?></td>
+					<td><?php echo $row['persetujuan_no']; ?></td>
+					<td class="center"><?php echo GetFormatDate($row['persetujuan_tanggal']); ?></td>
+					<td><?php echo $row['kerjasama_no']; ?></td>
+					<td class="center"><?php echo GetFormatDate($row['kerjasama_tanggal']); ?></td>
+					<td class="center"><?php echo GetFormatDate($row['tanggal_berlaku']); ?></td>
+					<td class="center"><?php echo $row['luas']; ?></td>
+					<td><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -61,59 +74,40 @@
 		<div class="label">Nama dan Fungsi Kawasan</div>
 		<div class="input"><input type="text" name="nama_kawasan" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">SK Kawasan</div>
+		<div class="label">Mitra</div>
+		<div class="input"><input type="text" name="mitra" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penunjukan No</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_no" class="short" /></div>
+		<div class="label">Jenis Kegiatan</div>
+		<div class="input"><input type="text" name="jenis_kegiatan" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penunjukan Tanggal</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_tanggal" class="short datepicker" /></div>
+		
+		<div class="label">Surat Persetujuan</div>
 		<div class="clear"></div>
-		<div class="label">- Penunjukan Luas (Ha)</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_luas" class="short" /></div>
+		<div class="label">- No</div>
+		<div class="input"><input type="text" name="persetujuan_no" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penetapan No</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_no" class="short" /></div>
+		<div class="label">- Tanggal</div>
+		<div class="input"><input type="text" name="persetujuan_tanggal" class="short datepicker" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penetapan Tanggal</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_tanggal" class="short datepicker" /></div>
+		
+		<div class="label">Perjanjian Kerjasama</div>
 		<div class="clear"></div>
-		<div class="label">- Penetapan Luas (Ha)</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_luas" class="short" /></div>
+		<div class="label">- No</div>
+		<div class="input"><input type="text" name="kerjasama_no" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Zonasi/Blok</div>
+		<div class="label">- Tanggal</div>
+		<div class="input"><input type="text" name="kerjasama_tanggal" class="short datepicker" /></div>
 		<div class="clear"></div>
-		<div class="label">- SK Penataan Pengesah</div>
-		<div class="input"><input type="text" name="blog_penata_pengesah" class="short" /></div>
+		
+		<div class="label">Berlaku s/d</div>
+		<div class="input"><input type="text" name="tanggal_berlaku" class="short datepicker" /></div>
 		<div class="clear"></div>
-		<div class="label">- SK Penataan No</div>
-		<div class="input"><input type="text" name="blog_penata_no" class="short" /></div>
+		
+		<div class="label">Luas (Ha)</div>
+		<div class="input"><input type="text" name="luas" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- SK Penataan Tanggal</div>
-		<div class="input"><input type="text" name="blog_penata_tanggal" class="short datepicker" /></div>
-		<div class="clear"></div>
-		<div class="label">- Luas Inti</div>
-		<div class="input"><input type="text" name="blog_luas_inti" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Luas Rimba</div>
-		<div class="input"><input type="text" name="blog_luas_rimba" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Luas Pemanfaatan</div>
-		<div class="input"><input type="text" name="blog_luas_manfaat" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Luas Lainnya</div>
-		<div class="input"><input type="text" name="blog_luas_lain" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Rencana Pengelolaan</div>
-		<div class="clear"></div>
-		<div class="label">- SP Pengesahan No</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_no" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- SP Pengesahan Tanggal</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_tanggal" class="short datepicker" /></div>
-		<div class="clear"></div>
-		<div class="label">- SP Pengesahan Periode</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_periode" class="short" /></div>
+		<div class="label">Keterangan</div>
+		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
 		<div class="clear"></div>
 		<div class="label">&nbsp;</div>
 		<div class="input">

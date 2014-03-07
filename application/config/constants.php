@@ -25,6 +25,19 @@ define('USER_TYPE',								'user_type');
 define('PPH_TABLE_01',							'pph_table_01');
 define('PKH_TABLE_01',							'pkh_table_01');
 define('KKH_TABLE_01',							'kkh_table_01');
+
 define('KKBHL_TABLE_01',						'kkbhl_table_01');
+define('KKBHL_TABLE_02',						'kkbhl_table_02');
+define('KKBHL_TABLE_03',						'kkbhl_table_03');
+define('KKBHL_TABLE_04',						'kkbhl_table_04');
+define('KKBHL_TABLE_05',						'kkbhl_table_05');
+define('KKBHL_TABLE_06',						'kkbhl_table_06');
+define('KKBHL_TABLE_07',						'kkbhl_table_07');
+define('KKBHL_TABLE_08',						'kkbhl_table_08');
+define('KKBHL_TABLE_09',						'kkbhl_table_09');
+define('KKBHL_TABLE_10',						'kkbhl_table_10');
+define('KKBHL_TABLE_11',						'kkbhl_table_11');
+define('KKBHL_TABLE_12',						'kkbhl_table_12');
+
 define('SEKRETARIAT_TABLE_01',					'sekretariat_table_01');
 define('PJLKKHL_TABLE_01',						'pjlkkhl_table_01');

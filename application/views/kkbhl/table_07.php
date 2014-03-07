@@ -23,26 +23,38 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th>Nama Kawasan</th>
-					<th>SK Penunjukan No</th>
-					<th>SK Penunjukan Tanggal</th>
-					<th>SK Penetapan No</th>
-					<th>SK Penetapan Tanggal</th>
-					<th>Luas Inti</th>
-					<th>Luas Rimba</th>
-					<th>&nbsp;</th>
+					<th rowspan="2">Nama Kawasan</th>
+					<th colspan="4">Lokasi</th>
+					<th rowspan="2">Luas (Ha)</th>
+					<th colspan="5">Progres</th>
+					<th rowspan="2">&nbsp;</th>
+				</tr>
+				<tr>
+					<th>Desa</th>
+					<th>Kabupatan</th>
+					<th>Provinsi</th>
+					<th>Koordinat</th>
+					<th>Identifikasi<br />Lokasi</th>
+					<th>SK<br />Penetapan</th>
+					<th>Penyusunan<br />Rantek</th>
+					<th>MoU<br />TNI</th>
+					<th>Bibit</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
 					<td><?php echo $row['nama_kawasan']; ?></td>
-					<td><?php echo $row['kawasan_penunjukan_no']; ?></td>
-					<td class="center"><?php echo GetFormatDate($row['kawasan_penunjukan_tanggal']); ?></td>
-					<td><?php echo $row['kawasan_penetapan_no']; ?></td>
-					<td class="center"><?php echo GetFormatDate($row['kawasan_penetapan_tanggal']); ?></td>
-					<td class="center"><?php echo $row['blog_luas_inti']; ?></td>
-					<td class="center"><?php echo $row['blog_luas_rimba']; ?></td>
+					<td><?php echo $row['desa']; ?></td>
+					<td><?php echo $row['kabupaten']; ?></td>
+					<td><?php echo $row['propinsi']; ?></td>
+					<td><?php echo $row['koordinat']; ?></td>
+					<td><?php echo $row['luas']; ?></td>
+					<td><?php echo $row['lokasi']; ?></td>
+					<td><?php echo $row['sk_penetapan']; ?></td>
+					<td><?php echo $row['rantek']; ?></td>
+					<td><?php echo $row['mou']; ?></td>
+					<td><?php echo $row['bibit']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -61,59 +73,55 @@
 		<div class="label">Nama dan Fungsi Kawasan</div>
 		<div class="input"><input type="text" name="nama_kawasan" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">SK Kawasan</div>
+		
+		<div class="label">Lokasi </div>
 		<div class="clear"></div>
-		<div class="label">- Penunjukan No</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_no" class="short" /></div>
+		<div class="label">- Desa</div>
+		<div class="input"><input type="text" name="desa" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penunjukan Tanggal</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_tanggal" class="short datepicker" /></div>
+		<div class="label">- Kabupaten</div>
+		<div class="input"><input type="text" name="kabupaten" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penunjukan Luas (Ha)</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_luas" class="short" /></div>
+		<div class="label">- Provinsi</div>
+		<div class="input"><input type="text" name="propinsi" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penetapan No</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_no" class="short" /></div>
+		<div class="label">- Koordinat</div>
+		<div class="input"><input type="text" name="koordinat" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penetapan Tanggal</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_tanggal" class="short datepicker" /></div>
+		
+		<div class="label">Luas (Ha)</div>
+		<div class="input"><input type="text" name="luas" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penetapan Luas (Ha)</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_luas" class="short" /></div>
+		
+		<div class="label">Progres</div>
 		<div class="clear"></div>
-		<div class="label">Zonasi/Blok</div>
+		<div class="label">- Identifikasi Lokasi</div>
+		<div class="input"><input type="text" name="lokasi" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- SK Penataan Pengesah</div>
-		<div class="input"><input type="text" name="blog_penata_pengesah" class="short" /></div>
+		<div class="label">- SK Penetapan</div>
+		<div class="input"><input type="text" name="sk_penetapan" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- SK Penataan No</div>
-		<div class="input"><input type="text" name="blog_penata_no" class="short" /></div>
+		<div class="label">- Penyusunan Rantek</div>
+		<div class="input"><input type="text" name="rantek" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- SK Penataan Tanggal</div>
-		<div class="input"><input type="text" name="blog_penata_tanggal" class="short datepicker" /></div>
+		<div class="label">- MoU TNI</div>
+		<div class="input"><input type="text" name="mou" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- Luas Inti</div>
-		<div class="input"><input type="text" name="blog_luas_inti" class="short" /></div>
+		<div class="label">- Bibit</div>
+		<div class="input"><input type="text" name="bibit" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- Luas Rimba</div>
-		<div class="input"><input type="text" name="blog_luas_rimba" class="short" /></div>
+		
+		<div class="label">Persiapan Lapangan</div>
+		<div class="input"><input type="text" name="lapangan" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- Luas Pemanfaatan</div>
-		<div class="input"><input type="text" name="blog_luas_manfaat" class="short" /></div>
+		<div class="label">Penanaman</div>
+		<div class="input"><input type="text" name="penanaman" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- Luas Lainnya</div>
-		<div class="input"><input type="text" name="blog_luas_lain" class="short" /></div>
+		<div class="label">Permasalahan</div>
+		<div class="input"><input type="text" name="permasalahan" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">Rencana Pengelolaan</div>
-		<div class="clear"></div>
-		<div class="label">- SP Pengesahan No</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_no" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- SP Pengesahan Tanggal</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_tanggal" class="short datepicker" /></div>
-		<div class="clear"></div>
-		<div class="label">- SP Pengesahan Periode</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_periode" class="short" /></div>
+		<div class="label">Tindak Lanjut</div>
+		<div class="input"><input type="text" name="tindak_lanjut" class="long" /></div>
 		<div class="clear"></div>
 		<div class="label">&nbsp;</div>
 		<div class="input">

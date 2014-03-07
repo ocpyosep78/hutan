@@ -23,26 +23,34 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th>Nama Kawasan</th>
-					<th>SK Penunjukan No</th>
-					<th>SK Penunjukan Tanggal</th>
-					<th>SK Penetapan No</th>
-					<th>SK Penetapan Tanggal</th>
-					<th>Luas Inti</th>
-					<th>Luas Rimba</th>
-					<th>&nbsp;</th>
+					<th rowspan="2">Nama Kawasan</th>
+					<th colspan="3">Batas Panjang (Km)</th>
+					<th rowspan="2">Panjang Sudah di Tata</th>
+					<th rowspan="2">Panjang Belum di Tata</th>
+					<th colspan="3">BATB</th>
+					<th rowspan="2">&nbsp;</th>
+				</tr>
+				<tr>
+					<th>Alam</th>
+					<th>Buatan</th>
+					<th>Total</th>
+					<th>No</th>
+					<th>Tanggal</th>
+					<th>Luas</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
 					<td><?php echo $row['nama_kawasan']; ?></td>
-					<td><?php echo $row['kawasan_penunjukan_no']; ?></td>
-					<td class="center"><?php echo GetFormatDate($row['kawasan_penunjukan_tanggal']); ?></td>
-					<td><?php echo $row['kawasan_penetapan_no']; ?></td>
-					<td class="center"><?php echo GetFormatDate($row['kawasan_penetapan_tanggal']); ?></td>
-					<td class="center"><?php echo $row['blog_luas_inti']; ?></td>
-					<td class="center"><?php echo $row['blog_luas_rimba']; ?></td>
+					<td class="center"><?php echo $row['batas_alam']; ?></td>
+					<td class="center"><?php echo $row['batas_buatan']; ?></td>
+					<td class="center"><?php echo $row['batas_total']; ?></td>
+					<td class="center"><?php echo $row['tata_batas_sudah']; ?></td>
+					<td class="center"><?php echo $row['tata_batas_belum']; ?></td>
+					<td><?php echo $row['batb_no']; ?></td>
+					<td class="center"><?php echo GetFormatDate($row['batb_tanggal']); ?></td>
+					<td class="center"><?php echo $row['batb_luas']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -61,59 +69,65 @@
 		<div class="label">Nama dan Fungsi Kawasan</div>
 		<div class="input"><input type="text" name="nama_kawasan" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">SK Kawasan</div>
+		<div class="label">Panjang batas (Km)</div>
 		<div class="clear"></div>
-		<div class="label">- Penunjukan No</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_no" class="short" /></div>
+		<div class="label">- Alam</div>
+		<div class="input"><input type="text" name="batas_alam" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penunjukan Tanggal</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_tanggal" class="short datepicker" /></div>
+		<div class="label">- Buatan</div>
+		<div class="input"><input type="text" name="batas_buatan" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penunjukan Luas (Ha)</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_luas" class="short" /></div>
+		<div class="label">- Total</div>
+		<div class="input"><input type="text" name="batas_total" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penetapan No</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_no" class="short" /></div>
+		
+		<div class="label">Panjang yang Sudah di Tata Batas (Km)</div>
+		<div class="input"><input type="text" name="tata_batas_sudah" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penetapan Tanggal</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_tanggal" class="short datepicker" /></div>
+		<div class="label">Panjang Belum di Tata Batas</div>
+		<div class="input"><input type="text" name="tata_batas_belum" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penetapan Luas (Ha)</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_luas" class="short" /></div>
+		<div class="label">Tahun Penataan Batas</div>
+		<div class="input"><input type="text" name="tata_batas_tahun" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Zonasi/Blok</div>
+		
+		<div class="label">BATB</div>
 		<div class="clear"></div>
-		<div class="label">- SK Penataan Pengesah</div>
-		<div class="input"><input type="text" name="blog_penata_pengesah" class="short" /></div>
+		<div class="label">- No</div>
+		<div class="input"><input type="text" name="batb_no" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- SK Penataan No</div>
-		<div class="input"><input type="text" name="blog_penata_no" class="short" /></div>
+		<div class="label">- Tanggal</div>
+		<div class="input"><input type="text" name="batb_tanggal" class="short datepicker" /></div>
 		<div class="clear"></div>
-		<div class="label">- SK Penataan Tanggal</div>
-		<div class="input"><input type="text" name="blog_penata_tanggal" class="short datepicker" /></div>
+		<div class="label">- Luas (Ha)</div>
+		<div class="input"><input type="text" name="batb_luas" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Luas Inti</div>
-		<div class="input"><input type="text" name="blog_luas_inti" class="short" /></div>
+		
+		<div class="label">Temu Gelang</div>
 		<div class="clear"></div>
-		<div class="label">- Luas Rimba</div>
-		<div class="input"><input type="text" name="blog_luas_rimba" class="short" /></div>
+		<div class="label">- BATB</div>
+		<div class="input"><input type="text" name="gelang_batb" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Luas Pemanfaatan</div>
-		<div class="input"><input type="text" name="blog_luas_manfaat" class="short" /></div>
+		<div class="label">- Tanggal</div>
+		<div class="input"><input type="text" name="gelang_tanggal" class="short datepicker" /></div>
 		<div class="clear"></div>
-		<div class="label">- Luas Lainnya</div>
-		<div class="input"><input type="text" name="blog_luas_lain" class="short" /></div>
+		<div class="label">- Luas (Ha)</div>
+		<div class="input"><input type="text" name="gelang_luas" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Rencana Pengelolaan</div>
+		
+		<div class="label">Jumlah Pal Batas</div>
+		<div class="input"><input type="text" name="jumlah_pal" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- SP Pengesahan No</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_no" class="short" /></div>
+		<div class="label" style="width: 75%;">Kondisi Pal Batas / Rambu Suar (Jumlah)</div>
 		<div class="clear"></div>
-		<div class="label">- SP Pengesahan Tanggal</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_tanggal" class="short datepicker" /></div>
+		<div class="label">- Baik</div>
+		<div class="input"><input type="text" name="kondisi_pal_baik" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- SP Pengesahan Periode</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_periode" class="short" /></div>
+		<div class="label">- Rusak</div>
+		<div class="input"><input type="text" name="kondisi_pal_rusak" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Hilang</div>
+		<div class="input"><input type="text" name="kondisi_pal_hilang" class="short" /></div>
 		<div class="clear"></div>
 		<div class="label">&nbsp;</div>
 		<div class="input">

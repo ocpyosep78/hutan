@@ -29,7 +29,8 @@ table.reference td.example_code { vertical-align:bottom; }
 table.reference td a { color: #000000; }
 
 /* datatable */
-.datatable .fa { margin: 0 5px; }
+.datatable { font-size: 12px; }
+.datatable .fa { margin: 0 5px; font-size: 15px; }
 .dataTables_wrapper { margin: 0 0 60px 0; }
 .dataTables_length, .dataTables_filter { margin: 0 0 15px 0; }
 .dataTables_info, .dataTables_paginate { margin: 15px 0 0 0; }

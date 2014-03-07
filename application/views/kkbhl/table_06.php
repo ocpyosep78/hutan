@@ -23,13 +23,10 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th>Nama Kawasan</th>
-					<th>SK Penunjukan No</th>
-					<th>SK Penunjukan Tanggal</th>
-					<th>SK Penetapan No</th>
-					<th>SK Penetapan Tanggal</th>
-					<th>Luas Inti</th>
-					<th>Luas Rimba</th>
+					<th>Nama dan Fungsi Kawasan</th>
+					<th>Jenis Permasalahan</th>
+					<th>Progres Penyelesaian</th>
+					<th>Keterangan</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -37,12 +34,9 @@
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
 					<td><?php echo $row['nama_kawasan']; ?></td>
-					<td><?php echo $row['kawasan_penunjukan_no']; ?></td>
-					<td class="center"><?php echo GetFormatDate($row['kawasan_penunjukan_tanggal']); ?></td>
-					<td><?php echo $row['kawasan_penetapan_no']; ?></td>
-					<td class="center"><?php echo GetFormatDate($row['kawasan_penetapan_tanggal']); ?></td>
-					<td class="center"><?php echo $row['blog_luas_inti']; ?></td>
-					<td class="center"><?php echo $row['blog_luas_rimba']; ?></td>
+					<td><?php echo $row['permasalahan']; ?></td>
+					<td><?php echo $row['penyelesaian']; ?></td>
+					<td><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -61,59 +55,14 @@
 		<div class="label">Nama dan Fungsi Kawasan</div>
 		<div class="input"><input type="text" name="nama_kawasan" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">SK Kawasan</div>
+		<div class="label">Jenis Permasalahan</div>
+		<div class="input"><input type="text" name="permasalahan" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penunjukan No</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_no" class="short" /></div>
+		<div class="label">Progres Penyelesaian</div>
+		<div class="input"><input type="text" name="penyelesaian" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- Penunjukan Tanggal</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_tanggal" class="short datepicker" /></div>
-		<div class="clear"></div>
-		<div class="label">- Penunjukan Luas (Ha)</div>
-		<div class="input"><input type="text" name="kawasan_penunjukan_luas" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Penetapan No</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_no" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Penetapan Tanggal</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_tanggal" class="short datepicker" /></div>
-		<div class="clear"></div>
-		<div class="label">- Penetapan Luas (Ha)</div>
-		<div class="input"><input type="text" name="kawasan_penetapan_luas" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Zonasi/Blok</div>
-		<div class="clear"></div>
-		<div class="label">- SK Penataan Pengesah</div>
-		<div class="input"><input type="text" name="blog_penata_pengesah" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- SK Penataan No</div>
-		<div class="input"><input type="text" name="blog_penata_no" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- SK Penataan Tanggal</div>
-		<div class="input"><input type="text" name="blog_penata_tanggal" class="short datepicker" /></div>
-		<div class="clear"></div>
-		<div class="label">- Luas Inti</div>
-		<div class="input"><input type="text" name="blog_luas_inti" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Luas Rimba</div>
-		<div class="input"><input type="text" name="blog_luas_rimba" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Luas Pemanfaatan</div>
-		<div class="input"><input type="text" name="blog_luas_manfaat" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Luas Lainnya</div>
-		<div class="input"><input type="text" name="blog_luas_lain" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Rencana Pengelolaan</div>
-		<div class="clear"></div>
-		<div class="label">- SP Pengesahan No</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_no" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- SP Pengesahan Tanggal</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_tanggal" class="short datepicker" /></div>
-		<div class="clear"></div>
-		<div class="label">- SP Pengesahan Periode</div>
-		<div class="input"><input type="text" name="sk_pengesahaan_periode" class="short" /></div>
+		<div class="label">Keterangan</div>
+		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
 		<div class="clear"></div>
 		<div class="label">&nbsp;</div>
 		<div class="input">
