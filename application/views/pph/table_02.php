@@ -26,7 +26,7 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="6">Pencurian Kayu/Penebangan Liar</th>
+					<th colspan="6">Perambahan dan Pemukiman Liar</th>
 					<th rowspan="3">Nilai Kerugian</th>
 					<th rowspan="3">Upaya Pengendalian</th>
 					<th rowspan="3">Keterangan</th>

@@ -26,35 +26,37 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="6">Pencurian Kayu/Penebangan Liar</th>
-					<th rowspan="3">Nilai Kerugian</th>
-					<th rowspan="3">Upaya Pengendalian</th>
-					<th rowspan="3">Keterangan</th>
-					<th rowspan="3">&nbsp;</th>
+					<th rowspan="2">Uraian Singkat Kasus</th>
+					<th rowspan="2">Jumlah Tersangka</th>
+					<th rowspan="2">Barang Bukti</th>
+					<th colspan="4">Proses Justisi (Penanganan Perkara)</th>
+					<th colspan="3">Lelang Barang Bukti</th>
+					<th rowspan="2">Keterangan</th>
+					<th rowspan="2">&nbsp;</th>
 				</tr>
 				<tr>
-					<th rowspan="2">Hutan Produksi</th>
-					<th rowspan="2">Hutan Lindung</th>
-					<th colspan="3">Kawasan Konservasi</th>
-					<th rowspan="2">Hutan Lainnya</th>
-				</tr>
-				<tr>
-					<th>KSA</th>
-					<th>KPA</th>
-					<th>TB</th>
+					<th>Lidik / Sidik</th>
+					<th>SP3 (Kasus)</th>
+					<th>P21 (Kasus)</th>
+					<th>Vonis (Orang)</th>
+					<th>Volume</th>
+					<th>Nilai Total (Rp)</th>
+					<th>Nilai Bersih (Rp)</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['hutan_produksi_text']; ?></td>
-					<td class="center"><?php echo $row['hutan_lindung_text']; ?></td>
-					<td class="center"><?php echo $row['hutan_ksa_text']; ?></td>
-					<td class="center"><?php echo $row['hutan_kpa_text']; ?></td>
-					<td class="center"><?php echo $row['hutan_tb_text']; ?></td>
-					<td class="center"><?php echo $row['hutan_lain_text']; ?></td>
-					<td class="center"><?php echo $row['nilai_rugi']; ?></td>
-					<td><?php echo $row['upaya']; ?></td>
+					<td><?php echo $row['uraian']; ?></td>
+					<td class="center"><?php echo $row['tersangka']; ?></td>
+					<td><?php echo $row['bukti']; ?></td>
+					<td class="center"><?php echo $row['sidik']; ?></td>
+					<td class="center"><?php echo $row['sp3']; ?></td>
+					<td class="center"><?php echo $row['p21']; ?></td>
+					<td class="center"><?php echo $row['vonis']; ?></td>
+					<td class="center"><?php echo $row['volume']; ?></td>
+					<td class="center"><?php echo $row['nilai_total']; ?></td>
+					<td class="center"><?php echo $row['nilai_bersih']; ?></td>
 					<td><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
@@ -71,64 +73,46 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Hutan Produksi</div>
-		<div class="input">
-			<input type="text" name="hutan_produksi_value" class="short" />
-			<select name="hutan_produksi_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">Uraian Singkat Kasus</div>
+		<div class="input"><input type="text" name="uraian" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">Hutan Lindung</div>
-		<div class="input">
-			<input type="text" name="hutan_lidung_value" class="short" />
-			<select name="hutan_lindung_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">Jumlah Tersangka</div>
+		<div class="input"><input type="text" name="tersangka" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">KSA</div>
-		<div class="input">
-			<input type="text" name="ksa_value" class="short" />
-			<select name="ksa_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">Barang Bukti</div>
+		<div class="input"><input type="text" name="bukti" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">KPA</div>
-		<div class="input">
-			<input type="text" name="kpa_value" class="short" />
-			<select name="kpa_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		
+		<div class="label">Proses Justisi (Penanganan Perkara)</div>
 		<div class="clear"></div>
-		<div class="label">TB</div>
-		<div class="input">
-			<input type="text" name="tb_value" class="short" />
-			<select name="tb_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">Lidik / Sidik</div>
+		<div class="input"><input type="text" name="sidik" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Hutan Lainnya</div>
-		<div class="input">
-			<input type="text" name="hutan_lain_value" class="short" />
-			<select name="hutan_lain_satuan">
-				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
-			</select>
-		</div>
+		<div class="label">SP3 (Kasus)</div>
+		<div class="input"><input type="text" name="sp3" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Nilai Rugi</div>
-		<div class="input"><input type="text" name="nilai_rugi" class="short" /></div>
+		<div class="label">P21 (Kasus)</div>
+		<div class="input"><input type="text" name="p21" class="short" /></div>
 		<div class="clear"></div>
+		<div class="label">Vonis (Orang)</div>
+		<div class="input"><input type="text" name="vonis" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Upaya Pengendalian</div>
-		<div class="input"><input type="text" name="upaya" class="long" /></div>
+		
+		<div class="label">Lelang Barang Bukti</div>
+		<div class="clear"></div>
+		<div class="label">Volume</div>
+		<div class="input"><input type="text" name="volume" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Nilai Total (Rp)</div>
+		<div class="input"><input type="text" name="nilai_total" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Nilai Bersih (Rp)</div>
+		<div class="input"><input type="text" name="nilai_bersih" class="short" /></div>
 		<div class="clear"></div>
 		<div class="label">Keterangan</div>
 		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
 		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

@@ -26,36 +26,20 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="6">Pencurian Kayu/Penebangan Liar</th>
-					<th rowspan="3">Nilai Kerugian</th>
-					<th rowspan="3">Upaya Pengendalian</th>
-					<th rowspan="3">Keterangan</th>
-					<th rowspan="3">&nbsp;</th>
-				</tr>
-				<tr>
-					<th rowspan="2">Hutan Produksi</th>
-					<th rowspan="2">Hutan Lindung</th>
-					<th colspan="3">Kawasan Konservasi</th>
-					<th rowspan="2">Hutan Lainnya</th>
-				</tr>
-				<tr>
-					<th>KSA</th>
-					<th>KPA</th>
-					<th>TB</th>
+					<th>Hutan Produksi</th>
+					<th>Hutan Lindung</th>
+					<th>Hutan Lainnya</th>
+					<th>Nilai Kerugian</th>
+					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['hutan_produksi_text']; ?></td>
-					<td class="center"><?php echo $row['hutan_lindung_text']; ?></td>
-					<td class="center"><?php echo $row['hutan_ksa_text']; ?></td>
-					<td class="center"><?php echo $row['hutan_kpa_text']; ?></td>
-					<td class="center"><?php echo $row['hutan_tb_text']; ?></td>
-					<td class="center"><?php echo $row['hutan_lain_text']; ?></td>
+					<td><?php echo $row['hutan_produksi_text']; ?></td>
+					<td><?php echo $row['hutan_lindung_text']; ?></td>
+					<td><?php echo $row['hutan_lain_text']; ?></td>
 					<td class="center"><?php echo $row['nilai_rugi']; ?></td>
-					<td><?php echo $row['upaya']; ?></td>
-					<td><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -98,7 +82,7 @@
 		<div class="label">KPA</div>
 		<div class="input">
 			<input type="text" name="kpa_value" class="short" />
-			<select name="kpa_satuan">
+			<select name="kps_satuan">
 				<?php echo ShowOption(array( 'Array' => $array_satuan )); ?>
 			</select>
 		</div>

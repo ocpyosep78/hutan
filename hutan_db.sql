@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 3.2.4
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 07, 2014 at 02:00 PM
--- Server version: 5.5.32
--- PHP Version: 5.4.19
+-- Host: localhost
+-- Generation Time: Mar 07, 2014 at 11:14 PM
+-- Server version: 5.1.41
+-- PHP Version: 5.3.1
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,8 +18,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `hutan_db`
 --
-CREATE DATABASE IF NOT EXISTS `hutan_db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `hutan_db`;
 
 -- --------------------------------------------------------
 
@@ -81,6 +78,11 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_02` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
+--
+-- Dumping data for table `kkbhl_table_02`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -110,6 +112,11 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_03` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
+--
+-- Dumping data for table `kkbhl_table_03`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -129,6 +136,11 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_04` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `kkbhl_table_04`
+--
+
 
 -- --------------------------------------------------------
 
@@ -152,6 +164,11 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_05` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
+--
+-- Dumping data for table `kkbhl_table_05`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -167,6 +184,11 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_06` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `kkbhl_table_06`
+--
+
 
 -- --------------------------------------------------------
 
@@ -195,6 +217,11 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_07` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
+--
+-- Dumping data for table `kkbhl_table_07`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -215,6 +242,11 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_08` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `kkbhl_table_08`
+--
+
 
 -- --------------------------------------------------------
 
@@ -272,6 +304,11 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_10` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
+--
+-- Dumping data for table `kkbhl_table_10`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -292,6 +329,11 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_11` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
+--
+-- Dumping data for table `kkbhl_table_11`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -309,6 +351,11 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_12` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `kkbhl_table_12`
+--
+
 
 -- --------------------------------------------------------
 
@@ -359,21 +406,21 @@ CREATE TABLE IF NOT EXISTS `module` (
 
 INSERT INTO `module` (`id`, `content`, `sumber_dana`, `periode`, `urutan`, `alias`, `module_type_id`) VALUES
 (1, 'TABEL 1.  GANGGUAN KEAMANAN KAWASAN DARI PENCURIAN KAYU/PENEBANGAN LIAR', 'UPT', 'Bulanan', 1, 'table_01', 1),
-(2, 'TABEL 2.  GANGGUAN KEAMANAN KAWASAN HUTAN AKIBAT PERAMBAHAN DAN PEMUKIMAN LIAR', 'UPT', 'Bulanan', 2, '', 1),
-(3, 'TABEL 3.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PERAMBAHAN DAN PEMUKIMAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 3, '', 1),
-(4, 'TABEL 4.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PERLADANGAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 4, '', 1),
-(5, 'TABEL 5.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PENAMBANGAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 5, '', 1),
-(6, 'TABEL 6.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP ILLEGAL LOGGING', 'UPT', 'Bulanan', 6, '', 1),
-(7, 'TABEL 7.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP TUMBUHAN DAN SATWA LIAR  ', 'UPT', 'Bulanan', 7, '', 1),
-(8, 'TABEL 8.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PERKEBUNAN', 'UPT', 'Bulanan', 8, '', 1),
-(9, 'TABEL 9.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PERTAMBANGAN', 'UPT', 'Bulanan', 9, '', 1),
-(10, 'TABEL 10.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PEMBANGUNAN SARANA PRASARANA', 'UPT', 'Bulanan', 10, '', 1),
-(11, 'TABEL 11.  PENANGANAN KERUSAKAN KAWASAN AKIBAT BENCANA ALAM', 'UPT', 'Triwulan', 11, '', 1),
-(12, 'TABEL 12.  JUMLAH TENAGA PENGAMANAN HUTAN', 'UPT', 'Bulanan', 12, '', 1),
-(13, 'TABEL 13.  REKAPITULASI PERKARA', 'UPT', 'Bulanan', 13, '', 1),
-(14, 'TABEL 14.  SARANA PENGAMANAN HUTAN', 'UPT', 'Semester', 14, '', 1),
-(15, 'TABEL 15.  PRASARANA PENGAMANAN HUTAN', 'UPT', 'Semester', 15, '', 1),
-(16, 'TABEL 16.  SENJATA API DAN AMUNISI', 'UPT', 'Semester', 16, '', 1),
+(2, 'TABEL 2.  GANGGUAN KEAMANAN KAWASAN HUTAN AKIBAT PERAMBAHAN DAN PEMUKIMAN LIAR', 'UPT', 'Bulanan', 2, 'table_02', 1),
+(3, 'TABEL 3.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PERAMBAHAN DAN PEMUKIMAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 3, 'table_03', 1),
+(4, 'TABEL 4.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PERLADANGAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 4, 'table_04', 1),
+(5, 'TABEL 5.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PENAMBANGAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 5, 'table_05', 1),
+(6, 'TABEL 6.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP ILLEGAL LOGGING', 'UPT', 'Bulanan', 6, 'table_06', 1),
+(7, 'TABEL 7.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP TUMBUHAN DAN SATWA LIAR  ', 'UPT', 'Bulanan', 7, 'table_07', 1),
+(8, 'TABEL 8.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PERKEBUNAN', 'UPT', 'Bulanan', 8, 'table_08', 1),
+(9, 'TABEL 9.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PERTAMBANGAN', 'UPT', 'Bulanan', 9, 'table_09', 1),
+(10, 'TABEL 10.  PENGGUNAAN KAWASAN TANPA IZIN MENTERI UNTUK KEGIATAN PEMBANGUNAN SARANA PRASARANA', 'UPT', 'Bulanan', 10, 'table_10', 1),
+(11, 'TABEL 11.  PENANGANAN KERUSAKAN KAWASAN AKIBAT BENCANA ALAM', 'UPT', 'Triwulan', 11, 'table_11', 1),
+(12, 'TABEL 12.  JUMLAH TENAGA PENGAMANAN HUTAN', 'UPT', 'Bulanan', 12, 'table_12', 1),
+(13, 'TABEL 13.  REKAPITULASI PERKARA', 'UPT', 'Bulanan', 13, 'table_13', 1),
+(14, 'TABEL 14.  SARANA PENGAMANAN HUTAN', 'UPT', 'Semester', 14, 'table_14', 1),
+(15, 'TABEL 15.  PRASARANA PENGAMANAN HUTAN', 'UPT', 'Semester', 15, 'table_15', 1),
+(16, 'TABEL 16.  SENJATA API DAN AMUNISI', 'UPT', 'Semester', 16, 'table_16', 1),
 (17, 'TABEL 1.  POTENSI TUMBUHAN DAN SATWA LIAR DILINDUNGI', 'UPT', 'Triwulan', 1, 'table_01', 2),
 (18, 'TABEL 2.  DAFTAR PENANGKAR TUMBUHAN DAN SATWA LIAR', 'UPT', 'Triwulan', 2, '', 2),
 (19, 'TABEL 3.  DAFTAR PENGEDAR TUMBUHAN DAN SATWA LIAR ', 'UPT', 'Triwulan', 3, '', 2),
@@ -598,7 +645,7 @@ CREATE TABLE IF NOT EXISTS `pph_table_01` (
   `ksa_value` varchar(255) NOT NULL,
   `ksa_satuan` varchar(255) NOT NULL,
   `kpa_value` varchar(255) NOT NULL,
-  `kps_satuan` varchar(255) NOT NULL,
+  `kpa_satuan` varchar(255) NOT NULL,
   `tb_value` varchar(255) NOT NULL,
   `tb_satuan` varchar(255) NOT NULL,
   `hutan_lain_value` varchar(255) NOT NULL,
@@ -614,8 +661,378 @@ CREATE TABLE IF NOT EXISTS `pph_table_01` (
 -- Dumping data for table `pph_table_01`
 --
 
-INSERT INTO `pph_table_01` (`id`, `hutan_produksi_value`, `hutan_produksi_satuan`, `hutan_lidung_value`, `hutan_lindung_satuan`, `ksa_value`, `ksa_satuan`, `kpa_value`, `kps_satuan`, `tb_value`, `tb_satuan`, `hutan_lain_value`, `hutan_lain_satuan`, `nilai_rugi`, `upaya`, `keterangan`, `update_time`) VALUES
-(10, '1111', '', '2', '', '3', '', '', '', '', '', '', '', 15, '', '', '2014-03-05 20:36:20');
+INSERT INTO `pph_table_01` (`id`, `hutan_produksi_value`, `hutan_produksi_satuan`, `hutan_lidung_value`, `hutan_lindung_satuan`, `ksa_value`, `ksa_satuan`, `kpa_value`, `kpa_satuan`, `tb_value`, `tb_satuan`, `hutan_lain_value`, `hutan_lain_satuan`, `nilai_rugi`, `upaya`, `keterangan`, `update_time`) VALUES
+(10, '1', 'm3', '2', 'batang', '3', 'pohon', '4', 'm3', '5', 'batang', '6', 'pohon', 7, '8', '9', '2014-03-05 20:36:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_02`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_02` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hutan_produksi_value` varchar(255) NOT NULL,
+  `hutan_produksi_satuan` varchar(255) NOT NULL,
+  `hutan_lidung_value` varchar(255) NOT NULL,
+  `hutan_lindung_satuan` varchar(255) NOT NULL,
+  `ksa_value` varchar(255) NOT NULL,
+  `ksa_satuan` varchar(255) NOT NULL,
+  `kpa_value` varchar(255) NOT NULL,
+  `kpa_satuan` varchar(255) NOT NULL,
+  `tb_value` varchar(255) NOT NULL,
+  `tb_satuan` varchar(255) NOT NULL,
+  `hutan_lain_value` varchar(255) NOT NULL,
+  `hutan_lain_satuan` varchar(255) NOT NULL,
+  `nilai_rugi` int(11) NOT NULL,
+  `upaya` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `pph_table_02`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_03`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_03` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `temuan_luas` int(11) NOT NULL,
+  `temuan_jumlah` int(11) NOT NULL,
+  `temuan_bangunan` varchar(255) NOT NULL,
+  `temuan_bukti` varchar(255) NOT NULL,
+  `sitaan_bangunan` varchar(255) NOT NULL,
+  `sitaan_bukti` varchar(255) NOT NULL,
+  `jumlah_kasus` int(11) NOT NULL,
+  `jumlah_tersangka` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `pph_table_03`
+--
+
+INSERT INTO `pph_table_03` (`id`, `nama_kawasan`, `temuan_luas`, `temuan_jumlah`, `temuan_bangunan`, `temuan_bukti`, `sitaan_bangunan`, `sitaan_bukti`, `jumlah_kasus`, `jumlah_tersangka`, `keterangan`, `update_time`) VALUES
+(1, '11', 2, 3, '4', '55', '6', '7', 88, 9, '10', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_04`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_04` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `temuan_luas` int(11) NOT NULL,
+  `temuan_jumlah` int(11) NOT NULL,
+  `temuan_bangunan` varchar(255) NOT NULL,
+  `temuan_bukti` varchar(255) NOT NULL,
+  `sitaan_bangunan` varchar(255) NOT NULL,
+  `sitaan_bukti` varchar(255) NOT NULL,
+  `jumlah_kasus` int(11) NOT NULL,
+  `jumlah_tersangka` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `pph_table_04`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_05`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_05` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `temuan_luas` int(11) NOT NULL,
+  `temuan_jumlah` int(11) NOT NULL,
+  `temuan_bangunan` varchar(255) NOT NULL,
+  `temuan_bukti` varchar(255) NOT NULL,
+  `sitaan_bangunan` varchar(255) NOT NULL,
+  `sitaan_bukti` varchar(255) NOT NULL,
+  `jumlah_kasus` int(11) NOT NULL,
+  `jumlah_tersangka` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `pph_table_05`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_06`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_06` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kegiatan` varchar(255) NOT NULL,
+  `jumlah_kasus` int(11) NOT NULL,
+  `pelaku` int(11) NOT NULL,
+  `bukti_kayu_value` int(11) NOT NULL,
+  `bukti_kayu_satuan` varchar(50) NOT NULL,
+  `bukti_alat` varchar(255) NOT NULL,
+  `bukti_lain` varchar(255) NOT NULL,
+  `kerugian` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pph_table_06`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_07`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_07` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `temuan_tumbuhan` int(11) NOT NULL,
+  `temuan_satwa` int(11) NOT NULL,
+  `temuan_bukti` varchar(255) NOT NULL,
+  `sitaan_tumbuhan` int(11) NOT NULL,
+  `sitaan_satwa` int(11) NOT NULL,
+  `sitaan_bukti` varchar(255) NOT NULL,
+  `jumlah_kasus` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pph_table_07`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_08`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_08` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `perusahaan` varchar(255) NOT NULL,
+  `temuan_luas` int(11) NOT NULL,
+  `temuan_bangunan` int(11) NOT NULL,
+  `temuan_bukti` varchar(255) NOT NULL,
+  `sitaan_bangunan` varchar(255) NOT NULL,
+  `sitaan_bukti` varchar(255) NOT NULL,
+  `jumlah_kasus` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pph_table_08`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_09`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_09` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `perusahaan` varchar(255) NOT NULL,
+  `temuan_luas` int(11) NOT NULL,
+  `temuan_bangunan` int(11) NOT NULL,
+  `temuan_bukti` varchar(255) NOT NULL,
+  `sitaan_bangunan` varchar(255) NOT NULL,
+  `sitaan_bukti` varchar(255) NOT NULL,
+  `jumlah_kasus` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pph_table_09`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_10`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_10` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `perusahaan` varchar(255) NOT NULL,
+  `temuan_luas` int(11) NOT NULL,
+  `temuan_bangunan` int(11) NOT NULL,
+  `temuan_bukti` varchar(255) NOT NULL,
+  `sitaan_bangunan` varchar(255) NOT NULL,
+  `sitaan_bukti` varchar(255) NOT NULL,
+  `jumlah_kasus` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `pph_table_10`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_11`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_11` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bencana` varchar(255) NOT NULL,
+  `luas` varchar(255) NOT NULL,
+  `kerugian` int(11) NOT NULL,
+  `upaya` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pph_table_11`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_12`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_12` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `polhut` int(11) NOT NULL,
+  `sporc` int(11) NOT NULL,
+  `tphl` int(11) NOT NULL,
+  `ppns` int(11) NOT NULL,
+  `pabin` int(11) NOT NULL,
+  `pamswakarsa` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pph_table_12`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_13`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_13` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uraian` varchar(255) NOT NULL,
+  `tersangka` int(11) NOT NULL,
+  `bukti` varchar(255) NOT NULL,
+  `sidik` int(11) NOT NULL,
+  `sp3` int(11) NOT NULL,
+  `p21` int(11) NOT NULL,
+  `vonis` int(11) NOT NULL,
+  `volume` int(11) NOT NULL,
+  `nilai_total` int(11) NOT NULL,
+  `nilai_bersih` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pph_table_13`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_14`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_14` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `senpi_genggam` int(11) NOT NULL,
+  `senpi_panjang` int(11) NOT NULL,
+  `senpi_bius` int(11) NOT NULL,
+  `transport_mobil` int(11) NOT NULL,
+  `transport_sepeda` int(11) NOT NULL,
+  `transport_boat` int(11) NOT NULL,
+  `transport_kapal` int(11) NOT NULL,
+  `transport_pesawat` int(11) NOT NULL,
+  `alat_radio` int(11) NOT NULL,
+  `alat_ht` int(11) NOT NULL,
+  `alat_ssb` int(11) NOT NULL,
+  `alat_lain` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pph_table_14`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pph_table_15`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_15` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pos_jaga` int(11) NOT NULL,
+  `pondok_kerja` int(11) NOT NULL,
+  `asrama_polhut` int(11) NOT NULL,
+  `papan_larangan` int(11) NOT NULL,
+  `papan_informasi` int(11) NOT NULL,
+  `menara_pengintai` int(11) NOT NULL,
+  `lain` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pph_table_15`
+--
+
 
 -- --------------------------------------------------------
 

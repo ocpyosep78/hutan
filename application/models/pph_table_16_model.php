@@ -1,12 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class pph_table_01_model extends CI_Model {
+class pph_table_16_model extends CI_Model {
     function __construct() {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'hutan_produksi_value', 'hutan_produksi_satuan', 'hutan_lidung_value', 'hutan_lindung_satuan', 'ksa_value', 'ksa_satuan', 'kpa_value',
-			'kpa_satuan', 'tb_value', 'tb_satuan', 'hutan_lain_value', 'hutan_lain_satuan', 'nilai_rugi', 'upaya', 'keterangan', 'update_time'
+			'id', 'hutan_produksi_value', 'hutan_produksi_satuan', 'hutan_lidung_value', 'hutan_lindung_satuan', 'ksa_value', 'update_time'
 		);
     }
 
@@ -14,14 +13,14 @@ class pph_table_01_model extends CI_Model {
         $result = array();
        
         if (empty($param['id'])) {
-            $insert_query  = GenerateInsertQuery($this->field, $param, PPH_TABLE_01);
+            $insert_query  = GenerateInsertQuery($this->field, $param, PPH_TABLE_16);
             $insert_result = mysql_query($insert_query) or die(mysql_error());
            
             $result['id'] = mysql_insert_id();
             $result['status'] = '1';
             $result['message'] = 'Data berhasil disimpan.';
         } else {
-            $update_query  = GenerateUpdateQuery($this->field, $param, PPH_TABLE_01);
+            $update_query  = GenerateUpdateQuery($this->field, $param, PPH_TABLE_16);
             $update_result = mysql_query($update_query) or die(mysql_error());
            
             $result['id'] = $param['id'];
@@ -36,7 +35,7 @@ class pph_table_01_model extends CI_Model {
         $array = array();
        
         if (isset($param['id'])) {
-            $select_query  = "SELECT * FROM ".PPH_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+            $select_query  = "SELECT * FROM ".PPH_TABLE_16." WHERE id = '".$param['id']."' LIMIT 1";
         }
 		
         $select_result = mysql_query($select_query) or die(mysql_error());
@@ -56,7 +55,7 @@ class pph_table_01_model extends CI_Model {
 		
 		$select_query = "
 			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".PPH_TABLE_01."
+			FROM ".PPH_TABLE_16."
 			WHERE 1 $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
@@ -79,7 +78,7 @@ class pph_table_01_model extends CI_Model {
     }
 	
     function delete($param) {
-		$delete_query  = "DELETE FROM ".PPH_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+		$delete_query  = "DELETE FROM ".PPH_TABLE_16." WHERE id = '".$param['id']."' LIMIT 1";
 		$delete_result = mysql_query($delete_query) or die(mysql_error());
 		
 		$result['status'] = '1';
@@ -90,13 +89,6 @@ class pph_table_01_model extends CI_Model {
 	
 	function sync($row) {
 		$row = StripArray($row);
-		
-		$row['hutan_produksi_text'] = $row['hutan_produksi_value'].' '.$row['hutan_produksi_satuan'];
-		$row['hutan_lindung_text'] = $row['hutan_lidung_value'].' '.$row['hutan_lindung_satuan'];
-		$row['hutan_ksa_text'] = $row['ksa_value'].' '.$row['ksa_satuan'];
-		$row['hutan_kpa_text'] = $row['kpa_value'].' '.$row['kpa_satuan'];
-		$row['hutan_tb_text'] = $row['tb_value'].' '.$row['tb_satuan'];
-		$row['hutan_lain_text'] = $row['hutan_lain_value'].' '.$row['hutan_lain_satuan'];
 		
 		return $row;
 	}

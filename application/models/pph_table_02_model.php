@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class pph_table_01_model extends CI_Model {
+class pph_table_02_model extends CI_Model {
     function __construct() {
         parent::__construct();
 		
@@ -14,14 +14,14 @@ class pph_table_01_model extends CI_Model {
         $result = array();
        
         if (empty($param['id'])) {
-            $insert_query  = GenerateInsertQuery($this->field, $param, PPH_TABLE_01);
+            $insert_query  = GenerateInsertQuery($this->field, $param, PPH_TABLE_02);
             $insert_result = mysql_query($insert_query) or die(mysql_error());
            
             $result['id'] = mysql_insert_id();
             $result['status'] = '1';
             $result['message'] = 'Data berhasil disimpan.';
         } else {
-            $update_query  = GenerateUpdateQuery($this->field, $param, PPH_TABLE_01);
+            $update_query  = GenerateUpdateQuery($this->field, $param, PPH_TABLE_02);
             $update_result = mysql_query($update_query) or die(mysql_error());
            
             $result['id'] = $param['id'];
@@ -36,7 +36,7 @@ class pph_table_01_model extends CI_Model {
         $array = array();
        
         if (isset($param['id'])) {
-            $select_query  = "SELECT * FROM ".PPH_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+            $select_query  = "SELECT * FROM ".PPH_TABLE_02." WHERE id = '".$param['id']."' LIMIT 1";
         }
 		
         $select_result = mysql_query($select_query) or die(mysql_error());
@@ -56,7 +56,7 @@ class pph_table_01_model extends CI_Model {
 		
 		$select_query = "
 			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".PPH_TABLE_01."
+			FROM ".PPH_TABLE_02."
 			WHERE 1 $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
@@ -79,7 +79,7 @@ class pph_table_01_model extends CI_Model {
     }
 	
     function delete($param) {
-		$delete_query  = "DELETE FROM ".PPH_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+		$delete_query  = "DELETE FROM ".PPH_TABLE_02." WHERE id = '".$param['id']."' LIMIT 1";
 		$delete_result = mysql_query($delete_query) or die(mysql_error());
 		
 		$result['status'] = '1';
