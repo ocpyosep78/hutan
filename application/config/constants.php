@@ -40,7 +40,23 @@ define('PPH_TABLE_14',							'pph_table_14');
 define('PPH_TABLE_15',							'pph_table_15');
 define('PPH_TABLE_16',							'pph_table_16');
 
+/*   PKH   */
 define('PKH_TABLE_01',							'pkh_table_01');
+define('PKH_TABLE_02',							'pkh_table_02');
+define('PKH_TABLE_03',							'pkh_table_03');
+define('PKH_TABLE_04',							'pkh_table_04');
+define('PKH_TABLE_05',							'pkh_table_05');
+define('PKH_TABLE_06',							'pkh_table_06');
+define('PKH_TABLE_07',							'pkh_table_07');
+define('PKH_TABLE_08',							'pkh_table_08');
+define('PKH_TABLE_09',							'pkh_table_09');
+define('PKH_TABLE_10',							'pkh_table_10');
+define('PKH_TABLE_11',							'pkh_table_11');
+define('PKH_TABLE_12',							'pkh_table_12');
+define('PKH_TABLE_13',							'pkh_table_13');
+define('PKH_TABLE_14',							'pkh_table_14');
+define('PKH_TABLE_15',							'pkh_table_15');
+
 define('KKH_TABLE_01',							'kkh_table_01');
 
 /*   KKBHL   */

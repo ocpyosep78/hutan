@@ -13,7 +13,7 @@
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 
-<div id="cnt-content"><div class="container"><div class="cnt-normal">
+<div id="cnt-content"><div class="container" style="width: 1800px; padding: 0 20px;"><div class="cnt-normal">
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	<div class="hide">
 		<div class="cnt-data"><?php echo json_encode($page); ?></div>
@@ -23,34 +23,71 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th rowspan="2">Tanggal Kebakaran</th>
-					<th colspan="2">Koordinat</th>
-					<th rowspan="2">Lokasi</th>
-					<th colspan="4">Fungsi Hutan</th>
-					<th rowspan="2">Kerugian</th>
-					<th rowspan="2">&nbsp;</th>
+					<th rowspan="4">Daops / Non Daops</th>
+					<th rowspan="4">Waktu Terpantau Hotspot (TGL- BLN)</th>
+					<th rowspan="2" colspan="2">Hotspot Hasil Pemantauan Satelit NOAA 18</th>
+					<th rowspan="2" colspan="2">Hotspot Dari Sumber Lain</th>
+					<th colspan="17">Hasl Ground Check Lapangan</th>
+					<th rowspan="4">&nbsp;</th>
 				</tr>
 				<tr>
-					<th>Lintang</th>
-					<th>Bujur</th>
-					<th>Luas Konservasi</th>
-					<th>HL</th>
-					<th>Luas Produksi</th>
-					<th>Luas Terbakar</th>
+					<th rowspan="3">Waktu Ground Check (TGL)</th>
+					<th colspan="2">Koordinat</th>
+					<th rowspan="3">Lokasi (Desa, Kec, Kab)</th>
+					<th colspan="12">Lokasi Kawasan Hutan</th>
+					<th rowspan="3">Diluar Kawasan Htuan</th>
+				</tr>
+				<tr>
+					<th rowspan="2">Lintang</th>
+					<th rowspan="2">Bujur</th>
+					<th rowspan="2">Lintang</th>
+					<th rowspan="2">Bujur</th>
+					<th rowspan="2">Lintang</th>
+					<th rowspan="2">Bujur</th>
+					<th colspan="7">Hutan Konservasi</th>
+					<th rowspan="2">HL</th>
+					<th colspan="4">Hutan Produksi</th>
+				</tr>
+				<tr>
+					<th>SM</th>
+					<th>CA</th>
+					<th>TN</th>
+					<th>THR</th>
+					<th>TWA</th>
+					<th>TB</th>
+					<th>JML</th>
+					<th>HTI</th>
+					<th>HA</th>
+					<th>HTR</th>
+					<th>JML</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo GetFormatDate($row['tanggal_kebakaran']); ?></td>
-					<td><?php echo $row['lintang']; ?></td>
-					<td><?php echo $row['bujur']; ?></td>
+					<td><?php echo $row['daops']; ?></td>
+					<td><?php echo $row['waktu']; ?></td>
+					<td><?php echo $row['satelit_lintang']; ?></td>
+					<td><?php echo $row['satelit_bujur']; ?></td>
+					<td><?php echo $row['sumber_lintang']; ?></td>
+					<td><?php echo $row['sumber_bujur']; ?></td>
+					<td class="center"><?php echo GetFormatDate($row['ground_check']); ?></td>
+					<td><?php echo $row['koordinat_lintang']; ?></td>
+					<td><?php echo $row['koordinat_bujur']; ?></td>
 					<td><?php echo $row['lokasi']; ?></td>
-					<td class="center"><?php echo $row['total_konservasi']; ?></td>
+					<td class="center"><?php echo $row['hutan_sm']; ?></td>
+					<td class="center"><?php echo $row['hutan_ca']; ?></td>
+					<td class="center"><?php echo $row['hutan_tn']; ?></td>
+					<td class="center"><?php echo $row['hutan_thr']; ?></td>
+					<td class="center"><?php echo $row['hutan_twa']; ?></td>
+					<td class="center"><?php echo $row['hutan_tb']; ?></td>
+					<td class="center"><?php echo $row['hutan_konservasi']; ?></td>
 					<td class="center"><?php echo $row['hutan_hl']; ?></td>
-					<td class="center"><?php echo $row['total_produksi']; ?></td>
-					<td class="center"><?php echo $row['hutan_terbakar']; ?></td>
-					<td><?php echo $row['kerugian']; ?></td>
+					<td class="center"><?php echo $row['hutan_hti']; ?></td>
+					<td class="center"><?php echo $row['hutan_ha']; ?></td>
+					<td class="center"><?php echo $row['hutan_htr']; ?></td>
+					<td class="center"><?php echo $row['hutan_produksi']; ?></td>
+					<td class="center"><?php echo $row['hutan_luar']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -66,22 +103,47 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Tanggal Terjadinya Kebakaran</div>
-		<div class="input"><input type="text" name="tanggal_kebakaran" class="datepicker" /></div>
+		<div class="label">Daops / Non Daops</div>
+		<div class="input"><input type="text" name="daops" /></div>
 		<div class="clear"></div>
-		<div class="label">Koordinat</div>
-		<div class="clear"></div>
-		<div class="label">- Lintang</div>
-		<div class="input"><input type="text" name="lintang" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Bujur</div>
-		<div class="input"><input type="text" name="bujur" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Lokasi</div>
-		<div class="input"><input type="text" name="lokasi" class="long" /></div>
+		<div class="label">Waktu Terpantau Hotspot</div>
+		<div class="input"><input type="text" name="waktu" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Hutan Konservsi (HA)</div>
+		<div class="label" style="width: 75%;">Hotspot Hasil Pemantauan Satelit NOAA 18</div>
+		<div class="clear"></div>
+		<div class="label">- Lintang</div>
+		<div class="input"><input type="text" name="satelit_lintang" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Bujur</div>
+		<div class="input"><input type="text" name="satelit_bujur" class="short" /></div>
+		<div class="clear"></div>
+		
+		<div class="label">Hotspot Dari Sumber Lain</div>
+		<div class="clear"></div>
+		<div class="label">- Lintang</div>
+		<div class="input"><input type="text" name="sumber_lintang" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Bujur</div>
+		<div class="input"><input type="text" name="sumber_bujur" class="short" /></div>
+		<div class="clear"></div>
+		
+		<div class="label">Hasil Ground Check Lapangan</div>
+		<div class="clear"></div>
+		<div class="label">- Waktu Ground Check</div>
+		<div class="input"><input type="text" name="ground_check" class="short datepicker" /></div>
+		<div class="clear"></div>
+		<div class="label">- Koordinat Lintang</div>
+		<div class="input"><input type="text" name="koordinat_lintang" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Koordinat Bujur</div>
+		<div class="input"><input type="text" name="koordinat_bujur" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Lokasi</div>
+		<div class="input"><input type="text" name="lokasi" class="short" /></div>
+		<div class="clear"></div>
+		
+		<div class="label">Hutan Konservasi</div>
 		<div class="clear"></div>
 		<div class="label">- SM</div>
 		<div class="input"><input type="text" name="hutan_sm" class="short" /></div>
@@ -116,15 +178,9 @@
 		<div class="label">- HTR</div>
 		<div class="input"><input type="text" name="hutan_htr" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Luas yang Terbakar</div>
-		<div class="input"><input type="text" name="hutan_terbakar" class="short" /></div>
-		<div class="clear"></div>
 		
-		<div class="label">Taksiran Kerugian</div>
-		<div class="input"><input type="text" name="kerugian" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Luas Yang Terbakar Diluar Kawasan Hutan</div>
-		<div class="input"><input type="text" name="luas_lain" class="short" /></div>
+		<div class="label">Diluar Kawasan Htuan</div>
+		<div class="input"><input type="text" name="hutan_luar" class="short" /></div>
 		<div class="clear"></div>
 		
 		<div class="label">&nbsp;</div>

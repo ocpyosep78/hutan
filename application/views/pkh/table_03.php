@@ -23,34 +23,52 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th rowspan="2">Tanggal Kebakaran</th>
-					<th colspan="2">Koordinat</th>
-					<th rowspan="2">Lokasi</th>
-					<th colspan="4">Fungsi Hutan</th>
-					<th rowspan="2">Kerugian</th>
-					<th rowspan="2">&nbsp;</th>
+					<th rowspan="4">Propinsi</th>
+					<th colspan="14">Lokasi Hotspot</th>
+					<th rowspan="4">&nbsp;</th>
 				</tr>
 				<tr>
-					<th>Lintang</th>
-					<th>Bujur</th>
-					<th>Luas Konservasi</th>
-					<th>HL</th>
-					<th>Luas Produksi</th>
-					<th>Luas Terbakar</th>
+					<th colspan="13">Lokasi Kawasan Hutan</th>
+					<th rowspan="3">Diluar Kawasan Hutan</th>
+				</tr>
+				<tr>
+					<th colspan="7">Hutan Konservasi</th>
+					<th rowspan="2">HL</th>
+					<th colspan="4">Hutan Produksi</th>
+					<th rowspan="2">Jml Hotspot</th>
+				</tr>
+				<tr>
+					<th>SM</th>
+					<th>CA</th>
+					<th>TN</th>
+					<th>THR</th>
+					<th>TWA</th>
+					<th>TB</th>
+					<th>JML</th>
+					<th>HTI</th>
+					<th>HA</th>
+					<th>HTR</th>
+					<th>JML</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo GetFormatDate($row['tanggal_kebakaran']); ?></td>
-					<td><?php echo $row['lintang']; ?></td>
-					<td><?php echo $row['bujur']; ?></td>
-					<td><?php echo $row['lokasi']; ?></td>
-					<td class="center"><?php echo $row['total_konservasi']; ?></td>
+					<td><?php echo $row['propinsi']; ?></td>
+					<td class="center"><?php echo $row['hutan_sm']; ?></td>
+					<td class="center"><?php echo $row['hutan_ca']; ?></td>
+					<td class="center"><?php echo $row['hutan_tn']; ?></td>
+					<td class="center"><?php echo $row['hutan_thr']; ?></td>
+					<td class="center"><?php echo $row['hutan_twa']; ?></td>
+					<td class="center"><?php echo $row['hutan_tb']; ?></td>
+					<td class="center"><?php echo $row['hutan_konservasi']; ?></td>
 					<td class="center"><?php echo $row['hutan_hl']; ?></td>
-					<td class="center"><?php echo $row['total_produksi']; ?></td>
-					<td class="center"><?php echo $row['hutan_terbakar']; ?></td>
-					<td><?php echo $row['kerugian']; ?></td>
+					<td class="center"><?php echo $row['hutan_hti']; ?></td>
+					<td class="center"><?php echo $row['hutan_ha']; ?></td>
+					<td class="center"><?php echo $row['hutan_htr']; ?></td>
+					<td class="center"><?php echo $row['hutan_produksi']; ?></td>
+					<td class="center"><?php echo $row['hotspot']; ?></td>
+					<td class="center"><?php echo $row['hutan_luar']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -66,65 +84,51 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Tanggal Terjadinya Kebakaran</div>
-		<div class="input"><input type="text" name="tanggal_kebakaran" class="datepicker" /></div>
-		<div class="clear"></div>
-		<div class="label">Koordinat</div>
-		<div class="clear"></div>
-		<div class="label">- Lintang</div>
-		<div class="input"><input type="text" name="lintang" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Bujur</div>
-		<div class="input"><input type="text" name="bujur" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Lokasi</div>
-		<div class="input"><input type="text" name="lokasi" class="long" /></div>
+		<div class="label">Propinsi</div>
+		<div class="input"><input type="text" name="propinsi" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Hutan Konservsi (HA)</div>
+		<div class="label">Hutan Konservasi</div>
 		<div class="clear"></div>
 		<div class="label">- SM</div>
-		<div class="input"><input type="text" name="hutan_sm" class="short" /></div>
+		<div class="input"><input type="text" name="hutan_sm" /></div>
 		<div class="clear"></div>
 		<div class="label">- CA</div>
-		<div class="input"><input type="text" name="hutan_ca" class="short" /></div>
+		<div class="input"><input type="text" name="hutan_ca" /></div>
 		<div class="clear"></div>
 		<div class="label">- TN</div>
-		<div class="input"><input type="text" name="hutan_tn" class="short" /></div>
+		<div class="input"><input type="text" name="hutan_tn" /></div>
 		<div class="clear"></div>
 		<div class="label">- THR</div>
-		<div class="input"><input type="text" name="hutan_thr" class="short" /></div>
+		<div class="input"><input type="text" name="hutan_thr" /></div>
 		<div class="clear"></div>
 		<div class="label">- TWA</div>
-		<div class="input"><input type="text" name="hutan_twa" class="short" /></div>
+		<div class="input"><input type="text" name="hutan_twa" /></div>
 		<div class="clear"></div>
 		<div class="label">- TB</div>
-		<div class="input"><input type="text" name="hutan_tb" class="short" /></div>
+		<div class="input"><input type="text" name="hutan_tb" /></div>
 		<div class="clear"></div>
 		<div class="label">HL</div>
-		<div class="input"><input type="text" name="hutan_hl" class="short" /></div>
+		<div class="input"><input type="text" name="hutan_hl" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Hutan Produksi (HA)</div>
+		<div class="label">Hutan Konservasi</div>
 		<div class="clear"></div>
 		<div class="label">- HTI</div>
-		<div class="input"><input type="text" name="hutan_hti" class="short" /></div>
+		<div class="input"><input type="text" name="hutan_hti" /></div>
 		<div class="clear"></div>
 		<div class="label">- HA</div>
-		<div class="input"><input type="text" name="hutan_ha" class="short" /></div>
+		<div class="input"><input type="text" name="hutan_ha" /></div>
 		<div class="clear"></div>
 		<div class="label">- HTR</div>
-		<div class="input"><input type="text" name="hutan_htr" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Luas yang Terbakar</div>
-		<div class="input"><input type="text" name="hutan_terbakar" class="short" /></div>
+		<div class="input"><input type="text" name="hutan_htr" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Taksiran Kerugian</div>
-		<div class="input"><input type="text" name="kerugian" class="short" /></div>
+		<div class="label">Jumlah Hotspot</div>
+		<div class="input"><input type="text" name="hotspot" /></div>
 		<div class="clear"></div>
-		<div class="label">Luas Yang Terbakar Diluar Kawasan Hutan</div>
-		<div class="input"><input type="text" name="luas_lain" class="short" /></div>
+		<div class="label">Diluar Kawasan Hutan</div>
+		<div class="input"><input type="text" name="hutan_luar" /></div>
 		<div class="clear"></div>
 		
 		<div class="label">&nbsp;</div>
