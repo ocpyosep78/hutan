@@ -23,26 +23,17 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="14">Tingkat Pendidikan</th>
-					<th rowspan="2" colspan="3">Jumlah</th>
+					<th colspan="11">Tingkat Golongan</th>
 					<th rowspan="3">&nbsp;</th>
 				</tr>
 				<tr>
-					<th colspan="2">S3</th>
-					<th colspan="2">S2</th>
-					<th colspan="2">S1 / D4</th>
-					<th colspan="2">D3</th>
-					<th colspan="2">SLTA</th>
-					<th colspan="2">SLTP</th>
-					<th colspan="2">SD</th>
+					<th colspan="2">Golongan IV</th>
+					<th colspan="2">Golongan III</th>
+					<th colspan="2">Golongan II</th>
+					<th colspan="2">Golongan I</th>
+					<th colspan="3">Jumlah</th>
 				</tr>
 				<tr>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
 					<th>L</th>
 					<th>P</th>
 					<th>L</th>
@@ -57,6 +48,7 @@
 				</tr>
 			</thead>
 			<tbody>
+				<!--
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
 					<td class="center"><?php echo $row['s3_l']; ?></td>
@@ -83,6 +75,7 @@
 					</td>
 				</tr>
 				<?php } ?>
+				-->
 			</tbody>
 		</table>
 	</div>

@@ -5,8 +5,8 @@ class pkh_table_08_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'tanggal_kebakaran', 'lintang', 'bujur', 'lokasi', 'hutan_sm', 'hutan_ca', 'hutan_tn', 'hutan_thr', 'hutan_twa', 'hutan_tb', 'hutan_hl', 'hutan_hti',
-			'hutan_ha', 'hutan_htr', 'hutan_terbakar', 'kerugian', 'luas_lain', 'update_time'
+			'id', 'jenis', 'title', 'jumlah_regu', 'jumlah_orang', 'tingkat_1', 'tingkat_2', 'tingkat_3', 'smart', 'danru', 'kadaop', 'spbk',
+			'pompa', 'tot', 'mmp', 'orakom', 'pb_kamp', 'pulbaket', 'mcn', 'gps', 'gis', 'sar', 'ics', 'aws', 'lain', 'update_time'
 		);
     }
 	
@@ -14,14 +14,14 @@ class pkh_table_08_model extends CI_Model {
         $result = array();
        
         if (empty($param['id'])) {
-            $insert_query  = GenerateInsertQuery($this->field, $param, PKH_TABLE_01);
+            $insert_query  = GenerateInsertQuery($this->field, $param, PKH_TABLE_08);
             $insert_result = mysql_query($insert_query) or die(mysql_error());
            
             $result['id'] = mysql_insert_id();
             $result['status'] = '1';
             $result['message'] = 'Data berhasil disimpan.';
         } else {
-            $update_query  = GenerateUpdateQuery($this->field, $param, PKH_TABLE_01);
+            $update_query  = GenerateUpdateQuery($this->field, $param, PKH_TABLE_08);
             $update_result = mysql_query($update_query) or die(mysql_error());
            
             $result['id'] = $param['id'];
@@ -36,7 +36,7 @@ class pkh_table_08_model extends CI_Model {
         $array = array();
        
         if (isset($param['id'])) {
-            $select_query  = "SELECT * FROM ".PKH_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+            $select_query  = "SELECT * FROM ".PKH_TABLE_08." WHERE id = '".$param['id']."' LIMIT 1";
         }
 		
         $select_result = mysql_query($select_query) or die(mysql_error());
@@ -57,7 +57,7 @@ class pkh_table_08_model extends CI_Model {
 		
 		$select_query = "
 			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".PKH_TABLE_01."
+			FROM ".PKH_TABLE_08."
 			WHERE 1 $string_jenis $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
@@ -80,7 +80,7 @@ class pkh_table_08_model extends CI_Model {
     }
 	
     function delete($param) {
-		$delete_query  = "DELETE FROM ".PKH_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+		$delete_query  = "DELETE FROM ".PKH_TABLE_08." WHERE id = '".$param['id']."' LIMIT 1";
 		$delete_result = mysql_query($delete_query) or die(mysql_error());
 		
 		$result['status'] = '1';

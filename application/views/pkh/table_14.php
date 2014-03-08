@@ -1,6 +1,7 @@
 <?php
 	// record data
-	$array_record = $this->$module['model_name']->get_array();
+	$array_daops = $this->$module['model_name']->get_array(array( 'jenis' => 'daops' ));
+	$array_non_daops = $this->$module['model_name']->get_array(array( 'jenis' => 'non_daops' ));
 	$message = get_flash_message();
 	
 	// page
@@ -13,118 +14,223 @@
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 
-<div id="cnt-content"><div class="container"><div class="cnt-normal">
+<div id="cnt-content"><div class="container" style="width: 1200px; padding: 0 20px"><div class="cnt-normal">
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	<div class="hide">
 		<div class="cnt-data"><?php echo json_encode($page); ?></div>
 	</div>
 	
-	<div class="table">
-		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
-			<thead>
-				<tr>
-					<th rowspan="2">Tanggal Kebakaran</th>
-					<th colspan="2">Koordinat</th>
-					<th rowspan="2">Lokasi</th>
-					<th colspan="4">Fungsi Hutan</th>
-					<th rowspan="2">Kerugian</th>
-					<th rowspan="2">&nbsp;</th>
-				</tr>
-				<tr>
-					<th>Lintang</th>
-					<th>Bujur</th>
-					<th>Luas Konservasi</th>
-					<th>HL</th>
-					<th>Luas Produksi</th>
-					<th>Luas Terbakar</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php foreach ($array_record as $key => $row) { ?>
-				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo GetFormatDate($row['tanggal_kebakaran']); ?></td>
-					<td><?php echo $row['lintang']; ?></td>
-					<td><?php echo $row['bujur']; ?></td>
-					<td><?php echo $row['lokasi']; ?></td>
-					<td class="center"><?php echo $row['total_konservasi']; ?></td>
-					<td class="center"><?php echo $row['hutan_hl']; ?></td>
-					<td class="center"><?php echo $row['total_produksi']; ?></td>
-					<td class="center"><?php echo $row['hutan_terbakar']; ?></td>
-					<td><?php echo $row['kerugian']; ?></td>
-					<td class="center">
-						<i class="fa fa-pencil btn-edit"></i>
-						<i class="fa fa-times btn-delete"></i>
-						<span class="hide"><?php echo json_encode($row); ?></span>
-					</td>
-				</tr>
-				<?php } ?>
-			</tbody>
-		</table>
+	<div class="cnt-table">
+		<h4 class="main-title">Daops</h4>
+		<div class="table">
+			<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
+				<thead>
+					<tr>
+						<th rowspan="3">Daops / Non Daops</th>
+						<th colspan="14">Peralatan Komunikasi</th>
+						<th colspan="3">Peralatan Cuaca</th>
+						<th rowspan="3">&nbsp;</th>
+					</tr>
+					<tr>
+						<th colspan="2">Handy Talky</th>
+						<th colspan="2">Radio Mobil</th>
+						<th colspan="2">Megaphone</th>
+						<th colspan="2">Peluit</th>
+						<th colspan="2">GPS</th>
+						<th colspan="2">Telepon</th>
+						<th colspan="2">Internet</th>
+						<th colspan="2">Pengamat Cuaca Otomatis</th>
+						<th rowspan="2">Lain-lain</th>
+					</tr>
+					<tr>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($array_daops as $key => $row) { ?>
+					<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
+						<td><?php echo $row['title']; ?></td>
+						<td class="center"><?php echo $row['handy_talky_baik']; ?></td>
+						<td class="center"><?php echo $row['handy_talky_rusak']; ?></td>
+						<td class="center"><?php echo $row['radio_baik']; ?></td>
+						<td class="center"><?php echo $row['radio_rusak']; ?></td>
+						<td class="center"><?php echo $row['megaphone_baik']; ?></td>
+						<td class="center"><?php echo $row['megaphone_rusak']; ?></td>
+						<td class="center"><?php echo $row['peluit_baik']; ?></td>
+						<td class="center"><?php echo $row['peluit_rusak']; ?></td>
+						<td class="center"><?php echo $row['gps_baik']; ?></td>
+						<td class="center"><?php echo $row['gps_rusak']; ?></td>
+						<td class="center"><?php echo $row['telepon_baik']; ?></td>
+						<td class="center"><?php echo $row['telepon_rusak']; ?></td>
+						<td class="center"><?php echo $row['internet_baik']; ?></td>
+						<td class="center"><?php echo $row['internet_rusak']; ?></td>
+						<td class="center"><?php echo $row['cuaca_baik']; ?></td>
+						<td class="center"><?php echo $row['cuaca_rusak']; ?></td>
+						<td class="center"><?php echo $row['lain']; ?></td>
+						<td class="center">
+							<i class="fa fa-pencil btn-edit"></i>
+							<i class="fa fa-times btn-delete"></i>
+							<span class="hide"><?php echo json_encode($row); ?></span>
+						</td>
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
+		
+		<h4 class="main-title" style="padding: 25px 0 0 0;">Non Daops</h4>
+		<div class="table">
+			<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
+				<thead>
+					<tr>
+						<th rowspan="3">Daops / Non Daops</th>
+						<th colspan="14">Peralatan Komunikasi</th>
+						<th colspan="3">Peralatan Cuaca</th>
+						<th rowspan="3">&nbsp;</th>
+					</tr>
+					<tr>
+						<th colspan="2">Handy Talky</th>
+						<th colspan="2">Radio Mobil</th>
+						<th colspan="2">Megaphone</th>
+						<th colspan="2">Peluit</th>
+						<th colspan="2">GPS</th>
+						<th colspan="2">Telepon</th>
+						<th colspan="2">Internet</th>
+						<th colspan="2">Pengamat Cuaca Otomatis</th>
+						<th rowspan="2">Lain-lain</th>
+					</tr>
+					<tr>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+						<th>Baik</th>
+						<th>Rusak</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($array_non_daops as $key => $row) { ?>
+					<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
+						<td><?php echo $row['title']; ?></td>
+						<td class="center"><?php echo $row['handy_talky_baik']; ?></td>
+						<td class="center"><?php echo $row['handy_talky_rusak']; ?></td>
+						<td class="center"><?php echo $row['radio_baik']; ?></td>
+						<td class="center"><?php echo $row['radio_rusak']; ?></td>
+						<td class="center"><?php echo $row['megaphone_baik']; ?></td>
+						<td class="center"><?php echo $row['megaphone_rusak']; ?></td>
+						<td class="center"><?php echo $row['peluit_baik']; ?></td>
+						<td class="center"><?php echo $row['peluit_rusak']; ?></td>
+						<td class="center"><?php echo $row['gps_baik']; ?></td>
+						<td class="center"><?php echo $row['gps_rusak']; ?></td>
+						<td class="center"><?php echo $row['telepon_baik']; ?></td>
+						<td class="center"><?php echo $row['telepon_rusak']; ?></td>
+						<td class="center"><?php echo $row['internet_baik']; ?></td>
+						<td class="center"><?php echo $row['internet_rusak']; ?></td>
+						<td class="center"><?php echo $row['cuaca_baik']; ?></td>
+						<td class="center"><?php echo $row['cuaca_rusak']; ?></td>
+						<td class="center"><?php echo $row['lain']; ?></td>
+						<td class="center">
+							<i class="fa fa-pencil btn-edit"></i>
+							<i class="fa fa-times btn-delete"></i>
+							<span class="hide"><?php echo json_encode($row); ?></span>
+						</td>
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
 	</div>
 	
 	<div class="form-box hide"><form id="form-editor">
 		<input type="hidden" name="id" value="0" />
+		<input type="hidden" name="jenis" value="" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Tanggal Terjadinya Kebakaran</div>
-		<div class="input"><input type="text" name="tanggal_kebakaran" class="datepicker" /></div>
-		<div class="clear"></div>
-		<div class="label">Koordinat</div>
-		<div class="clear"></div>
-		<div class="label">- Lintang</div>
-		<div class="input"><input type="text" name="lintang" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Bujur</div>
-		<div class="input"><input type="text" name="bujur" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Lokasi</div>
-		<div class="input"><input type="text" name="lokasi" class="long" /></div>
+		<div class="label">Daops / Non Daops</div>
+		<div class="input"><input type="text" name="title" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Hutan Konservsi (HA)</div>
+		<div class="label">Peralatan Komunikasi</div>
 		<div class="clear"></div>
-		<div class="label">- SM</div>
-		<div class="input"><input type="text" name="hutan_sm" class="short" /></div>
+		<div class="label">Handy Talky Baik</div>
+		<div class="input"><input type="text" name="handy_talky_baik" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- CA</div>
-		<div class="input"><input type="text" name="hutan_ca" class="short" /></div>
+		<div class="label">Handy Talky Rusak</div>
+		<div class="input"><input type="text" name="handy_talky_rusak" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- TN</div>
-		<div class="input"><input type="text" name="hutan_tn" class="short" /></div>
+		<div class="label">Radio Mobil Baik</div>
+		<div class="input"><input type="text" name="radio_baik" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- THR</div>
-		<div class="input"><input type="text" name="hutan_thr" class="short" /></div>
+		<div class="label">Radio Mobil Rusak</div>
+		<div class="input"><input type="text" name="radio_rusak" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- TWA</div>
-		<div class="input"><input type="text" name="hutan_twa" class="short" /></div>
+		<div class="label">Megaphone Baik</div>
+		<div class="input"><input type="text" name="megaphone_baik" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- TB</div>
-		<div class="input"><input type="text" name="hutan_tb" class="short" /></div>
+		<div class="label">Megaphone Rusak</div>
+		<div class="input"><input type="text" name="megaphone_rusak" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">HL</div>
-		<div class="input"><input type="text" name="hutan_hl" class="short" /></div>
+		<div class="label">Peluit Baik</div>
+		<div class="input"><input type="text" name="peluit_baik" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Peluit Rusak</div>
+		<div class="input"><input type="text" name="peluit_rusak" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">GPS Baik</div>
+		<div class="input"><input type="text" name="gps_baik" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">GPS Rusak</div>
+		<div class="input"><input type="text" name="gps_rusak" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Telepon Baik</div>
+		<div class="input"><input type="text" name="telepon_baik" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Telepon Rusak</div>
+		<div class="input"><input type="text" name="telepon_rusak" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Internet Baik</div>
+		<div class="input"><input type="text" name="internet_baik" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Internet Rusak</div>
+		<div class="input"><input type="text" name="internet_rusak" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Hutan Produksi (HA)</div>
+		<div class="label">Peralatan Cuaca</div>
 		<div class="clear"></div>
-		<div class="label">- HTI</div>
-		<div class="input"><input type="text" name="hutan_hti" class="short" /></div>
+		<div class="label">- Pengamat Cuaca Otomatis Baik</div>
+		<div class="input"><input type="text" name="cuaca_baik" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- HA</div>
-		<div class="input"><input type="text" name="hutan_ha" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- HTR</div>
-		<div class="input"><input type="text" name="hutan_htr" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Luas yang Terbakar</div>
-		<div class="input"><input type="text" name="hutan_terbakar" class="short" /></div>
+		<div class="label">- Pengamat Cuaca Otomatis Rusak</div>
+		<div class="input"><input type="text" name="cuaca_rusak" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Taksiran Kerugian</div>
-		<div class="input"><input type="text" name="kerugian" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Luas Yang Terbakar Diluar Kawasan Hutan</div>
-		<div class="input"><input type="text" name="luas_lain" class="short" /></div>
+		<div class="label">Lain-lain</div>
+		<div class="input"><input type="text" name="lain" class="long" /></div>
 		<div class="clear"></div>
 		
 		<div class="label">&nbsp;</div>
@@ -145,11 +251,11 @@ $(document).ready(function() {
 			page.data = data;
 		},
 		show_form: function() {
-			$('.table').hide();
+			$('.cnt-table').hide();
 			$('.form-box').show();
 		},
 		show_grid: function() {
-			$('.table').show();
+			$('.cnt-table').show();
 			$('.form-box').hide();
 		}
 	}
@@ -196,10 +302,13 @@ $(document).ready(function() {
 	});
 	
 	// helper
-	$('.dataTables_length').prepend('<div style="float: left; width: 65px; padding: 2px 0 0 0;"><button class="btn show-form">Tambah</button></div>');
+	$('.dataTables_length').eq(0).prepend('<div style="float: left; width: 65px; padding: 2px 0 0 0;"><button class="btn show-form" data-jenis="daops">Tambah</button></div>');
+	$('.dataTables_length').eq(1).prepend('<div style="float: left; width: 65px; padding: 2px 0 0 0;"><button class="btn show-form" data-jenis="non_daops">Tambah</button></div>');
 	$('.show-form').click(function() {
 		$('#form-editor')[0].reset();
 		$('#form-editor [name="id"]').val(0);
+		$('#form-editor [name="jenis"]').val($(this).data('jenis'));
+		
 		page.show_form();
 	});
 	$('.btn-cancel').click(function() {

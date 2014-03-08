@@ -1,14 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class pkh_table_10_model extends CI_Model {
+class sekretariat_table_09_model extends CI_Model {
     function __construct() {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'jenis', 'title', 'gudang_baik', 'gudang_rusak', 'kantor_baik', 'kantor_rusak', 'garasi_baik', 'garasi_rusak', 'bengkel_baik',
-			'bengkel_rusak', 'tempat_cuci_baik', 'tempat_cuci_rusak', 'tandon_baik', 'tandon_rusak', 'olahraga_baik', 'olahraga_rusak', 'pelatihan_baik',
-			'pelatihan_rusak', 'barak_baik', 'barak_rusak', 'ibadah_baik', 'ibadah_rusak', 'dapur_baik', 'dapur_rusak', 'menara_baik', 'menara_rusak', 'lain',
-			'update_time'
+			'id', 'propinsi', 'pkh', 'upt', 'sk_pembentukan', 'lokasi', 'regu', 'jumlah_anggota', 'keterangan', 'update_time'
 		);
     }
 	
@@ -16,14 +13,14 @@ class pkh_table_10_model extends CI_Model {
         $result = array();
        
         if (empty($param['id'])) {
-            $insert_query  = GenerateInsertQuery($this->field, $param, PKH_TABLE_10);
+            $insert_query  = GenerateInsertQuery($this->field, $param, SEKRETARIAT_TABLE_01);
             $insert_result = mysql_query($insert_query) or die(mysql_error());
            
             $result['id'] = mysql_insert_id();
             $result['status'] = '1';
             $result['message'] = 'Data berhasil disimpan.';
         } else {
-            $update_query  = GenerateUpdateQuery($this->field, $param, PKH_TABLE_10);
+            $update_query  = GenerateUpdateQuery($this->field, $param, SEKRETARIAT_TABLE_01);
             $update_result = mysql_query($update_query) or die(mysql_error());
            
             $result['id'] = $param['id'];
@@ -38,7 +35,7 @@ class pkh_table_10_model extends CI_Model {
         $array = array();
        
         if (isset($param['id'])) {
-            $select_query  = "SELECT * FROM ".PKH_TABLE_10." WHERE id = '".$param['id']."' LIMIT 1";
+            $select_query  = "SELECT * FROM ".SEKRETARIAT_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
         }
 		
         $select_result = mysql_query($select_query) or die(mysql_error());
@@ -59,7 +56,7 @@ class pkh_table_10_model extends CI_Model {
 		
 		$select_query = "
 			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".PKH_TABLE_10."
+			FROM ".SEKRETARIAT_TABLE_01."
 			WHERE 1 $string_jenis $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
@@ -82,7 +79,7 @@ class pkh_table_10_model extends CI_Model {
     }
 	
     function delete($param) {
-		$delete_query  = "DELETE FROM ".PKH_TABLE_10." WHERE id = '".$param['id']."' LIMIT 1";
+		$delete_query  = "DELETE FROM ".SEKRETARIAT_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
 		$delete_result = mysql_query($delete_query) or die(mysql_error());
 		
 		$result['status'] = '1';

@@ -1,6 +1,7 @@
 <?php
 	// record data
-	$array_record = $this->$module['model_name']->get_array();
+	$array_daops = $this->$module['model_name']->get_array(array( 'jenis' => 'daops' ));
+	$array_non_daops = $this->$module['model_name']->get_array(array( 'jenis' => 'non_daops' ));
 	$message = get_flash_message();
 	
 	// page
@@ -13,118 +14,240 @@
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 
-<div id="cnt-content"><div class="container"><div class="cnt-normal">
+<div id="cnt-content"><div class="container" style="width: 1800px; padding: 0 20px"><div class="cnt-normal">
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	<div class="hide">
 		<div class="cnt-data"><?php echo json_encode($page); ?></div>
 	</div>
 	
-	<div class="table">
-		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
-			<thead>
-				<tr>
-					<th rowspan="2">Tanggal Kebakaran</th>
-					<th colspan="2">Koordinat</th>
-					<th rowspan="2">Lokasi</th>
-					<th colspan="4">Fungsi Hutan</th>
-					<th rowspan="2">Kerugian</th>
-					<th rowspan="2">&nbsp;</th>
-				</tr>
-				<tr>
-					<th>Lintang</th>
-					<th>Bujur</th>
-					<th>Luas Konservasi</th>
-					<th>HL</th>
-					<th>Luas Produksi</th>
-					<th>Luas Terbakar</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php foreach ($array_record as $key => $row) { ?>
-				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo GetFormatDate($row['tanggal_kebakaran']); ?></td>
-					<td><?php echo $row['lintang']; ?></td>
-					<td><?php echo $row['bujur']; ?></td>
-					<td><?php echo $row['lokasi']; ?></td>
-					<td class="center"><?php echo $row['total_konservasi']; ?></td>
-					<td class="center"><?php echo $row['hutan_hl']; ?></td>
-					<td class="center"><?php echo $row['total_produksi']; ?></td>
-					<td class="center"><?php echo $row['hutan_terbakar']; ?></td>
-					<td><?php echo $row['kerugian']; ?></td>
-					<td class="center">
-						<i class="fa fa-pencil btn-edit"></i>
-						<i class="fa fa-times btn-delete"></i>
-						<span class="hide"><?php echo json_encode($row); ?></span>
-					</td>
-				</tr>
-				<?php } ?>
-			</tbody>
-		</table>
+	<div class="cnt-table">
+		<h4 class="main-title">Daops</h4>
+		<div class="table">
+			<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
+				<thead>
+					<tr>
+						<th rowspan="3">Daops / Non Daops</th>
+						<th colspan="2">Jumlah</th>
+						<th colspan="20">Jenis pelatihan</th>
+						<th rowspan="3">&nbsp;</th>
+					</tr>
+					<tr>
+						<th rowspan="2">Regu</th>
+						<th rowspan="2">Orang</th>
+						<th colspan="3">Tingkat Dasar</th>
+						<th rowspan="2">SMART</th>
+						<th rowspan="2">Calon DANRU</th>
+						<th rowspan="2">Calon KADAOP</th>
+						<th rowspan="2">SPBK</th>
+						<th rowspan="2">Mekanik Pompa</th>
+						<th rowspan="2">TOT</th>
+						<th rowspan="2">MMP</th>
+						<th rowspan="2">ORAKOM & MP</th>
+						<th rowspan="2">PB KAMP</th>
+						<th rowspan="2">PULBAKET</th>
+						<th rowspan="2">MCN</th>
+						<th rowspan="2">GPS</th>
+						<th rowspan="2">GIS</th>
+						<th rowspan="2">SAR</th>
+						<th rowspan="2">ICS</th>
+						<th rowspan="2">AWS</th>
+						<th rowspan="2">LAIN-LAIN</th>
+					</tr>
+					<tr>
+						<th>I</th>
+						<th>II</th>
+						<th>III</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($array_daops as $key => $row) { ?>
+					<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
+						<td><?php echo $row['title']; ?></td>
+						<td class="center"><?php echo $row['jumlah_regu']; ?></td>
+						<td class="center"><?php echo $row['jumlah_orang']; ?></td>
+						<td class="center"><?php echo $row['tingkat_1']; ?></td>
+						<td class="center"><?php echo $row['tingkat_2']; ?></td>
+						<td class="center"><?php echo $row['tingkat_3']; ?></td>
+						<td class="center"><?php echo $row['smart']; ?></td>
+						<td class="center"><?php echo $row['danru']; ?></td>
+						<td class="center"><?php echo $row['kadaop']; ?></td>
+						<td class="center"><?php echo $row['spbk']; ?></td>
+						<td class="center"><?php echo $row['pompa']; ?></td>
+						<td class="center"><?php echo $row['tot']; ?></td>
+						<td class="center"><?php echo $row['mmp']; ?></td>
+						<td class="center"><?php echo $row['orakom']; ?></td>
+						<td class="center"><?php echo $row['pb_kamp']; ?></td>
+						<td class="center"><?php echo $row['pulbaket']; ?></td>
+						<td class="center"><?php echo $row['mcn']; ?></td>
+						<td class="center"><?php echo $row['gps']; ?></td>
+						<td class="center"><?php echo $row['gis']; ?></td>
+						<td class="center"><?php echo $row['sar']; ?></td>
+						<td class="center"><?php echo $row['ics']; ?></td>
+						<td class="center"><?php echo $row['aws']; ?></td>
+						<td class="center"><?php echo $row['lain']; ?></td>
+						<td class="center">
+							<i class="fa fa-pencil btn-edit"></i>
+							<i class="fa fa-times btn-delete"></i>
+							<span class="hide"><?php echo json_encode($row); ?></span>
+						</td>
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
+		
+		<h4 class="main-title" style="padding: 25px 0 0 0;">Non Daops</h4>
+		<div class="table">
+			<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
+				<thead>
+					<tr>
+						<th rowspan="3">Daops / Non Daops</th>
+						<th colspan="2">Jumlah</th>
+						<th colspan="20">Jenis pelatihan</th>
+						<th rowspan="3">&nbsp;</th>
+					</tr>
+					<tr>
+						<th rowspan="2">Regu</th>
+						<th rowspan="2">Orang</th>
+						<th colspan="3">Tingkat Dasar</th>
+						<th rowspan="2">SMART</th>
+						<th rowspan="2">Calon DANRU</th>
+						<th rowspan="2">Calon KADAOP</th>
+						<th rowspan="2">SPBK</th>
+						<th rowspan="2">Mekanik Pompa</th>
+						<th rowspan="2">TOT</th>
+						<th rowspan="2">MMP</th>
+						<th rowspan="2">ORAKOM & MP</th>
+						<th rowspan="2">PB KAMP</th>
+						<th rowspan="2">PULBAKET</th>
+						<th rowspan="2">MCN</th>
+						<th rowspan="2">GPS</th>
+						<th rowspan="2">GIS</th>
+						<th rowspan="2">SAR</th>
+						<th rowspan="2">ICS</th>
+						<th rowspan="2">AWS</th>
+						<th rowspan="2">LAIN-LAIN</th>
+					</tr>
+					<tr>
+						<th>I</th>
+						<th>II</th>
+						<th>III</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($array_non_daops as $key => $row) { ?>
+					<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
+						<td><?php echo $row['title']; ?></td>
+						<td class="center"><?php echo $row['jumlah_regu']; ?></td>
+						<td class="center"><?php echo $row['jumlah_orang']; ?></td>
+						<td class="center"><?php echo $row['tingkat_1']; ?></td>
+						<td class="center"><?php echo $row['tingkat_2']; ?></td>
+						<td class="center"><?php echo $row['tingkat_3']; ?></td>
+						<td class="center"><?php echo $row['smart']; ?></td>
+						<td class="center"><?php echo $row['danru']; ?></td>
+						<td class="center"><?php echo $row['kadaop']; ?></td>
+						<td class="center"><?php echo $row['spbk']; ?></td>
+						<td class="center"><?php echo $row['pompa']; ?></td>
+						<td class="center"><?php echo $row['tot']; ?></td>
+						<td class="center"><?php echo $row['mmp']; ?></td>
+						<td class="center"><?php echo $row['orakom']; ?></td>
+						<td class="center"><?php echo $row['pb_kamp']; ?></td>
+						<td class="center"><?php echo $row['pulbaket']; ?></td>
+						<td class="center"><?php echo $row['mcn']; ?></td>
+						<td class="center"><?php echo $row['gps']; ?></td>
+						<td class="center"><?php echo $row['gis']; ?></td>
+						<td class="center"><?php echo $row['sar']; ?></td>
+						<td class="center"><?php echo $row['ics']; ?></td>
+						<td class="center"><?php echo $row['aws']; ?></td>
+						<td class="center"><?php echo $row['lain']; ?></td>
+						<td class="center">
+							<i class="fa fa-pencil btn-edit"></i>
+							<i class="fa fa-times btn-delete"></i>
+							<span class="hide"><?php echo json_encode($row); ?></span>
+						</td>
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
 	</div>
 	
 	<div class="form-box hide"><form id="form-editor">
 		<input type="hidden" name="id" value="0" />
+		<input type="hidden" name="jenis" value="" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Tanggal Terjadinya Kebakaran</div>
-		<div class="input"><input type="text" name="tanggal_kebakaran" class="datepicker" /></div>
+		<div class="label">Daops / Non Daops</div>
+		<div class="input"><input type="text" name="title" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Koordinat</div>
+		<div class="label">Jumlah Regu</div>
+		<div class="input"><input type="text" name="jumlah_regu" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Lintang</div>
-		<div class="input"><input type="text" name="lintang" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Bujur</div>
-		<div class="input"><input type="text" name="bujur" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Lokasi</div>
-		<div class="input"><input type="text" name="lokasi" class="long" /></div>
+		<div class="label">Jumlah Orang</div>
+		<div class="input"><input type="text" name="jumlah_orang" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Hutan Konservsi (HA)</div>
+		<div class="label">Jenis pelatihan</div>
 		<div class="clear"></div>
-		<div class="label">- SM</div>
-		<div class="input"><input type="text" name="hutan_sm" class="short" /></div>
+		<div class="label">- Tingkat Dasar I</div>
+		<div class="input"><input type="text" name="tingkat_1" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- CA</div>
-		<div class="input"><input type="text" name="hutan_ca" class="short" /></div>
+		<div class="label">- Tingkat Dasar II</div>
+		<div class="input"><input type="text" name="tingkat_2" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- TN</div>
-		<div class="input"><input type="text" name="hutan_tn" class="short" /></div>
+		<div class="label">- Tingkat Dasar III</div>
+		<div class="input"><input type="text" name="tingkat_3" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- THR</div>
-		<div class="input"><input type="text" name="hutan_thr" class="short" /></div>
+		<div class="label">- SMART</div>
+		<div class="input"><input type="text" name="smart" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- TWA</div>
-		<div class="input"><input type="text" name="hutan_twa" class="short" /></div>
+		<div class="label">- Calon DANRU</div>
+		<div class="input"><input type="text" name="danru" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- TB</div>
-		<div class="input"><input type="text" name="hutan_tb" class="short" /></div>
+		<div class="label">- Calon KADAOP</div>
+		<div class="input"><input type="text" name="kadaop" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">HL</div>
-		<div class="input"><input type="text" name="hutan_hl" class="short" /></div>
+		<div class="label">- SPBK</div>
+		<div class="input"><input type="text" name="spbk" class="short" /></div>
 		<div class="clear"></div>
-		
-		<div class="label">Hutan Produksi (HA)</div>
+		<div class="label">- Mekanik Pompa</div>
+		<div class="input"><input type="text" name="pompa" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- HTI</div>
-		<div class="input"><input type="text" name="hutan_hti" class="short" /></div>
+		<div class="label">- TOT</div>
+		<div class="input"><input type="text" name="tot" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- HA</div>
-		<div class="input"><input type="text" name="hutan_ha" class="short" /></div>
+		<div class="label">- MMP</div>
+		<div class="input"><input type="text" name="mmp" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- HTR</div>
-		<div class="input"><input type="text" name="hutan_htr" class="short" /></div>
+		<div class="label">- ORAKOM & MP</div>
+		<div class="input"><input type="text" name="orakom" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- Luas yang Terbakar</div>
-		<div class="input"><input type="text" name="hutan_terbakar" class="short" /></div>
+		<div class="label">- PB KAMP</div>
+		<div class="input"><input type="text" name="pb_kamp" class="short" /></div>
 		<div class="clear"></div>
-		
-		<div class="label">Taksiran Kerugian</div>
-		<div class="input"><input type="text" name="kerugian" class="short" /></div>
+		<div class="label">- PULBAKET</div>
+		<div class="input"><input type="text" name="pulbaket" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Luas Yang Terbakar Diluar Kawasan Hutan</div>
-		<div class="input"><input type="text" name="luas_lain" class="short" /></div>
+		<div class="label">- MCN</div>
+		<div class="input"><input type="text" name="mcn" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- GPS</div>
+		<div class="input"><input type="text" name="gps" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- GIS</div>
+		<div class="input"><input type="text" name="gis" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- SAR</div>
+		<div class="input"><input type="text" name="sar" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- ICS</div>
+		<div class="input"><input type="text" name="ics" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- AWS</div>
+		<div class="input"><input type="text" name="aws" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- LAIN-LAIN</div>
+		<div class="input"><input type="text" name="lain" class="short" /></div>
 		<div class="clear"></div>
 		
 		<div class="label">&nbsp;</div>
@@ -145,11 +268,11 @@ $(document).ready(function() {
 			page.data = data;
 		},
 		show_form: function() {
-			$('.table').hide();
+			$('.cnt-table').hide();
 			$('.form-box').show();
 		},
 		show_grid: function() {
-			$('.table').show();
+			$('.cnt-table').show();
 			$('.form-box').hide();
 		}
 	}
@@ -196,10 +319,13 @@ $(document).ready(function() {
 	});
 	
 	// helper
-	$('.dataTables_length').prepend('<div style="float: left; width: 65px; padding: 2px 0 0 0;"><button class="btn show-form">Tambah</button></div>');
+	$('.dataTables_length').eq(0).prepend('<div style="float: left; width: 65px; padding: 2px 0 0 0;"><button class="btn show-form" data-jenis="daops">Tambah</button></div>');
+	$('.dataTables_length').eq(1).prepend('<div style="float: left; width: 65px; padding: 2px 0 0 0;"><button class="btn show-form" data-jenis="non_daops">Tambah</button></div>');
 	$('.show-form').click(function() {
 		$('#form-editor')[0].reset();
 		$('#form-editor [name="id"]').val(0);
+		$('#form-editor [name="jenis"]').val($(this).data('jenis'));
+		
 		page.show_form();
 	});
 	$('.btn-cancel').click(function() {

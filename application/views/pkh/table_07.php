@@ -13,7 +13,7 @@
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 
-<div id="cnt-content"><div class="container"><div class="cnt-normal">
+<div id="cnt-content"><div class="container" style="width: 1250px;"><div class="cnt-normal">
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	<div class="hide">
 		<div class="cnt-data"><?php echo json_encode($page); ?></div>
@@ -23,34 +23,54 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th rowspan="2">Tanggal Kebakaran</th>
-					<th colspan="2">Koordinat</th>
-					<th rowspan="2">Lokasi</th>
-					<th colspan="4">Fungsi Hutan</th>
-					<th rowspan="2">Kerugian</th>
-					<th rowspan="2">&nbsp;</th>
+					<th rowspan="3">Provinsi</th>
+					<th colspan="6">Manggala Agni</th>
+					<th colspan="2">Masyarakat Peduli Api/ MPA</th>
+					<th colspan="2">Instansi Lain (MPA)</th>
+					<th colspan="2">Pemangku Kepentingan (MPA)</th>
+					<th rowspan="3">Jumlah Regu</th>
+					<th rowspan="3">Jumlah<br />Anggota<br />(ORANG)</th>
+					<th rowspan="3">Keterangan</th>
+					<th rowspan="3">&nbsp;</th>
 				</tr>
 				<tr>
-					<th>Lintang</th>
-					<th>Bujur</th>
-					<th>Luas Konservasi</th>
-					<th>HL</th>
-					<th>Luas Produksi</th>
-					<th>Luas Terbakar</th>
+					<th colspan="3">Daops</th>
+					<th colspan="3">Non Daops</th>
+					<th rowspan="2">Regu</th>
+					<th rowspan="2">Jumlah<br />Orang</th>
+					<th rowspan="2">Regu</th>
+					<th rowspan="2">Jumlah<br />Orang</th>
+					<th rowspan="2">Regu</th>
+					<th rowspan="2">Jumlah<br />Orang</th>
+				</tr>
+				<tr>
+					<th>Nama</th>
+					<th>Regu</th>
+					<th>Jumlah<br />Orang</th>
+					<th>Satuan<br />Kerja</th>
+					<th>Regu</th>
+					<th>Jumlah<br />Orang</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo GetFormatDate($row['tanggal_kebakaran']); ?></td>
-					<td><?php echo $row['lintang']; ?></td>
-					<td><?php echo $row['bujur']; ?></td>
-					<td><?php echo $row['lokasi']; ?></td>
-					<td class="center"><?php echo $row['total_konservasi']; ?></td>
-					<td class="center"><?php echo $row['hutan_hl']; ?></td>
-					<td class="center"><?php echo $row['total_produksi']; ?></td>
-					<td class="center"><?php echo $row['hutan_terbakar']; ?></td>
-					<td><?php echo $row['kerugian']; ?></td>
+					<td><?php echo $row['propinsi']; ?></td>
+					<td><?php echo $row['daops_nama']; ?></td>
+					<td><?php echo $row['daops_regu']; ?></td>
+					<td class="center"><?php echo $row['daops_jumlah']; ?></td>
+					<td><?php echo $row['daops_non_satuan']; ?></td>
+					<td><?php echo $row['daops_non_regu']; ?></td>
+					<td class="center"><?php echo $row['daops_non_jumlah']; ?></td>
+					<td><?php echo $row['masyarakat_regu']; ?></td>
+					<td class="center"><?php echo $row['masyarakat_jumlah']; ?></td>
+					<td><?php echo $row['instansi_regu']; ?></td>
+					<td class="center"><?php echo $row['instansi_jumlah']; ?></td>
+					<td><?php echo $row['pemangku_regu']; ?></td>
+					<td class="center"><?php echo $row['pemangku_jumlah']; ?></td>
+					<td><?php echo $row['jumlah_regu']; ?></td>
+					<td class="center"><?php echo $row['jumlah_anggota']; ?></td>
+					<td><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -66,67 +86,67 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Tanggal Terjadinya Kebakaran</div>
-		<div class="input"><input type="text" name="tanggal_kebakaran" class="datepicker" /></div>
-		<div class="clear"></div>
-		<div class="label">Koordinat</div>
-		<div class="clear"></div>
-		<div class="label">- Lintang</div>
-		<div class="input"><input type="text" name="lintang" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Bujur</div>
-		<div class="input"><input type="text" name="bujur" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Lokasi</div>
-		<div class="input"><input type="text" name="lokasi" class="long" /></div>
+		<div class="label">Propinsi</div>
+		<div class="input"><input type="text" name="propinsi" class="long" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Hutan Konservsi (HA)</div>
+		<div class="label">Manggala Agni</div>
 		<div class="clear"></div>
-		<div class="label">- SM</div>
-		<div class="input"><input type="text" name="hutan_sm" class="short" /></div>
+		<div class="label">- Daops Nama</div>
+		<div class="input"><input type="text" name="daops_nama" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- CA</div>
-		<div class="input"><input type="text" name="hutan_ca" class="short" /></div>
+		<div class="label">- Daops Regu</div>
+		<div class="input"><input type="text" name="daops_regu" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- TN</div>
-		<div class="input"><input type="text" name="hutan_tn" class="short" /></div>
+		<div class="label">- Daops Jumlah Orang</div>
+		<div class="input"><input type="text" name="daops_jumlah" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">- THR</div>
-		<div class="input"><input type="text" name="hutan_thr" class="short" /></div>
+		<div class="label">- Non Daops Satuan Kerja</div>
+		<div class="input"><input type="text" name="daops_non_satuan" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- TWA</div>
-		<div class="input"><input type="text" name="hutan_twa" class="short" /></div>
+		<div class="label">- Non Daops Regu</div>
+		<div class="input"><input type="text" name="daops_non_regu" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- TB</div>
-		<div class="input"><input type="text" name="hutan_tb" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">HL</div>
-		<div class="input"><input type="text" name="hutan_hl" class="short" /></div>
+		<div class="label">- Non Daops Jumlah Orang</div>
+		<div class="input"><input type="text" name="daops_non_jumlah" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Hutan Produksi (HA)</div>
+		<div class="label">Masyarakat Peduli Api/ MPA</div>
 		<div class="clear"></div>
-		<div class="label">- HTI</div>
-		<div class="input"><input type="text" name="hutan_hti" class="short" /></div>
+		<div class="label">- Regu</div>
+		<div class="input"><input type="text" name="masyarakat_regu" class="long" /></div>
 		<div class="clear"></div>
-		<div class="label">- HA</div>
-		<div class="input"><input type="text" name="hutan_ha" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- HTR</div>
-		<div class="input"><input type="text" name="hutan_htr" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">- Luas yang Terbakar</div>
-		<div class="input"><input type="text" name="hutan_terbakar" class="short" /></div>
+		<div class="label">- Jumlah Orang</div>
+		<div class="input"><input type="text" name="masyarakat_jumlah" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Taksiran Kerugian</div>
-		<div class="input"><input type="text" name="kerugian" class="short" /></div>
+		<div class="label">Instansi Lain (MPA)</div>
 		<div class="clear"></div>
-		<div class="label">Luas Yang Terbakar Diluar Kawasan Hutan</div>
-		<div class="input"><input type="text" name="luas_lain" class="short" /></div>
+		<div class="label">- Regu</div>
+		<div class="input"><input type="text" name="instansi_regu" class="long" /></div>
+		<div class="clear"></div>
+		<div class="label">- Jumlah Orang</div>
+		<div class="input"><input type="text" name="instansi_jumlah" class="short" /></div>
 		<div class="clear"></div>
 		
+		<div class="label">Pemangku Kepentingan (MPA)</div>
+		<div class="clear"></div>
+		<div class="label">- Regu</div>
+		<div class="input"><input type="text" name="pemangku_regu" class="long" /></div>
+		<div class="clear"></div>
+		<div class="label">- Jumlah Orang</div>
+		<div class="input"><input type="text" name="pemangku_jumlah" class="short" /></div>
+		<div class="clear"></div>
+		
+		<div class="label">Jumlah Regu</div>
+		<div class="input"><input type="text" name="jumlah_regu" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Jumlah Anggota (ORANG)</div>
+		<div class="input"><input type="text" name="jumlah_anggota" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Keterangan</div>
+		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
+		<div class="clear"></div>
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>
@@ -159,6 +179,7 @@ $(document).ready(function() {
 	$('.btn-edit').click(function() {
 		var raw_record = $(this).parent('td').find('.hide').text();
 		eval('var record = ' + raw_record);
+		console.log(record);
 		Func.populate({ cnt: '#form-editor', record: record });
 		page.show_form();
 	});
