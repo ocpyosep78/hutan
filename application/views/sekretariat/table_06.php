@@ -13,7 +13,7 @@
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 
-<div id="cnt-content"><div class="container"><div class="cnt-normal">
+<div id="cnt-content"><div class="container" style="width: 1200px; padding: 0 20px;"><div class="cnt-normal">
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	<div class="hide">
 		<div class="cnt-data"><?php echo json_encode($page); ?></div>
@@ -23,14 +23,16 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
+					<th rowspan="3">Uraian</th>
 					<th colspan="14">Tingkat Pendidikan</th>
 					<th rowspan="2" colspan="3">Jumlah</th>
+					<th rowspan="3">Keterangan</th>
 					<th rowspan="3">&nbsp;</th>
 				</tr>
 				<tr>
 					<th colspan="2">S3</th>
 					<th colspan="2">S2</th>
-					<th colspan="2">S1 / D4</th>
+					<th colspan="2">S1</th>
 					<th colspan="2">D3</th>
 					<th colspan="2">SLTA</th>
 					<th colspan="2">SLTP</th>
@@ -59,6 +61,7 @@
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
+					<td><?php echo $row['uraian']; ?></td>
 					<td class="center"><?php echo $row['s3_l']; ?></td>
 					<td class="center"><?php echo $row['s3_p']; ?></td>
 					<td class="center"><?php echo $row['s2_l']; ?></td>
@@ -76,6 +79,7 @@
 					<td class="center"><?php echo $row['total_l']; ?></td>
 					<td class="center"><?php echo $row['total_p']; ?></td>
 					<td class="center"><?php echo $row['total']; ?></td>
+					<td><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -90,6 +94,10 @@
 	<div class="form-box hide"><form id="form-editor">
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
+		
+		<div class="label">Uraian</div>
+		<div class="input"><input type="text" name="uraian" class="long" /></div>
+		<div class="clear"></div>
 		
 		<div class="label">S3 L</div>
 		<div class="input"><input type="text" name="s3_l" class="short" /></div>
@@ -133,6 +141,11 @@
 		<div class="label">SD P</div>
 		<div class="input"><input type="text" name="sd_p" class="short" /></div>
 		<div class="clear"></div>
+		
+		<div class="label">Keterangan</div>
+		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
+		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

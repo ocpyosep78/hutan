@@ -5,7 +5,9 @@ class sekretariat_table_05_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'propinsi', 'pkh', 'upt', 'sk_pembentukan', 'lokasi', 'regu', 'jumlah_anggota', 'keterangan', 'update_time'
+			'id', 'struktural_1a_l', 'struktural_1a_p', 'struktural_1b_l', 'struktural_1b_p', 'struktural_2a_l', 'struktural_2a_p', 'struktural_2b_l',
+			'struktural_2b_p', 'struktural_3a_l', 'struktural_3a_p', 'struktural_3b_l', 'struktural_3b_p', 'struktural_4a_l', 'struktural_4a_p',
+			'struktural_4b_l', 'struktural_4b_p', 'fungsional_umum_l', 'fungsional_umum_p', 'fungsional_l', 'fungsional_p', 'keterangan', 'update_time'
 		);
     }
 	
@@ -13,14 +15,14 @@ class sekretariat_table_05_model extends CI_Model {
         $result = array();
        
         if (empty($param['id'])) {
-            $insert_query  = GenerateInsertQuery($this->field, $param, SEKRETARIAT_TABLE_01);
+            $insert_query  = GenerateInsertQuery($this->field, $param, SEKRETARIAT_TABLE_05);
             $insert_result = mysql_query($insert_query) or die(mysql_error());
            
             $result['id'] = mysql_insert_id();
             $result['status'] = '1';
             $result['message'] = 'Data berhasil disimpan.';
         } else {
-            $update_query  = GenerateUpdateQuery($this->field, $param, SEKRETARIAT_TABLE_01);
+            $update_query  = GenerateUpdateQuery($this->field, $param, SEKRETARIAT_TABLE_05);
             $update_result = mysql_query($update_query) or die(mysql_error());
            
             $result['id'] = $param['id'];
@@ -35,7 +37,7 @@ class sekretariat_table_05_model extends CI_Model {
         $array = array();
        
         if (isset($param['id'])) {
-            $select_query  = "SELECT * FROM ".SEKRETARIAT_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+            $select_query  = "SELECT * FROM ".SEKRETARIAT_TABLE_05." WHERE id = '".$param['id']."' LIMIT 1";
         }
 		
         $select_result = mysql_query($select_query) or die(mysql_error());
@@ -56,7 +58,7 @@ class sekretariat_table_05_model extends CI_Model {
 		
 		$select_query = "
 			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".SEKRETARIAT_TABLE_01."
+			FROM ".SEKRETARIAT_TABLE_05."
 			WHERE 1 $string_jenis $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
@@ -79,7 +81,7 @@ class sekretariat_table_05_model extends CI_Model {
     }
 	
     function delete($param) {
-		$delete_query  = "DELETE FROM ".SEKRETARIAT_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+		$delete_query  = "DELETE FROM ".SEKRETARIAT_TABLE_05." WHERE id = '".$param['id']."' LIMIT 1";
 		$delete_result = mysql_query($delete_query) or die(mysql_error());
 		
 		$result['status'] = '1';
@@ -90,6 +92,12 @@ class sekretariat_table_05_model extends CI_Model {
 	
 	function sync($row) {
 		$row = StripArray($row);
+		
+		$row['total_l'] = $row['struktural_1a_l'] + $row['struktural_1b_l'] + $row['struktural_2a_l'] + $row['struktural_2b_l'] + $row['struktural_3a_l']
+			+ $row['struktural_3b_l'] + $row['struktural_4a_l'] + $row['struktural_4b_l'] + $row['fungsional_umum_l'] + $row['fungsional_l'];
+		$row['total_p'] = $row['struktural_1a_p'] + $row['struktural_1b_p'] + $row['struktural_2a_p'] + $row['struktural_2b_p'] + $row['struktural_3a_p']
+			+ $row['struktural_3b_p'] + $row['struktural_4a_p'] + $row['struktural_4b_p'] + $row['fungsional_umum_p'] + $row['fungsional_p'];
+		$row['total'] = $row['total_l'] + $row['total_p'];
 		
 		return $row;
 	}

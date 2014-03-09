@@ -48,23 +48,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<!--
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['s3_l']; ?></td>
-					<td class="center"><?php echo $row['s3_p']; ?></td>
-					<td class="center"><?php echo $row['s2_l']; ?></td>
-					<td class="center"><?php echo $row['s2_p']; ?></td>
-					<td class="center"><?php echo $row['s1_l']; ?></td>
-					<td class="center"><?php echo $row['s1_p']; ?></td>
-					<td class="center"><?php echo $row['d3_l']; ?></td>
-					<td class="center"><?php echo $row['d3_p']; ?></td>
-					<td class="center"><?php echo $row['slta_l']; ?></td>
-					<td class="center"><?php echo $row['slta_p']; ?></td>
-					<td class="center"><?php echo $row['sltp_l']; ?></td>
-					<td class="center"><?php echo $row['sltp_p']; ?></td>
-					<td class="center"><?php echo $row['sd_l']; ?></td>
-					<td class="center"><?php echo $row['sd_p']; ?></td>
+					<td class="center"><?php echo $row['gol_4_l']; ?></td>
+					<td class="center"><?php echo $row['gol_4_p']; ?></td>
+					<td class="center"><?php echo $row['gol_3_l']; ?></td>
+					<td class="center"><?php echo $row['gol_3_p']; ?></td>
+					<td class="center"><?php echo $row['gol_2_l']; ?></td>
+					<td class="center"><?php echo $row['gol_2_p']; ?></td>
+					<td class="center"><?php echo $row['gol_1_l']; ?></td>
+					<td class="center"><?php echo $row['gol_1_p']; ?></td>
 					<td class="center"><?php echo $row['total_l']; ?></td>
 					<td class="center"><?php echo $row['total_p']; ?></td>
 					<td class="center"><?php echo $row['total']; ?></td>
@@ -75,7 +68,6 @@
 					</td>
 				</tr>
 				<?php } ?>
-				-->
 			</tbody>
 		</table>
 	</div>
@@ -84,48 +76,31 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">S3 L</div>
-		<div class="input"><input type="text" name="s3_l" class="short" /></div>
+		<div class="label">Golongan IV L</div>
+		<div class="input"><input type="text" name="gol_4_l" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S3 P</div>
-		<div class="input"><input type="text" name="s3_p" class="short" /></div>
+		<div class="label">Golongan IV P</div>
+		<div class="input"><input type="text" name="gol_4_p" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S2 L</div>
-		<div class="input"><input type="text" name="s2_l" class="short" /></div>
+		<div class="label">Golongan III L</div>
+		<div class="input"><input type="text" name="gol_3_l" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S2 P</div>
-		<div class="input"><input type="text" name="s2_p" class="short" /></div>
+		<div class="label">Golongan III P</div>
+		<div class="input"><input type="text" name="gol_3_p" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S1 L</div>
-		<div class="input"><input type="text" name="s1_l" class="short" /></div>
+		<div class="label">Golongan II L</div>
+		<div class="input"><input type="text" name="gol_2_l" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S1 P</div>
-		<div class="input"><input type="text" name="s1_p" class="short" /></div>
+		<div class="label">Golongan II P</div>
+		<div class="input"><input type="text" name="gol_2_p" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">D3 L</div>
-		<div class="input"><input type="text" name="d3_l" class="short" /></div>
+		<div class="label">Golongan I L</div>
+		<div class="input"><input type="text" name="gol_1_l" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">D3 P</div>
-		<div class="input"><input type="text" name="d3_p" class="short" /></div>
+		<div class="label">Golongan I P</div>
+		<div class="input"><input type="text" name="gol_1_p" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SLTA L</div>
-		<div class="input"><input type="text" name="slta_l" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SLTA P</div>
-		<div class="input"><input type="text" name="slta_p" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SLTP L</div>
-		<div class="input"><input type="text" name="sltp_l" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SLTP P</div>
-		<div class="input"><input type="text" name="sltp_p" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SD L</div>
-		<div class="input"><input type="text" name="sd_l" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SD P</div>
-		<div class="input"><input type="text" name="sd_p" class="short" /></div>
-		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

@@ -5,7 +5,11 @@ class sekretariat_table_03_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'propinsi', 'pkh', 'upt', 'sk_pembentukan', 'lokasi', 'regu', 'jumlah_anggota', 'keterangan', 'update_time'
+			'id', 'polhut_terampil', 'polhut_calon_terampil', 'polhut_ahli', 'polhut_calon_ahli', 'peh_terampil', 'peh_calon_terampil', 'peh_ahli',
+			'peh_calon_ahli', 'pranata_terampil', 'pranata_calon_terampil', 'pranata_ahli', 'pranata_calon_ahli', 'analis_terampil', 'analis_calon_terampil',
+			'analis_ahli', 'analis_calon_ahli', 'statistisi_terampil', 'statistisi_calon_terampil', 'statistisi_ahli', 'statistisi_calon_ahli',
+			'arsiparis_terampil', 'arsiparis_calon_terampil', 'arsiparis_ahli', 'arsiparis_calon_ahli', 'perencana_terampil', 'perencana_calon_terampil',
+			'perencana_ahli', 'perencana_calon_ahli', 'update_time'
 		);
     }
 	
@@ -13,14 +17,14 @@ class sekretariat_table_03_model extends CI_Model {
         $result = array();
        
         if (empty($param['id'])) {
-            $insert_query  = GenerateInsertQuery($this->field, $param, SEKRETARIAT_TABLE_01);
+            $insert_query  = GenerateInsertQuery($this->field, $param, SEKRETARIAT_TABLE_03);
             $insert_result = mysql_query($insert_query) or die(mysql_error());
            
             $result['id'] = mysql_insert_id();
             $result['status'] = '1';
             $result['message'] = 'Data berhasil disimpan.';
         } else {
-            $update_query  = GenerateUpdateQuery($this->field, $param, SEKRETARIAT_TABLE_01);
+            $update_query  = GenerateUpdateQuery($this->field, $param, SEKRETARIAT_TABLE_03);
             $update_result = mysql_query($update_query) or die(mysql_error());
            
             $result['id'] = $param['id'];
@@ -35,7 +39,7 @@ class sekretariat_table_03_model extends CI_Model {
         $array = array();
        
         if (isset($param['id'])) {
-            $select_query  = "SELECT * FROM ".SEKRETARIAT_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+            $select_query  = "SELECT * FROM ".SEKRETARIAT_TABLE_03." WHERE id = '".$param['id']."' LIMIT 1";
         }
 		
         $select_result = mysql_query($select_query) or die(mysql_error());
@@ -56,7 +60,7 @@ class sekretariat_table_03_model extends CI_Model {
 		
 		$select_query = "
 			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".SEKRETARIAT_TABLE_01."
+			FROM ".SEKRETARIAT_TABLE_03."
 			WHERE 1 $string_jenis $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
@@ -79,7 +83,7 @@ class sekretariat_table_03_model extends CI_Model {
     }
 	
     function delete($param) {
-		$delete_query  = "DELETE FROM ".SEKRETARIAT_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+		$delete_query  = "DELETE FROM ".SEKRETARIAT_TABLE_03." WHERE id = '".$param['id']."' LIMIT 1";
 		$delete_result = mysql_query($delete_query) or die(mysql_error());
 		
 		$result['status'] = '1';
@@ -90,6 +94,14 @@ class sekretariat_table_03_model extends CI_Model {
 	
 	function sync($row) {
 		$row = StripArray($row);
+		
+		$row['polhut_total'] = $row['polhut_terampil'] + $row['polhut_calon_terampil'] + $row['polhut_ahli'] + $row['polhut_calon_ahli'];
+		$row['peh_total'] = $row['peh_terampil'] + $row['peh_calon_terampil'] + $row['peh_ahli'] + $row['peh_calon_ahli'];
+		$row['pranata_total'] = $row['pranata_terampil'] + $row['pranata_calon_terampil'] + $row['pranata_ahli'] + $row['pranata_calon_ahli'];
+		$row['analis_total'] = $row['analis_terampil'] + $row['analis_calon_terampil'] + $row['analis_ahli'] + $row['analis_calon_ahli'];
+		$row['statistisi_total'] = $row['statistisi_terampil'] + $row['statistisi_calon_terampil'] + $row['statistisi_ahli'] + $row['statistisi_calon_ahli'];
+		$row['arsiparis_total'] = $row['arsiparis_terampil'] + $row['arsiparis_calon_terampil'] + $row['arsiparis_ahli'] + $row['arsiparis_calon_ahli'];
+		$row['perencana_total'] = $row['perencana_terampil'] + $row['perencana_calon_terampil'] + $row['perencana_ahli'] + $row['perencana_calon_ahli'];
 		
 		return $row;
 	}

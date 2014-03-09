@@ -13,6 +13,11 @@
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 
+<style>
+.form-box .label { width: 400px; }
+.form-box .input { width: 260px; }
+</style>
+
 <div id="cnt-content"><div class="container"><div class="cnt-normal">
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	<div class="hide">
@@ -23,59 +28,46 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="14">Tingkat Pendidikan</th>
-					<th rowspan="2" colspan="3">Jumlah</th>
+					<th colspan="9">Jenis Inventaris Tanah</th>
+					<th rowspan="3">Keterangan</th>
 					<th rowspan="3">&nbsp;</th>
 				</tr>
 				<tr>
-					<th colspan="2">S3</th>
-					<th colspan="2">S2</th>
-					<th colspan="2">S1 / D4</th>
-					<th colspan="2">D3</th>
-					<th colspan="2">SLTA</th>
-					<th colspan="2">SLTP</th>
-					<th colspan="2">SD</th>
+					<th>Tanah Bangunan Kantor Pemerintah</th>
+					<th>Tanah Bangunan Pos Jaga/Pondok Kerja/Pos Pengamatan</th>
+					<th>Tanah Bangunan Rumah Negara Gol II</th>
+					<th>Tanah Bangunan Rumah Negara Gol III</th>
+					<th>Tanah Bangunan Rumah Negara Gol IV</th>
+					<th>Tanah Bangunan Mess/Wisma/ Asrama</th>
+					<th>Tanah Bangunan Markas Polhut/SPORC</th>
+					<th>Tanah Bangunan DAOPS/ Brigdalkar</th>
+					<th>Tanah Bangunan PLG/PPG</th>
 				</tr>
 				<tr>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>Total</th>
+					<th>(m2)</th>
+					<th>(m2)</th>
+					<th>(m2)</th>
+					<th>(m2)</th>
+					<th>(m2)</th>
+					<th>(m2)</th>
+					<th>(m2)</th>
+					<th>(m2)</th>
+					<th>(m2)</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['s3_l']; ?></td>
-					<td class="center"><?php echo $row['s3_p']; ?></td>
-					<td class="center"><?php echo $row['s2_l']; ?></td>
-					<td class="center"><?php echo $row['s2_p']; ?></td>
-					<td class="center"><?php echo $row['s1_l']; ?></td>
-					<td class="center"><?php echo $row['s1_p']; ?></td>
-					<td class="center"><?php echo $row['d3_l']; ?></td>
-					<td class="center"><?php echo $row['d3_p']; ?></td>
-					<td class="center"><?php echo $row['slta_l']; ?></td>
-					<td class="center"><?php echo $row['slta_p']; ?></td>
-					<td class="center"><?php echo $row['sltp_l']; ?></td>
-					<td class="center"><?php echo $row['sltp_p']; ?></td>
-					<td class="center"><?php echo $row['sd_l']; ?></td>
-					<td class="center"><?php echo $row['sd_p']; ?></td>
-					<td class="center"><?php echo $row['total_l']; ?></td>
-					<td class="center"><?php echo $row['total_p']; ?></td>
-					<td class="center"><?php echo $row['total']; ?></td>
+					<td class="center"><?php echo $row['kantor_pemerintah']; ?></td>
+					<td class="center"><?php echo $row['pos_jaga']; ?></td>
+					<td class="center"><?php echo $row['rumah_negara_gol2']; ?></td>
+					<td class="center"><?php echo $row['rumah_negara_gol3']; ?></td>
+					<td class="center"><?php echo $row['rumah_negara_gol4']; ?></td>
+					<td class="center"><?php echo $row['wisma']; ?></td>
+					<td class="center"><?php echo $row['markas_polhut']; ?></td>
+					<td class="center"><?php echo $row['daops']; ?></td>
+					<td class="center"><?php echo $row['plg_ppg']; ?></td>
+					<td class="center"><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -91,48 +83,38 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">S3 L</div>
-		<div class="input"><input type="text" name="s3_l" class="short" /></div>
+		<div class="label">Tanah Bangunan Kantor Pemerintah</div>
+		<div class="input"><input type="text" name="kantor_pemerintah" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S3 P</div>
-		<div class="input"><input type="text" name="s3_p" class="short" /></div>
+		<div class="label">Tanah Bangunan Pos Jaga/Pondok Kerja/Pos Pengamatan</div>
+		<div class="input"><input type="text" name="pos_jaga" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S2 L</div>
-		<div class="input"><input type="text" name="s2_l" class="short" /></div>
+		<div class="label">Tanah Bangunan Rumah Negara Gol II</div>
+		<div class="input"><input type="text" name="rumah_negara_gol2" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S2 P</div>
-		<div class="input"><input type="text" name="s2_p" class="short" /></div>
+		<div class="label">Tanah Bangunan Rumah Negara Gol III</div>
+		<div class="input"><input type="text" name="rumah_negara_gol3" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S1 L</div>
-		<div class="input"><input type="text" name="s1_l" class="short" /></div>
+		<div class="label">Tanah Bangunan Rumah Negara Gol IV</div>
+		<div class="input"><input type="text" name="rumah_negara_gol4" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S1 P</div>
-		<div class="input"><input type="text" name="s1_p" class="short" /></div>
+		<div class="label">Tanah Bangunan Mess/Wisma/ Asrama</div>
+		<div class="input"><input type="text" name="wisma" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">D3 L</div>
-		<div class="input"><input type="text" name="d3_l" class="short" /></div>
+		<div class="label">Tanah Bangunan Markas Polhut/SPORC</div>
+		<div class="input"><input type="text" name="markas_polhut" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">D3 P</div>
-		<div class="input"><input type="text" name="d3_p" class="short" /></div>
+		<div class="label">Tanah Bangunan DAOPS/ Brigdalkar</div>
+		<div class="input"><input type="text" name="daops" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SLTA L</div>
-		<div class="input"><input type="text" name="slta_l" class="short" /></div>
+		<div class="label">Tanah Bangunan PLG/PPG</div>
+		<div class="input"><input type="text" name="plg_ppg" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SLTA P</div>
-		<div class="input"><input type="text" name="slta_p" class="short" /></div>
+		
+		<div class="label">Keterangan</div>
+		<div class="input"><textarea name="keterangan" class="short"></textarea></div>
 		<div class="clear"></div>
-		<div class="label">SLTP L</div>
-		<div class="input"><input type="text" name="sltp_l" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SLTP P</div>
-		<div class="input"><input type="text" name="sltp_p" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SD L</div>
-		<div class="input"><input type="text" name="sd_l" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SD P</div>
-		<div class="input"><input type="text" name="sd_p" class="short" /></div>
-		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

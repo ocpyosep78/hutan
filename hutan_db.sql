@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 07, 2014 at 11:14 PM
+-- Generation Time: Mar 09, 2014 at 11:18 AM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_04` (
   `kawasan_luas_baru` int(11) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `kkbhl_table_04`
@@ -241,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_08` (
   `keterangan` varchar(255) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `kkbhl_table_08`
@@ -273,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_09` (
   `keterangan` varchar(255) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `kkbhl_table_09`
@@ -302,7 +302,7 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_10` (
   `keterangan` varchar(255) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `kkbhl_table_10`
@@ -327,7 +327,7 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_11` (
   `keterangan` varchar(255) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `kkbhl_table_11`
@@ -350,7 +350,7 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_12` (
   `potensi` varchar(255) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `kkbhl_table_12`
@@ -448,20 +448,20 @@ INSERT INTO `module` (`id`, `content`, `sumber_dana`, `periode`, `urutan`, `alia
 (41, 'TABEL 11. POTENSI KAWASAN EKOSISTEM ESENSIAL ', 'UPT', 'Triwulan', 11, 'table_11', 3),
 (42, 'TABEL 12. POTENSI KAWASAN KONSERVASI LAHAN BASAH ', 'UPT', 'Triwulan', 12, 'table_12', 3),
 (43, 'TABEL 1.  LUASAN KEBAKARAN HUTAN BERDASARKAN FUNGSI HUTAN ', 'UPT', 'Bulanan', 1, 'table_01', 4),
-(44, 'TABEL 2.  LAPORAN  HASIL GROUND CHECK HOTSPOT/TITIK PANAS', 'UPT', 'Bulanan', 2, '', 4),
-(45, 'TABEL 3.  REKAPITULASI JUMLAH HOTSPOT/TITIK PANAS', 'UPT', 'Bulanan', 3, '', 4),
-(46, 'TABEL 4.  JUMLAH DAN SEBARAN PERSONIL BRIGDALKAR MANGGALA AGNI DAOPS ', 'UPT', 'Semester', 4, '', 4),
-(47, 'TABEL 5.  JUMLAH DAN SEBARAN PERSONIL BRIGDALKAR MANGGALA AGNI NON DAOPS ', 'UPT', 'Semester', 5, '', 4),
-(48, 'TABEL 6.  PEMBENTUKAN DAN PELATIHAN  MASYARAKAT PEDULI API  (MPA)  ', 'UPT', 'Semester', 6, '', 4),
-(49, 'TABEL 7.  KEADAAN SUMBER DAYA MANUSIA PENGENDALIAN KEBAKARAN HUTAN ', 'UPT', 'Semester', 7, '', 4),
-(50, 'TABEL 8.  PELATIHAN YANG TELAH DIIKUTI OLEH ANGGOTA PENGENDALIAN KEBAKARAN HUTAN MANGGALA AGNI', 'UPT', 'Semester', 8, '', 4),
-(51, 'TABEL 9.  PERALATAN TANGAN ', 'UPT', 'Semester', 9, '', 4),
-(52, 'TABEL 10. FASILITAS BANGUNAN', 'UPT', 'Semester', 10, '', 4),
-(53, 'TABEL 11. PERLENGKAPAN PERORANGAN', 'UPT', 'Semester', 11, '', 4),
-(54, 'TABEL 12. PERALATAN TRANSPORTASI ', 'UPT', 'Semester', 12, '', 4),
-(55, 'TABEL 13. PERALATAN MESIN POMPA DAN KELENGKAPANNYA ', 'UPT', 'Semester', 13, '', 4),
-(56, 'TABEL 14. PERALATAN KOMUNIKASI DAN PENGAMATAN CUACA ', 'UPT', 'Semester', 14, '', 4),
-(57, 'TABEL 15. PERLENGKAPAN BEREGU ', 'UPT', 'Semester', 15, '', 4),
+(44, 'TABEL 2.  LAPORAN  HASIL GROUND CHECK HOTSPOT/TITIK PANAS', 'UPT', 'Bulanan', 2, 'table_02', 4),
+(45, 'TABEL 3.  REKAPITULASI JUMLAH HOTSPOT/TITIK PANAS', 'UPT', 'Bulanan', 3, 'table_03', 4),
+(46, 'TABEL 4.  JUMLAH DAN SEBARAN PERSONIL BRIGDALKAR MANGGALA AGNI DAOPS ', 'UPT', 'Semester', 4, 'table_04', 4),
+(47, 'TABEL 5.  JUMLAH DAN SEBARAN PERSONIL BRIGDALKAR MANGGALA AGNI NON DAOPS ', 'UPT', 'Semester', 5, 'table_05', 4),
+(48, 'TABEL 6.  PEMBENTUKAN DAN PELATIHAN  MASYARAKAT PEDULI API  (MPA)  ', 'UPT', 'Semester', 6, 'table_06', 4),
+(49, 'TABEL 7.  KEADAAN SUMBER DAYA MANUSIA PENGENDALIAN KEBAKARAN HUTAN ', 'UPT', 'Semester', 7, 'table_07', 4),
+(50, 'TABEL 8.  PELATIHAN YANG TELAH DIIKUTI OLEH ANGGOTA PENGENDALIAN KEBAKARAN HUTAN MANGGALA AGNI', 'UPT', 'Semester', 8, 'table_08', 4),
+(51, 'TABEL 9.  PERALATAN TANGAN ', 'UPT', 'Semester', 9, 'table_09', 4),
+(52, 'TABEL 10. FASILITAS BANGUNAN', 'UPT', 'Semester', 10, 'table_10', 4),
+(53, 'TABEL 11. PERLENGKAPAN PERORANGAN', 'UPT', 'Semester', 11, 'table_11', 4),
+(54, 'TABEL 12. PERALATAN TRANSPORTASI ', 'UPT', 'Semester', 12, 'table_12', 4),
+(55, 'TABEL 13. PERALATAN MESIN POMPA DAN KELENGKAPANNYA ', 'UPT', 'Semester', 13, 'table_13', 4),
+(56, 'TABEL 14. PERALATAN KOMUNIKASI DAN PENGAMATAN CUACA ', 'UPT', 'Semester', 14, 'table_14', 4),
+(57, 'TABEL 15. PERLENGKAPAN BEREGU ', 'UPT', 'Semester', 15, 'table_15', 4),
 (58, 'TABEL 1. DATA POTENSI WISATA ALAM DI TAMAN NASIONAL', 'UPT', 'Semester ', 1, 'table_01', 5),
 (59, 'TABEL 2. DATA POTENSI AIR  DI TAMAN NASIONAL', 'UPT', 'Semester ', 2, '', 5),
 (60, 'TABEL 3. DATA POTENSI KARBON  DI TAMAN NASIONAL', 'UPT', 'Semester ', 3, '', 5),
@@ -479,21 +479,21 @@ INSERT INTO `module` (`id`, `content`, `sumber_dana`, `periode`, `urutan`, `alia
 (72, 'TABEL 15. JUMLAH KADER, KELOMPOK PENCINTA ALAM DAN KELOMPOK SWADAYA MASYARAKAT/PROFESI', 'UPT', 'Triwulan', 15, '', 5),
 (73, 'TABEL 16. PROMOSI DAN PUBLIKASI JASA LINGKUNGAN', 'UPT', 'Triwulan', 16, '', 5),
 (74, 'TABEL 1.  SEBARAN PNS/CPNS BERDASARKAN TINGKAT PENDIDIKAN ', 'UPT ', 'Semester ', 1, 'table_01', 6),
-(75, 'TABEL 2.  SEBARAN PNS/CPNS BERDASARKAN  GOLONGAN', 'UPT', 'Semester ', 2, '', 6),
-(76, 'TABEL 3.  SEBARAN PNS BERDASARKAN NAMA JABATAN FUNGSIONAL', 'UPT', 'Semester ', 3, '', 6),
-(77, 'TABEL 4.  SEBARAN PEGAWAI HARIAN LEPAS MENURUT TINGKAT PENDIDIKAN ', 'UPT', 'Semester ', 4, '', 6),
-(78, 'TABEL 5.  SEBARAN PNS MENURUT JENIS JABATAN ', 'UPT', 'Semester ', 5, '', 6),
-(79, 'TABEL 6.  SEBARAN PEGAWAI FUNGSIONAL MENURUT TINGKAT PENDIDIKAN ', 'UPT', 'Semester ', 6, '', 6),
-(80, 'TABEL 7.  SEBARAN PEGAWAI FUNGSIONAL MENURUT GOLONGAN / RUANG', 'UPT', 'Semester ', 7, '', 6),
-(81, 'TABEL 8.  PAGU DAN REALISASI ANGGARAN', 'UPT', 'Bulanan', 8, '', 6),
-(82, 'TABEL 9.  REALISASI PNBP MENURUT JENIS PENERIMAAN ', 'UPT', 'Semester ', 9, '', 6),
-(83, 'TABEL 10. DAFTAR INVENTARIS TANAH BANGUNAN', 'UPT', 'Tahunan', 10, '', 6),
-(84, 'TABEL 11. DAFTAR INVENTARIS GEDUNG DAN BANGUNAN ', 'UPT', 'Tahunan', 11, '', 6),
-(85, 'TABEL 12. DAFTAR INVENTARIS ALAT TRANSPORTASI', 'UPT', 'Tahunan', 12, '', 6),
-(86, 'TABEL 13. DAFTAR  MUTASI BARANG', 'UPT', 'Tahunan', 13, '', 6),
-(87, 'TABEL 14. DAFTAR KERJASAMA/KEMITRAAN/HLN', 'UPT', 'Tahunan', 14, '', 6),
-(88, 'TABEL 15. DAFTAR TENAGA AHLI ASING DI LINGKUP DIREKTORAT JENDERAL PHKA ', 'UPT', 'Tahunan', 15, '', 6),
-(89, 'TABEL 16. PUBLIKASI BIDANG PHKA', 'UPT', 'Triwulan', 16, '', 6);
+(75, 'TABEL 2.  SEBARAN PNS/CPNS BERDASARKAN  GOLONGAN', 'UPT', 'Semester ', 2, 'table_02', 6),
+(76, 'TABEL 3.  SEBARAN PNS BERDASARKAN NAMA JABATAN FUNGSIONAL', 'UPT', 'Semester ', 3, 'table_03', 6),
+(77, 'TABEL 4.  SEBARAN PEGAWAI HARIAN LEPAS MENURUT TINGKAT PENDIDIKAN ', 'UPT', 'Semester ', 4, 'table_04', 6),
+(78, 'TABEL 5.  SEBARAN PNS MENURUT JENIS JABATAN ', 'UPT', 'Semester ', 5, 'table_05', 6),
+(79, 'TABEL 6.  SEBARAN PEGAWAI FUNGSIONAL MENURUT TINGKAT PENDIDIKAN ', 'UPT', 'Semester ', 6, 'table_06', 6),
+(80, 'TABEL 7.  SEBARAN PEGAWAI FUNGSIONAL MENURUT GOLONGAN / RUANG', 'UPT', 'Semester ', 7, 'table_07', 6),
+(81, 'TABEL 8.  PAGU DAN REALISASI ANGGARAN', 'UPT', 'Bulanan', 8, 'table_08', 6),
+(82, 'TABEL 9.  REALISASI PNBP MENURUT JENIS PENERIMAAN ', 'UPT', 'Semester ', 9, 'table_09', 6),
+(83, 'TABEL 10. DAFTAR INVENTARIS TANAH BANGUNAN', 'UPT', 'Tahunan', 10, 'table_10', 6),
+(84, 'TABEL 11. DAFTAR INVENTARIS GEDUNG DAN BANGUNAN ', 'UPT', 'Tahunan', 11, 'table_11', 6),
+(85, 'TABEL 12. DAFTAR INVENTARIS ALAT TRANSPORTASI', 'UPT', 'Tahunan', 12, 'table_12', 6),
+(86, 'TABEL 13. DAFTAR  MUTASI BARANG', 'UPT', 'Tahunan', 13, 'table_13', 6),
+(87, 'TABEL 14. DAFTAR KERJASAMA/KEMITRAAN/HLN', 'UPT', 'Tahunan', 14, 'table_14', 6),
+(88, 'TABEL 15. DAFTAR TENAGA AHLI ASING DI LINGKUP DIREKTORAT JENDERAL PHKA ', 'UPT', 'Tahunan', 15, 'table_15', 6),
+(89, 'TABEL 16. PUBLIKASI BIDANG PHKA', 'UPT', 'Triwulan', 16, 'table_16', 6);
 
 -- --------------------------------------------------------
 
@@ -629,6 +629,528 @@ CREATE TABLE IF NOT EXISTS `pkh_table_01` (
 
 INSERT INTO `pkh_table_01` (`id`, `tanggal_kebakaran`, `lintang`, `bujur`, `lokasi`, `hutan_sm`, `hutan_ca`, `hutan_tn`, `hutan_thr`, `hutan_twa`, `hutan_tb`, `hutan_hl`, `hutan_hti`, `hutan_ha`, `hutan_htr`, `hutan_terbakar`, `kerugian`, `luas_lain`, `update_time`) VALUES
 (2, '2014-03-31', '1', '2', '3', 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, '14', '15', '16', '2014-03-06 11:39:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_02`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_02` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `daops` varchar(255) NOT NULL,
+  `waktu` varchar(255) NOT NULL,
+  `satelit_lintang` varchar(255) NOT NULL,
+  `satelit_bujur` varchar(255) NOT NULL,
+  `sumber_lintang` varchar(255) NOT NULL,
+  `sumber_bujur` varchar(255) NOT NULL,
+  `ground_check` varchar(255) NOT NULL,
+  `koordinat_lintang` varchar(255) NOT NULL,
+  `koordinat_bujur` varchar(255) NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
+  `hutan_sm` int(11) NOT NULL,
+  `hutan_ca` int(11) NOT NULL,
+  `hutan_tn` int(11) NOT NULL,
+  `hutan_thr` int(11) NOT NULL,
+  `hutan_twa` int(11) NOT NULL,
+  `hutan_tb` int(11) NOT NULL,
+  `hutan_hl` int(11) NOT NULL,
+  `hutan_hti` int(11) NOT NULL,
+  `hutan_ha` int(11) NOT NULL,
+  `hutan_htr` int(11) NOT NULL,
+  `hutan_luar` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pkh_table_02`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_03`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_03` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `propinsi` varchar(255) NOT NULL,
+  `hutan_sm` int(11) NOT NULL,
+  `hutan_ca` int(11) NOT NULL,
+  `hutan_tn` int(11) NOT NULL,
+  `hutan_thr` int(11) NOT NULL,
+  `hutan_twa` int(11) NOT NULL,
+  `hutan_tb` int(11) NOT NULL,
+  `hutan_hl` int(11) NOT NULL,
+  `hutan_hti` int(11) NOT NULL,
+  `hutan_ha` int(11) NOT NULL,
+  `hutan_htr` int(11) NOT NULL,
+  `hotspot` int(11) NOT NULL,
+  `hutan_luar` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `pkh_table_03`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_04`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_04` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `daops` varchar(255) NOT NULL,
+  `sk_keputusan` varchar(255) NOT NULL,
+  `jumlah_regu` int(11) NOT NULL,
+  `pns_s` int(11) NOT NULL,
+  `pns_b` int(11) NOT NULL,
+  `kontrak_s` int(11) NOT NULL,
+  `kontrak_b` int(11) NOT NULL,
+  `jumlah_anggota` int(11) NOT NULL,
+  `jumlah_gajah` int(11) NOT NULL,
+  `jumlah_pawang` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pkh_table_04`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_05`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_05` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sk_keputusan` varchar(255) NOT NULL,
+  `jumlah_regu` int(11) NOT NULL,
+  `penempatan` varchar(255) NOT NULL,
+  `jabatan_polhut` int(11) NOT NULL,
+  `jabatan_peh` int(11) NOT NULL,
+  `jabatan_penyuluh` int(11) NOT NULL,
+  `jabatan_non_struktural` int(11) NOT NULL,
+  `jabatan_honorer` int(11) NOT NULL,
+  `jumlah_gajah` int(11) NOT NULL,
+  `jumlah_pawang` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pkh_table_05`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_06`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_06` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `propinsi` varchar(255) NOT NULL,
+  `pkh` varchar(255) NOT NULL,
+  `upt` varchar(255) NOT NULL,
+  `sk_pembentukan` varchar(255) NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
+  `regu` varchar(255) NOT NULL,
+  `jumlah_anggota` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pkh_table_06`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_07`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_07` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `propinsi` varchar(255) NOT NULL,
+  `daops_nama` varchar(255) NOT NULL,
+  `daops_regu` varchar(255) NOT NULL,
+  `daops_jumlah` int(11) NOT NULL,
+  `daops_non_satuan` varchar(255) NOT NULL,
+  `daops_non_regu` varchar(255) NOT NULL,
+  `daops_non_jumlah` int(11) NOT NULL,
+  `masyarakat_regu` varchar(255) NOT NULL,
+  `masyarakat_jumlah` int(11) NOT NULL,
+  `instansi_regu` varchar(255) NOT NULL,
+  `instansi_jumlah` int(11) NOT NULL,
+  `pemangku_regu` varchar(255) NOT NULL,
+  `pemangku_jumlah` int(11) NOT NULL,
+  `jumlah_regu` varchar(255) NOT NULL,
+  `jumlah_anggota` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pkh_table_07`
+--
+
+INSERT INTO `pkh_table_07` (`id`, `propinsi`, `daops_nama`, `daops_regu`, `daops_jumlah`, `daops_non_satuan`, `daops_non_regu`, `daops_non_jumlah`, `masyarakat_regu`, `masyarakat_jumlah`, `instansi_regu`, `instansi_jumlah`, `pemangku_regu`, `pemangku_jumlah`, `jumlah_regu`, `jumlah_anggota`, `keterangan`, `update_time`) VALUES
+(1, '11', '2', '33', 4, '55', '6', 7, '8', 9, '10', 11, '12', 13, '14', 15, '16', '2014-03-08 16:11:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_08`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_08` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `jumlah_regu` int(11) NOT NULL,
+  `jumlah_orang` int(11) NOT NULL,
+  `tingkat_1` int(11) NOT NULL,
+  `tingkat_2` int(11) NOT NULL,
+  `tingkat_3` int(11) NOT NULL,
+  `smart` int(11) NOT NULL,
+  `danru` int(11) NOT NULL,
+  `kadaop` int(11) NOT NULL,
+  `spbk` int(11) NOT NULL,
+  `pompa` int(11) NOT NULL,
+  `tot` int(11) NOT NULL,
+  `mmp` int(11) NOT NULL,
+  `orakom` int(11) NOT NULL,
+  `pb_kamp` int(11) NOT NULL,
+  `pulbaket` int(11) NOT NULL,
+  `mcn` int(11) NOT NULL,
+  `gps` int(11) NOT NULL,
+  `gis` int(11) NOT NULL,
+  `sar` int(11) NOT NULL,
+  `ics` int(11) NOT NULL,
+  `aws` int(11) NOT NULL,
+  `lain` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `pkh_table_08`
+--
+
+INSERT INTO `pkh_table_08` (`id`, `jenis`, `title`, `jumlah_regu`, `jumlah_orang`, `tingkat_1`, `tingkat_2`, `tingkat_3`, `smart`, `danru`, `kadaop`, `spbk`, `pompa`, `tot`, `mmp`, `orakom`, `pb_kamp`, `pulbaket`, `mcn`, `gps`, `gis`, `sar`, `ics`, `aws`, `lain`, `update_time`) VALUES
+(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0000-00-00 00:00:00'),
+(2, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_09`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_09` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `sekop_baik` int(11) NOT NULL,
+  `sekop_rusak` int(11) NOT NULL,
+  `garu_baik` int(11) NOT NULL,
+  `garu_rusak` int(11) NOT NULL,
+  `garu_tajam_baik` int(11) NOT NULL,
+  `garu_tajam_rusak` int(11) NOT NULL,
+  `kapak_baik` int(11) NOT NULL,
+  `kapak_rusak` int(11) NOT NULL,
+  `gepyok_baik` int(11) NOT NULL,
+  `gepyok_rusak` int(11) NOT NULL,
+  `cangkul_baik` int(11) NOT NULL,
+  `cangkul_rusak` int(11) NOT NULL,
+  `golok_baik` int(11) NOT NULL,
+  `golok_rusak` int(11) NOT NULL,
+  `pengait_baik` int(11) NOT NULL,
+  `pengait_rusak` int(11) NOT NULL,
+  `obor_baik` int(11) NOT NULL,
+  `obor_rusak` int(11) NOT NULL,
+  `shooter_baik` int(11) NOT NULL,
+  `shooter_rusak` int(11) NOT NULL,
+  `kirir_baik` int(11) NOT NULL,
+  `kirir_rusak` int(11) NOT NULL,
+  `chainsaw_baik` int(11) NOT NULL,
+  `chainsaw_rusak` int(11) NOT NULL,
+  `lain` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `pkh_table_09`
+--
+
+INSERT INTO `pkh_table_09` (`id`, `jenis`, `title`, `sekop_baik`, `sekop_rusak`, `garu_baik`, `garu_rusak`, `garu_tajam_baik`, `garu_tajam_rusak`, `kapak_baik`, `kapak_rusak`, `gepyok_baik`, `gepyok_rusak`, `cangkul_baik`, `cangkul_rusak`, `golok_baik`, `golok_rusak`, `pengait_baik`, `pengait_rusak`, `obor_baik`, `obor_rusak`, `shooter_baik`, `shooter_rusak`, `kirir_baik`, `kirir_rusak`, `chainsaw_baik`, `chainsaw_rusak`, `lain`, `update_time`) VALUES
+(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_10`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_10` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `gudang_baik` int(11) NOT NULL,
+  `gudang_rusak` int(11) NOT NULL,
+  `kantor_baik` int(11) NOT NULL,
+  `kantor_rusak` int(11) NOT NULL,
+  `garasi_baik` int(11) NOT NULL,
+  `garasi_rusak` int(11) NOT NULL,
+  `bengkel_baik` int(11) NOT NULL,
+  `bengkel_rusak` int(11) NOT NULL,
+  `tempat_cuci_baik` int(11) NOT NULL,
+  `tempat_cuci_rusak` int(11) NOT NULL,
+  `tandon_baik` int(11) NOT NULL,
+  `tandon_rusak` int(11) NOT NULL,
+  `olahraga_baik` int(11) NOT NULL,
+  `olahraga_rusak` int(11) NOT NULL,
+  `pelatihan_baik` int(11) NOT NULL,
+  `pelatihan_rusak` int(11) NOT NULL,
+  `barak_baik` int(11) NOT NULL,
+  `barak_rusak` int(11) NOT NULL,
+  `ibadah_baik` int(11) NOT NULL,
+  `ibadah_rusak` int(11) NOT NULL,
+  `dapur_baik` int(11) NOT NULL,
+  `dapur_rusak` int(11) NOT NULL,
+  `menara_baik` int(11) NOT NULL,
+  `menara_rusak` int(11) NOT NULL,
+  `lain` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pkh_table_10`
+--
+
+INSERT INTO `pkh_table_10` (`id`, `jenis`, `title`, `gudang_baik`, `gudang_rusak`, `kantor_baik`, `kantor_rusak`, `garasi_baik`, `garasi_rusak`, `bengkel_baik`, `bengkel_rusak`, `tempat_cuci_baik`, `tempat_cuci_rusak`, `tandon_baik`, `tandon_rusak`, `olahraga_baik`, `olahraga_rusak`, `pelatihan_baik`, `pelatihan_rusak`, `barak_baik`, `barak_rusak`, `ibadah_baik`, `ibadah_rusak`, `dapur_baik`, `dapur_rusak`, `menara_baik`, `menara_rusak`, `lain`, `update_time`) VALUES
+(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_11`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_11` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `pakaian_baik` int(11) NOT NULL,
+  `pakaian_rusak` int(11) NOT NULL,
+  `helm_baik` int(11) NOT NULL,
+  `helm_rusak` int(11) NOT NULL,
+  `lampu_baik` int(11) NOT NULL,
+  `lampu_rusak` int(11) NOT NULL,
+  `gogles_baik` int(11) NOT NULL,
+  `gogles_rusak` int(11) NOT NULL,
+  `slayer_baik` int(11) NOT NULL,
+  `slayer_rusak` int(11) NOT NULL,
+  `sarung_tangan_baik` int(11) NOT NULL,
+  `sarung_tangan_rusak` int(11) NOT NULL,
+  `sabuk_baik` int(11) NOT NULL,
+  `sabuk_rusak` int(11) NOT NULL,
+  `veples_baik` int(11) NOT NULL,
+  `veples_rusak` int(11) NOT NULL,
+  `sepatu_baik` int(11) NOT NULL,
+  `sepatu_rusak` int(11) NOT NULL,
+  `ransel_baik` int(11) NOT NULL,
+  `ransel_rusak` int(11) NOT NULL,
+  `lain` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pkh_table_11`
+--
+
+INSERT INTO `pkh_table_11` (`id`, `jenis`, `title`, `pakaian_baik`, `pakaian_rusak`, `helm_baik`, `helm_rusak`, `lampu_baik`, `lampu_rusak`, `gogles_baik`, `gogles_rusak`, `slayer_baik`, `slayer_rusak`, `sarung_tangan_baik`, `sarung_tangan_rusak`, `sabuk_baik`, `sabuk_rusak`, `veples_baik`, `veples_rusak`, `sepatu_baik`, `sepatu_rusak`, `ransel_baik`, `ransel_rusak`, `lain`, `update_time`) VALUES
+(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_12`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_12` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `slip_on_baik` int(11) NOT NULL,
+  `slip_on_rusak` int(11) NOT NULL,
+  `monilog_baik` int(11) NOT NULL,
+  `monilog_rusak` int(11) NOT NULL,
+  `sepeda_baik` int(11) NOT NULL,
+  `sepeda_rusak` int(11) NOT NULL,
+  `mobil_patroli_baik` int(11) NOT NULL,
+  `mobil_patroli_rusak` int(11) NOT NULL,
+  `mobil_operasional_baik` int(11) NOT NULL,
+  `mobil_operasional_rusak` int(11) NOT NULL,
+  `darat_lain` varchar(255) NOT NULL,
+  `boat_baik` int(11) NOT NULL,
+  `boat_rusak` int(11) NOT NULL,
+  `klotok_baik` int(11) NOT NULL,
+  `klotok_rusak` int(11) NOT NULL,
+  `katinting_baik` int(11) NOT NULL,
+  `katinting_rusak` int(11) NOT NULL,
+  `air_lain` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pkh_table_12`
+--
+
+INSERT INTO `pkh_table_12` (`id`, `jenis`, `title`, `slip_on_baik`, `slip_on_rusak`, `monilog_baik`, `monilog_rusak`, `sepeda_baik`, `sepeda_rusak`, `mobil_patroli_baik`, `mobil_patroli_rusak`, `mobil_operasional_baik`, `mobil_operasional_rusak`, `darat_lain`, `boat_baik`, `boat_rusak`, `klotok_baik`, `klotok_rusak`, `katinting_baik`, `katinting_rusak`, `air_lain`, `update_time`) VALUES
+(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_13`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_13` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `impuls_baik` int(11) NOT NULL,
+  `impuls_rusak` int(11) NOT NULL,
+  `kompresor_baik` int(11) NOT NULL,
+  `kompresor_rusak` int(11) NOT NULL,
+  `pompa_jinjing_baik` int(11) NOT NULL,
+  `pompa_jinjing_rusak` int(11) NOT NULL,
+  `pompa_apung_baik` int(11) NOT NULL,
+  `pompa_apung_rusak` int(11) NOT NULL,
+  `pompa_induk_baik` int(11) NOT NULL,
+  `pompa_induk_rusak` int(11) NOT NULL,
+  `pompa_sorong_baik` int(11) NOT NULL,
+  `pompa_sorong_rusak` int(11) NOT NULL,
+  `tangki_baik` int(11) NOT NULL,
+  `tangki_rusak` int(11) NOT NULL,
+  `selang_15_baik` int(11) NOT NULL,
+  `selang_15_rusak` int(11) NOT NULL,
+  `selang_25_baik` int(11) NOT NULL,
+  `selang_25_rusak` int(11) NOT NULL,
+  `nozel_15_baik` int(11) NOT NULL,
+  `nozel_15_rusak` int(11) NOT NULL,
+  `nozel_25_baik` int(11) NOT NULL,
+  `nozel_25_rusak` int(11) NOT NULL,
+  `valve_baik` int(11) NOT NULL,
+  `valve_rusak` int(11) NOT NULL,
+  `sunbut_baik` int(11) NOT NULL,
+  `sunbut_rusak` int(11) NOT NULL,
+  `kopling_baik` int(11) NOT NULL,
+  `kopling_rusak` int(11) NOT NULL,
+  `pencuci_baik` int(11) NOT NULL,
+  `pencuci_rusak` int(11) NOT NULL,
+  `lain` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pkh_table_13`
+--
+
+INSERT INTO `pkh_table_13` (`id`, `jenis`, `title`, `impuls_baik`, `impuls_rusak`, `kompresor_baik`, `kompresor_rusak`, `pompa_jinjing_baik`, `pompa_jinjing_rusak`, `pompa_apung_baik`, `pompa_apung_rusak`, `pompa_induk_baik`, `pompa_induk_rusak`, `pompa_sorong_baik`, `pompa_sorong_rusak`, `tangki_baik`, `tangki_rusak`, `selang_15_baik`, `selang_15_rusak`, `selang_25_baik`, `selang_25_rusak`, `nozel_15_baik`, `nozel_15_rusak`, `nozel_25_baik`, `nozel_25_rusak`, `valve_baik`, `valve_rusak`, `sunbut_baik`, `sunbut_rusak`, `kopling_baik`, `kopling_rusak`, `pencuci_baik`, `pencuci_rusak`, `lain`, `update_time`) VALUES
+(1, '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_14`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_14` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `handy_talky_baik` int(11) NOT NULL,
+  `handy_talky_rusak` int(11) NOT NULL,
+  `radio_baik` int(11) NOT NULL,
+  `radio_rusak` int(11) NOT NULL,
+  `megaphone_baik` int(11) NOT NULL,
+  `megaphone_rusak` int(11) NOT NULL,
+  `peluit_baik` int(11) NOT NULL,
+  `peluit_rusak` int(11) NOT NULL,
+  `gps_baik` int(11) NOT NULL,
+  `gps_rusak` int(11) NOT NULL,
+  `telepon_baik` int(11) NOT NULL,
+  `telepon_rusak` int(11) NOT NULL,
+  `internet_baik` int(11) NOT NULL,
+  `internet_rusak` int(11) NOT NULL,
+  `cuaca_baik` int(11) NOT NULL,
+  `cuaca_rusak` int(11) NOT NULL,
+  `lain` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pkh_table_14`
+--
+
+INSERT INTO `pkh_table_14` (`id`, `jenis`, `title`, `handy_talky_baik`, `handy_talky_rusak`, `radio_baik`, `radio_rusak`, `megaphone_baik`, `megaphone_rusak`, `peluit_baik`, `peluit_rusak`, `gps_baik`, `gps_rusak`, `telepon_baik`, `telepon_rusak`, `internet_baik`, `internet_rusak`, `cuaca_baik`, `cuaca_rusak`, `lain`, `update_time`) VALUES
+(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pkh_table_15`
+--
+
+CREATE TABLE IF NOT EXISTS `pkh_table_15` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `tenda_baik` int(11) NOT NULL,
+  `tenda_rusak` int(11) NOT NULL,
+  `masak_baik` int(11) NOT NULL,
+  `masak_rusak` int(11) NOT NULL,
+  `p3k_baik` int(11) NOT NULL,
+  `p3k_rusak` int(11) NOT NULL,
+  `generator_baik` int(11) NOT NULL,
+  `generator_rusak` int(11) NOT NULL,
+  `lain_baik` int(11) NOT NULL,
+  `lain_rusak` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pkh_table_15`
+--
+
+INSERT INTO `pkh_table_15` (`id`, `jenis`, `title`, `tenda_baik`, `tenda_rusak`, `masak_baik`, `masak_rusak`, `p3k_baik`, `p3k_rusak`, `generator_baik`, `generator_rusak`, `lain_baik`, `lain_rusak`, `update_time`) VALUES
+(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1037,6 +1559,38 @@ CREATE TABLE IF NOT EXISTS `pph_table_15` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pph_table_16`
+--
+
+CREATE TABLE IF NOT EXISTS `pph_table_16` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `senpi_panjang_fisik` varchar(255) NOT NULL,
+  `senpi_panjang_buku` varchar(255) NOT NULL,
+  `senpi_panjang_kondisi` varchar(255) NOT NULL,
+  `senpi_genggam_fisik` varchar(255) NOT NULL,
+  `senpi_genggam_buku` varchar(255) NOT NULL,
+  `senpi_genggam_kondisi` varchar(255) NOT NULL,
+  `bius_fisik` varchar(255) NOT NULL,
+  `bius_buku` varchar(255) NOT NULL,
+  `bius_kondisi` varchar(255) NOT NULL,
+  `amunisi_panjang` varchar(255) NOT NULL,
+  `amunisi_genggam` varchar(255) NOT NULL,
+  `latihan` varchar(255) NOT NULL,
+  `operasi` varchar(255) NOT NULL,
+  `sisa` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pph_table_16`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sekretariat_table_01`
 --
 
@@ -1064,8 +1618,451 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_01` (
 -- Dumping data for table `sekretariat_table_01`
 --
 
-INSERT INTO `sekretariat_table_01` (`id`, `s3_l`, `s3_p`, `s2_l`, `s2_p`, `s1_l`, `s1_p`, `d3_l`, `d3_p`, `slta_l`, `slta_p`, `sltp_l`, `sltp_p`, `sd_l`, `sd_p`, `update_time`) VALUES
-(1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_02`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_02` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `gol_1_l` int(11) NOT NULL,
+  `gol_1_p` int(11) NOT NULL,
+  `gol_2_l` int(11) NOT NULL,
+  `gol_2_p` int(11) NOT NULL,
+  `gol_3_l` int(11) NOT NULL,
+  `gol_3_p` int(11) NOT NULL,
+  `gol_4_l` int(11) NOT NULL,
+  `gol_4_p` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_02`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_03`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_03` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `polhut_terampil` int(11) NOT NULL,
+  `polhut_calon_terampil` int(11) NOT NULL,
+  `polhut_ahli` int(11) NOT NULL,
+  `polhut_calon_ahli` int(11) NOT NULL,
+  `peh_terampil` int(11) NOT NULL,
+  `peh_calon_terampil` int(11) NOT NULL,
+  `peh_ahli` int(11) NOT NULL,
+  `peh_calon_ahli` int(11) NOT NULL,
+  `pranata_terampil` int(11) NOT NULL,
+  `pranata_calon_terampil` int(11) NOT NULL,
+  `pranata_ahli` int(11) NOT NULL,
+  `pranata_calon_ahli` int(11) NOT NULL,
+  `analis_terampil` int(11) NOT NULL,
+  `analis_calon_terampil` int(11) NOT NULL,
+  `analis_ahli` int(11) NOT NULL,
+  `analis_calon_ahli` int(11) NOT NULL,
+  `statistisi_terampil` int(11) NOT NULL,
+  `statistisi_calon_terampil` int(11) NOT NULL,
+  `statistisi_ahli` int(11) NOT NULL,
+  `statistisi_calon_ahli` int(11) NOT NULL,
+  `arsiparis_terampil` int(11) NOT NULL,
+  `arsiparis_calon_terampil` int(11) NOT NULL,
+  `arsiparis_ahli` int(11) NOT NULL,
+  `arsiparis_calon_ahli` int(11) NOT NULL,
+  `perencana_terampil` int(11) NOT NULL,
+  `perencana_calon_terampil` int(11) NOT NULL,
+  `perencana_ahli` int(11) NOT NULL,
+  `perencana_calon_ahli` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `sekretariat_table_03`
+--
+
+INSERT INTO `sekretariat_table_03` (`id`, `polhut_terampil`, `polhut_calon_terampil`, `polhut_ahli`, `polhut_calon_ahli`, `peh_terampil`, `peh_calon_terampil`, `peh_ahli`, `peh_calon_ahli`, `pranata_terampil`, `pranata_calon_terampil`, `pranata_ahli`, `pranata_calon_ahli`, `analis_terampil`, `analis_calon_terampil`, `analis_ahli`, `analis_calon_ahli`, `statistisi_terampil`, `statistisi_calon_terampil`, `statistisi_ahli`, `statistisi_calon_ahli`, `arsiparis_terampil`, `arsiparis_calon_terampil`, `arsiparis_ahli`, `arsiparis_calon_ahli`, `perencana_terampil`, `perencana_calon_terampil`, `perencana_ahli`, `perencana_calon_ahli`, `update_time`) VALUES
+(3, 1, 2, 3, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2014-03-09 09:55:49'),
+(2, 1, 2, 3, 4, 55, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, '2014-03-09 09:54:53'),
+(4, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2014-03-09 09:55:53');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_04`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_04` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `s1_l` int(11) NOT NULL,
+  `s1_p` int(11) NOT NULL,
+  `d3_l` int(11) NOT NULL,
+  `d3_p` int(11) NOT NULL,
+  `slta_l` int(11) NOT NULL,
+  `slta_p` int(11) NOT NULL,
+  `sltp_l` int(11) NOT NULL,
+  `sltp_p` int(11) NOT NULL,
+  `sd_l` int(11) NOT NULL,
+  `sd_p` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_04`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_05`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_05` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `struktural_1a_l` int(11) NOT NULL,
+  `struktural_1a_p` int(11) NOT NULL,
+  `struktural_1b_l` int(11) NOT NULL,
+  `struktural_1b_p` int(11) NOT NULL,
+  `struktural_2a_l` int(11) NOT NULL,
+  `struktural_2a_p` int(11) NOT NULL,
+  `struktural_2b_l` int(11) NOT NULL,
+  `struktural_2b_p` int(11) NOT NULL,
+  `struktural_3a_l` int(11) NOT NULL,
+  `struktural_3a_p` int(11) NOT NULL,
+  `struktural_3b_l` int(11) NOT NULL,
+  `struktural_3b_p` int(11) NOT NULL,
+  `struktural_4a_l` int(11) NOT NULL,
+  `struktural_4a_p` int(11) NOT NULL,
+  `struktural_4b_l` int(11) NOT NULL,
+  `struktural_4b_p` int(11) NOT NULL,
+  `fungsional_umum_l` int(11) NOT NULL,
+  `fungsional_umum_p` int(11) NOT NULL,
+  `fungsional_l` int(11) NOT NULL,
+  `fungsional_p` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_05`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_06`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_06` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uraian` varchar(255) NOT NULL,
+  `s3_l` int(11) NOT NULL,
+  `s3_p` int(11) NOT NULL,
+  `s2_l` int(11) NOT NULL,
+  `s2_p` int(11) NOT NULL,
+  `s1_l` int(11) NOT NULL,
+  `s1_p` int(11) NOT NULL,
+  `d3_l` int(11) NOT NULL,
+  `d3_p` int(11) NOT NULL,
+  `slta_l` int(11) NOT NULL,
+  `slta_p` int(11) NOT NULL,
+  `sltp_l` int(11) NOT NULL,
+  `sltp_p` int(11) NOT NULL,
+  `sd_l` int(11) NOT NULL,
+  `sd_p` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_06`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_07`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_07` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `gol_1_l` int(11) NOT NULL,
+  `gol_1_p` int(11) NOT NULL,
+  `gol_2_l` int(11) NOT NULL,
+  `gol_2_p` int(11) NOT NULL,
+  `gol_3_l` int(11) NOT NULL,
+  `gol_3_p` int(11) NOT NULL,
+  `gol_4_l` int(11) NOT NULL,
+  `gol_4_p` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_07`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_08`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_08` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pagu` int(11) NOT NULL,
+  `target` int(11) NOT NULL,
+  `realisasi` int(11) NOT NULL,
+  `realisasi_sampai` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_08`
+--
+
+INSERT INTO `sekretariat_table_08` (`id`, `pagu`, `target`, `realisasi`, `realisasi_sampai`, `update_time`) VALUES
+(2, 1, 2, 3, 7, '2014-03-09 10:33:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_09`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_09` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(255) NOT NULL,
+  `jenis` varchar(255) NOT NULL,
+  `target` varchar(255) NOT NULL,
+  `realisasi` varchar(255) NOT NULL,
+  `percentase` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_09`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_10`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_10` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kantor_pemerintah` int(11) NOT NULL,
+  `pos_jaga` int(11) NOT NULL,
+  `rumah_negara_gol2` int(11) NOT NULL,
+  `rumah_negara_gol3` int(11) NOT NULL,
+  `rumah_negara_gol4` int(11) NOT NULL,
+  `wisma` int(11) NOT NULL,
+  `markas_polhut` int(11) NOT NULL,
+  `daops` int(11) NOT NULL,
+  `plg_ppg` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `sekretariat_table_10`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_11`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_11` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `satker` varchar(255) NOT NULL,
+  `kantor_balai` int(11) NOT NULL,
+  `kantor_bidang_wilayah` int(11) NOT NULL,
+  `kantor_seksi_wilayah` int(11) NOT NULL,
+  `kantor_resort` int(11) NOT NULL,
+  `pos_jaga` int(11) NOT NULL,
+  `pondok_kerja` int(11) NOT NULL,
+  `pos_pengamatan` int(11) NOT NULL,
+  `rumah_negara_gol2` int(11) NOT NULL,
+  `rumah_negara_gol3` int(11) NOT NULL,
+  `rumah_negara_gol4` int(11) NOT NULL,
+  `wisma` int(11) NOT NULL,
+  `markas_polhut` int(11) NOT NULL,
+  `daops` int(11) NOT NULL,
+  `plg_ppg` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_11`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_12`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_12` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `darat_4_fungsional` int(11) NOT NULL,
+  `darat_4_pamhut` int(11) NOT NULL,
+  `darat_4_karhut` int(11) NOT NULL,
+  `darat_4_monilog` int(11) NOT NULL,
+  `darat_4_tsl` int(11) NOT NULL,
+  `darat_4_penyuluh` int(11) NOT NULL,
+  `darat_2_fungsional` int(11) NOT NULL,
+  `darat_2_pamhut` int(11) NOT NULL,
+  `darat_2_karhut` int(11) NOT NULL,
+  `darat_2_monilog` int(11) NOT NULL,
+  `darat_2_tsl` int(11) NOT NULL,
+  `darat_2_penyuluh` int(11) NOT NULL,
+  `speed_boat` int(11) NOT NULL,
+  `motor_tempel` int(11) NOT NULL,
+  `long_boat` int(11) NOT NULL,
+  `klotok` int(11) NOT NULL,
+  `long_boat_2` int(11) NOT NULL,
+  `kapal_patroli` int(11) NOT NULL,
+  `perahu_penumpang` int(11) NOT NULL,
+  `perahu_karet` int(11) NOT NULL,
+  `rakit` int(11) NOT NULL,
+  `helikopter` int(11) NOT NULL,
+  `pesawat_trike` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_12`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_13`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_13` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kelompok` varchar(255) NOT NULL,
+  `satuan` varchar(255) NOT NULL,
+  `awal_kuantitas` int(11) NOT NULL,
+  `awal_nilai` int(11) NOT NULL,
+  `mutasi_tambah_kuantitas` int(11) NOT NULL,
+  `mutasi_tambah_nilai` int(11) NOT NULL,
+  `mutasi_kurang_kuantitas` int(11) NOT NULL,
+  `mutasi_kurang_nilai` int(11) NOT NULL,
+  `akhir_kuantitas` int(11) NOT NULL,
+  `akhir_nilai` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_13`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_14`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_14` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mitra` varchar(255) NOT NULL,
+  `tanggal_kerjasama` varchar(255) NOT NULL,
+  `mou_judul` varchar(255) NOT NULL,
+  `mou_no` varchar(255) NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
+  `masa_berlaku` varchar(255) NOT NULL,
+  `sumber_anggaran` varchar(255) NOT NULL,
+  `alokasi_anggaran` varchar(255) NOT NULL,
+  `realisasi_anggaran` varchar(255) NOT NULL,
+  `hasil` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_14`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_15`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_15` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(255) NOT NULL,
+  `kebangsaan` varchar(255) NOT NULL,
+  `jabatan` varchar(255) NOT NULL,
+  `tempat_tugas` varchar(255) NOT NULL,
+  `masa_tugas` varchar(255) NOT NULL,
+  `sponsor` varchar(255) NOT NULL,
+  `counterpart` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_15`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sekretariat_table_16`
+--
+
+CREATE TABLE IF NOT EXISTS `sekretariat_table_16` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(255) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `diterbitkan` varchar(255) NOT NULL,
+  `tahun` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sekretariat_table_16`
+--
+
 
 -- --------------------------------------------------------
 

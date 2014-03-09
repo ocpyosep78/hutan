@@ -23,59 +23,28 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="14">Tingkat Pendidikan</th>
-					<th rowspan="2" colspan="3">Jumlah</th>
-					<th rowspan="3">&nbsp;</th>
-				</tr>
-				<tr>
-					<th colspan="2">S3</th>
-					<th colspan="2">S2</th>
-					<th colspan="2">S1 / D4</th>
-					<th colspan="2">D3</th>
-					<th colspan="2">SLTA</th>
-					<th colspan="2">SLTP</th>
-					<th colspan="2">SD</th>
-				</tr>
-				<tr>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>Total</th>
+					<th>Nama Tenaga Ahli</th>
+					<th>Kebangsaan</th>
+					<th>Jabatan</th>
+					<th>Tempat Tugas</th>
+					<th>Masa Tugas</th>
+					<th>Sponsor</th>
+					<th>Counterpart</th>
+					<th>Keterangan</th>
+					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['s3_l']; ?></td>
-					<td class="center"><?php echo $row['s3_p']; ?></td>
-					<td class="center"><?php echo $row['s2_l']; ?></td>
-					<td class="center"><?php echo $row['s2_p']; ?></td>
-					<td class="center"><?php echo $row['s1_l']; ?></td>
-					<td class="center"><?php echo $row['s1_p']; ?></td>
-					<td class="center"><?php echo $row['d3_l']; ?></td>
-					<td class="center"><?php echo $row['d3_p']; ?></td>
-					<td class="center"><?php echo $row['slta_l']; ?></td>
-					<td class="center"><?php echo $row['slta_p']; ?></td>
-					<td class="center"><?php echo $row['sltp_l']; ?></td>
-					<td class="center"><?php echo $row['sltp_p']; ?></td>
-					<td class="center"><?php echo $row['sd_l']; ?></td>
-					<td class="center"><?php echo $row['sd_p']; ?></td>
-					<td class="center"><?php echo $row['total_l']; ?></td>
-					<td class="center"><?php echo $row['total_p']; ?></td>
-					<td class="center"><?php echo $row['total']; ?></td>
+					<td class="center"><?php echo $row['nama']; ?></td>
+					<td class="center"><?php echo $row['kebangsaan']; ?></td>
+					<td class="center"><?php echo $row['jabatan']; ?></td>
+					<td class="center"><?php echo $row['tempat_tugas']; ?></td>
+					<td class="center"><?php echo $row['masa_tugas']; ?></td>
+					<td class="center"><?php echo $row['sponsor']; ?></td>
+					<td class="center"><?php echo $row['counterpart']; ?></td>
+					<td class="center"><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -91,48 +60,32 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">S3 L</div>
-		<div class="input"><input type="text" name="s3_l" class="short" /></div>
+		<div class="label">Nama Tenaga Ahli</div>
+		<div class="input"><input type="text" name="nama" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S3 P</div>
-		<div class="input"><input type="text" name="s3_p" class="short" /></div>
+		<div class="label">Kebangsaan</div>
+		<div class="input"><input type="text" name="kebangsaan" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S2 L</div>
-		<div class="input"><input type="text" name="s2_l" class="short" /></div>
+		<div class="label">Jabatan</div>
+		<div class="input"><input type="text" name="jabatan" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S2 P</div>
-		<div class="input"><input type="text" name="s2_p" class="short" /></div>
+		<div class="label">Tempat Tugas</div>
+		<div class="input"><input type="text" name="tempat_tugas" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S1 L</div>
-		<div class="input"><input type="text" name="s1_l" class="short" /></div>
+		<div class="label">Masa Tugas</div>
+		<div class="input"><input type="text" name="masa_tugas" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S1 P</div>
-		<div class="input"><input type="text" name="s1_p" class="short" /></div>
+		<div class="label">Sponsor</div>
+		<div class="input"><input type="text" name="sponsor" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">D3 L</div>
-		<div class="input"><input type="text" name="d3_l" class="short" /></div>
+		<div class="label">Counterpart</div>
+		<div class="input"><input type="text" name="counterpart" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">D3 P</div>
-		<div class="input"><input type="text" name="d3_p" class="short" /></div>
+		
+		<div class="label">Keterangan</div>
+		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
 		<div class="clear"></div>
-		<div class="label">SLTA L</div>
-		<div class="input"><input type="text" name="slta_l" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SLTA P</div>
-		<div class="input"><input type="text" name="slta_p" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SLTP L</div>
-		<div class="input"><input type="text" name="sltp_l" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SLTP P</div>
-		<div class="input"><input type="text" name="sltp_p" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SD L</div>
-		<div class="input"><input type="text" name="sd_l" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">SD P</div>
-		<div class="input"><input type="text" name="sd_p" class="short" /></div>
-		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

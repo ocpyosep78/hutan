@@ -13,7 +13,7 @@
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 
-<div id="cnt-content"><div class="container"><div class="cnt-normal">
+<div id="cnt-content"><div class="container" style="width: 1800px; padding: 0 20px;"><div class="cnt-normal">
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	<div class="hide">
 		<div class="cnt-data"><?php echo json_encode($page); ?></div>
@@ -23,59 +23,88 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="14">Tingkat Pendidikan</th>
-					<th rowspan="2" colspan="3">Jumlah</th>
-					<th rowspan="3">&nbsp;</th>
+					<th colspan="22">Jenis Inventaris Alat Angkutan</th>
+					<th rowspan="4">&nbsp;</th>
 				</tr>
 				<tr>
-					<th colspan="2">S3</th>
-					<th colspan="2">S2</th>
-					<th colspan="2">S1 / D4</th>
-					<th colspan="2">D3</th>
-					<th colspan="2">SLTA</th>
-					<th colspan="2">SLTP</th>
-					<th colspan="2">SD</th>
+					<th colspan="11">Darat</th>
+					<th colspan="9">Laut</th>
+					<th colspan="2">Udara</th>
 				</tr>
 				<tr>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>Total</th>
+					<th>Roda-4 Non Fungsional</th>
+					<th>Roda-4 Operasional Pamhut</th>
+					<th>Roda-4 OPerasional Karhut</th>
+					<th>Roda-4 Monilog</th>
+					<th>Roda-4 Operasional TSL</th>
+					<th>Roda-4 Operasional Penyuluh</th>
+					<th>Roda-2 Non Fungsional</th>
+					<th>Roda-2 Operasional Pamhut</th>
+					<th>Roda-2 Operasional Karhut</th>
+					<th>Roda-2 Operasional TSL</th>
+					<th>Roda-2 Operasional Penyuluh</th>
+					<th>Speed Boat</th>
+					<th>Motor Tempel</th>
+					<th>Long Boat</th>
+					<th>Klotok</th>
+					<th>Long Boat</th>
+					<th>Kapal Patroli</th>
+					<th>Perahu Penumpang</th>
+					<th>Perahu Karet</th>
+					<th>Floating Platform /Rakit</th>
+					<th>Helikopter</th>
+					<th>Pesawat Trike</th>
+				</tr>
+				<tr>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['s3_l']; ?></td>
-					<td class="center"><?php echo $row['s3_p']; ?></td>
-					<td class="center"><?php echo $row['s2_l']; ?></td>
-					<td class="center"><?php echo $row['s2_p']; ?></td>
-					<td class="center"><?php echo $row['s1_l']; ?></td>
-					<td class="center"><?php echo $row['s1_p']; ?></td>
-					<td class="center"><?php echo $row['d3_l']; ?></td>
-					<td class="center"><?php echo $row['d3_p']; ?></td>
-					<td class="center"><?php echo $row['slta_l']; ?></td>
-					<td class="center"><?php echo $row['slta_p']; ?></td>
-					<td class="center"><?php echo $row['sltp_l']; ?></td>
-					<td class="center"><?php echo $row['sltp_p']; ?></td>
-					<td class="center"><?php echo $row['sd_l']; ?></td>
-					<td class="center"><?php echo $row['sd_p']; ?></td>
-					<td class="center"><?php echo $row['total_l']; ?></td>
-					<td class="center"><?php echo $row['total_p']; ?></td>
-					<td class="center"><?php echo $row['total']; ?></td>
+					<td class="center"><?php echo $row['darat_4_fungsional']; ?></td>
+					<td class="center"><?php echo $row['darat_4_pamhut']; ?></td>
+					<td class="center"><?php echo $row['darat_4_karhut']; ?></td>
+					<td class="center"><?php echo $row['darat_4_monilog']; ?></td>
+					<td class="center"><?php echo $row['darat_4_tsl']; ?></td>
+					<td class="center"><?php echo $row['darat_4_penyuluh']; ?></td>
+					<td class="center"><?php echo $row['darat_2_fungsional']; ?></td>
+					<td class="center"><?php echo $row['darat_2_pamhut']; ?></td>
+					<td class="center"><?php echo $row['darat_2_karhut']; ?></td>
+					<td class="center"><?php echo $row['darat_2_tsl']; ?></td>
+					<td class="center"><?php echo $row['darat_2_penyuluh']; ?></td>
+					<td class="center"><?php echo $row['speed_boat']; ?></td>
+					<td class="center"><?php echo $row['motor_tempel']; ?></td>
+					<td class="center"><?php echo $row['long_boat']; ?></td>
+					<td class="center"><?php echo $row['klotok']; ?></td>
+					<td class="center"><?php echo $row['long_boat_2']; ?></td>
+					<td class="center"><?php echo $row['kapal_patroli']; ?></td>
+					<td class="center"><?php echo $row['perahu_penumpang']; ?></td>
+					<td class="center"><?php echo $row['perahu_karet']; ?></td>
+					<td class="center"><?php echo $row['rakit']; ?></td>
+					<td class="center"><?php echo $row['helikopter']; ?></td>
+					<td class="center"><?php echo $row['pesawat_trike']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -91,48 +120,82 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">S3 L</div>
-		<div class="input"><input type="text" name="s3_l" class="short" /></div>
+		<div class="label">Darat</div>
 		<div class="clear"></div>
-		<div class="label">S3 P</div>
-		<div class="input"><input type="text" name="s3_p" class="short" /></div>
+		<div class="label">Roda-4 Non Fungsional</div>
+		<div class="input"><input type="text" name="darat_4_fungsional" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S2 L</div>
-		<div class="input"><input type="text" name="s2_l" class="short" /></div>
+		<div class="label">Roda-4 Operasional Pamhut</div>
+		<div class="input"><input type="text" name="darat_4_pamhut" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S2 P</div>
-		<div class="input"><input type="text" name="s2_p" class="short" /></div>
+		<div class="label">Roda-4 OPerasional Karhut</div>
+		<div class="input"><input type="text" name="darat_4_karhut" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S1 L</div>
-		<div class="input"><input type="text" name="s1_l" class="short" /></div>
+		<div class="label">Roda-4 Monilog</div>
+		<div class="input"><input type="text" name="darat_4_monilog" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S1 P</div>
-		<div class="input"><input type="text" name="s1_p" class="short" /></div>
+		<div class="label">Roda-4 Operasional TSL</div>
+		<div class="input"><input type="text" name="darat_4_tsl" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">D3 L</div>
-		<div class="input"><input type="text" name="d3_l" class="short" /></div>
+		<div class="label">Roda-4 Operasional Penyuluh</div>
+		<div class="input"><input type="text" name="darat_4_penyuluh" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">D3 P</div>
-		<div class="input"><input type="text" name="d3_p" class="short" /></div>
+		
+		<div class="label">Roda-2 Non Fungsional</div>
+		<div class="input"><input type="text" name="darat_2_fungsional" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SLTA L</div>
-		<div class="input"><input type="text" name="slta_l" class="short" /></div>
+		<div class="label">Roda-2 Operasional Pamhut</div>
+		<div class="input"><input type="text" name="darat_2_pamhut" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SLTA P</div>
-		<div class="input"><input type="text" name="slta_p" class="short" /></div>
+		<div class="label">Roda-2 Operasional Karhut</div>
+		<div class="input"><input type="text" name="darat_2_karhut" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SLTP L</div>
-		<div class="input"><input type="text" name="sltp_l" class="short" /></div>
+		<div class="label">Roda-2 Operasional TSL</div>
+		<div class="input"><input type="text" name="darat_2_tsl" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SLTP P</div>
-		<div class="input"><input type="text" name="sltp_p" class="short" /></div>
+		<div class="label">Roda-2 Operasional Penyuluh</div>
+		<div class="input"><input type="text" name="darat_2_penyuluh" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SD L</div>
-		<div class="input"><input type="text" name="sd_l" class="short" /></div>
+		
+		<div class="label">Laut</div>
 		<div class="clear"></div>
-		<div class="label">SD P</div>
-		<div class="input"><input type="text" name="sd_p" class="short" /></div>
+		<div class="label">Speed Boat</div>
+		<div class="input"><input type="text" name="speed_boat" class="short" /></div>
 		<div class="clear"></div>
+		<div class="label">Motor Tempel</div>
+		<div class="input"><input type="text" name="motor_tempel" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Long Boat</div>
+		<div class="input"><input type="text" name="long_boat" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Klotok</div>
+		<div class="input"><input type="text" name="klotok" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Long Boat</div>
+		<div class="input"><input type="text" name="long_boat_2" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Kapal Patroli</div>
+		<div class="input"><input type="text" name="kapal_patroli" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Perahu Penumpang</div>
+		<div class="input"><input type="text" name="perahu_penumpang" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Perahu Karet</div>
+		<div class="input"><input type="text" name="perahu_karet" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Floating Platform /Rakit</div>
+		<div class="input"><input type="text" name="rakit" class="short" /></div>
+		<div class="clear"></div>
+		
+		<div class="label">Udara</div>
+		<div class="clear"></div>
+		<div class="label">Helikopter</div>
+		<div class="input"><input type="text" name="helikopter" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Pesawat Trike</div>
+		<div class="input"><input type="text" name="pesawat_trike" class="short" /></div>
+		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

@@ -5,7 +5,7 @@ class sekretariat_table_09_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'propinsi', 'pkh', 'upt', 'sk_pembentukan', 'lokasi', 'regu', 'jumlah_anggota', 'keterangan', 'update_time'
+			'id', 'kode', 'jenis', 'target', 'realisasi', 'percentase', 'update_time'
 		);
     }
 	
@@ -13,14 +13,14 @@ class sekretariat_table_09_model extends CI_Model {
         $result = array();
        
         if (empty($param['id'])) {
-            $insert_query  = GenerateInsertQuery($this->field, $param, SEKRETARIAT_TABLE_01);
+            $insert_query  = GenerateInsertQuery($this->field, $param, SEKRETARIAT_TABLE_09);
             $insert_result = mysql_query($insert_query) or die(mysql_error());
            
             $result['id'] = mysql_insert_id();
             $result['status'] = '1';
             $result['message'] = 'Data berhasil disimpan.';
         } else {
-            $update_query  = GenerateUpdateQuery($this->field, $param, SEKRETARIAT_TABLE_01);
+            $update_query  = GenerateUpdateQuery($this->field, $param, SEKRETARIAT_TABLE_09);
             $update_result = mysql_query($update_query) or die(mysql_error());
            
             $result['id'] = $param['id'];
@@ -35,7 +35,7 @@ class sekretariat_table_09_model extends CI_Model {
         $array = array();
        
         if (isset($param['id'])) {
-            $select_query  = "SELECT * FROM ".SEKRETARIAT_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+            $select_query  = "SELECT * FROM ".SEKRETARIAT_TABLE_09." WHERE id = '".$param['id']."' LIMIT 1";
         }
 		
         $select_result = mysql_query($select_query) or die(mysql_error());
@@ -56,7 +56,7 @@ class sekretariat_table_09_model extends CI_Model {
 		
 		$select_query = "
 			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".SEKRETARIAT_TABLE_01."
+			FROM ".SEKRETARIAT_TABLE_09."
 			WHERE 1 $string_jenis $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
@@ -79,7 +79,7 @@ class sekretariat_table_09_model extends CI_Model {
     }
 	
     function delete($param) {
-		$delete_query  = "DELETE FROM ".SEKRETARIAT_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+		$delete_query  = "DELETE FROM ".SEKRETARIAT_TABLE_09." WHERE id = '".$param['id']."' LIMIT 1";
 		$delete_result = mysql_query($delete_query) or die(mysql_error());
 		
 		$result['status'] = '1';

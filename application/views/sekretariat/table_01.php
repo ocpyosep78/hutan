@@ -133,6 +133,7 @@
 		<div class="label">SD P</div>
 		<div class="input"><input type="text" name="sd_p" class="short" /></div>
 		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

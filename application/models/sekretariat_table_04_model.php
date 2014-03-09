@@ -5,7 +5,7 @@ class sekretariat_table_04_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'propinsi', 'pkh', 'upt', 'sk_pembentukan', 'lokasi', 'regu', 'jumlah_anggota', 'keterangan', 'update_time'
+			'id', 's1_l', 's1_p', 'd3_l', 'd3_p', 'slta_l', 'slta_p', 'sltp_l', 'sltp_p', 'sd_l', 'sd_p', 'keterangan', 'update_time'
 		);
     }
 	
@@ -13,14 +13,14 @@ class sekretariat_table_04_model extends CI_Model {
         $result = array();
        
         if (empty($param['id'])) {
-            $insert_query  = GenerateInsertQuery($this->field, $param, SEKRETARIAT_TABLE_01);
+            $insert_query  = GenerateInsertQuery($this->field, $param, SEKRETARIAT_TABLE_04);
             $insert_result = mysql_query($insert_query) or die(mysql_error());
            
             $result['id'] = mysql_insert_id();
             $result['status'] = '1';
             $result['message'] = 'Data berhasil disimpan.';
         } else {
-            $update_query  = GenerateUpdateQuery($this->field, $param, SEKRETARIAT_TABLE_01);
+            $update_query  = GenerateUpdateQuery($this->field, $param, SEKRETARIAT_TABLE_04);
             $update_result = mysql_query($update_query) or die(mysql_error());
            
             $result['id'] = $param['id'];
@@ -35,7 +35,7 @@ class sekretariat_table_04_model extends CI_Model {
         $array = array();
        
         if (isset($param['id'])) {
-            $select_query  = "SELECT * FROM ".SEKRETARIAT_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+            $select_query  = "SELECT * FROM ".SEKRETARIAT_TABLE_04." WHERE id = '".$param['id']."' LIMIT 1";
         }
 		
         $select_result = mysql_query($select_query) or die(mysql_error());
@@ -56,7 +56,7 @@ class sekretariat_table_04_model extends CI_Model {
 		
 		$select_query = "
 			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".SEKRETARIAT_TABLE_01."
+			FROM ".SEKRETARIAT_TABLE_04."
 			WHERE 1 $string_jenis $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
@@ -79,7 +79,7 @@ class sekretariat_table_04_model extends CI_Model {
     }
 	
     function delete($param) {
-		$delete_query  = "DELETE FROM ".SEKRETARIAT_TABLE_01." WHERE id = '".$param['id']."' LIMIT 1";
+		$delete_query  = "DELETE FROM ".SEKRETARIAT_TABLE_04." WHERE id = '".$param['id']."' LIMIT 1";
 		$delete_result = mysql_query($delete_query) or die(mysql_error());
 		
 		$result['status'] = '1';
@@ -90,6 +90,10 @@ class sekretariat_table_04_model extends CI_Model {
 	
 	function sync($row) {
 		$row = StripArray($row);
+		
+		$row['total_l'] = $row['s1_l'] + $row['d3_l'] + $row['slta_l'] + $row['sltp_l'] + $row['sd_l'];
+		$row['total_p'] = $row['s1_p'] + $row['d3_p'] + $row['slta_p'] + $row['sltp_p'] + $row['sd_p'];
+		$row['total'] = $row['total_l'] + $row['total_p'];
 		
 		return $row;
 	}

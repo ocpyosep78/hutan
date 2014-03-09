@@ -49,13 +49,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<!--
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['s3_l']; ?></td>
-					<td class="center"><?php echo $row['s3_p']; ?></td>
-					<td class="center"><?php echo $row['s2_l']; ?></td>
-					<td class="center"><?php echo $row['s2_p']; ?></td>
 					<td class="center"><?php echo $row['s1_l']; ?></td>
 					<td class="center"><?php echo $row['s1_p']; ?></td>
 					<td class="center"><?php echo $row['d3_l']; ?></td>
@@ -69,6 +64,7 @@
 					<td class="center"><?php echo $row['total_l']; ?></td>
 					<td class="center"><?php echo $row['total_p']; ?></td>
 					<td class="center"><?php echo $row['total']; ?></td>
+					<td class="center"><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -76,7 +72,6 @@
 					</td>
 				</tr>
 				<?php } ?>
-				-->
 			</tbody>
 		</table>
 	</div>
@@ -85,18 +80,6 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">S3 L</div>
-		<div class="input"><input type="text" name="s3_l" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">S3 P</div>
-		<div class="input"><input type="text" name="s3_p" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">S2 L</div>
-		<div class="input"><input type="text" name="s2_l" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">S2 P</div>
-		<div class="input"><input type="text" name="s2_p" class="short" /></div>
-		<div class="clear"></div>
 		<div class="label">S1 L</div>
 		<div class="input"><input type="text" name="s1_l" class="short" /></div>
 		<div class="clear"></div>
@@ -127,6 +110,11 @@
 		<div class="label">SD P</div>
 		<div class="input"><input type="text" name="sd_p" class="short" /></div>
 		<div class="clear"></div>
+		
+		<div class="label">Keterangan</div>
+		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
+		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

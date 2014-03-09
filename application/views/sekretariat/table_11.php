@@ -13,7 +13,12 @@
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 
-<div id="cnt-content"><div class="container"><div class="cnt-normal">
+<style>
+.form-box .label { width: 400px; }
+.form-box .input { width: 260px; }
+</style>
+
+<div id="cnt-content"><div class="container" style="width: 1400px; padding: 0 20px;"><div class="cnt-normal">
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	<div class="hide">
 		<div class="cnt-data"><?php echo json_encode($page); ?></div>
@@ -23,59 +28,63 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="14">Tingkat Pendidikan</th>
-					<th rowspan="2" colspan="3">Jumlah</th>
+					<th rowspan="3">Nama Satker</th>
+					<th colspan="15">Jenis Inventaris Gedung dan Bangunan</th>
 					<th rowspan="3">&nbsp;</th>
 				</tr>
 				<tr>
-					<th colspan="2">S3</th>
-					<th colspan="2">S2</th>
-					<th colspan="2">S1 / D4</th>
-					<th colspan="2">D3</th>
-					<th colspan="2">SLTA</th>
-					<th colspan="2">SLTP</th>
-					<th colspan="2">SD</th>
+					<th>Kantor Balai</th>
+					<th>Kantor Bidang Wilayah</th>
+					<th>Kantor Seksi Wilayah</th>
+					<th>Kantor Resort</th>
+					<th>Pos Jaga</th>
+					<th>Pondok Kerja</th>
+					<th>Pos Pengamatan</th>
+					<th>Rumah Negara Golongan II</th>
+					<th>Rumah Negara Golongan III</th>
+					<th>Rumah Negara Golongan IV</th>
+					<th>Mess/Wisma/ Asrama</th>
+					<th>Markas Polhut/SPORC</th>
+					<th>DAOPS/ Brigdalkar</th>
+					<th>PLG/PPG</th>
+					<th rowspan="2">Keterangan</th>
 				</tr>
 				<tr>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>L</th>
-					<th>P</th>
-					<th>Total</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
+					<th>Unit</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['s3_l']; ?></td>
-					<td class="center"><?php echo $row['s3_p']; ?></td>
-					<td class="center"><?php echo $row['s2_l']; ?></td>
-					<td class="center"><?php echo $row['s2_p']; ?></td>
-					<td class="center"><?php echo $row['s1_l']; ?></td>
-					<td class="center"><?php echo $row['s1_p']; ?></td>
-					<td class="center"><?php echo $row['d3_l']; ?></td>
-					<td class="center"><?php echo $row['d3_p']; ?></td>
-					<td class="center"><?php echo $row['slta_l']; ?></td>
-					<td class="center"><?php echo $row['slta_p']; ?></td>
-					<td class="center"><?php echo $row['sltp_l']; ?></td>
-					<td class="center"><?php echo $row['sltp_p']; ?></td>
-					<td class="center"><?php echo $row['sd_l']; ?></td>
-					<td class="center"><?php echo $row['sd_p']; ?></td>
-					<td class="center"><?php echo $row['total_l']; ?></td>
-					<td class="center"><?php echo $row['total_p']; ?></td>
-					<td class="center"><?php echo $row['total']; ?></td>
+					<td class="center"><?php echo $row['satker']; ?></td>
+					<td class="center"><?php echo $row['kantor_balai']; ?></td>
+					<td class="center"><?php echo $row['kantor_bidang_wilayah']; ?></td>
+					<td class="center"><?php echo $row['kantor_seksi_wilayah']; ?></td>
+					<td class="center"><?php echo $row['kantor_resort']; ?></td>
+					<td class="center"><?php echo $row['pos_jaga']; ?></td>
+					<td class="center"><?php echo $row['pondok_kerja']; ?></td>
+					<td class="center"><?php echo $row['pos_pengamatan']; ?></td>
+					<td class="center"><?php echo $row['rumah_negara_gol2']; ?></td>
+					<td class="center"><?php echo $row['rumah_negara_gol3']; ?></td>
+					<td class="center"><?php echo $row['rumah_negara_gol4']; ?></td>
+					<td class="center"><?php echo $row['wisma']; ?></td>
+					<td class="center"><?php echo $row['markas_polhut']; ?></td>
+					<td class="center"><?php echo $row['daops']; ?></td>
+					<td class="center"><?php echo $row['plg_ppg']; ?></td>
+					<td class="center"><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -91,48 +100,56 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">S3 L</div>
-		<div class="input"><input type="text" name="s3_l" class="short" /></div>
+		<div class="label">Nama Satker</div>
+		<div class="input"><input type="text" name="satker" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S3 P</div>
-		<div class="input"><input type="text" name="s3_p" class="short" /></div>
+		<div class="label">Kantor Balai</div>
+		<div class="input"><input type="text" name="kantor_balai" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S2 L</div>
-		<div class="input"><input type="text" name="s2_l" class="short" /></div>
+		<div class="label">Kantor Bidang Wilayah</div>
+		<div class="input"><input type="text" name="kantor_bidang_wilayah" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S2 P</div>
-		<div class="input"><input type="text" name="s2_p" class="short" /></div>
+		<div class="label">Kantor Seksi Wilayah</div>
+		<div class="input"><input type="text" name="kantor_seksi_wilayah" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S1 L</div>
-		<div class="input"><input type="text" name="s1_l" class="short" /></div>
+		<div class="label">Kantor Resort</div>
+		<div class="input"><input type="text" name="kantor_resort" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">S1 P</div>
-		<div class="input"><input type="text" name="s1_p" class="short" /></div>
+		<div class="label">Pos Jaga</div>
+		<div class="input"><input type="text" name="pos_jaga" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">D3 L</div>
-		<div class="input"><input type="text" name="d3_l" class="short" /></div>
+		<div class="label">Pondok Kerja</div>
+		<div class="input"><input type="text" name="pondok_kerja" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">D3 P</div>
-		<div class="input"><input type="text" name="d3_p" class="short" /></div>
+		<div class="label">Pos Pengamatan</div>
+		<div class="input"><input type="text" name="pos_pengamatan" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SLTA L</div>
-		<div class="input"><input type="text" name="slta_l" class="short" /></div>
+		<div class="label">Rumah Negara Golongan II</div>
+		<div class="input"><input type="text" name="rumah_negara_gol2" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SLTA P</div>
-		<div class="input"><input type="text" name="slta_p" class="short" /></div>
+		<div class="label">Rumah Negara Golongan III</div>
+		<div class="input"><input type="text" name="rumah_negara_gol3" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SLTP L</div>
-		<div class="input"><input type="text" name="sltp_l" class="short" /></div>
+		<div class="label">Rumah Negara Golongan IV</div>
+		<div class="input"><input type="text" name="rumah_negara_gol4" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SLTP P</div>
-		<div class="input"><input type="text" name="sltp_p" class="short" /></div>
+		<div class="label">Mess/Wisma/ Asrama</div>
+		<div class="input"><input type="text" name="wisma" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SD L</div>
-		<div class="input"><input type="text" name="sd_l" class="short" /></div>
+		<div class="label">Markas Polhut/SPORC</div>
+		<div class="input"><input type="text" name="markas_polhut" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">SD P</div>
-		<div class="input"><input type="text" name="sd_p" class="short" /></div>
+		<div class="label">DAOPS/ Brigdalkar</div>
+		<div class="input"><input type="text" name="daops" class="short" /></div>
 		<div class="clear"></div>
+		<div class="label">PLG/PPG</div>
+		<div class="input"><input type="text" name="plg_ppg" class="short" /></div>
+		<div class="clear"></div>
+		
+		<div class="label">Keterangan</div>
+		<div class="input"><textarea name="keterangan" class="short"></textarea></div>
+		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>
