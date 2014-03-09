@@ -1,6 +1,6 @@
 <?php
 
-class table_01 extends CI_Controller {
+class table_05 extends CI_Controller {
     function __construct() {
         parent::__construct();
 		$module_info = get_module_name($_SERVER['REQUEST_URI']);

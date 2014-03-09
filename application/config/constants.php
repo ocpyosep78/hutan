@@ -91,4 +91,20 @@ define('SEKRETARIAT_TABLE_14',					'sekretariat_table_14');
 define('SEKRETARIAT_TABLE_15',					'sekretariat_table_15');
 define('SEKRETARIAT_TABLE_16',					'sekretariat_table_16');
 
+/*   PJLKKHL   */
 define('PJLKKHL_TABLE_01',						'pjlkkhl_table_01');
+define('PJLKKHL_TABLE_02',						'pjlkkhl_table_02');
+define('PJLKKHL_TABLE_03',						'pjlkkhl_table_03');
+define('PJLKKHL_TABLE_04',						'pjlkkhl_table_04');
+define('PJLKKHL_TABLE_05',						'pjlkkhl_table_05');
+define('PJLKKHL_TABLE_06',						'pjlkkhl_table_06');
+define('PJLKKHL_TABLE_07',						'pjlkkhl_table_07');
+define('PJLKKHL_TABLE_08',						'pjlkkhl_table_08');
+define('PJLKKHL_TABLE_09',						'pjlkkhl_table_09');
+define('PJLKKHL_TABLE_10',						'pjlkkhl_table_10');
+define('PJLKKHL_TABLE_11',						'pjlkkhl_table_11');
+define('PJLKKHL_TABLE_12',						'pjlkkhl_table_12');
+define('PJLKKHL_TABLE_13',						'pjlkkhl_table_13');
+define('PJLKKHL_TABLE_14',						'pjlkkhl_table_14');
+define('PJLKKHL_TABLE_15',						'pjlkkhl_table_15');
+define('PJLKKHL_TABLE_16',						'pjlkkhl_table_16');

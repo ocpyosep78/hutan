@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 09, 2014 at 11:18 AM
+-- Generation Time: Mar 09, 2014 at 08:16 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -463,21 +463,21 @@ INSERT INTO `module` (`id`, `content`, `sumber_dana`, `periode`, `urutan`, `alia
 (56, 'TABEL 14. PERALATAN KOMUNIKASI DAN PENGAMATAN CUACA ', 'UPT', 'Semester', 14, 'table_14', 4),
 (57, 'TABEL 15. PERLENGKAPAN BEREGU ', 'UPT', 'Semester', 15, 'table_15', 4),
 (58, 'TABEL 1. DATA POTENSI WISATA ALAM DI TAMAN NASIONAL', 'UPT', 'Semester ', 1, 'table_01', 5),
-(59, 'TABEL 2. DATA POTENSI AIR  DI TAMAN NASIONAL', 'UPT', 'Semester ', 2, '', 5),
-(60, 'TABEL 3. DATA POTENSI KARBON  DI TAMAN NASIONAL', 'UPT', 'Semester ', 3, '', 5),
-(61, 'TABEL 4. DATA POTENSI GEOTERMAL  DI TAMAN NASIONAL', 'UPT', 'Semester ', 4, '', 5),
-(62, 'TABEL 5. DATA POTENSI TANAMAN OBAT DI TAMAN NASIONAL', 'UPT', 'Semester ', 5, '', 5),
-(63, 'TABEL 6. PENGUNJUNG TAMAN NASIONAL', 'UPT', 'Triwulan', 6, '', 5),
-(64, 'TABEL 7. KEJADIAN KECELAKAAN WISATA ALAM', 'UPT', 'Triwulan', 7, '', 5),
-(65, 'TABEL 8. JUMLAH DAN LUAS IZIN USAHA PEMANFAATAN JASA LINGKUNGAN', 'UPT', 'Triwulan', 8, '', 5),
-(66, 'TABEL 9. PERKEMBANGAN  IZIN PENGUSAHAAN PARIWISATA ALAM (IPPA) DI TAMAN NASIONAL', 'UPT', 'Triwulan', 9, '', 5),
-(67, 'TABEL 10. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN AIR DAN KARBON DI TAMAN NASIONAL', 'UPT', 'Triwulan', 10, '', 5),
-(68, 'TABEL 11. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN KETINGGIAN DI TAMAN NASIONAL', 'UPT', 'Triwulan', 11, '', 5),
-(69, 'TABEL 12. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN GEOTERMAL DI TAMAN NASIONAL', 'UPT', 'Triwulan', 12, '', 5),
-(70, 'TABEL 13. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN TANAMAN OBAT DI TAMAN NASIONAL', 'UPT', 'Triwulan', 13, '', 5),
-(71, 'TABEL 14. PENERIMAAN NEGARA DARI PEMANFAATAN JASA LINGKUNGAN', 'UPT', 'Triwulan', 14, '', 5),
-(72, 'TABEL 15. JUMLAH KADER, KELOMPOK PENCINTA ALAM DAN KELOMPOK SWADAYA MASYARAKAT/PROFESI', 'UPT', 'Triwulan', 15, '', 5),
-(73, 'TABEL 16. PROMOSI DAN PUBLIKASI JASA LINGKUNGAN', 'UPT', 'Triwulan', 16, '', 5),
+(59, 'TABEL 2. DATA POTENSI AIR  DI TAMAN NASIONAL', 'UPT', 'Semester ', 2, 'table_02', 5),
+(60, 'TABEL 3. DATA POTENSI KARBON  DI TAMAN NASIONAL', 'UPT', 'Semester ', 3, 'table_03', 5),
+(61, 'TABEL 4. DATA POTENSI GEOTERMAL  DI TAMAN NASIONAL', 'UPT', 'Semester ', 4, 'table_04', 5),
+(62, 'TABEL 5. DATA POTENSI TANAMAN OBAT DI TAMAN NASIONAL', 'UPT', 'Semester ', 5, 'table_05', 5),
+(63, 'TABEL 6. PENGUNJUNG TAMAN NASIONAL', 'UPT', 'Triwulan', 6, 'table_06', 5),
+(64, 'TABEL 7. KEJADIAN KECELAKAAN WISATA ALAM', 'UPT', 'Triwulan', 7, 'table_07', 5),
+(65, 'TABEL 8. JUMLAH DAN LUAS IZIN USAHA PEMANFAATAN JASA LINGKUNGAN', 'UPT', 'Triwulan', 8, 'table_08', 5),
+(66, 'TABEL 9. PERKEMBANGAN  IZIN PENGUSAHAAN PARIWISATA ALAM (IPPA) DI TAMAN NASIONAL', 'UPT', 'Triwulan', 9, 'table_09', 5),
+(67, 'TABEL 10. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN AIR DAN KARBON DI TAMAN NASIONAL', 'UPT', 'Triwulan', 10, 'table_10', 5),
+(68, 'TABEL 11. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN KETINGGIAN DI TAMAN NASIONAL', 'UPT', 'Triwulan', 11, 'table_11', 5),
+(69, 'TABEL 12. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN GEOTERMAL DI TAMAN NASIONAL', 'UPT', 'Triwulan', 12, 'table_12', 5),
+(70, 'TABEL 13. PERKEMBANGAN PEMANFAATAN JASA LINGKUNGAN TANAMAN OBAT DI TAMAN NASIONAL', 'UPT', 'Triwulan', 13, 'table_13', 5),
+(71, 'TABEL 14. PENERIMAAN NEGARA DARI PEMANFAATAN JASA LINGKUNGAN', 'UPT', 'Triwulan', 14, 'table_14', 5),
+(72, 'TABEL 15. JUMLAH KADER, KELOMPOK PENCINTA ALAM DAN KELOMPOK SWADAYA MASYARAKAT/PROFESI', 'UPT', 'Triwulan', 15, 'table_15', 5),
+(73, 'TABEL 16. PROMOSI DAN PUBLIKASI JASA LINGKUNGAN', 'UPT', 'Triwulan', 16, 'table_16', 5),
 (74, 'TABEL 1.  SEBARAN PNS/CPNS BERDASARKAN TINGKAT PENDIDIKAN ', 'UPT ', 'Semester ', 1, 'table_01', 6),
 (75, 'TABEL 2.  SEBARAN PNS/CPNS BERDASARKAN  GOLONGAN', 'UPT', 'Semester ', 2, 'table_02', 6),
 (76, 'TABEL 3.  SEBARAN PNS BERDASARKAN NAMA JABATAN FUNGSIONAL', 'UPT', 'Semester ', 3, 'table_03', 6),
@@ -585,14 +585,387 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_01` (
   `keterangan` varchar(255) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `pjlkkhl_table_01`
 --
 
-INSERT INTO `pjlkkhl_table_01` (`id`, `odtwa_id`, `lokasi`, `fungsi`, `pengelola`, `luas`, `pariwisata`, `sarana`, `peluang`, `keterangan`, `update_time`) VALUES
-(2, 4, '1', '2', '3', '4', '5', '6', '7', '8', '2014-03-06 13:10:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_02`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_02` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `sumber_air` varchar(255) NOT NULL,
+  `luas_sumber` int(11) NOT NULL,
+  `debit_air` int(11) NOT NULL,
+  `ketersediaan` varchar(255) NOT NULL,
+  `nama_zona` varchar(255) NOT NULL,
+  `luas_zona` int(11) NOT NULL,
+  `koordinat_sumber` varchar(255) NOT NULL,
+  `batas_alam` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_02`
+--
+
+INSERT INTO `pjlkkhl_table_02` (`id`, `nama_kawasan`, `sumber_air`, `luas_sumber`, `debit_air`, `ketersediaan`, `nama_zona`, `luas_zona`, `koordinat_sumber`, `batas_alam`, `keterangan`, `update_time`) VALUES
+(2, '11', '22', 3, 4, '5', '6', 7, '8', '9', '10', '2014-03-09 18:40:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_03`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_03` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `nama_blok` varchar(255) NOT NULL,
+  `luas_blok` int(11) NOT NULL,
+  `potensi_karbon` int(11) NOT NULL,
+  `koordinat_lokasi` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_03`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_04`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_04` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `nama_blok` varchar(255) NOT NULL,
+  `luas_blok` int(11) NOT NULL,
+  `potensi_panas` int(11) NOT NULL,
+  `koordinat_lokasi` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_04`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_05`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_05` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `jenis_tanaman` varchar(255) NOT NULL,
+  `nama_blok` varchar(255) NOT NULL,
+  `luas_blok` int(11) NOT NULL,
+  `koordinat_lokasi` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_05`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_06`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_06` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `penelitian_dn` int(11) NOT NULL,
+  `penelitian_ln` int(11) NOT NULL,
+  `pendidikan_dn` int(11) NOT NULL,
+  `pendidikan_ln` int(11) NOT NULL,
+  `rekreasi_dn` int(11) NOT NULL,
+  `rekreasi_ln` int(11) NOT NULL,
+  `berkemah_dn` int(11) NOT NULL,
+  `berkemah_ln` int(11) NOT NULL,
+  `lain_dn` int(11) NOT NULL,
+  `lain_ln` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_06`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_07`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_07` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `waktu` varchar(255) NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
+  `korban_dn` int(11) NOT NULL,
+  `korban_ln` int(11) NOT NULL,
+  `kecelakaan_ringan` int(11) NOT NULL,
+  `kecelakaan_berat` int(11) NOT NULL,
+  `upaya` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_07`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_08`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_08` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `koordinat` varchar(255) NOT NULL,
+  `dasar_hukum` varchar(255) NOT NULL,
+  `pemanfaatan_aliran_air` int(11) NOT NULL,
+  `pemanfaatan_air` int(11) NOT NULL,
+  `wisata_alam` int(11) NOT NULL,
+  `tanaman_obat` int(11) NOT NULL,
+  `jasa_geotermal` int(11) NOT NULL,
+  `penyerapan_karbon` int(11) NOT NULL,
+  `jasa_lain` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_08`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_09`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_09` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `perusahaan` varchar(255) NOT NULL,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `luas_kawasan` int(11) NOT NULL,
+  `luas_permintaan` int(11) NOT NULL,
+  `kota` varchar(255) NOT NULL,
+  `propinsi` int(11) NOT NULL,
+  `tanggal_permohonan` date NOT NULL,
+  `persetujuan_no` varchar(255) NOT NULL,
+  `persetujuan_tanggal` date NOT NULL,
+  `persetujuan_berlaku` varchar(255) NOT NULL,
+  `keputusan_no` varchar(255) NOT NULL,
+  `keputusan_tanggal` date NOT NULL,
+  `keputusan_berlaku` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_09`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_10`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_10` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `perusahaan` varchar(255) NOT NULL,
+  `dasar_hukum` varchar(255) NOT NULL,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `pemanfaatan` varchar(255) NOT NULL,
+  `luas` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_10`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_11`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_11` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `perusahaan` varchar(255) NOT NULL,
+  `dasar_hukum` varchar(255) NOT NULL,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `pemanfaatan` varchar(255) NOT NULL,
+  `luas` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_11`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_12`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_12` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `koordinat` varchar(255) NOT NULL,
+  `pemanfaatan` varchar(255) NOT NULL,
+  `perusahaan` varchar(255) NOT NULL,
+  `luas` int(11) NOT NULL,
+  `dasar_hukum` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_12`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_13`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_13` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kawasan` varchar(255) NOT NULL,
+  `fungsi` varchar(255) NOT NULL,
+  `pemanfaatan` varchar(255) NOT NULL,
+  `perusahaan` varchar(255) NOT NULL,
+  `luas` int(11) NOT NULL,
+  `dasar_hukum` varchar(255) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_13`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_14`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_14` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `perusahaan` varchar(255) NOT NULL,
+  `fungsi` varchar(255) NOT NULL,
+  `air` int(11) NOT NULL,
+  `iupa` int(11) NOT NULL,
+  `pupa` int(11) NOT NULL,
+  `ktm` int(11) NOT NULL,
+  `geotermal` int(11) NOT NULL,
+  `lain` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_14`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_15`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_15` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kader_pemula` int(11) NOT NULL,
+  `kader_madya` int(11) NOT NULL,
+  `kader_utama` int(11) NOT NULL,
+  `pecinta_total` int(11) NOT NULL,
+  `pecinta_aktif` int(11) NOT NULL,
+  `pecinta_pasif` int(11) NOT NULL,
+  `swadaya_total` int(11) NOT NULL,
+  `swadaya_aktif` int(11) NOT NULL,
+  `swadaya_pasif` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_15`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pjlkkhl_table_16`
+--
+
+CREATE TABLE IF NOT EXISTS `pjlkkhl_table_16` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(255) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `diterbitkan` varchar(255) NOT NULL,
+  `tahun` int(11) NOT NULL,
+  `update_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `pjlkkhl_table_16`
+--
+
 
 -- --------------------------------------------------------
 

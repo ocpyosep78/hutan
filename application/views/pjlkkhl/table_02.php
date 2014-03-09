@@ -1,7 +1,4 @@
 <?php
-	// master
-	$array_odtwa = $this->odtwa_model->get_array();
-	
 	// record data
 	$array_record = $this->$module['model_name']->get_array();
 	$message = get_flash_message();
@@ -26,34 +23,32 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="2">Kawasan</th>
-					<th rowspan="2">Pengusaha / Pengelolaan</th>
-					<th rowspan="2">Luas Kawasan</th>
-					<th colspan="3">Produk Wisata Alam</th>
-					<th rowspan="2">Peluang Pengembangan Wisata</th>
-					<th rowspan="2">Keterangan</th>
-					<th rowspan="2">&nbsp;</th>
-				</tr>
-				<tr>
-					<th>Lokasi</th>
-					<th>Fungsi</th>
-					<th>ODTWA</th>
-					<th>Atraksi Utama</th>
-					<th>Sarana / Prasarana</th>
+					<th>Nama dan Fungsi Kawasan</th>
+					<th>Nama Sumber Air</th>
+					<th>Luas Sumber Air (m2)</th>
+					<th>Debit Air (m3)</th>
+					<th>Ketersediaan / Daya Dukung</th>
+					<th>Nama Blok / Zona</th>
+					<th>Luas Blok / Zona (Ha)</th>
+					<th>Koordinat Sumber Air</th>
+					<th>Batas Alam</th>
+					<th>Keterangan</th>
+					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['lokasi']; ?></td>
-					<td class="center"><?php echo $row['fungsi']; ?></td>
-					<td class="center"><?php echo $row['pengelola']; ?></td>
-					<td class="center"><?php echo $row['luas']; ?></td>
-					<td class="center"><?php echo $row['odtwa_title']; ?></td>
-					<td class="center"><?php echo $row['pariwisata']; ?></td>
-					<td class="center"><?php echo $row['sarana']; ?></td>
-					<td class="center"><?php echo $row['peluang']; ?></td>
-					<td class="center"><?php echo $row['keterangan']; ?></td>
+					<td><?php echo $row['nama_kawasan']; ?></td>
+					<td><?php echo $row['sumber_air']; ?></td>
+					<td class="center"><?php echo $row['luas_sumber']; ?></td>
+					<td class="center"><?php echo $row['debit_air']; ?></td>
+					<td><?php echo $row['ketersediaan']; ?></td>
+					<td><?php echo $row['nama_zona']; ?></td>
+					<td class="center"><?php echo $row['luas_zona']; ?></td>
+					<td><?php echo $row['koordinat_sumber']; ?></td>
+					<td><?php echo $row['batas_alam']; ?></td>
+					<td><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -69,42 +64,37 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Kawasan</div>
+		<div class="label">Nama dan Fungsi Kawasan</div>
+		<div class="input"><input type="text" name="nama_kawasan" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Lokasi</div>
-		<div class="input"><input type="text" name="lokasi" class="short" /></div>
+		<div class="label">Nama Sumber Air</div>
+		<div class="input"><input type="text" name="sumber_air" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Fungsi</div>
-		<div class="input"><input type="text" name="fungsi" class="long" /></div>
+		<div class="label">Luas Sumber Air (m2)</div>
+		<div class="input"><input type="text" name="luas_sumber" class="short" /></div>
 		<div class="clear"></div>
-		
-		<div class="label">Pengusahaan/Pengelolaan</div>
-		<div class="input"><input type="text" name="pengelola" class="long" /></div>
+		<div class="label">Debit Air (m3)</div>
+		<div class="input"><input type="text" name="debit_air" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Luas Pemanfaatan</div>
-		<div class="input"><input type="text" name="luas" class="short" /></div>
+		<div class="label">Ketersediaan/Daya Dukung</div>
+		<div class="input"><input type="text" name="ketersediaan" class="short" /></div>
 		<div class="clear"></div>
-		
-		<div class="label">Produk Wisata Alam</div>
+		<div class="label">Nama Blok/Zona</div>
+		<div class="input"><input type="text" name="nama_zona" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">ODTWA *</div>
-		<div class="input">
-			<select name="odtwa_id">
-				<?php echo ShowOption(array( 'Array' => $array_odtwa )); ?>
-			</select>
-		</div>
-		<div class="label">Atraksi Utama Pariwisata</div>
-		<div class="input"><input type="text" name="pariwisata" class="long" /></div>
+		<div class="label">Luas Blok/Zona (Ha)</div>
+		<div class="input"><input type="text" name="luas_zona" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Sarana & Prasarana</div>
-		<div class="input"><input type="text" name="sarana" class="long" /></div>
+		<div class="label">Koordinat Sumber Air</div>
+		<div class="input"><input type="text" name="koordinat_sumber" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Peluang Pengembangan</div>
-		<div class="input"><input type="text" name="peluang" class="long" /></div>
+		<div class="label">Batas Alam</div>
+		<div class="input"><input type="text" name="batas_alam" class="short" /></div>
 		<div class="clear"></div>
 		<div class="label">Keterangan</div>
 		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
 		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

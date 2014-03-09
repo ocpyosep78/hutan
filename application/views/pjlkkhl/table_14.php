@@ -1,7 +1,4 @@
 <?php
-	// master
-	$array_odtwa = $this->odtwa_model->get_array();
-	
 	// record data
 	$array_record = $this->$module['model_name']->get_array();
 	$message = get_flash_message();
@@ -26,34 +23,38 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="2">Kawasan</th>
-					<th rowspan="2">Pengusaha / Pengelolaan</th>
-					<th rowspan="2">Luas Kawasan</th>
-					<th colspan="3">Produk Wisata Alam</th>
-					<th rowspan="2">Peluang Pengembangan Wisata</th>
-					<th rowspan="2">Keterangan</th>
-					<th rowspan="2">&nbsp;</th>
+					<th rowspan="3">Perusahaan</th>
+					<th rowspan="3">Nama dan Fungsi Kawasan</th>
+					<th colspan="7">Jenis Pemanfaatan (Rp)</th>
+					<th rowspan="3">Jumlah PNPB (Rp)</th>
+					<th rowspan="3">&nbsp;</th>
 				</tr>
 				<tr>
-					<th>Lokasi</th>
-					<th>Fungsi</th>
-					<th>ODTWA</th>
-					<th>Atraksi Utama</th>
-					<th>Sarana / Prasarana</th>
+					<th rowspan="2">Pemanfaatan Air</th>
+					<th colspan="4">Wisata Alam</th>
+					<th rowspan="2">Geotermal</th>
+					<th rowspan="2">Lain-Lain</th>
+				</tr>
+				<tr>
+					<th>IUPA</th>
+					<th>PUPA</th>
+					<th>KTM</th>
+					<th>Jumlah</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['lokasi']; ?></td>
-					<td class="center"><?php echo $row['fungsi']; ?></td>
-					<td class="center"><?php echo $row['pengelola']; ?></td>
-					<td class="center"><?php echo $row['luas']; ?></td>
-					<td class="center"><?php echo $row['odtwa_title']; ?></td>
-					<td class="center"><?php echo $row['pariwisata']; ?></td>
-					<td class="center"><?php echo $row['sarana']; ?></td>
-					<td class="center"><?php echo $row['peluang']; ?></td>
-					<td class="center"><?php echo $row['keterangan']; ?></td>
+					<td><?php echo $row['perusahaan']; ?></td>
+					<td><?php echo $row['fungsi']; ?></td>
+					<td class="center"><?php echo $row['air']; ?></td>
+					<td class="center"><?php echo $row['iupa']; ?></td>
+					<td class="center"><?php echo $row['pupa']; ?></td>
+					<td class="center"><?php echo $row['ktm']; ?></td>
+					<td class="center"><?php echo $row['alam_total']; ?></td>
+					<td class="center"><?php echo $row['geotermal']; ?></td>
+					<td class="center"><?php echo $row['lain']; ?></td>
+					<td class="center"><?php echo $row['total']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -69,42 +70,34 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Kawasan</div>
+		<div class="label">Perusahaan</div>
+		<div class="input"><input type="text" name="perusahaan" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Lokasi</div>
-		<div class="input"><input type="text" name="lokasi" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Fungsi</div>
-		<div class="input"><input type="text" name="fungsi" class="long" /></div>
+		<div class="label">Nama dan Fungsi Kawasan</div>
+		<div class="input"><input type="text" name="fungsi" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Pengusahaan/Pengelolaan</div>
-		<div class="input"><input type="text" name="pengelola" class="long" /></div>
+		<div class="label">Jenis Pemanfaatan (Rp)</div>
 		<div class="clear"></div>
-		<div class="label">Luas Pemanfaatan</div>
-		<div class="input"><input type="text" name="luas" class="short" /></div>
+		<div class="label">- Pemanfaatan Air</div>
+		<div class="input"><input type="text" name="air" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Wisata Alam IUPA</div>
+		<div class="input"><input type="text" name="iupa" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Wisata Alam PUPA</div>
+		<div class="input"><input type="text" name="pupa" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Wisata Alam KTM</div>
+		<div class="input"><input type="text" name="ktm" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Geotermal</div>
+		<div class="input"><input type="text" name="geotermal" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Lain-Lain</div>
+		<div class="input"><input type="text" name="lain" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Produk Wisata Alam</div>
-		<div class="clear"></div>
-		<div class="label">ODTWA *</div>
-		<div class="input">
-			<select name="odtwa_id">
-				<?php echo ShowOption(array( 'Array' => $array_odtwa )); ?>
-			</select>
-		</div>
-		<div class="label">Atraksi Utama Pariwisata</div>
-		<div class="input"><input type="text" name="pariwisata" class="long" /></div>
-		<div class="clear"></div>
-		<div class="label">Sarana & Prasarana</div>
-		<div class="input"><input type="text" name="sarana" class="long" /></div>
-		<div class="clear"></div>
-		<div class="label">Peluang Pengembangan</div>
-		<div class="input"><input type="text" name="peluang" class="long" /></div>
-		<div class="clear"></div>
-		<div class="label">Keterangan</div>
-		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
-		<div class="clear"></div>
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

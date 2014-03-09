@@ -1,7 +1,4 @@
 <?php
-	// master
-	$array_odtwa = $this->odtwa_model->get_array();
-	
 	// record data
 	$array_record = $this->$module['model_name']->get_array();
 	$message = get_flash_message();
@@ -26,34 +23,26 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="2">Kawasan</th>
-					<th rowspan="2">Pengusaha / Pengelolaan</th>
-					<th rowspan="2">Luas Kawasan</th>
-					<th colspan="3">Produk Wisata Alam</th>
-					<th rowspan="2">Peluang Pengembangan Wisata</th>
-					<th rowspan="2">Keterangan</th>
-					<th rowspan="2">&nbsp;</th>
-				</tr>
-				<tr>
-					<th>Lokasi</th>
-					<th>Fungsi</th>
-					<th>ODTWA</th>
-					<th>Atraksi Utama</th>
-					<th>Sarana / Prasarana</th>
+					<th>Nama Kawasan/Koordinat Lokasi</th>
+					<th>Fungsi Kawasan Pemanfaatan</th>
+					<th>Jenis Pemanfaatan (Komersial/Non Komersial)</th>
+					<th>Pemanfaat (Pihak Ketiga)</th>
+					<th>Luas/Volume</th>
+					<th>Dasar Hukum Pemanfaatan</th>
+					<th>Keterangan</th>
+					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['lokasi']; ?></td>
-					<td class="center"><?php echo $row['fungsi']; ?></td>
-					<td class="center"><?php echo $row['pengelola']; ?></td>
+					<td><?php echo $row['nama_kawasan']; ?></td>
+					<td><?php echo $row['fungsi']; ?></td>
+					<td><?php echo $row['pemanfaatan']; ?></td>
+					<td><?php echo $row['perusahaan']; ?></td>
 					<td class="center"><?php echo $row['luas']; ?></td>
-					<td class="center"><?php echo $row['odtwa_title']; ?></td>
-					<td class="center"><?php echo $row['pariwisata']; ?></td>
-					<td class="center"><?php echo $row['sarana']; ?></td>
-					<td class="center"><?php echo $row['peluang']; ?></td>
-					<td class="center"><?php echo $row['keterangan']; ?></td>
+					<td><?php echo $row['dasar_hukum']; ?></td>
+					<td><?php echo $row['keterangan']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -69,42 +58,30 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Kawasan</div>
+		<div class="label">Nama Kawasan/Koordinat Lokasi</div>
+		<div class="input"><input type="text" name="nama_kawasan" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Lokasi</div>
-		<div class="input"><input type="text" name="lokasi" class="short" /></div>
-		<div class="clear"></div>
-		<div class="label">Fungsi</div>
-		<div class="input"><input type="text" name="fungsi" class="long" /></div>
+		<div class="label">Fungsi Kawasan Pemanfaatan</div>
+		<div class="input"><input type="text" name="fungsi" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Pengusahaan/Pengelolaan</div>
-		<div class="input"><input type="text" name="pengelola" class="long" /></div>
+		<div class="label">Jenis Pemanfaatan (Komersial/Non Komersial)</div>
+		<div class="input"><input type="text" name="pemanfaatan" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Luas Pemanfaatan</div>
+		<div class="label">Pemanfaat (Pihak Ketiga)</div>
+		<div class="input"><input type="text" name="perusahaan" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Luas/Volume</div>
 		<div class="input"><input type="text" name="luas" class="short" /></div>
 		<div class="clear"></div>
+		<div class="label">Dasar Hukum Pemanfaatan</div>
+		<div class="input"><input type="text" name="dasar_hukum" class="short" /></div>
+		<div class="clear"></div>
 		
-		<div class="label">Produk Wisata Alam</div>
-		<div class="clear"></div>
-		<div class="label">ODTWA *</div>
-		<div class="input">
-			<select name="odtwa_id">
-				<?php echo ShowOption(array( 'Array' => $array_odtwa )); ?>
-			</select>
-		</div>
-		<div class="label">Atraksi Utama Pariwisata</div>
-		<div class="input"><input type="text" name="pariwisata" class="long" /></div>
-		<div class="clear"></div>
-		<div class="label">Sarana & Prasarana</div>
-		<div class="input"><input type="text" name="sarana" class="long" /></div>
-		<div class="clear"></div>
-		<div class="label">Peluang Pengembangan</div>
-		<div class="input"><input type="text" name="peluang" class="long" /></div>
-		<div class="clear"></div>
 		<div class="label">Keterangan</div>
 		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
 		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

@@ -23,7 +23,7 @@
 	<div class="cnt-table">
 		<h4 class="main-title">Tumbuhan</h4>
 		<div class="table">
-			<table cellpadding="0" cellspacing="0" border="0" class="display datatable">
+			<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 				<thead>
 					<tr>
 						<th>Nama Kelas / Famili</th>
@@ -57,7 +57,7 @@
 		
 		<h4 class="main-title" style="padding: 25px 0 0 0;">Satwa Liar</h4>
 		<div class="table">
-			<table cellpadding="0" cellspacing="0" border="0" class="display datatable">
+			<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 				<thead>
 					<tr>
 						<th>Nama Kelas / Famili</th>

@@ -1,7 +1,4 @@
 <?php
-	// master
-	$array_odtwa = $this->odtwa_model->get_array();
-	
 	// record data
 	$array_record = $this->$module['model_name']->get_array();
 	$message = get_flash_message();
@@ -16,6 +13,11 @@
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 
+<style>
+.form-box .label { width: 300px; }
+.form-box .input { width: 260px; }
+</style>
+
 <div id="cnt-content"><div class="container"><div class="cnt-normal">
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	<div class="hide">
@@ -26,34 +28,46 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="2">Kawasan</th>
-					<th rowspan="2">Pengusaha / Pengelolaan</th>
-					<th rowspan="2">Luas Kawasan</th>
-					<th colspan="3">Produk Wisata Alam</th>
-					<th rowspan="2">Peluang Pengembangan Wisata</th>
-					<th rowspan="2">Keterangan</th>
+					<th colspan="2">Penelitian dan Pengembangan</th>
+					<th colspan="2">Pendidikan / Ilmu Pengetahuan</th>
+					<th colspan="2">Rekreasi</th>
+					<th colspan="2">Berkemah</th>
+					<th colspan="2">Lain-Lain</th>
+					<th colspan="3">Jumlah</th>
 					<th rowspan="2">&nbsp;</th>
 				</tr>
 				<tr>
-					<th>Lokasi</th>
-					<th>Fungsi</th>
-					<th>ODTWA</th>
-					<th>Atraksi Utama</th>
-					<th>Sarana / Prasarana</th>
+					<th>DN</th>
+					<th>LN</th>
+					<th>DN</th>
+					<th>LN</th>
+					<th>DN</th>
+					<th>LN</th>
+					<th>DN</th>
+					<th>LN</th>
+					<th>DN</th>
+					<th>LN</th>
+					<th>DN</th>
+					<th>LN</th>
+					<th>Total</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['lokasi']; ?></td>
-					<td class="center"><?php echo $row['fungsi']; ?></td>
-					<td class="center"><?php echo $row['pengelola']; ?></td>
-					<td class="center"><?php echo $row['luas']; ?></td>
-					<td class="center"><?php echo $row['odtwa_title']; ?></td>
-					<td class="center"><?php echo $row['pariwisata']; ?></td>
-					<td class="center"><?php echo $row['sarana']; ?></td>
-					<td class="center"><?php echo $row['peluang']; ?></td>
-					<td class="center"><?php echo $row['keterangan']; ?></td>
+					<td class="center"><?php echo $row['penelitian_dn']; ?></td>
+					<td class="center"><?php echo $row['penelitian_ln']; ?></td>
+					<td class="center"><?php echo $row['pendidikan_dn']; ?></td>
+					<td class="center"><?php echo $row['pendidikan_ln']; ?></td>
+					<td class="center"><?php echo $row['rekreasi_dn']; ?></td>
+					<td class="center"><?php echo $row['rekreasi_ln']; ?></td>
+					<td class="center"><?php echo $row['berkemah_dn']; ?></td>
+					<td class="center"><?php echo $row['berkemah_ln']; ?></td>
+					<td class="center"><?php echo $row['lain_dn']; ?></td>
+					<td class="center"><?php echo $row['lain_ln']; ?></td>
+					<td class="center"><?php echo $row['total_dn']; ?></td>
+					<td class="center"><?php echo $row['total_ln']; ?></td>
+					<td class="center"><?php echo $row['total']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -69,42 +83,37 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Kawasan</div>
+		<div class="label">Penelitian dan Pengembangan DN</div>
+		<div class="input"><input type="text" name="penelitian_dn" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Lokasi</div>
-		<div class="input"><input type="text" name="lokasi" class="short" /></div>
+		<div class="label">Penelitian dan Pengembangan LN</div>
+		<div class="input"><input type="text" name="penelitian_ln" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Fungsi</div>
-		<div class="input"><input type="text" name="fungsi" class="long" /></div>
+		<div class="label">Pendidikan / Ilmu Pengetahuan DN</div>
+		<div class="input"><input type="text" name="pendidikan_dn" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Pendidikan / Ilmu Pengetahuan LN</div>
+		<div class="input"><input type="text" name="pendidikan_ln" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Rekreasi DN</div>
+		<div class="input"><input type="text" name="rekreasi_dn" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Rekreasi LN</div>
+		<div class="input"><input type="text" name="rekreasi_ln" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Berkemah DN</div>
+		<div class="input"><input type="text" name="berkemah_dn" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Berkemah LN</div>
+		<div class="input"><input type="text" name="berkemah_ln" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Lain-Lain DN</div>
+		<div class="input"><input type="text" name="lain_dn" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">Lain-Lain DN</div>
+		<div class="input"><input type="text" name="lain_ln" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Pengusahaan/Pengelolaan</div>
-		<div class="input"><input type="text" name="pengelola" class="long" /></div>
-		<div class="clear"></div>
-		<div class="label">Luas Pemanfaatan</div>
-		<div class="input"><input type="text" name="luas" class="short" /></div>
-		<div class="clear"></div>
-		
-		<div class="label">Produk Wisata Alam</div>
-		<div class="clear"></div>
-		<div class="label">ODTWA *</div>
-		<div class="input">
-			<select name="odtwa_id">
-				<?php echo ShowOption(array( 'Array' => $array_odtwa )); ?>
-			</select>
-		</div>
-		<div class="label">Atraksi Utama Pariwisata</div>
-		<div class="input"><input type="text" name="pariwisata" class="long" /></div>
-		<div class="clear"></div>
-		<div class="label">Sarana & Prasarana</div>
-		<div class="input"><input type="text" name="sarana" class="long" /></div>
-		<div class="clear"></div>
-		<div class="label">Peluang Pengembangan</div>
-		<div class="input"><input type="text" name="peluang" class="long" /></div>
-		<div class="clear"></div>
-		<div class="label">Keterangan</div>
-		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
-		<div class="clear"></div>
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

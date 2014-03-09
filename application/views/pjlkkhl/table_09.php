@@ -1,7 +1,4 @@
 <?php
-	// master
-	$array_odtwa = $this->odtwa_model->get_array();
-	
 	// record data
 	$array_record = $this->$module['model_name']->get_array();
 	$message = get_flash_message();
@@ -16,7 +13,7 @@
 <body>
 <?php $this->load->view( 'panel/common/header' ); ?>
 
-<div id="cnt-content"><div class="container"><div class="cnt-normal">
+<div id="cnt-content"><div class="container" style="width: 1200px;"><div class="cnt-normal">
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	<div class="hide">
 		<div class="cnt-data"><?php echo json_encode($page); ?></div>
@@ -26,34 +23,43 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="2">Kawasan</th>
-					<th rowspan="2">Pengusaha / Pengelolaan</th>
-					<th rowspan="2">Luas Kawasan</th>
-					<th colspan="3">Produk Wisata Alam</th>
-					<th rowspan="2">Peluang Pengembangan Wisata</th>
-					<th rowspan="2">Keterangan</th>
+					<th rowspan="2">Nama Perusahaan</th>
+					<th colspan="5">Lokasi</th>
+					<th rowspan="2">Tanggal Permohonan IPPA</th>
+					<th colspan="3">Surat Keputusan Persetujuan Prinsip</th>
+					<th colspan="3">Surat Keputusan IPPA</th>
 					<th rowspan="2">&nbsp;</th>
 				</tr>
 				<tr>
-					<th>Lokasi</th>
-					<th>Fungsi</th>
-					<th>ODTWA</th>
-					<th>Atraksi Utama</th>
-					<th>Sarana / Prasarana</th>
+					<th>Nama Kawasan</th>
+					<th>Luas Kawasan (Ha)</th>
+					<th>Luas Yang Dimohon (Ha)</th>
+					<th>Kabupaten/Kota</th>
+					<th>Provinsi</th>
+					<th>Nomor</th>
+					<th>Tanggal</th>
+					<th>Masa Berlaku</th>
+					<th>Nomor</th>
+					<th>Tanggal</th>
+					<th>Masa Berlaku</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['lokasi']; ?></td>
-					<td class="center"><?php echo $row['fungsi']; ?></td>
-					<td class="center"><?php echo $row['pengelola']; ?></td>
-					<td class="center"><?php echo $row['luas']; ?></td>
-					<td class="center"><?php echo $row['odtwa_title']; ?></td>
-					<td class="center"><?php echo $row['pariwisata']; ?></td>
-					<td class="center"><?php echo $row['sarana']; ?></td>
-					<td class="center"><?php echo $row['peluang']; ?></td>
-					<td class="center"><?php echo $row['keterangan']; ?></td>
+					<td><?php echo $row['perusahaan']; ?></td>
+					<td><?php echo $row['nama_kawasan']; ?></td>
+					<td class="center"><?php echo $row['luas_kawasan']; ?></td>
+					<td class="center"><?php echo $row['luas_permintaan']; ?></td>
+					<td><?php echo $row['kota']; ?></td>
+					<td><?php echo $row['propinsi']; ?></td>
+					<td class="center"><?php echo GetFormatDate($row['tanggal_permohonan']); ?></td>
+					<td class="center"><?php echo $row['persetujuan_no']; ?></td>
+					<td class="center"><?php echo GetFormatDate($row['persetujuan_tanggal']); ?></td>
+					<td><?php echo $row['persetujuan_berlaku']; ?></td>
+					<td class="center"><?php echo $row['keputusan_no']; ?></td>
+					<td class="center"><?php echo GetFormatDate($row['keputusan_tanggal']); ?></td>
+					<td><?php echo $row['keputusan_berlaku']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -69,42 +75,56 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Kawasan</div>
+		<div class="label">Nama Perusahaan</div>
+		<div class="input"><input type="text" name="perusahaan" class="short" /></div>
 		<div class="clear"></div>
+		
 		<div class="label">Lokasi</div>
-		<div class="input"><input type="text" name="lokasi" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Fungsi</div>
-		<div class="input"><input type="text" name="fungsi" class="long" /></div>
+		<div class="label">- Nama Kawasan</div>
+		<div class="input"><input type="text" name="nama_kawasan" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Luas Kawasan (Ha)</div>
+		<div class="input"><input type="text" name="luas_kawasan" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Luas Yang Dimohon (Ha)</div>
+		<div class="input"><input type="text" name="luas_permintaan" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Kabupaten/Kota</div>
+		<div class="input"><input type="text" name="kota" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Provinsi</div>
+		<div class="input"><input type="text" name="propinsi" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Pengusahaan/Pengelolaan</div>
-		<div class="input"><input type="text" name="pengelola" class="long" /></div>
-		<div class="clear"></div>
-		<div class="label">Luas Pemanfaatan</div>
-		<div class="input"><input type="text" name="luas" class="short" /></div>
+		<div class="label">Tanggal Permohonan IPPA</div>
+		<div class="input"><input type="text" name="tanggal_permohonan" class="short datepicker" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Produk Wisata Alam</div>
+		<div class="label" style="width: 50%;">Surat Keputusan Persetujuan Prinsip</div>
 		<div class="clear"></div>
-		<div class="label">ODTWA *</div>
-		<div class="input">
-			<select name="odtwa_id">
-				<?php echo ShowOption(array( 'Array' => $array_odtwa )); ?>
-			</select>
-		</div>
-		<div class="label">Atraksi Utama Pariwisata</div>
-		<div class="input"><input type="text" name="pariwisata" class="long" /></div>
+		<div class="label">- Nomor</div>
+		<div class="input"><input type="text" name="persetujuan_no" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Sarana & Prasarana</div>
-		<div class="input"><input type="text" name="sarana" class="long" /></div>
+		<div class="label">- Tanggal</div>
+		<div class="input"><input type="text" name="persetujuan_tanggal" class="short datepicker" /></div>
 		<div class="clear"></div>
-		<div class="label">Peluang Pengembangan</div>
-		<div class="input"><input type="text" name="peluang" class="long" /></div>
+		<div class="label">- Masa Berlaku</div>
+		<div class="input"><input type="text" name="persetujuan_berlaku" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Keterangan</div>
-		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
+		
+		<div class="label">Surat Keputusan IPPA</div>
 		<div class="clear"></div>
+		<div class="label">- Nomor</div>
+		<div class="input"><input type="text" name="keputusan_no" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Tanggal</div>
+		<div class="input"><input type="text" name="keputusan_tanggal" class="short datepicker" /></div>
+		<div class="clear"></div>
+		<div class="label">- Masa Berlaku</div>
+		<div class="input"><input type="text" name="keputusan_berlaku" class="short" /></div>
+		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>

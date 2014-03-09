@@ -1,7 +1,4 @@
 <?php
-	// master
-	$array_odtwa = $this->odtwa_model->get_array();
-	
 	// record data
 	$array_record = $this->$module['model_name']->get_array();
 	$message = get_flash_message();
@@ -26,34 +23,41 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="display datatable">
 			<thead>
 				<tr>
-					<th colspan="2">Kawasan</th>
-					<th rowspan="2">Pengusaha / Pengelolaan</th>
-					<th rowspan="2">Luas Kawasan</th>
-					<th colspan="3">Produk Wisata Alam</th>
-					<th rowspan="2">Peluang Pengembangan Wisata</th>
-					<th rowspan="2">Keterangan</th>
-					<th rowspan="2">&nbsp;</th>
+					<th colspan="4">Kader Konservasi</th>
+					<th colspan="3">Kelompok Pencinta Alam</th>
+					<th colspan="3">Kelompok Swadaya Masyarakat/Profesi</th>
+					<th rowspan="3">&nbsp;</th>
 				</tr>
 				<tr>
-					<th>Lokasi</th>
-					<th>Fungsi</th>
-					<th>ODTWA</th>
-					<th>Atraksi Utama</th>
-					<th>Sarana / Prasarana</th>
+					<th rowspan="2">Pemula</th>
+					<th rowspan="2">Madya</th>
+					<th rowspan="2">Utama</th>
+					<th rowspan="2">Jumlah</th>
+					<th rowspan="2">Jumlah Kelompok</th>
+					<th colspan="2">Keadaan Saat Ini</th>
+					<th rowspan="2">Jumlah Kelompok</th>
+					<th colspan="2">Keadaan Saat Ini</th>
+				</tr>
+				<tr>
+					<th>Aktif</th>
+					<th>Tidak Aktif</th>
+					<th>Aktif</th>
+					<th>Tidak Aktif</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($array_record as $key => $row) { ?>
 				<tr class="<?php echo (($key % 2) == 0) ? 'even' : 'odd'; ?> gradeA">
-					<td class="center"><?php echo $row['lokasi']; ?></td>
-					<td class="center"><?php echo $row['fungsi']; ?></td>
-					<td class="center"><?php echo $row['pengelola']; ?></td>
-					<td class="center"><?php echo $row['luas']; ?></td>
-					<td class="center"><?php echo $row['odtwa_title']; ?></td>
-					<td class="center"><?php echo $row['pariwisata']; ?></td>
-					<td class="center"><?php echo $row['sarana']; ?></td>
-					<td class="center"><?php echo $row['peluang']; ?></td>
-					<td class="center"><?php echo $row['keterangan']; ?></td>
+					<td class="center"><?php echo $row['kader_pemula']; ?></td>
+					<td class="center"><?php echo $row['kader_madya']; ?></td>
+					<td class="center"><?php echo $row['kader_utama']; ?></td>
+					<td class="center"><?php echo $row['kader_total']; ?></td>
+					<td class="center"><?php echo $row['pecinta_total']; ?></td>
+					<td class="center"><?php echo $row['pecinta_aktif']; ?></td>
+					<td class="center"><?php echo $row['pecinta_pasif']; ?></td>
+					<td class="center"><?php echo $row['swadaya_total']; ?></td>
+					<td class="center"><?php echo $row['swadaya_aktif']; ?></td>
+					<td class="center"><?php echo $row['swadaya_pasif']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
 						<i class="fa fa-times btn-delete"></i>
@@ -69,42 +73,42 @@
 		<input type="hidden" name="id" value="0" />
 		<input type="hidden" name="action" value="update" />
 		
-		<div class="label">Kawasan</div>
+		<div class="label">Kader Konservasi</div>
 		<div class="clear"></div>
-		<div class="label">Lokasi</div>
-		<div class="input"><input type="text" name="lokasi" class="short" /></div>
+		<div class="label">- Pemula</div>
+		<div class="input"><input type="text" name="kader_pemula" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Fungsi</div>
-		<div class="input"><input type="text" name="fungsi" class="long" /></div>
+		<div class="label">- Madya</div>
+		<div class="input"><input type="text" name="kader_madya" class="short" /></div>
 		<div class="clear"></div>
-		
-		<div class="label">Pengusahaan/Pengelolaan</div>
-		<div class="input"><input type="text" name="pengelola" class="long" /></div>
-		<div class="clear"></div>
-		<div class="label">Luas Pemanfaatan</div>
-		<div class="input"><input type="text" name="luas" class="short" /></div>
+		<div class="label">- Utama</div>
+		<div class="input"><input type="text" name="kader_utama" class="short" /></div>
 		<div class="clear"></div>
 		
-		<div class="label">Produk Wisata Alam</div>
+		<div class="label" style="width: 75%;">Kelompok Pencinta Alam</div>
 		<div class="clear"></div>
-		<div class="label">ODTWA *</div>
-		<div class="input">
-			<select name="odtwa_id">
-				<?php echo ShowOption(array( 'Array' => $array_odtwa )); ?>
-			</select>
-		</div>
-		<div class="label">Atraksi Utama Pariwisata</div>
-		<div class="input"><input type="text" name="pariwisata" class="long" /></div>
+		<div class="label">- Jumlah Kelompok</div>
+		<div class="input"><input type="text" name="pecinta_total" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Sarana & Prasarana</div>
-		<div class="input"><input type="text" name="sarana" class="long" /></div>
+		<div class="label">- Aktif</div>
+		<div class="input"><input type="text" name="pecinta_aktif" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Peluang Pengembangan</div>
-		<div class="input"><input type="text" name="peluang" class="long" /></div>
+		<div class="label">- Tidak Aktif</div>
+		<div class="input"><input type="text" name="pecinta_pasif" class="short" /></div>
 		<div class="clear"></div>
-		<div class="label">Keterangan</div>
-		<div class="input"><textarea name="keterangan" class="long"></textarea></div>
+		
+		<div class="label" style="width: 75%;">Kelompok Swadaya Masyarakat/Profesi</div>
 		<div class="clear"></div>
+		<div class="label">- Jumlah Kelompok</div>
+		<div class="input"><input type="text" name="swadaya_total" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Aktif</div>
+		<div class="input"><input type="text" name="swadaya_aktif" class="short" /></div>
+		<div class="clear"></div>
+		<div class="label">- Tidak Aktif</div>
+		<div class="input"><input type="text" name="swadaya_pasif" class="short" /></div>
+		<div class="clear"></div>
+		
 		<div class="label">&nbsp;</div>
 		<div class="input">
 			<button type="button" class="btn-cancel"><i class="fa fa-mail-reply"></i> Batal</button>
