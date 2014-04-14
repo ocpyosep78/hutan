@@ -22,6 +22,9 @@ define('ODTWA',									'odtwa');
 define('USER',									'user');
 define('USER_TYPE',								'user_type');
 
+/*   USER TYPE   */
+define('USER_TYPE_ADMINISTRATOR',				1);
+
 /*   PPH   */
 define('PPH_TABLE_01',							'pph_table_01');
 define('PPH_TABLE_02',							'pph_table_02');

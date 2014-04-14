@@ -1,8 +1,16 @@
 <?php
 	$is_login = $this->User_model->is_login();
+	if ($is_login) {
+		$user = $this->User_model->get_session();
+	}
 ?>
 <div id="cnt-header">
 	<a href="<?php echo base_url(); ?>">HOME</a>
+	
+	<?php if ($is_login && $user['user_type_id'] == USER_TYPE_ADMINISTRATOR) { ?>
+	| <a href="<?php echo base_url('user'); ?>">USER</a>
+	<?php } ?>
+	
 	<?php if ($is_login) { ?>
 	| <a href="<?php echo base_url('kkh/index'); ?>">KKH</a>
 	| <a href="<?php echo base_url('kkbhl/index'); ?>">KKBHL</a>
@@ -14,4 +22,5 @@
 	<?php } else { ?>
 	| <a href="<?php echo base_url('login'); ?>">LOGIN</a>
 	<?php } ?>
+	
 </div>

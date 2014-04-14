@@ -20,8 +20,8 @@ class login extends CI_Controller {
 		$result = array( 'status' => false, 'message' => '' );
 		if (count($user) == 0) {
 			$result['message'] = 'Maaf, user anda tidak ditemukan';
-		} else if ($user['is_active'] == 0) {
-			$result['message'] = 'Maaf, user anda tidak aktif';
+//		} else if ($user['is_active'] == 0) {
+//			$result['message'] = 'Maaf, user anda tidak aktif';
 		} else if ($user['passwd'] == EncriptPassword($_POST['passwd'])) {
 			$result['status'] = true;
 			$this->User_model->set_session($user);

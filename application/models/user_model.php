@@ -39,7 +39,13 @@ class User_model extends CI_Model {
         if (isset($param['id'])) {
             $select_query  = "SELECT * FROM ".USER." WHERE id = '".$param['id']."' LIMIT 1";
         } else if (isset($param['alias'])) {
-            $select_query  = "SELECT * FROM ".USER." WHERE alias = '".$param['alias']."' LIMIT 1";
+            $select_query  = "
+				SELECT user.*, user_type.parent_id
+				FROM ".USER." user
+				LEFT JOIN ".USER_TYPE." user_type ON user_type.id = user.user_type_id
+				WHERE user.alias = '".$param['alias']."'
+				LIMIT 1
+			";
         } else if (isset($param['email'])) {
             $select_query  = "SELECT * FROM ".USER." WHERE email = '".$param['email']."' LIMIT 1";
         } 
