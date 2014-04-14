@@ -1,0 +1,33 @@
+1.selamat anda masuk sebagai resort, seksi, bidang, admin
+2.font arial 11, judul kolom 2 warna merah, button tambah merah
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+resort:
+1.resort= cetak, input, edit, hapus data
+2.resort= data dikirim ke seksi
+3.resort= tanggal kirim
+4.resort= bisa melihat antar resort, tapi tdk bisa edit dan hapus data resort lain.
+
+seksi:
+1.seksi= pilih resort
+2.seksi= tanggal masuk
+3.seksi= cetak, edit
+4.seksi= tanggal kirim
+5.seksi= setelah data kiriman dari resort masuk ke seksi maka data akan direvisi oleh seksi dan kemudian di kirim ke bidang
+6.seksi= apabila data sudah masuk ke seksi dan data di edit oleh seksi maka data resort tidak berubah
+
+bidang:
+1.bidang= pilih seksi-resort
+2.bidang= tanggal masuk
+3.bidang= cetak, edit
+4.bidang= tanggal kirim
+5.bidang= setelah data kiriman dari seksi masuk ke bidang,  maka data akan direvisi oleh bidang dan kemudian di kirim ke admin
+6.bidang= apabila data sudah masuk ke bidang dan data di edit oleh bidang maka data resort, seksi tidak berubah
+
+Admin balai:
+1.admin= pilih bidang-seksi-resort
+2.seksi= tanggal masuk data
+3.admin hanya dapat melihat data yang sudah terproses/terkirim per jenjang
+4.admin management user
