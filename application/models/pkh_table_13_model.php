@@ -5,7 +5,7 @@ class pkh_table_13_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'jenis', 'title', 'impuls_baik', 'impuls_rusak', 'kompresor_baik', 'kompresor_rusak', 'pompa_jinjing_baik', 'pompa_jinjing_rusak',
+			'id', 'sender_id', 'user_type_id', 'jenis', 'title', 'impuls_baik', 'impuls_rusak', 'kompresor_baik', 'kompresor_rusak', 'pompa_jinjing_baik', 'pompa_jinjing_rusak',
 			'pompa_apung_baik', 'pompa_apung_rusak', 'pompa_induk_baik', 'pompa_induk_rusak', 'pompa_sorong_baik', 'pompa_sorong_rusak',
 			'tangki_baik', 'tangki_rusak', 'selang_15_baik', 'selang_15_rusak', 'selang_25_baik', 'selang_25_rusak', 'nozel_15_baik', 'nozel_15_rusak',
 			'nozel_25_baik', 'nozel_25_rusak', 'valve_baik', 'valve_rusak', 'sunbut_baik', 'sunbut_rusak', 'kopling_baik', 'kopling_rusak',
@@ -54,14 +54,17 @@ class pkh_table_13_model extends CI_Model {
         $array = array();
 		
 		$string_jenis = (isset($param['jenis'])) ? "AND jenis = '".$param['jenis']."'" : '';
+		$string_user_type = (isset($param['user_type_id'])) ? "AND store.user_type_id = '".$param['user_type_id']."'" : '';
 		$string_filter = GetStringFilter($param, @$param['column']);
 		$string_sorting = GetStringSorting($param, @$param['column'], 'update_time ASC');
 		$string_limit = GetStringLimit($param);
 		
 		$select_query = "
-			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".PKH_TABLE_13."
-			WHERE 1 $string_jenis $string_filter
+			SELECT SQL_CALC_FOUND_ROWS store.*, user_type.name user_type_name
+			FROM ".PKH_TABLE_13." store
+			LEFT JOIN ".USER." user ON user.id = store.sender_id
+			LEFT JOIN ".USER_TYPE." user_type ON user_type.id = user.user_type_id
+			WHERE 1 $string_jenis $string_user_type $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
 		";

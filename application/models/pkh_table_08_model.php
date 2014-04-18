@@ -5,7 +5,7 @@ class pkh_table_08_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'jenis', 'title', 'jumlah_regu', 'jumlah_orang', 'tingkat_1', 'tingkat_2', 'tingkat_3', 'smart', 'danru', 'kadaop', 'spbk',
+			'id', 'sender_id', 'user_type_id', 'jenis', 'title', 'jumlah_regu', 'jumlah_orang', 'tingkat_1', 'tingkat_2', 'tingkat_3', 'smart', 'danru', 'kadaop', 'spbk',
 			'pompa', 'tot', 'mmp', 'orakom', 'pb_kamp', 'pulbaket', 'mcn', 'gps', 'gis', 'sar', 'ics', 'aws', 'lain', 'update_time'
 		);
     }
@@ -51,14 +51,17 @@ class pkh_table_08_model extends CI_Model {
         $array = array();
 		
 		$string_jenis = (isset($param['jenis'])) ? "AND jenis = '".$param['jenis']."'" : '';
+		$string_user_type = (isset($param['user_type_id'])) ? "AND store.user_type_id = '".$param['user_type_id']."'" : '';
 		$string_filter = GetStringFilter($param, @$param['column']);
 		$string_sorting = GetStringSorting($param, @$param['column'], 'update_time ASC');
 		$string_limit = GetStringLimit($param);
 		
 		$select_query = "
-			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".PKH_TABLE_08."
-			WHERE 1 $string_jenis $string_filter
+			SELECT SQL_CALC_FOUND_ROWS store.*, user_type.name user_type_name
+			FROM ".PKH_TABLE_08." store
+			LEFT JOIN ".USER." user ON user.id = store.sender_id
+			LEFT JOIN ".USER_TYPE." user_type ON user_type.id = user.user_type_id
+			WHERE 1 $string_jenis $string_user_type $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
 		";

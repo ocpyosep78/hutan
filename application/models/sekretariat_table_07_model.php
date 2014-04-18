@@ -5,7 +5,7 @@ class sekretariat_table_07_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'gol_1_l', 'gol_1_p', 'gol_2_l', 'gol_2_p', 'gol_3_l', 'gol_3_p', 'gol_4_l', 'gol_4_p', 'keterangan', 'update_time'
+			'id', 'sender_id', 'user_type_id', 'gol_1_l', 'gol_1_p', 'gol_2_l', 'gol_2_p', 'gol_3_l', 'gol_3_p', 'gol_4_l', 'gol_4_p', 'keterangan', 'update_time'
 		);
     }
 	
@@ -50,14 +50,17 @@ class sekretariat_table_07_model extends CI_Model {
         $array = array();
 		
 		$string_jenis = (isset($param['jenis'])) ? "AND jenis = '".$param['jenis']."'" : '';
+		$string_user_type = (isset($param['user_type_id'])) ? "AND store.user_type_id = '".$param['user_type_id']."'" : '';
 		$string_filter = GetStringFilter($param, @$param['column']);
 		$string_sorting = GetStringSorting($param, @$param['column'], 'update_time ASC');
 		$string_limit = GetStringLimit($param);
 		
 		$select_query = "
-			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".SEKRETARIAT_TABLE_07."
-			WHERE 1 $string_jenis $string_filter
+			SELECT SQL_CALC_FOUND_ROWS store.*, user_type.name user_type_name
+			FROM ".SEKRETARIAT_TABLE_07." store
+			LEFT JOIN ".USER." user ON user.id = store.sender_id
+			LEFT JOIN ".USER_TYPE." user_type ON user_type.id = user.user_type_id
+			WHERE 1 $string_jenis $string_user_type $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
 		";

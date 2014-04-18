@@ -5,7 +5,7 @@ class sekretariat_table_05_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'struktural_1a_l', 'struktural_1a_p', 'struktural_1b_l', 'struktural_1b_p', 'struktural_2a_l', 'struktural_2a_p', 'struktural_2b_l',
+			'id', 'sender_id', 'user_type_id', 'struktural_1a_l', 'struktural_1a_p', 'struktural_1b_l', 'struktural_1b_p', 'struktural_2a_l', 'struktural_2a_p', 'struktural_2b_l',
 			'struktural_2b_p', 'struktural_3a_l', 'struktural_3a_p', 'struktural_3b_l', 'struktural_3b_p', 'struktural_4a_l', 'struktural_4a_p',
 			'struktural_4b_l', 'struktural_4b_p', 'fungsional_umum_l', 'fungsional_umum_p', 'fungsional_l', 'fungsional_p', 'keterangan', 'update_time'
 		);
@@ -51,15 +51,18 @@ class sekretariat_table_05_model extends CI_Model {
     function get_array($param = array()) {
         $array = array();
 		
+		$string_user_type = (isset($param['user_type_id'])) ? "AND store.user_type_id = '".$param['user_type_id']."'" : '';
 		$string_jenis = (isset($param['jenis'])) ? "AND jenis = '".$param['jenis']."'" : '';
 		$string_filter = GetStringFilter($param, @$param['column']);
 		$string_sorting = GetStringSorting($param, @$param['column'], 'update_time ASC');
 		$string_limit = GetStringLimit($param);
 		
 		$select_query = "
-			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".SEKRETARIAT_TABLE_05."
-			WHERE 1 $string_jenis $string_filter
+			SELECT SQL_CALC_FOUND_ROWS store.*, user_type.name user_type_name
+			FROM ".SEKRETARIAT_TABLE_05." store
+			LEFT JOIN ".USER." user ON user.id = store.sender_id
+			LEFT JOIN ".USER_TYPE." user_type ON user_type.id = user.user_type_id
+			WHERE 1 $string_jenis $string_user_type $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
 		";

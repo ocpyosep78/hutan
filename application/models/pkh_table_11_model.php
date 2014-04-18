@@ -5,7 +5,7 @@ class pkh_table_11_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'jenis', 'title', 'pakaian_baik', 'pakaian_rusak', 'helm_baik', 'helm_rusak', 'lampu_baik', 'lampu_rusak', 'gogles_baik', 'gogles_rusak',
+			'id', 'sender_id', 'user_type_id', 'jenis', 'title', 'pakaian_baik', 'pakaian_rusak', 'helm_baik', 'helm_rusak', 'lampu_baik', 'lampu_rusak', 'gogles_baik', 'gogles_rusak',
 			'slayer_baik', 'slayer_rusak', 'sarung_tangan_baik', 'sarung_tangan_rusak', 'sabuk_baik', 'sabuk_rusak', 'veples_baik', 'veples_rusak',
 			'sepatu_baik', 'sepatu_rusak', 'ransel_baik', 'ransel_rusak', 'lain', 'update_time'
 		);
@@ -52,14 +52,17 @@ class pkh_table_11_model extends CI_Model {
         $array = array();
 		
 		$string_jenis = (isset($param['jenis'])) ? "AND jenis = '".$param['jenis']."'" : '';
+		$string_user_type = (isset($param['user_type_id'])) ? "AND store.user_type_id = '".$param['user_type_id']."'" : '';
 		$string_filter = GetStringFilter($param, @$param['column']);
 		$string_sorting = GetStringSorting($param, @$param['column'], 'update_time ASC');
 		$string_limit = GetStringLimit($param);
 		
 		$select_query = "
-			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".PKH_TABLE_11."
-			WHERE 1 $string_jenis $string_filter
+			SELECT SQL_CALC_FOUND_ROWS store.*, user_type.name user_type_name
+			FROM ".PKH_TABLE_11." store
+			LEFT JOIN ".USER." user ON user.id = store.sender_id
+			LEFT JOIN ".USER_TYPE." user_type ON user_type.id = user.user_type_id
+			WHERE 1 $string_jenis $string_user_type $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
 		";

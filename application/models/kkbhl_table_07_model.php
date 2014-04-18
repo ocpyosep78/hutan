@@ -5,7 +5,7 @@ class kkbhl_table_07_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'nama_kawasan', 'desa', 'kabupaten', 'propinsi', 'koordinat', 'luas', 'lokasi', 'sk_penetapan', 'rantek', 'mou', 'bibit', 'lapangan', 'penanaman',
+			'id', 'sender_id', 'user_type_id', 'nama_kawasan', 'desa', 'kabupaten', 'propinsi', 'koordinat', 'luas', 'lokasi', 'sk_penetapan', 'rantek', 'mou', 'bibit', 'lapangan', 'penanaman',
 			'permasalahan', 'tindak_lanjut', 'update_time'
 		);
     }
@@ -50,14 +50,17 @@ class kkbhl_table_07_model extends CI_Model {
     function get_array($param = array()) {
         $array = array();
 		
+		$string_user_type = (isset($param['user_type_id'])) ? "AND store.user_type_id = '".$param['user_type_id']."'" : '';
 		$string_filter = GetStringFilter($param, @$param['column']);
 		$string_sorting = GetStringSorting($param, @$param['column'], 'update_time ASC');
 		$string_limit = GetStringLimit($param);
 		
 		$select_query = "
-			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".KKBHL_TABLE_07."
-			WHERE 1 $string_filter
+			SELECT SQL_CALC_FOUND_ROWS store.*, user_type.name user_type_name
+			FROM ".KKBHL_TABLE_07." store
+			LEFT JOIN ".USER." user ON user.id = store.sender_id
+			LEFT JOIN ".USER_TYPE." user_type ON user_type.id = user.user_type_id
+			WHERE 1 $string_user_type $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
 		";

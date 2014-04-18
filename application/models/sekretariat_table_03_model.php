@@ -5,7 +5,7 @@ class sekretariat_table_03_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'polhut_terampil', 'polhut_calon_terampil', 'polhut_ahli', 'polhut_calon_ahli', 'peh_terampil', 'peh_calon_terampil', 'peh_ahli',
+			'id', 'sender_id', 'user_type_id', 'polhut_terampil', 'polhut_calon_terampil', 'polhut_ahli', 'polhut_calon_ahli', 'peh_terampil', 'peh_calon_terampil', 'peh_ahli',
 			'peh_calon_ahli', 'pranata_terampil', 'pranata_calon_terampil', 'pranata_ahli', 'pranata_calon_ahli', 'analis_terampil', 'analis_calon_terampil',
 			'analis_ahli', 'analis_calon_ahli', 'statistisi_terampil', 'statistisi_calon_terampil', 'statistisi_ahli', 'statistisi_calon_ahli',
 			'arsiparis_terampil', 'arsiparis_calon_terampil', 'arsiparis_ahli', 'arsiparis_calon_ahli', 'perencana_terampil', 'perencana_calon_terampil',
@@ -53,15 +53,18 @@ class sekretariat_table_03_model extends CI_Model {
     function get_array($param = array()) {
         $array = array();
 		
+		$string_user_type = (isset($param['user_type_id'])) ? "AND store.user_type_id = '".$param['user_type_id']."'" : '';
 		$string_jenis = (isset($param['jenis'])) ? "AND jenis = '".$param['jenis']."'" : '';
 		$string_filter = GetStringFilter($param, @$param['column']);
 		$string_sorting = GetStringSorting($param, @$param['column'], 'update_time ASC');
 		$string_limit = GetStringLimit($param);
 		
 		$select_query = "
-			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".SEKRETARIAT_TABLE_03."
-			WHERE 1 $string_jenis $string_filter
+			SELECT SQL_CALC_FOUND_ROWS store.*, user_type.name user_type_name
+			FROM ".SEKRETARIAT_TABLE_03." store
+			LEFT JOIN ".USER." user ON user.id = store.sender_id
+			LEFT JOIN ".USER_TYPE." user_type ON user_type.id = user.user_type_id
+			WHERE 1 $string_jenis $string_user_type $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
 		";

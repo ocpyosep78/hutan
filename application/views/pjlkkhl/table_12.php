@@ -1,6 +1,9 @@
 <?php
+	// user
+	$user = $this->User_model->get_session();
+	
 	// record data
-	$array_record = $this->$module['model_name']->get_array();
+	$array_record = $this->$module['model_name']->get_array(array( 'user_type_id' => $user['user_type_id'] ));
 	$message = get_flash_message();
 	
 	// page
@@ -29,6 +32,7 @@
 					<th rowspan="2">Luas/Volume</th>
 					<th rowspan="2">Dasar Hukum Pemanfaatan</th>
 					<th rowspan="2">Keterangan</th>
+					<th rowspan="2">Dari</th>
 					<th rowspan="2">&nbsp;</th>
 				</tr>
 				<tr>
@@ -46,8 +50,10 @@
 					<td class="center"><?php echo $row['luas']; ?></td>
 					<td><?php echo $row['dasar_hukum']; ?></td>
 					<td><?php echo $row['keterangan']; ?></td>
+					<td><?php echo $row['user_type_name']; ?></td>
 					<td class="center">
 						<i class="fa fa-pencil btn-edit"></i>
+						<i class="fa fa-mail-forward btn-forward"></i>
 						<i class="fa fa-times btn-delete"></i>
 						<span class="hide"><?php echo json_encode($row); ?></span>
 					</td>
@@ -121,6 +127,20 @@ $(document).ready(function() {
 		eval('var record = ' + raw_record);
 		Func.populate({ cnt: '#form-editor', record: record });
 		page.show_form();
+	});
+	$('.btn-forward').click(function() {
+		var raw_record = $(this).parent('td').find('.hide').text();
+		eval('var record = ' + raw_record);
+		
+		Func.form.submit({
+			url: page.data.module.module_link + '/action',
+			param: { action: 'forward', id: record.id },
+			callback: function(result) {
+				if (result.status) {
+					window.location = window.location.href;
+				}
+			}
+		});
 	});
 	$('.btn-delete').click(function() {
 		var raw_record = $(this).parent('td').find('.hide').text();

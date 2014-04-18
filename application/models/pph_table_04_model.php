@@ -5,7 +5,7 @@ class pph_table_04_model extends CI_Model {
         parent::__construct();
 		
         $this->field = array(
-			'id', 'nama_kawasan', 'temuan_luas', 'temuan_jumlah', 'temuan_bangunan', 'temuan_bukti', 'sitaan_bangunan', 'sitaan_bukti',
+			'id', 'sender_id', 'user_type_id', 'nama_kawasan', 'temuan_luas', 'temuan_jumlah', 'temuan_bangunan', 'temuan_bukti', 'sitaan_bangunan', 'sitaan_bukti',
 			'jumlah_kasus', 'jumlah_tersangka', 'keterangan', 'update_time'
 		);
     }
@@ -50,14 +50,17 @@ class pph_table_04_model extends CI_Model {
     function get_array($param = array()) {
         $array = array();
 		
+		$string_user_type = (isset($param['user_type_id'])) ? "AND store.user_type_id = '".$param['user_type_id']."'" : '';
 		$string_filter = GetStringFilter($param, @$param['column']);
 		$string_sorting = GetStringSorting($param, @$param['column'], 'update_time ASC');
 		$string_limit = GetStringLimit($param);
 		
 		$select_query = "
-			SELECT SQL_CALC_FOUND_ROWS *
-			FROM ".PPH_TABLE_04."
-			WHERE 1 $string_filter
+			SELECT SQL_CALC_FOUND_ROWS store.*, user_type.name user_type_name
+			FROM ".PPH_TABLE_04." store
+			LEFT JOIN ".USER." user ON user.id = store.sender_id
+			LEFT JOIN ".USER_TYPE." user_type ON user_type.id = user.user_type_id
+			WHERE 1 $string_user_type $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
 		";

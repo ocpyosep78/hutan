@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 09, 2014 at 08:16 PM
+-- Generation Time: Apr 18, 2014 at 07:46 AM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -27,6 +27,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_01` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `kawasan_penunjukan_no` varchar(255) NOT NULL,
   `kawasan_penunjukan_tanggal` date NOT NULL,
@@ -46,14 +48,17 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_01` (
   `sk_pengesahaan_periode` varchar(255) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `kkbhl_table_01`
 --
 
-INSERT INTO `kkbhl_table_01` (`id`, `nama_kawasan`, `kawasan_penunjukan_no`, `kawasan_penunjukan_tanggal`, `kawasan_penunjukan_luas`, `kawasan_penetapan_no`, `kawasan_penetapan_tanggal`, `kawasan_penetapan_luas`, `blog_penata_pengesah`, `blog_penata_no`, `blog_penata_tanggal`, `blog_luas_inti`, `blog_luas_rimba`, `blog_luas_manfaat`, `blog_luas_lain`, `sk_pengesahaan_no`, `sk_pengesahaan_tanggal`, `sk_pengesahaan_periode`, `update_time`) VALUES
-(2, 'Bromo Tengger', '01', '2014-03-02', '03', '04', '2014-03-05', '06', '07', '08', '2014-03-09', '11', '12', '13', '14', '15', '2014-03-16', '17', '2014-03-06 10:42:05');
+INSERT INTO `kkbhl_table_01` (`id`, `sender_id`, `user_type_id`, `nama_kawasan`, `kawasan_penunjukan_no`, `kawasan_penunjukan_tanggal`, `kawasan_penunjukan_luas`, `kawasan_penetapan_no`, `kawasan_penetapan_tanggal`, `kawasan_penetapan_luas`, `blog_penata_pengesah`, `blog_penata_no`, `blog_penata_tanggal`, `blog_luas_inti`, `blog_luas_rimba`, `blog_luas_manfaat`, `blog_luas_lain`, `sk_pengesahaan_no`, `sk_pengesahaan_tanggal`, `sk_pengesahaan_periode`, `update_time`) VALUES
+(2, 0, 0, 'Bromo Tengger', '01', '2014-03-02', '03', '04', '2014-03-05', '06', '07', '08', '2014-03-09', '11', '12', '13', '14', '15', '2014-03-16', '17', '2014-03-06 10:42:05'),
+(3, 0, 9, '1', '2', '0000-00-00', '', '4', '0000-00-00', '', '6', '7', '0000-00-00', '9', '', '10', '11', '', '0000-00-00', '', '2014-04-18 06:49:49'),
+(4, 14, 5, '1', '2', '0000-00-00', '', '4', '0000-00-00', '', '6', '7', '0000-00-00', '9', '', '10', '11', '', '0000-00-00', '', '2014-04-18 06:49:49'),
+(5, 15, 3, '1', '2', '0000-00-00', '', '4', '0000-00-00', '', '6', '7', '0000-00-00', '9', '', '10', '11', '', '0000-00-00', '', '2014-04-18 06:49:49');
 
 -- --------------------------------------------------------
 
@@ -63,6 +68,8 @@ INSERT INTO `kkbhl_table_01` (`id`, `nama_kawasan`, `kawasan_penunjukan_no`, `ka
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_02` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `penunjukan_no` varchar(255) NOT NULL,
   `penunjukan_tanggal` date NOT NULL,
@@ -91,6 +98,8 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_02` (
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_03` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `batas_alam` int(11) NOT NULL,
   `batas_buatan` int(11) NOT NULL,
@@ -125,6 +134,8 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_03` (
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_04` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `kawasan_nama_lama` varchar(255) NOT NULL,
   `kawasan_no_lama` varchar(255) NOT NULL,
   `kawasan_tanggal_lama` date NOT NULL,
@@ -150,6 +161,8 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_04` (
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_05` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `mitra` varchar(255) NOT NULL,
   `jenis_kegiatan` varchar(255) NOT NULL,
@@ -177,6 +190,8 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_05` (
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_06` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `permasalahan` varchar(255) NOT NULL,
   `penyelesaian` varchar(255) NOT NULL,
@@ -198,6 +213,8 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_06` (
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_07` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `desa` varchar(255) NOT NULL,
   `kabupaten` varchar(255) NOT NULL,
@@ -230,6 +247,8 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_07` (
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_08` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_desa` varchar(255) NOT NULL,
   `nama_kegiatan` varchar(255) NOT NULL,
   `jenis_kegiatan` varchar(255) NOT NULL,
@@ -256,6 +275,8 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_08` (
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_09` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `lokasi_kegiatan` varchar(255) NOT NULL,
   `nama_kegiatan` varchar(255) NOT NULL,
   `pelaksana_kegiatan` varchar(255) NOT NULL,
@@ -279,8 +300,8 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_09` (
 -- Dumping data for table `kkbhl_table_09`
 --
 
-INSERT INTO `kkbhl_table_09` (`id`, `lokasi_kegiatan`, `nama_kegiatan`, `pelaksana_kegiatan`, `waktu_kegiatan`, `sumber_dana`, `desa_nama`, `desa_penduduk_laki`, `desa_penduduk_perempuan`, `desa_jumlah_kk`, `respon`, `keberhasilan`, `dampak_positif`, `dampak_negatif`, `tindak_lanjut`, `keterangan`, `update_time`) VALUES
-(1, '1', '2', '3', '4', '5', '6', 7, 8, 9, '10', 11, '12', '13', '14', '15', '0000-00-00 00:00:00');
+INSERT INTO `kkbhl_table_09` (`id`, `sender_id`, `user_type_id`, `lokasi_kegiatan`, `nama_kegiatan`, `pelaksana_kegiatan`, `waktu_kegiatan`, `sumber_dana`, `desa_nama`, `desa_penduduk_laki`, `desa_penduduk_perempuan`, `desa_jumlah_kk`, `respon`, `keberhasilan`, `dampak_positif`, `dampak_negatif`, `tindak_lanjut`, `keterangan`, `update_time`) VALUES
+(1, 0, 0, '1', '2', '3', '4', '5', '6', 7, 8, 9, '10', 11, '12', '13', '14', '15', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -290,6 +311,8 @@ INSERT INTO `kkbhl_table_09` (`id`, `lokasi_kegiatan`, `nama_kegiatan`, `pelaksa
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_10` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `desa_nama` varchar(255) NOT NULL,
   `desa_letak` varchar(255) NOT NULL,
   `desa_x` varchar(255) NOT NULL,
@@ -317,6 +340,8 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_10` (
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_11` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `lokasi` varchar(255) NOT NULL,
   `luas` varchar(255) NOT NULL,
@@ -342,6 +367,8 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_11` (
 
 CREATE TABLE IF NOT EXISTS `kkbhl_table_12` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `surat_keputusan` varchar(255) NOT NULL,
   `surat_tanggal` date NOT NULL,
@@ -365,6 +392,8 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_12` (
 
 CREATE TABLE IF NOT EXISTS `kkh_table_01` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `nama_kelas` varchar(255) NOT NULL,
   `nama_spesies_indo` varchar(255) NOT NULL,
@@ -374,14 +403,21 @@ CREATE TABLE IF NOT EXISTS `kkh_table_01` (
   `keterangan` varchar(255) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `kkh_table_01`
 --
 
-INSERT INTO `kkh_table_01` (`id`, `jenis`, `nama_kelas`, `nama_spesies_indo`, `nama_spesies_ilmiah`, `lokasi`, `populasi`, `keterangan`, `update_time`) VALUES
-(5, 'satwa', '11', '22', '33', '44', '55', '66', '2014-03-06 10:08:47');
+INSERT INTO `kkh_table_01` (`id`, `sender_id`, `user_type_id`, `jenis`, `nama_kelas`, `nama_spesies_indo`, `nama_spesies_ilmiah`, `lokasi`, `populasi`, `keterangan`, `update_time`) VALUES
+(6, 0, 9, 'tumbuhan', '1', '2', '3', '4', '5', '', '2014-04-14 20:04:27'),
+(13, 14, 5, 'tumbuhan', '1', '2', '3', '4', '5', '', '2014-04-14 20:04:27'),
+(14, 0, 9, 'tumbuhan', '1', '2', '23', '21', '32', '564', '2014-04-14 20:34:20'),
+(15, 14, 5, 'tumbuhan', '1', '2', '23', '21', '32', '564', '2014-04-14 20:34:20'),
+(16, 0, 5, 'satwa', '11', '1', '1', '1', '11', '1', '2014-04-14 20:34:34'),
+(17, 15, 3, 'satwa', '11', '1', '1', '1', '11', '1', '2014-04-14 20:34:34'),
+(18, 15, 3, 'tumbuhan', '1', '2', '23', '21', '32', '564', '2014-04-14 20:34:20'),
+(19, 15, 3, 'tumbuhan', '1', '2', '3', '4', '5', '', '2014-04-14 20:04:27');
 
 -- --------------------------------------------------------
 
@@ -574,6 +610,8 @@ INSERT INTO `odtwa` (`id`, `title`) VALUES
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_01` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `odtwa_id` int(11) NOT NULL,
   `lokasi` varchar(255) NOT NULL,
   `fungsi` varchar(255) NOT NULL,
@@ -600,6 +638,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_01` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_02` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `sumber_air` varchar(255) NOT NULL,
   `luas_sumber` int(11) NOT NULL,
@@ -618,8 +658,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_02` (
 -- Dumping data for table `pjlkkhl_table_02`
 --
 
-INSERT INTO `pjlkkhl_table_02` (`id`, `nama_kawasan`, `sumber_air`, `luas_sumber`, `debit_air`, `ketersediaan`, `nama_zona`, `luas_zona`, `koordinat_sumber`, `batas_alam`, `keterangan`, `update_time`) VALUES
-(2, '11', '22', 3, 4, '5', '6', 7, '8', '9', '10', '2014-03-09 18:40:47');
+INSERT INTO `pjlkkhl_table_02` (`id`, `sender_id`, `user_type_id`, `nama_kawasan`, `sumber_air`, `luas_sumber`, `debit_air`, `ketersediaan`, `nama_zona`, `luas_zona`, `koordinat_sumber`, `batas_alam`, `keterangan`, `update_time`) VALUES
+(2, 0, 0, '11', '22', 3, 4, '5', '6', 7, '8', '9', '10', '2014-03-09 18:40:47');
 
 -- --------------------------------------------------------
 
@@ -629,6 +669,8 @@ INSERT INTO `pjlkkhl_table_02` (`id`, `nama_kawasan`, `sumber_air`, `luas_sumber
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_03` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `nama_blok` varchar(255) NOT NULL,
   `luas_blok` int(11) NOT NULL,
@@ -652,6 +694,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_03` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_04` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `nama_blok` varchar(255) NOT NULL,
   `luas_blok` int(11) NOT NULL,
@@ -675,6 +719,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_04` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_05` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `jenis_tanaman` varchar(255) NOT NULL,
   `nama_blok` varchar(255) NOT NULL,
@@ -698,6 +744,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_05` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_06` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `penelitian_dn` int(11) NOT NULL,
   `penelitian_ln` int(11) NOT NULL,
   `pendidikan_dn` int(11) NOT NULL,
@@ -725,6 +773,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_06` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_07` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `waktu` varchar(255) NOT NULL,
   `lokasi` varchar(255) NOT NULL,
@@ -751,6 +801,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_07` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_08` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `koordinat` varchar(255) NOT NULL,
   `dasar_hukum` varchar(255) NOT NULL,
@@ -779,6 +831,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_08` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_09` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `perusahaan` varchar(255) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `luas_kawasan` int(11) NOT NULL,
@@ -809,6 +863,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_09` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_10` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `perusahaan` varchar(255) NOT NULL,
   `dasar_hukum` varchar(255) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
@@ -832,6 +888,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_10` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_11` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `perusahaan` varchar(255) NOT NULL,
   `dasar_hukum` varchar(255) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
@@ -855,6 +913,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_11` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_12` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `koordinat` varchar(255) NOT NULL,
   `pemanfaatan` varchar(255) NOT NULL,
@@ -879,6 +939,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_12` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_13` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `fungsi` varchar(255) NOT NULL,
   `pemanfaatan` varchar(255) NOT NULL,
@@ -903,6 +965,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_13` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_14` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `perusahaan` varchar(255) NOT NULL,
   `fungsi` varchar(255) NOT NULL,
   `air` int(11) NOT NULL,
@@ -928,6 +992,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_14` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_15` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `kader_pemula` int(11) NOT NULL,
   `kader_madya` int(11) NOT NULL,
   `kader_utama` int(11) NOT NULL,
@@ -954,6 +1020,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_15` (
 
 CREATE TABLE IF NOT EXISTS `pjlkkhl_table_16` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `judul` varchar(255) NOT NULL,
   `diterbitkan` varchar(255) NOT NULL,
@@ -975,6 +1043,8 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_16` (
 
 CREATE TABLE IF NOT EXISTS `pkh_table_01` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `tanggal_kebakaran` date NOT NULL,
   `lintang` varchar(255) NOT NULL,
   `bujur` varchar(255) NOT NULL,
@@ -1000,8 +1070,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_01` (
 -- Dumping data for table `pkh_table_01`
 --
 
-INSERT INTO `pkh_table_01` (`id`, `tanggal_kebakaran`, `lintang`, `bujur`, `lokasi`, `hutan_sm`, `hutan_ca`, `hutan_tn`, `hutan_thr`, `hutan_twa`, `hutan_tb`, `hutan_hl`, `hutan_hti`, `hutan_ha`, `hutan_htr`, `hutan_terbakar`, `kerugian`, `luas_lain`, `update_time`) VALUES
-(2, '2014-03-31', '1', '2', '3', 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, '14', '15', '16', '2014-03-06 11:39:58');
+INSERT INTO `pkh_table_01` (`id`, `sender_id`, `user_type_id`, `tanggal_kebakaran`, `lintang`, `bujur`, `lokasi`, `hutan_sm`, `hutan_ca`, `hutan_tn`, `hutan_thr`, `hutan_twa`, `hutan_tb`, `hutan_hl`, `hutan_hti`, `hutan_ha`, `hutan_htr`, `hutan_terbakar`, `kerugian`, `luas_lain`, `update_time`) VALUES
+(2, 0, 0, '2014-03-31', '1', '2', '3', 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, '14', '15', '16', '2014-03-06 11:39:58');
 
 -- --------------------------------------------------------
 
@@ -1011,6 +1081,8 @@ INSERT INTO `pkh_table_01` (`id`, `tanggal_kebakaran`, `lintang`, `bujur`, `loka
 
 CREATE TABLE IF NOT EXISTS `pkh_table_02` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `daops` varchar(255) NOT NULL,
   `waktu` varchar(255) NOT NULL,
   `satelit_lintang` varchar(255) NOT NULL,
@@ -1049,6 +1121,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_02` (
 
 CREATE TABLE IF NOT EXISTS `pkh_table_03` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `propinsi` varchar(255) NOT NULL,
   `hutan_sm` int(11) NOT NULL,
   `hutan_ca` int(11) NOT NULL,
@@ -1079,6 +1153,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_03` (
 
 CREATE TABLE IF NOT EXISTS `pkh_table_04` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `daops` varchar(255) NOT NULL,
   `sk_keputusan` varchar(255) NOT NULL,
   `jumlah_regu` int(11) NOT NULL,
@@ -1107,6 +1183,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_04` (
 
 CREATE TABLE IF NOT EXISTS `pkh_table_05` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `sk_keputusan` varchar(255) NOT NULL,
   `jumlah_regu` int(11) NOT NULL,
   `penempatan` varchar(255) NOT NULL,
@@ -1135,6 +1213,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_05` (
 
 CREATE TABLE IF NOT EXISTS `pkh_table_06` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `propinsi` varchar(255) NOT NULL,
   `pkh` varchar(255) NOT NULL,
   `upt` varchar(255) NOT NULL,
@@ -1160,6 +1240,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_06` (
 
 CREATE TABLE IF NOT EXISTS `pkh_table_07` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `propinsi` varchar(255) NOT NULL,
   `daops_nama` varchar(255) NOT NULL,
   `daops_regu` varchar(255) NOT NULL,
@@ -1184,8 +1266,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_07` (
 -- Dumping data for table `pkh_table_07`
 --
 
-INSERT INTO `pkh_table_07` (`id`, `propinsi`, `daops_nama`, `daops_regu`, `daops_jumlah`, `daops_non_satuan`, `daops_non_regu`, `daops_non_jumlah`, `masyarakat_regu`, `masyarakat_jumlah`, `instansi_regu`, `instansi_jumlah`, `pemangku_regu`, `pemangku_jumlah`, `jumlah_regu`, `jumlah_anggota`, `keterangan`, `update_time`) VALUES
-(1, '11', '2', '33', 4, '55', '6', 7, '8', 9, '10', 11, '12', 13, '14', 15, '16', '2014-03-08 16:11:47');
+INSERT INTO `pkh_table_07` (`id`, `sender_id`, `user_type_id`, `propinsi`, `daops_nama`, `daops_regu`, `daops_jumlah`, `daops_non_satuan`, `daops_non_regu`, `daops_non_jumlah`, `masyarakat_regu`, `masyarakat_jumlah`, `instansi_regu`, `instansi_jumlah`, `pemangku_regu`, `pemangku_jumlah`, `jumlah_regu`, `jumlah_anggota`, `keterangan`, `update_time`) VALUES
+(1, 0, 0, '11', '2', '33', 4, '55', '6', 7, '8', 9, '10', 11, '12', 13, '14', 15, '16', '2014-03-08 16:11:47');
 
 -- --------------------------------------------------------
 
@@ -1195,6 +1277,8 @@ INSERT INTO `pkh_table_07` (`id`, `propinsi`, `daops_nama`, `daops_regu`, `daops
 
 CREATE TABLE IF NOT EXISTS `pkh_table_08` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `jumlah_regu` int(11) NOT NULL,
@@ -1227,9 +1311,9 @@ CREATE TABLE IF NOT EXISTS `pkh_table_08` (
 -- Dumping data for table `pkh_table_08`
 --
 
-INSERT INTO `pkh_table_08` (`id`, `jenis`, `title`, `jumlah_regu`, `jumlah_orang`, `tingkat_1`, `tingkat_2`, `tingkat_3`, `smart`, `danru`, `kadaop`, `spbk`, `pompa`, `tot`, `mmp`, `orakom`, `pb_kamp`, `pulbaket`, `mcn`, `gps`, `gis`, `sar`, `ics`, `aws`, `lain`, `update_time`) VALUES
-(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0000-00-00 00:00:00'),
-(2, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0000-00-00 00:00:00');
+INSERT INTO `pkh_table_08` (`id`, `sender_id`, `user_type_id`, `jenis`, `title`, `jumlah_regu`, `jumlah_orang`, `tingkat_1`, `tingkat_2`, `tingkat_3`, `smart`, `danru`, `kadaop`, `spbk`, `pompa`, `tot`, `mmp`, `orakom`, `pb_kamp`, `pulbaket`, `mcn`, `gps`, `gis`, `sar`, `ics`, `aws`, `lain`, `update_time`) VALUES
+(1, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0000-00-00 00:00:00'),
+(2, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1239,6 +1323,8 @@ INSERT INTO `pkh_table_08` (`id`, `jenis`, `title`, `jumlah_regu`, `jumlah_orang
 
 CREATE TABLE IF NOT EXISTS `pkh_table_09` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `sekop_baik` int(11) NOT NULL,
@@ -1274,8 +1360,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_09` (
 -- Dumping data for table `pkh_table_09`
 --
 
-INSERT INTO `pkh_table_09` (`id`, `jenis`, `title`, `sekop_baik`, `sekop_rusak`, `garu_baik`, `garu_rusak`, `garu_tajam_baik`, `garu_tajam_rusak`, `kapak_baik`, `kapak_rusak`, `gepyok_baik`, `gepyok_rusak`, `cangkul_baik`, `cangkul_rusak`, `golok_baik`, `golok_rusak`, `pengait_baik`, `pengait_rusak`, `obor_baik`, `obor_rusak`, `shooter_baik`, `shooter_rusak`, `kirir_baik`, `kirir_rusak`, `chainsaw_baik`, `chainsaw_rusak`, `lain`, `update_time`) VALUES
-(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+INSERT INTO `pkh_table_09` (`id`, `sender_id`, `user_type_id`, `jenis`, `title`, `sekop_baik`, `sekop_rusak`, `garu_baik`, `garu_rusak`, `garu_tajam_baik`, `garu_tajam_rusak`, `kapak_baik`, `kapak_rusak`, `gepyok_baik`, `gepyok_rusak`, `cangkul_baik`, `cangkul_rusak`, `golok_baik`, `golok_rusak`, `pengait_baik`, `pengait_rusak`, `obor_baik`, `obor_rusak`, `shooter_baik`, `shooter_rusak`, `kirir_baik`, `kirir_rusak`, `chainsaw_baik`, `chainsaw_rusak`, `lain`, `update_time`) VALUES
+(1, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1285,6 +1371,8 @@ INSERT INTO `pkh_table_09` (`id`, `jenis`, `title`, `sekop_baik`, `sekop_rusak`,
 
 CREATE TABLE IF NOT EXISTS `pkh_table_10` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `gudang_baik` int(11) NOT NULL,
@@ -1320,8 +1408,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_10` (
 -- Dumping data for table `pkh_table_10`
 --
 
-INSERT INTO `pkh_table_10` (`id`, `jenis`, `title`, `gudang_baik`, `gudang_rusak`, `kantor_baik`, `kantor_rusak`, `garasi_baik`, `garasi_rusak`, `bengkel_baik`, `bengkel_rusak`, `tempat_cuci_baik`, `tempat_cuci_rusak`, `tandon_baik`, `tandon_rusak`, `olahraga_baik`, `olahraga_rusak`, `pelatihan_baik`, `pelatihan_rusak`, `barak_baik`, `barak_rusak`, `ibadah_baik`, `ibadah_rusak`, `dapur_baik`, `dapur_rusak`, `menara_baik`, `menara_rusak`, `lain`, `update_time`) VALUES
-(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+INSERT INTO `pkh_table_10` (`id`, `sender_id`, `user_type_id`, `jenis`, `title`, `gudang_baik`, `gudang_rusak`, `kantor_baik`, `kantor_rusak`, `garasi_baik`, `garasi_rusak`, `bengkel_baik`, `bengkel_rusak`, `tempat_cuci_baik`, `tempat_cuci_rusak`, `tandon_baik`, `tandon_rusak`, `olahraga_baik`, `olahraga_rusak`, `pelatihan_baik`, `pelatihan_rusak`, `barak_baik`, `barak_rusak`, `ibadah_baik`, `ibadah_rusak`, `dapur_baik`, `dapur_rusak`, `menara_baik`, `menara_rusak`, `lain`, `update_time`) VALUES
+(1, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1331,6 +1419,8 @@ INSERT INTO `pkh_table_10` (`id`, `jenis`, `title`, `gudang_baik`, `gudang_rusak
 
 CREATE TABLE IF NOT EXISTS `pkh_table_11` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `pakaian_baik` int(11) NOT NULL,
@@ -1362,8 +1452,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_11` (
 -- Dumping data for table `pkh_table_11`
 --
 
-INSERT INTO `pkh_table_11` (`id`, `jenis`, `title`, `pakaian_baik`, `pakaian_rusak`, `helm_baik`, `helm_rusak`, `lampu_baik`, `lampu_rusak`, `gogles_baik`, `gogles_rusak`, `slayer_baik`, `slayer_rusak`, `sarung_tangan_baik`, `sarung_tangan_rusak`, `sabuk_baik`, `sabuk_rusak`, `veples_baik`, `veples_rusak`, `sepatu_baik`, `sepatu_rusak`, `ransel_baik`, `ransel_rusak`, `lain`, `update_time`) VALUES
-(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+INSERT INTO `pkh_table_11` (`id`, `sender_id`, `user_type_id`, `jenis`, `title`, `pakaian_baik`, `pakaian_rusak`, `helm_baik`, `helm_rusak`, `lampu_baik`, `lampu_rusak`, `gogles_baik`, `gogles_rusak`, `slayer_baik`, `slayer_rusak`, `sarung_tangan_baik`, `sarung_tangan_rusak`, `sabuk_baik`, `sabuk_rusak`, `veples_baik`, `veples_rusak`, `sepatu_baik`, `sepatu_rusak`, `ransel_baik`, `ransel_rusak`, `lain`, `update_time`) VALUES
+(1, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1373,6 +1463,8 @@ INSERT INTO `pkh_table_11` (`id`, `jenis`, `title`, `pakaian_baik`, `pakaian_rus
 
 CREATE TABLE IF NOT EXISTS `pkh_table_12` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `slip_on_baik` int(11) NOT NULL,
@@ -1401,8 +1493,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_12` (
 -- Dumping data for table `pkh_table_12`
 --
 
-INSERT INTO `pkh_table_12` (`id`, `jenis`, `title`, `slip_on_baik`, `slip_on_rusak`, `monilog_baik`, `monilog_rusak`, `sepeda_baik`, `sepeda_rusak`, `mobil_patroli_baik`, `mobil_patroli_rusak`, `mobil_operasional_baik`, `mobil_operasional_rusak`, `darat_lain`, `boat_baik`, `boat_rusak`, `klotok_baik`, `klotok_rusak`, `katinting_baik`, `katinting_rusak`, `air_lain`, `update_time`) VALUES
-(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+INSERT INTO `pkh_table_12` (`id`, `sender_id`, `user_type_id`, `jenis`, `title`, `slip_on_baik`, `slip_on_rusak`, `monilog_baik`, `monilog_rusak`, `sepeda_baik`, `sepeda_rusak`, `mobil_patroli_baik`, `mobil_patroli_rusak`, `mobil_operasional_baik`, `mobil_operasional_rusak`, `darat_lain`, `boat_baik`, `boat_rusak`, `klotok_baik`, `klotok_rusak`, `katinting_baik`, `katinting_rusak`, `air_lain`, `update_time`) VALUES
+(1, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1412,6 +1504,8 @@ INSERT INTO `pkh_table_12` (`id`, `jenis`, `title`, `slip_on_baik`, `slip_on_rus
 
 CREATE TABLE IF NOT EXISTS `pkh_table_13` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `impuls_baik` int(11) NOT NULL,
@@ -1453,8 +1547,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_13` (
 -- Dumping data for table `pkh_table_13`
 --
 
-INSERT INTO `pkh_table_13` (`id`, `jenis`, `title`, `impuls_baik`, `impuls_rusak`, `kompresor_baik`, `kompresor_rusak`, `pompa_jinjing_baik`, `pompa_jinjing_rusak`, `pompa_apung_baik`, `pompa_apung_rusak`, `pompa_induk_baik`, `pompa_induk_rusak`, `pompa_sorong_baik`, `pompa_sorong_rusak`, `tangki_baik`, `tangki_rusak`, `selang_15_baik`, `selang_15_rusak`, `selang_25_baik`, `selang_25_rusak`, `nozel_15_baik`, `nozel_15_rusak`, `nozel_25_baik`, `nozel_25_rusak`, `valve_baik`, `valve_rusak`, `sunbut_baik`, `sunbut_rusak`, `kopling_baik`, `kopling_rusak`, `pencuci_baik`, `pencuci_rusak`, `lain`, `update_time`) VALUES
-(1, '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+INSERT INTO `pkh_table_13` (`id`, `sender_id`, `user_type_id`, `jenis`, `title`, `impuls_baik`, `impuls_rusak`, `kompresor_baik`, `kompresor_rusak`, `pompa_jinjing_baik`, `pompa_jinjing_rusak`, `pompa_apung_baik`, `pompa_apung_rusak`, `pompa_induk_baik`, `pompa_induk_rusak`, `pompa_sorong_baik`, `pompa_sorong_rusak`, `tangki_baik`, `tangki_rusak`, `selang_15_baik`, `selang_15_rusak`, `selang_25_baik`, `selang_25_rusak`, `nozel_15_baik`, `nozel_15_rusak`, `nozel_25_baik`, `nozel_25_rusak`, `valve_baik`, `valve_rusak`, `sunbut_baik`, `sunbut_rusak`, `kopling_baik`, `kopling_rusak`, `pencuci_baik`, `pencuci_rusak`, `lain`, `update_time`) VALUES
+(1, 0, 0, '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1464,6 +1558,8 @@ INSERT INTO `pkh_table_13` (`id`, `jenis`, `title`, `impuls_baik`, `impuls_rusak
 
 CREATE TABLE IF NOT EXISTS `pkh_table_14` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `handy_talky_baik` int(11) NOT NULL,
@@ -1491,8 +1587,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_14` (
 -- Dumping data for table `pkh_table_14`
 --
 
-INSERT INTO `pkh_table_14` (`id`, `jenis`, `title`, `handy_talky_baik`, `handy_talky_rusak`, `radio_baik`, `radio_rusak`, `megaphone_baik`, `megaphone_rusak`, `peluit_baik`, `peluit_rusak`, `gps_baik`, `gps_rusak`, `telepon_baik`, `telepon_rusak`, `internet_baik`, `internet_rusak`, `cuaca_baik`, `cuaca_rusak`, `lain`, `update_time`) VALUES
-(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
+INSERT INTO `pkh_table_14` (`id`, `sender_id`, `user_type_id`, `jenis`, `title`, `handy_talky_baik`, `handy_talky_rusak`, `radio_baik`, `radio_rusak`, `megaphone_baik`, `megaphone_rusak`, `peluit_baik`, `peluit_rusak`, `gps_baik`, `gps_rusak`, `telepon_baik`, `telepon_rusak`, `internet_baik`, `internet_rusak`, `cuaca_baik`, `cuaca_rusak`, `lain`, `update_time`) VALUES
+(1, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1502,6 +1598,8 @@ INSERT INTO `pkh_table_14` (`id`, `jenis`, `title`, `handy_talky_baik`, `handy_t
 
 CREATE TABLE IF NOT EXISTS `pkh_table_15` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `tenda_baik` int(11) NOT NULL,
@@ -1522,8 +1620,8 @@ CREATE TABLE IF NOT EXISTS `pkh_table_15` (
 -- Dumping data for table `pkh_table_15`
 --
 
-INSERT INTO `pkh_table_15` (`id`, `jenis`, `title`, `tenda_baik`, `tenda_rusak`, `masak_baik`, `masak_rusak`, `p3k_baik`, `p3k_rusak`, `generator_baik`, `generator_rusak`, `lain_baik`, `lain_rusak`, `update_time`) VALUES
-(1, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0000-00-00 00:00:00');
+INSERT INTO `pkh_table_15` (`id`, `sender_id`, `user_type_id`, `jenis`, `title`, `tenda_baik`, `tenda_rusak`, `masak_baik`, `masak_rusak`, `p3k_baik`, `p3k_rusak`, `generator_baik`, `generator_rusak`, `lain_baik`, `lain_rusak`, `update_time`) VALUES
+(1, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1533,6 +1631,8 @@ INSERT INTO `pkh_table_15` (`id`, `jenis`, `title`, `tenda_baik`, `tenda_rusak`,
 
 CREATE TABLE IF NOT EXISTS `pph_table_01` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `hutan_produksi_value` varchar(255) NOT NULL,
   `hutan_produksi_satuan` varchar(255) NOT NULL,
   `hutan_lidung_value` varchar(255) NOT NULL,
@@ -1556,8 +1656,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_01` (
 -- Dumping data for table `pph_table_01`
 --
 
-INSERT INTO `pph_table_01` (`id`, `hutan_produksi_value`, `hutan_produksi_satuan`, `hutan_lidung_value`, `hutan_lindung_satuan`, `ksa_value`, `ksa_satuan`, `kpa_value`, `kpa_satuan`, `tb_value`, `tb_satuan`, `hutan_lain_value`, `hutan_lain_satuan`, `nilai_rugi`, `upaya`, `keterangan`, `update_time`) VALUES
-(10, '1', 'm3', '2', 'batang', '3', 'pohon', '4', 'm3', '5', 'batang', '6', 'pohon', 7, '8', '9', '2014-03-05 20:36:20');
+INSERT INTO `pph_table_01` (`id`, `sender_id`, `user_type_id`, `hutan_produksi_value`, `hutan_produksi_satuan`, `hutan_lidung_value`, `hutan_lindung_satuan`, `ksa_value`, `ksa_satuan`, `kpa_value`, `kpa_satuan`, `tb_value`, `tb_satuan`, `hutan_lain_value`, `hutan_lain_satuan`, `nilai_rugi`, `upaya`, `keterangan`, `update_time`) VALUES
+(10, 0, 0, '1', 'm3', '2', 'batang', '3', 'pohon', '4', 'm3', '5', 'batang', '6', 'pohon', 7, '8', '9', '2014-03-05 20:36:20');
 
 -- --------------------------------------------------------
 
@@ -1567,6 +1667,8 @@ INSERT INTO `pph_table_01` (`id`, `hutan_produksi_value`, `hutan_produksi_satuan
 
 CREATE TABLE IF NOT EXISTS `pph_table_02` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `hutan_produksi_value` varchar(255) NOT NULL,
   `hutan_produksi_satuan` varchar(255) NOT NULL,
   `hutan_lidung_value` varchar(255) NOT NULL,
@@ -1599,6 +1701,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_02` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_03` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `temuan_luas` int(11) NOT NULL,
   `temuan_jumlah` int(11) NOT NULL,
@@ -1617,8 +1721,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_03` (
 -- Dumping data for table `pph_table_03`
 --
 
-INSERT INTO `pph_table_03` (`id`, `nama_kawasan`, `temuan_luas`, `temuan_jumlah`, `temuan_bangunan`, `temuan_bukti`, `sitaan_bangunan`, `sitaan_bukti`, `jumlah_kasus`, `jumlah_tersangka`, `keterangan`, `update_time`) VALUES
-(1, '11', 2, 3, '4', '55', '6', '7', 88, 9, '10', '0000-00-00 00:00:00');
+INSERT INTO `pph_table_03` (`id`, `sender_id`, `user_type_id`, `nama_kawasan`, `temuan_luas`, `temuan_jumlah`, `temuan_bangunan`, `temuan_bukti`, `sitaan_bangunan`, `sitaan_bukti`, `jumlah_kasus`, `jumlah_tersangka`, `keterangan`, `update_time`) VALUES
+(1, 0, 0, '11', 2, 3, '4', '55', '6', '7', 88, 9, '10', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1628,6 +1732,8 @@ INSERT INTO `pph_table_03` (`id`, `nama_kawasan`, `temuan_luas`, `temuan_jumlah`
 
 CREATE TABLE IF NOT EXISTS `pph_table_04` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `temuan_luas` int(11) NOT NULL,
   `temuan_jumlah` int(11) NOT NULL,
@@ -1655,6 +1761,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_04` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_05` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama_kawasan` varchar(255) NOT NULL,
   `temuan_luas` int(11) NOT NULL,
   `temuan_jumlah` int(11) NOT NULL,
@@ -1682,6 +1790,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_05` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_06` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `kegiatan` varchar(255) NOT NULL,
   `jumlah_kasus` int(11) NOT NULL,
   `pelaku` int(11) NOT NULL,
@@ -1708,6 +1818,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_06` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_07` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `temuan_tumbuhan` int(11) NOT NULL,
   `temuan_satwa` int(11) NOT NULL,
   `temuan_bukti` varchar(255) NOT NULL,
@@ -1733,6 +1845,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_07` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_08` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `perusahaan` varchar(255) NOT NULL,
   `temuan_luas` int(11) NOT NULL,
   `temuan_bangunan` int(11) NOT NULL,
@@ -1758,6 +1872,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_08` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_09` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `perusahaan` varchar(255) NOT NULL,
   `temuan_luas` int(11) NOT NULL,
   `temuan_bangunan` int(11) NOT NULL,
@@ -1783,6 +1899,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_09` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_10` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `perusahaan` varchar(255) NOT NULL,
   `temuan_luas` int(11) NOT NULL,
   `temuan_bangunan` int(11) NOT NULL,
@@ -1808,6 +1926,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_10` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_11` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `bencana` varchar(255) NOT NULL,
   `luas` varchar(255) NOT NULL,
   `kerugian` int(11) NOT NULL,
@@ -1830,6 +1950,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_11` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_12` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `polhut` int(11) NOT NULL,
   `sporc` int(11) NOT NULL,
   `tphl` int(11) NOT NULL,
@@ -1854,6 +1976,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_12` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_13` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `uraian` varchar(255) NOT NULL,
   `tersangka` int(11) NOT NULL,
   `bukti` varchar(255) NOT NULL,
@@ -1882,6 +2006,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_13` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_14` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `senpi_genggam` int(11) NOT NULL,
   `senpi_panjang` int(11) NOT NULL,
   `senpi_bius` int(11) NOT NULL,
@@ -1912,6 +2038,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_14` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_15` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `pos_jaga` int(11) NOT NULL,
   `pondok_kerja` int(11) NOT NULL,
   `asrama_polhut` int(11) NOT NULL,
@@ -1937,6 +2065,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_15` (
 
 CREATE TABLE IF NOT EXISTS `pph_table_16` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `senpi_panjang_fisik` varchar(255) NOT NULL,
   `senpi_panjang_buku` varchar(255) NOT NULL,
   `senpi_panjang_kondisi` varchar(255) NOT NULL,
@@ -1969,6 +2099,8 @@ CREATE TABLE IF NOT EXISTS `pph_table_16` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_01` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `s3_l` int(11) NOT NULL,
   `s3_p` int(11) NOT NULL,
   `s2_l` int(11) NOT NULL,
@@ -2000,6 +2132,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_01` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_02` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `gol_1_l` int(11) NOT NULL,
   `gol_1_p` int(11) NOT NULL,
   `gol_2_l` int(11) NOT NULL,
@@ -2025,6 +2159,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_02` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_03` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `polhut_terampil` int(11) NOT NULL,
   `polhut_calon_terampil` int(11) NOT NULL,
   `polhut_ahli` int(11) NOT NULL,
@@ -2061,10 +2197,10 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_03` (
 -- Dumping data for table `sekretariat_table_03`
 --
 
-INSERT INTO `sekretariat_table_03` (`id`, `polhut_terampil`, `polhut_calon_terampil`, `polhut_ahli`, `polhut_calon_ahli`, `peh_terampil`, `peh_calon_terampil`, `peh_ahli`, `peh_calon_ahli`, `pranata_terampil`, `pranata_calon_terampil`, `pranata_ahli`, `pranata_calon_ahli`, `analis_terampil`, `analis_calon_terampil`, `analis_ahli`, `analis_calon_ahli`, `statistisi_terampil`, `statistisi_calon_terampil`, `statistisi_ahli`, `statistisi_calon_ahli`, `arsiparis_terampil`, `arsiparis_calon_terampil`, `arsiparis_ahli`, `arsiparis_calon_ahli`, `perencana_terampil`, `perencana_calon_terampil`, `perencana_ahli`, `perencana_calon_ahli`, `update_time`) VALUES
-(3, 1, 2, 3, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2014-03-09 09:55:49'),
-(2, 1, 2, 3, 4, 55, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, '2014-03-09 09:54:53'),
-(4, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2014-03-09 09:55:53');
+INSERT INTO `sekretariat_table_03` (`id`, `sender_id`, `user_type_id`, `polhut_terampil`, `polhut_calon_terampil`, `polhut_ahli`, `polhut_calon_ahli`, `peh_terampil`, `peh_calon_terampil`, `peh_ahli`, `peh_calon_ahli`, `pranata_terampil`, `pranata_calon_terampil`, `pranata_ahli`, `pranata_calon_ahli`, `analis_terampil`, `analis_calon_terampil`, `analis_ahli`, `analis_calon_ahli`, `statistisi_terampil`, `statistisi_calon_terampil`, `statistisi_ahli`, `statistisi_calon_ahli`, `arsiparis_terampil`, `arsiparis_calon_terampil`, `arsiparis_ahli`, `arsiparis_calon_ahli`, `perencana_terampil`, `perencana_calon_terampil`, `perencana_ahli`, `perencana_calon_ahli`, `update_time`) VALUES
+(3, 0, 0, 1, 2, 3, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2014-03-09 09:55:49'),
+(2, 0, 0, 1, 2, 3, 4, 55, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, '2014-03-09 09:54:53'),
+(4, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2014-03-09 09:55:53');
 
 -- --------------------------------------------------------
 
@@ -2074,6 +2210,8 @@ INSERT INTO `sekretariat_table_03` (`id`, `polhut_terampil`, `polhut_calon_teram
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_04` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `s1_l` int(11) NOT NULL,
   `s1_p` int(11) NOT NULL,
   `d3_l` int(11) NOT NULL,
@@ -2102,6 +2240,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_04` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_05` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `struktural_1a_l` int(11) NOT NULL,
   `struktural_1a_p` int(11) NOT NULL,
   `struktural_1b_l` int(11) NOT NULL,
@@ -2140,6 +2280,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_05` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_06` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `uraian` varchar(255) NOT NULL,
   `s3_l` int(11) NOT NULL,
   `s3_p` int(11) NOT NULL,
@@ -2173,6 +2315,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_06` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_07` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `gol_1_l` int(11) NOT NULL,
   `gol_1_p` int(11) NOT NULL,
   `gol_2_l` int(11) NOT NULL,
@@ -2199,6 +2343,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_07` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_08` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `pagu` int(11) NOT NULL,
   `target` int(11) NOT NULL,
   `realisasi` int(11) NOT NULL,
@@ -2211,8 +2357,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_08` (
 -- Dumping data for table `sekretariat_table_08`
 --
 
-INSERT INTO `sekretariat_table_08` (`id`, `pagu`, `target`, `realisasi`, `realisasi_sampai`, `update_time`) VALUES
-(2, 1, 2, 3, 7, '2014-03-09 10:33:56');
+INSERT INTO `sekretariat_table_08` (`id`, `sender_id`, `user_type_id`, `pagu`, `target`, `realisasi`, `realisasi_sampai`, `update_time`) VALUES
+(2, 0, 0, 1, 2, 3, 7, '2014-03-09 10:33:56');
 
 -- --------------------------------------------------------
 
@@ -2222,6 +2368,8 @@ INSERT INTO `sekretariat_table_08` (`id`, `pagu`, `target`, `realisasi`, `realis
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_09` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `kode` varchar(255) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `target` varchar(255) NOT NULL,
@@ -2244,6 +2392,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_09` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_10` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `kantor_pemerintah` int(11) NOT NULL,
   `pos_jaga` int(11) NOT NULL,
   `rumah_negara_gol2` int(11) NOT NULL,
@@ -2271,6 +2421,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_10` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_11` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `satker` varchar(255) NOT NULL,
   `kantor_balai` int(11) NOT NULL,
   `kantor_bidang_wilayah` int(11) NOT NULL,
@@ -2304,6 +2456,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_11` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_12` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `darat_4_fungsional` int(11) NOT NULL,
   `darat_4_pamhut` int(11) NOT NULL,
   `darat_4_karhut` int(11) NOT NULL,
@@ -2344,6 +2498,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_12` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_13` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `kelompok` varchar(255) NOT NULL,
   `satuan` varchar(255) NOT NULL,
   `awal_kuantitas` int(11) NOT NULL,
@@ -2372,6 +2528,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_13` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_14` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `mitra` varchar(255) NOT NULL,
   `tanggal_kerjasama` varchar(255) NOT NULL,
   `mou_judul` varchar(255) NOT NULL,
@@ -2399,6 +2557,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_14` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_15` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `kebangsaan` varchar(255) NOT NULL,
   `jabatan` varchar(255) NOT NULL,
@@ -2424,6 +2584,8 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_15` (
 
 CREATE TABLE IF NOT EXISTS `sekretariat_table_16` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
   `jenis` varchar(255) NOT NULL,
   `judul` varchar(255) NOT NULL,
   `diterbitkan` varchar(255) NOT NULL,
@@ -2454,14 +2616,56 @@ CREATE TABLE IF NOT EXISTS `user` (
   `register_date` datetime NOT NULL,
   `is_active` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `user_type_id`, `alias`, `email`, `fullname`, `passwd`, `address`, `register_date`, `is_active`) VALUES
-(1, 1, 'admin', 'her0satr@yahoo.com', 'Admin', 'fe30fa79056939db8cbe99c8d601de74', '1235', '2013-07-04 00:00:00', 1);
+(1, 1, 'admin', 'her0satr@yahoo.com', 'Admin', 'fe30fa79056939db8cbe99c8d601de74', '1235', '2013-07-04 00:00:00', 1),
+(14, 9, 'tengger', 'tengger@mail.com', 'tengger', '09143290c5bcd27f0521178277db0add', '', '2014-04-14 20:20:57', 0),
+(15, 5, 'seksi1', 'seksi1@mail.com', 'seksi1', '4197b1cf1876545e71a91d8313d94d02', '', '2014-04-14 20:20:53', 0),
+(16, 3, 'bidang1', 'bidang1@mail.com', 'bidang1', '3c59e91b3b2b2d6330c5386ec7ece0ff', '', '2014-04-14 20:35:06', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_type`
+--
+
+CREATE TABLE IF NOT EXISTS `user_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+
+--
+-- Dumping data for table `user_type`
+--
+
+INSERT INTO `user_type` (`id`, `parent_id`, `name`) VALUES
+(1, 0, 'Administrator'),
+(2, 0, 'Kepala Balai'),
+(3, 2, 'Bidang Pengelola 1'),
+(4, 2, 'Bidang Pengelola 2'),
+(5, 3, 'Seksi Pengelola 1'),
+(6, 3, 'Seksi Pengelola 2'),
+(7, 4, 'Seksi Pengelola 3'),
+(8, 4, 'Seksi Pengelola 4'),
+(9, 5, 'Resort Tengger Laut Pasir'),
+(10, 5, 'Resort Gunung Pananjakan'),
+(11, 5, 'Resort Sumber'),
+(12, 6, 'Resort Paton Picis'),
+(13, 6, 'Resort Coban Trisula'),
+(14, 6, 'Resort Jabung'),
+(15, 7, 'Resort Gucialit'),
+(16, 7, 'Resort Ranupani'),
+(17, 7, 'Resort Seroja'),
+(18, 8, 'Resort Candipuro'),
+(19, 8, 'Resort Taman Satriyan'),
+(20, 8, 'Resort Ranu Darungan');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

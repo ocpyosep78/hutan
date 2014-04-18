@@ -4,3 +4,35 @@ target sampai 04-03-2014 : bikin sampai keluar 1 form untuk CRUD
 
 datatable => render table html saja
 
+ALTER TABLE `pph_table_01` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_02` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_03` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_04` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_05` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_06` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_07` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_08` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_09` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_10` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_11` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_12` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_13` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_14` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_15` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `pph_table_16` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_01` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_02` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_03` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_04` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_05` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_06` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_07` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_08` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_09` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_10` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_11` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_12` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_13` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_14` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_15` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
+ALTER TABLE `sekretariat_table_16` ADD `sender_id` INT NOT NULL AFTER `id`, ADD `user_type_id` INT NOT NULL AFTER `sender_id`;
