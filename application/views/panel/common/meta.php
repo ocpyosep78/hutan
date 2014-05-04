@@ -5,6 +5,7 @@
 <head>
 	<title><?php echo $title; ?></title>
 	<link rel="stylesheet" href="<?php echo base_url('static/css/common.css'); ?>" />
+	<link rel="icon shortcut" href="<?php echo base_url('static/img/favicon.png'); ?>" type="image/x-icon" />
 	
 	<script type="text/javascript">var web = <?php echo json_encode($web); ?></script>
 	<script type="text/javascript" src="<?php echo base_url('static/js/jquery.js'); ?>"></script>

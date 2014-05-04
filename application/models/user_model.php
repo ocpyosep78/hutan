@@ -40,7 +40,7 @@ class User_model extends CI_Model {
             $select_query  = "SELECT * FROM ".USER." WHERE id = '".$param['id']."' LIMIT 1";
         } else if (isset($param['alias'])) {
             $select_query  = "
-				SELECT user.*, user_type.parent_id
+				SELECT user.*, user_type.parent_id, user_type.name user_type_name
 				FROM ".USER." user
 				LEFT JOIN ".USER_TYPE." user_type ON user_type.id = user.user_type_id
 				WHERE user.alias = '".$param['alias']."'
@@ -72,9 +72,9 @@ class User_model extends CI_Model {
 		$string_limit = GetStringLimit($param);
 		
 		$select_query = "
-			SELECT SQL_CALC_FOUND_ROWS User.*, UserType.name user_type_name
+			SELECT SQL_CALC_FOUND_ROWS User.*, user_type.name user_type_name
 			FROM ".USER." User
-			LEFT JOIN ".USER_TYPE." UserType ON UserType.id = User.user_type_id
+			LEFT JOIN ".USER_TYPE." user_type ON user_type.id = User.user_type_id
 			WHERE 1 $string_namelike $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit

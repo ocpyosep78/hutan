@@ -281,6 +281,11 @@ $(document).ready(function() {
 	// datepicker
 	$('.datepicker').datepicker({ dateFormat: 'dd-mm-yy', changeMonth: true, changeYear: true, yearRange: 'c-50:c+10' });
 	
+	// Add Label CRUD
+	$('.btn-edit').attr('title', 'Edit');
+	$('.btn-delete').attr('title', 'Hapus');
+	$('.btn-forward').attr('title', 'Kirim');
+	
 	// message
 	if ($('.cnt-data').length == 1) {
 		var raw_data = $('.cnt-data').text();

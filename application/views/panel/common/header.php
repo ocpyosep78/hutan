@@ -4,7 +4,13 @@
 		$user = $this->User_model->get_session();
 	}
 ?>
-<div id="cnt-header">
+<div id="cnt-header" style="position: relative;">
+	<?php if ($is_login) { ?>
+	<div style="position: absolute; top: 7px; right: 45px;">
+		<?php echo $user['fullname'].' - '.$user['user_type_name']; ?>
+	</div>
+	<?php } ?>
+	
 	<a href="<?php echo base_url(); ?>">HOME</a>
 	
 	<?php if ($is_login) { ?>
@@ -22,5 +28,4 @@
 	<?php } else { ?>
 	| <a href="<?php echo base_url('login'); ?>">LOGIN</a>
 	<?php } ?>
-	
 </div>

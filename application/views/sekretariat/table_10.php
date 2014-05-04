@@ -22,6 +22,7 @@
 </style>
 
 <div id="cnt-content"><div class="container"><div class="cnt-normal">
+	<h3 class="main-title" style="padding: 0px;"><?php echo $module['module_type_name']; ?></h3>
 	<h3 class="main-title"><?php echo $module['content']; ?></h3>
 	<div class="hide">
 		<div class="cnt-data"><?php echo json_encode($page); ?></div>

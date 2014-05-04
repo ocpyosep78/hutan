@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.4
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Apr 18, 2014 at 07:46 AM
--- Server version: 5.1.41
--- PHP Version: 5.3.1
+-- Host: 127.0.0.1
+-- Generation Time: May 04, 2014 at 03:40 PM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.19
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,6 +19,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `hutan_db`
 --
+CREATE DATABASE IF NOT EXISTS `hutan_db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `hutan_db`;
 
 -- --------------------------------------------------------
 
@@ -85,11 +88,6 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_02` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `kkbhl_table_02`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -121,11 +119,6 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_03` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `kkbhl_table_03`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -147,11 +140,6 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_04` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `kkbhl_table_04`
---
-
 
 -- --------------------------------------------------------
 
@@ -177,11 +165,6 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_05` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `kkbhl_table_05`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -199,11 +182,6 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_06` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `kkbhl_table_06`
---
-
 
 -- --------------------------------------------------------
 
@@ -234,11 +212,6 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_07` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `kkbhl_table_07`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -261,11 +234,6 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_08` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `kkbhl_table_08`
---
-
 
 -- --------------------------------------------------------
 
@@ -327,11 +295,6 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_10` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `kkbhl_table_10`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -354,11 +317,6 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_11` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `kkbhl_table_11`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -378,11 +336,6 @@ CREATE TABLE IF NOT EXISTS `kkbhl_table_12` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `kkbhl_table_12`
---
-
 
 -- --------------------------------------------------------
 
@@ -443,7 +396,7 @@ CREATE TABLE IF NOT EXISTS `module` (
 INSERT INTO `module` (`id`, `content`, `sumber_dana`, `periode`, `urutan`, `alias`, `module_type_id`) VALUES
 (1, 'TABEL 1.  GANGGUAN KEAMANAN KAWASAN DARI PENCURIAN KAYU/PENEBANGAN LIAR', 'UPT', 'Bulanan', 1, 'table_01', 1),
 (2, 'TABEL 2.  GANGGUAN KEAMANAN KAWASAN HUTAN AKIBAT PERAMBAHAN DAN PEMUKIMAN LIAR', 'UPT', 'Bulanan', 2, 'table_02', 1),
-(3, 'TABEL 3.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PERAMBAHAN DAN PEMUKIMAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 3, 'table_03', 1),
+(3, 'TABEL 3. HASIL OPERASI PENGAMANAN TERHADAP PERAMBAHAN DAN PEMUKIMAN LIAR KAWASAN KONSERVASI', 'UPT', 'Bulanan', 3, 'table_03', 1),
 (4, 'TABEL 4.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PERLADANGAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 4, 'table_04', 1),
 (5, 'TABEL 5.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP PENAMBANGAN LIAR DI KAWASAN KONSERVASI', 'UPT', 'Bulanan', 5, 'table_05', 1),
 (6, 'TABEL 6.  HASIL OPERASI PENGAMANAN HUTAN TERHADAP ILLEGAL LOGGING', 'UPT', 'Bulanan', 6, 'table_06', 1),
@@ -625,11 +578,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_01` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
---
--- Dumping data for table `pjlkkhl_table_01`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -681,11 +629,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_03` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `pjlkkhl_table_03`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -706,11 +649,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_04` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
---
--- Dumping data for table `pjlkkhl_table_04`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -730,11 +668,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_05` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `pjlkkhl_table_05`
---
-
 
 -- --------------------------------------------------------
 
@@ -760,11 +693,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_06` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `pjlkkhl_table_06`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -787,11 +715,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_07` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `pjlkkhl_table_07`
---
-
 
 -- --------------------------------------------------------
 
@@ -817,11 +740,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_08` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `pjlkkhl_table_08`
---
-
 
 -- --------------------------------------------------------
 
@@ -850,11 +768,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_09` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `pjlkkhl_table_09`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -875,11 +788,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_10` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `pjlkkhl_table_10`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -899,11 +807,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_11` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `pjlkkhl_table_11`
---
-
 
 -- --------------------------------------------------------
 
@@ -926,11 +829,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_12` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `pjlkkhl_table_12`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -951,11 +849,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_13` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `pjlkkhl_table_13`
---
-
 
 -- --------------------------------------------------------
 
@@ -978,11 +871,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_14` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `pjlkkhl_table_14`
---
-
 
 -- --------------------------------------------------------
 
@@ -1007,11 +895,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_15` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `pjlkkhl_table_15`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1029,11 +912,6 @@ CREATE TABLE IF NOT EXISTS `pjlkkhl_table_16` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `pjlkkhl_table_16`
---
-
 
 -- --------------------------------------------------------
 
@@ -1108,11 +986,6 @@ CREATE TABLE IF NOT EXISTS `pkh_table_02` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `pkh_table_02`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1140,11 +1013,6 @@ CREATE TABLE IF NOT EXISTS `pkh_table_03` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `pkh_table_03`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1169,11 +1037,6 @@ CREATE TABLE IF NOT EXISTS `pkh_table_04` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `pkh_table_04`
---
-
 
 -- --------------------------------------------------------
 
@@ -1200,11 +1063,6 @@ CREATE TABLE IF NOT EXISTS `pkh_table_05` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
---
--- Dumping data for table `pkh_table_05`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1226,11 +1084,6 @@ CREATE TABLE IF NOT EXISTS `pkh_table_06` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `pkh_table_06`
---
-
 
 -- --------------------------------------------------------
 
@@ -1688,11 +1541,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_02` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `pph_table_02`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1748,11 +1596,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_04` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `pph_table_04`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1777,11 +1620,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_05` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `pph_table_05`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1805,11 +1643,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_06` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `pph_table_06`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1831,11 +1664,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_07` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `pph_table_07`
---
-
 
 -- --------------------------------------------------------
 
@@ -1859,11 +1687,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_08` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
---
--- Dumping data for table `pph_table_08`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1885,11 +1708,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_09` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `pph_table_09`
---
-
 
 -- --------------------------------------------------------
 
@@ -1913,11 +1731,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_10` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `pph_table_10`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1936,11 +1749,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_11` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `pph_table_11`
---
-
 
 -- --------------------------------------------------------
 
@@ -1962,11 +1770,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_12` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `pph_table_12`
---
-
 
 -- --------------------------------------------------------
 
@@ -1992,11 +1795,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_13` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `pph_table_13`
---
-
 
 -- --------------------------------------------------------
 
@@ -2025,11 +1823,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_14` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `pph_table_14`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2051,11 +1844,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_15` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `pph_table_15`
---
-
 
 -- --------------------------------------------------------
 
@@ -2086,11 +1874,6 @@ CREATE TABLE IF NOT EXISTS `pph_table_16` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `pph_table_16`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2119,11 +1902,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_01` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `sekretariat_table_01`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2145,11 +1923,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_02` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `sekretariat_table_02`
---
-
 
 -- --------------------------------------------------------
 
@@ -2227,11 +2000,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_04` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `sekretariat_table_04`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2267,11 +2035,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_05` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `sekretariat_table_05`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2302,11 +2065,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_06` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `sekretariat_table_06`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2329,11 +2087,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_07` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `sekretariat_table_07`
---
-
 
 -- --------------------------------------------------------
 
@@ -2379,11 +2132,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_09` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `sekretariat_table_09`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2407,11 +2155,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_10` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `sekretariat_table_10`
---
-
 
 -- --------------------------------------------------------
 
@@ -2442,11 +2185,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_11` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `sekretariat_table_11`
---
-
 
 -- --------------------------------------------------------
 
@@ -2485,11 +2223,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_12` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `sekretariat_table_12`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2515,11 +2248,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_13` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `sekretariat_table_13`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2544,11 +2272,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_14` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `sekretariat_table_14`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2571,11 +2294,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_15` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `sekretariat_table_15`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -2593,11 +2311,6 @@ CREATE TABLE IF NOT EXISTS `sekretariat_table_16` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `sekretariat_table_16`
---
-
 
 -- --------------------------------------------------------
 

@@ -1,2 +1,9 @@
-- PKH 1 saja
-- ada user type yang bisa kirim laporan ke atasannya
+ada keterangan edit, kirim, hapus
+selamat datang adi, anda masuk sebagai resort
+(adi, resort tengger) user muncul di pojok atas
+font diperkecil, arial
+muncul menu, kkh
+
+logo, =>"
+
+datasip-tnbts.org

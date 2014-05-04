@@ -36,7 +36,7 @@ $('#form-login').submit(function(e) {
 	var param = Func.form.get_galue('form-login');
 	Func.ajax({ url: web.host + 'login/action', param: param, callback: function(result) {
 		if (result.status == 1) {
-			window.location = web.host + 'kkh/index';
+			window.location = web.host;
 		} else {
 			$.notify(result.message, "error");
 		}
