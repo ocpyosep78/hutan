@@ -1,3 +1,3 @@
 <div id="cnt-footer">
-	&copy; <?php echo date("Y"); ?>. All Rights Reserved.
+	&copy; 2013. All Rights Reserved.
 </div>
