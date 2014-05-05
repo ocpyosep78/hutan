@@ -3,6 +3,10 @@
 ?>
 <?php $this->load->view( 'panel/common/meta', $meta ); ?>
 <body>
+	<style>
+		body { overflow:hidden; }
+	</style>
+	
 	<?php $this->load->view( 'panel/common/header' ); ?>
 	<div id="cnt-content">
 		<div class="center">
